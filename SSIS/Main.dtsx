@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/6/2023 1:25:50 AM"
@@ -11,9 +11,432 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{74B51593-B502-4BDE-AC2E-35C9494F053B}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{58953E74-A7D2-4D4E-A7CE-0BD185637294}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+      DTS:ObjectName="ABC1.BI07_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}ABC1.BI07_STAGE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4605F0EB-CC68-4FC8-A1BE-B22006233635}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="GetCET">
+      <DTS:VariableValue
+        DTS:DataType="7">12/6/2023 11:21:59 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{55B1F4CD-6846-4ADB-899D-2A4B1002E739}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="GetID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DDD50017-CD94-4D4C-9F06-28F8241218E0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="GetLSET">
+      <DTS:VariableValue
+        DTS:DataType="7">12/6/2023 11:22:03 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D60E6119-455A-46D7-B65C-F886D6D3326D}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ETL\Source To Stage"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{12416824-3494-424F-969F-684ECA4C8ECA}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Source To Stage"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SourceToStage.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>CET</ParameterName>
+                <BindedVariableOrParameterName>User::GetCET</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>ID</ParameterName>
+                <BindedVariableOrParameterName>User::GetID</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>LSET</ParameterName>
+                <BindedVariableOrParameterName>User::GetLSET</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Handle LSET, CET"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0E340927-65E1-46A1-8A6D-6479E46AE9B7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Handle LSET, CET">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Handle LSET, CET\Check METADATA"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{93803122-C66F-4F17-B8B9-DDE461547FFE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check METADATA"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+              SQLTask:SqlStatementSource="IF OBJECT_ID('METADATA') IS NULL&#xA;    CREATE TABLE METADATA(&#xA; ID int IDENTITY(1,1) NOT NULL,&#xA; SOURCE_NAME varchar(30) NULL,&#xA; LSET datetime NULL,&#xA; CET datetime NULL,&#xA; PRIMARY KEY (ID)&#xA; )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Handle LSET, CET\Check source_name"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{B9F58A21-4947-4F0D-8196-98F95A23F2BE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check source_name"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM METADATA WHERE SOURCE_NAME = 'supermarket_sales')&#xA;  INSERT INTO METADATA(SOURCE_NAME, LSET, CET)  VALUES('supermarket_sales',NULL, NULL)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Handle LSET, CET\Get LSET, CET, ID"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{2D51D011-EBA2-4879-82F4-7F233EE25A8C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LSET, CET, ID"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+              SQLTask:SqlStatementSource="SELECT LSET,CET,ID&#xA;FROM   METADATA&#xA;WHERE (SOURCE_NAME = 'supermarket_sales')"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="CET"
+                SQLTask:DtsVariableName="User::GetCET" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="LSET"
+                SQLTask:DtsVariableName="User::GetLSET" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="ID"
+                SQLTask:DtsVariableName="User::GetID" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Handle LSET, CET\Set CET"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{CEE450B4-D54E-4402-8F5B-325F5DCFA442}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set CET"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+              SQLTask:SqlStatementSource="UPDATE METADATA&#xA;SET       CET = GETDATE()&#xA;WHERE (SOURCE_NAME = 'supermarket_sales')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Handle LSET, CET.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{07EC368E-F189-47F5-8581-196A5F6BD8E5}"
+          DTS:From="Package\Handle LSET, CET\Check METADATA"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Handle LSET, CET\Check source_name" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Handle LSET, CET.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{033F02D6-B40B-43CD-AA85-6A16CA753B8F}"
+          DTS:From="Package\Handle LSET, CET\Check source_name"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Handle LSET, CET\Set CET" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Handle LSET, CET.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{8AB968B8-8649-4259-ACD1-C2C4C3DBC016}"
+          DTS:From="Package\Handle LSET, CET\Set CET"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Handle LSET, CET\Get LSET, CET, ID" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update LSET"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4A3CC9D0-8098-47FA-915F-2B2DE953C4FB}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update LSET">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update LSET\Update LSET"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Update LSET"
+          DTS:DTSID="{7F00F124-EDFE-4650-A7D5-D2B39CB0BD6E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update LSET"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
+              SQLTask:SqlStatementSource="UPDATE METADATA&#xA;SET       LSET = CET&#xA;WHERE (SOURCE_NAME = 'supermarket_sales')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{085E6379-2CF7-44CE-8E38-EFC7369572AC}"
+      DTS:From="Package\Handle LSET, CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\ETL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{74250849-B8B5-4A4B-9BC6-8BDA8E0B00FB}"
+      DTS:From="Package\ETL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update LSET" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Handle LSET, CET\Check METADATA"
+          TopLeft="14.8285715912678,28" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Handle LSET, CET\Check source_name"
+          TopLeft="227.342857594454,22.0588235381256" />
+        <EdgeLayout
+          Id="Package\Handle LSET, CET.PrecedenceConstraints[Constraint]"
+          TopLeft="178.028571591268,45.8294117690628">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.3142860031858,0"
+              Start="0,0"
+              End="41.8142860031858,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.8142860031858,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\Handle LSET, CET\Set CET"
+          TopLeft="252.200000478966,103.494117485518" />
+        <EdgeLayout
+          Id="Package\Handle LSET, CET.PrecedenceConstraints[Constraint 1]"
+          TopLeft="311.77142903671,63.6588235381256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.8352939473922"
+              Start="0,0"
+              End="0,32.3352939473922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.3352939473922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Handle LSET, CET\Get LSET, CET, ID"
+          TopLeft="43.5999998935632,111.141176302344" />
+        <EdgeLayout
+          Id="Package\Handle LSET, CET.PrecedenceConstraints[Constraint 2]"
+          TopLeft="252.200000478966,128.117646893931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.2000005854028,0"
+              Start="0,0"
+              End="-38.7000005854028,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-38.7000005854028,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="416.8,216"
+          Size="416.8,259.2"
+          Id="Package\Handle LSET, CET"
+          TopLeft="18.5714286109622,37.4705882024496" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\ETL\Source To Stage"
+          TopLeft="17.2571431186734,16.305881978917" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="250.4,117.6"
+          Size="250.4,160.8"
+          Id="Package\ETL"
+          TopLeft="105.714285939324,367.058823207671" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Update LSET\Update LSET"
+          TopLeft="53.0857152740567,20.8235290323781" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="220.8,117.6"
+          Size="220.8,160.8"
+          Id="Package\Update LSET"
+          TopLeft="604.28571557208,367.058823207671" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="228.942857275143,296.67058820245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.388235005221"
+              Start="0,0"
+              End="0,62.888235005221">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.888235005221" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="356.114285939324,447.458823207671">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="248.171429632757,0"
+              Start="0,0"
+              End="240.671429632757,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="240.671429632757,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="S"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="35.2,60"
+          Id="e22bd8fe-558f-4903-b6a3-2d57efad5b3c"
+          TopLeft="434.285715210195,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

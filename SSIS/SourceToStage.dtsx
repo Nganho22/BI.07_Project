@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{A9114E7E-15D5-4276-86EB-837E3F86AFE6}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{63A60020-2E0B-40AD-8AF5-802CE7FCD123}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\HK1_4\BI\BI.07_Project\Info\supermarket_sales.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\HK1_4\BI\BI.07_Project\Info\supermarket_sales.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -375,7 +375,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="TRUNCATE table city"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="3">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -715,7 +715,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="TRUNCATE table product"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1028,7 +1028,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="TRUNCATE table product_line"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="3">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1529,7 +1529,7 @@
                         <property
                           dataType="System.String"
                           description="Specifies the name of the database object used to open a rowset."
-                          name="OpenRowset">[supermarket_sales]</property>
+                          name="OpenRowset">[dbo].[supermarket_sales]</property>
                         <property
                           dataType="System.String"
                           description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1717,7 +1717,7 @@
                               name="ProductID" />
                             <externalMetadataColumn
                               refId="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
-                              dataType="r8"
+                              dataType="i4"
                               name="Quantity" />
                             <externalMetadataColumn
                               refId="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tax 5%]"
@@ -1729,12 +1729,13 @@
                               name="Total" />
                             <externalMetadataColumn
                               refId="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                              dataType="dbTimeStamp"
+                              dataType="dbDate"
                               name="Date" />
                             <externalMetadataColumn
                               refId="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                              dataType="dbTimeStamp"
-                              name="Time" />
+                              dataType="dbTime2"
+                              name="Time"
+                              scale="7" />
                             <externalMetadataColumn
                               refId="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment]"
                               dataType="wstr"
@@ -1812,7 +1813,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="TRUNCATE table supermarket_sales"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="2">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1848,27 +1849,27 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248,41.6"
-          Id="Package\Source To Stage\supermarket_sales\TRUNCATE table supermarket_sales"
-          TopLeft="5.5,18.905882195422" />
-        <NodeLayout
           Size="150.4,41.6"
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task"
-          TopLeft="50.2571432144667,89.6941174513329" />
+          Id="Package\Source To Stage\city\Data Flow Task"
+          TopLeft="38.7071440260479,105.911764419331" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Source To Stage\city\TRUNCATE table city"
+          TopLeft="27.9928582889543,12.4117643338691" />
         <EdgeLayout
-          Id="Package\Source To Stage\supermarket_sales.PrecedenceConstraints[Constraint]"
-          TopLeft="127.478571607233,60.505882195422">
+          Id="Package\Source To Stage\city.PrecedenceConstraints[Constraint]"
+          TopLeft="115.150001157501,54.0117643338691">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.1882352559109"
+              EndConnector="0,51.9000000854624"
               Start="0,0"
-              End="0,21.6882352559109">
+              End="0,44.4000000854624">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.6882352559109" />
+                    End="0,44.4000000854624" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1880,10 +1881,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="258.4,184"
-          Size="258.4,227.2"
-          Id="Package\Source To Stage\supermarket_sales"
-          TopLeft="19.6000002767358,23.3647057791276" />
+          PanelSize="236,205.6"
+          Size="236,248.8"
+          Id="Package\Source To Stage\city"
+          TopLeft="396.028572272464,267.438235196087" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Source To Stage\product\Data Flow Task"
@@ -1922,13 +1923,13 @@
           Id="Package\Source To Stage\product"
           TopLeft="398.528572511946,25.879411732029" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Source To Stage\product_line\TRUNCATE table product_line"
-          TopLeft="25.3785715673195,15.9117644763065" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Source To Stage\product_line\Data Flow Task"
           TopLeft="29.6285715806241,102.852940869811" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Source To Stage\product_line\TRUNCATE table product_line"
+          TopLeft="25.3785715673195,15.9117644763065" />
         <EdgeLayout
           Id="Package\Source To Stage\product_line.PrecedenceConstraints[Constraint]"
           TopLeft="113.778571567319,57.5117644763065">
@@ -1971,27 +1972,27 @@
           Id="Package\Source To Stage\product_line"
           TopLeft="22.6357145689125,270.585293870476" />
         <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Source To Stage\city\TRUNCATE table city"
-          TopLeft="27.9928582889543,12.4117643338691" />
-        <NodeLayout
           Size="150.4,41.6"
-          Id="Package\Source To Stage\city\Data Flow Task"
-          TopLeft="38.7071440260479,105.911764419331" />
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task"
+          TopLeft="50.2571432144667,89.6941174513329" />
+        <NodeLayout
+          Size="248,41.6"
+          Id="Package\Source To Stage\supermarket_sales\TRUNCATE table supermarket_sales"
+          TopLeft="5.5,18.905882195422" />
         <EdgeLayout
-          Id="Package\Source To Stage\city.PrecedenceConstraints[Constraint]"
-          TopLeft="115.150001157501,54.0117643338691">
+          Id="Package\Source To Stage\supermarket_sales.PrecedenceConstraints[Constraint]"
+          TopLeft="127.478571607233,60.505882195422">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.9000000854624"
+              EndConnector="0,29.1882352559109"
               Start="0,0"
-              End="0,44.4000000854624">
+              End="0,21.6882352559109">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.4000000854624" />
+                    End="0,21.6882352559109" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2003,10 +2004,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="236,205.6"
-          Size="236,248.8"
-          Id="Package\Source To Stage\city"
-          TopLeft="396.028572272464,267.438235196087" />
+          PanelSize="258.4,184"
+          Size="258.4,227.2"
+          Id="Package\Source To Stage\supermarket_sales"
+          TopLeft="19.6000002767358,23.3647057791276" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -2018,276 +2019,10 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\Excel Source"
-          TopLeft="26.9999995976687,33.9999994933605" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\Derived Column"
-          TopLeft="191.999997138977,113.999998301268" />
-        <EdgeLayout
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="96.1999995976687,75.5999994933605">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="172.199997541308,38.3999988079071"
-              Start="0,0"
-              End="172.199997541308,30.8999988079071">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.1999994039536" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.1999994039536"
-                    Point2="0,19.1999994039536"
-                    Point3="4,19.1999994039536" />
-                  <mssgle:LineSegment
-                    End="168.199997541308,19.1999994039536" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168.199997541308,19.1999994039536"
-                    Point2="172.199997541308,19.1999994039536"
-                    Point3="172.199997541308,23.1999994039536" />
-                  <mssgle:LineSegment
-                    End="172.199997541308,30.8999988079071" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination"
-          TopLeft="68.9999989718199,190.999997153878" />
-        <EdgeLayout
-          Id="Package\Source To Stage\supermarket_sales\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="268.399997138977,155.599998301268">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-114.199998167157,35.3999988526106"
-              Start="0,0"
-              End="-114.199998167157,27.8999988526106">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.6999994263053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.6999994263053"
-                    Point2="0,17.6999994263053"
-                    Point3="-4,17.6999994263053" />
-                  <mssgle:LineSegment
-                    End="-110.199998167157,17.6999994263053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-110.199998167157,17.6999994263053"
-                    Point2="-114.199998167157,17.6999994263053"
-                    Point3="-114.199998167157,21.6999994263053" />
-                  <mssgle:LineSegment
-                    End="-114.199998167157,27.8999988526106" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Source To Stage\product\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Source To Stage\product\Data Flow Task\Excel Source"
-          TopLeft="76.9999988526106,66.9999990016222" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Source To Stage\product\Data Flow Task\OLE DB Destination"
-          TopLeft="292.99999563396,78.9999988228083" />
-        <EdgeLayout
-          Id="Package\Source To Stage\product\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="215.399998852611,87.7999990016222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77.5999967813493,11.9999998211861"
-              Start="0,0"
-              End="70.0999967813493,11.9999998211861">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34.7999983906746,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.7999983906746,0"
-                    Point2="38.7999983906746,0"
-                    Point3="38.7999983906746,4" />
-                  <mssgle:LineSegment
-                    End="38.7999983906746,7.99999982118607" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.7999983906746,7.99999982118607"
-                    Point2="38.7999983906746,11.9999998211861"
-                    Point3="42.7999983906746,11.9999998211861" />
-                  <mssgle:LineSegment
-                    End="70.0999967813493,11.9999998211861" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\product\Data Flow Task\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\product\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Source To Stage\product_line\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Source To Stage\product_line\Data Flow Task\Excel Source"
-          TopLeft="61.999999076128,59.9999991059303" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Source To Stage\product_line\Data Flow Task\OLE DB Destination"
-          TopLeft="248.999996289611,97.9999985396862" />
-        <EdgeLayout
-          Id="Package\Source To Stage\product_line\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="200.399999076128,80.7999991059303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="48.5999972134829,37.9999994337559"
-              Start="0,0"
-              End="41.0999972134829,37.9999994337559">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="20.2999986067414,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.2999986067414,0"
-                    Point2="24.2999986067414,0"
-                    Point3="24.2999986067414,4" />
-                  <mssgle:LineSegment
-                    End="24.2999986067414,33.9999994337559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24.2999986067414,33.9999994337559"
-                    Point2="24.2999986067414,37.9999994337559"
-                    Point3="28.2999986067414,37.9999994337559" />
-                  <mssgle:LineSegment
-                    End="41.0999972134829,37.9999994337559" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\product_line\Data Flow Task\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source To Stage\product_line\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Source To Stage\city\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\Source To Stage\city\Data Flow Task\Excel Source"
@@ -2327,7 +2062,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2348,6 +2085,276 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Source To Stage\city\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Source To Stage\product\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Source To Stage\product\Data Flow Task\OLE DB Destination"
+          TopLeft="292.99999563396,78.9999988228083" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Source To Stage\product\Data Flow Task\Excel Source"
+          TopLeft="76.9999988526106,66.9999990016222" />
+        <EdgeLayout
+          Id="Package\Source To Stage\product\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="215.399998852611,87.7999990016222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5999967813493,11.9999998211861"
+              Start="0,0"
+              End="70.0999967813493,11.9999998211861">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.7999983906746,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.7999983906746,0"
+                    Point2="38.7999983906746,0"
+                    Point3="38.7999983906746,4" />
+                  <mssgle:LineSegment
+                    End="38.7999983906746,7.99999982118607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.7999983906746,7.99999982118607"
+                    Point2="38.7999983906746,11.9999998211861"
+                    Point3="42.7999983906746,11.9999998211861" />
+                  <mssgle:LineSegment
+                    End="70.0999967813493,11.9999998211861" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\product\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\product\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Source To Stage\product_line\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Source To Stage\product_line\Data Flow Task\Excel Source"
+          TopLeft="61.999999076128,59.9999991059303" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Source To Stage\product_line\Data Flow Task\OLE DB Destination"
+          TopLeft="248.999996289611,97.9999985396862" />
+        <EdgeLayout
+          Id="Package\Source To Stage\product_line\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="200.399999076128,80.7999991059303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5999972134829,37.9999994337559"
+              Start="0,0"
+              End="41.0999972134829,37.9999994337559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="20.2999986067414,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.2999986067414,0"
+                    Point2="24.2999986067414,0"
+                    Point3="24.2999986067414,4" />
+                  <mssgle:LineSegment
+                    End="24.2999986067414,33.9999994337559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.2999986067414,33.9999994337559"
+                    Point2="24.2999986067414,37.9999994337559"
+                    Point3="28.2999986067414,37.9999994337559" />
+                  <mssgle:LineSegment
+                    End="41.0999972134829,37.9999994337559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\product_line\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\product_line\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination"
+          TopLeft="68.9999989718199,190.999997153878" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\Excel Source"
+          TopLeft="26.9999995976687,33.9999994933605" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task\Derived Column"
+          TopLeft="191.999997138977,113.999998301268" />
+        <EdgeLayout
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="268.399997138977,155.599998301268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.199998167157,35.3999988526106"
+              Start="0,0"
+              End="-114.199998167157,27.8999988526106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6999994263053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6999994263053"
+                    Point2="0,17.6999994263053"
+                    Point3="-4,17.6999994263053" />
+                  <mssgle:LineSegment
+                    End="-110.199998167157,17.6999994263053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-110.199998167157,17.6999994263053"
+                    Point2="-114.199998167157,17.6999994263053"
+                    Point3="-114.199998167157,21.6999994263053" />
+                  <mssgle:LineSegment
+                    End="-114.199998167157,27.8999988526106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source To Stage\supermarket_sales\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="96.1999995976687,75.5999994933605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172.199997541308,38.3999988079071"
+              Start="0,0"
+              End="172.199997541308,30.8999988079071">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1999994039536" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1999994039536"
+                    Point2="0,19.1999994039536"
+                    Point3="4,19.1999994039536" />
+                  <mssgle:LineSegment
+                    End="168.199997541308,19.1999994039536" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.199997541308,19.1999994039536"
+                    Point2="172.199997541308,19.1999994039536"
+                    Point3="172.199997541308,23.1999994039536" />
+                  <mssgle:LineSegment
+                    End="172.199997541308,30.8999988079071" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source To Stage\supermarket_sales\Data Flow Task\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

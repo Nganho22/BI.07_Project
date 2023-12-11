@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{60D5884E-EDD8-40B8-9C61-3E4A4E630D70}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{1428F80C-E336-4349-8812-838DAE41CF57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2169,8 +2169,8 @@ set [Product line] = ?, updatedDate = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="411.2,295.2"
-          Size="411.2,338.4"
+          PanelSize="411.2,248.8"
+          Size="411.2,292"
           Id="Package\Product Line"
           TopLeft="43.5714286641807,47.4117646643241" />
       </GraphLayout>

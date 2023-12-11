@@ -1,3 +1,4 @@
+
 CREATE TABLE DATA_STORE_INFO
 (
 	DBS_ID int IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -12,6 +13,7 @@ CREATE TABLE DATA_TABLE_INFO
 	TABLE_NAME varchar(255) NOT NULL,
 	TABLE_TYPE VARCHAR(50),
 	DESCRIPTIONS VARCHAR(255) NULL,
+	UPDATEDATE DATETIME NULL,
 	FOREIGN KEY (DBS_ID) REFERENCES DATA_STORE_INFO(DBS_ID)
 )
 
@@ -23,33 +25,32 @@ INSERT INTO DATA_STORE_INFO VALUES ('BI07_DDS','A user-facing data store, in the
 
 SELECT * FROM DATA_STORE_INFO
 
-INSERT INTO DATA_TABLE_INFO VALUES (1, 'DATA_FLOW','METADATA','Store the timestamps of data source flow that ETL to DW');
+INSERT INTO DATA_TABLE_INFO VALUES (1, 'DATA_FLOW','METADATA','Store the timestamps of data source flow that ETL to DW', NULL);
 
-INSERT INTO DATA_TABLE_INFO VALUES (2, 'city','Stage','Store City data about the city from source')
+INSERT INTO DATA_TABLE_INFO VALUES (2, 'city','Stage','Store City data about the city from source', NULL)
 
-insert into DATA_TABLE_INFO VALUES (2,'product_line','Stage','Store Product Line data from source')
+insert into DATA_TABLE_INFO VALUES (2,'product_line','Stage','Store Product Line data from source', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES (2,'product','Stage','Store Product data from source')
+INSERT INTO DATA_TABLE_INFO VALUES (2,'product','Stage','Store Product data from source', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(2, 'supermarket_sales','Stage','Store the Invoice data of supermarket_sales from source')
+INSERT INTO DATA_TABLE_INFO VALUES(2, 'supermarket_sales','Stage','Store the Invoice data of supermarket_sales from source', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(3,'DATE','Master tables(NDS)', 'Store date data')
+INSERT INTO DATA_TABLE_INFO VALUES(3,'DATE','Master tables(NDS)', 'Store date data', GETDATE())
 
-INSERT INTO DATA_TABLE_INFO VALUES(3, 'TIME','Master tables(NDS)', 'Store time data')
+INSERT INTO DATA_TABLE_INFO VALUES(3, 'TIME','Master tables(NDS)', 'Store time data', GETDATE())
 
-INSERT INTO DATA_TABLE_INFO VALUES(3, 'Payment','Master tables(NDS)','Store payment type')
+INSERT INTO DATA_TABLE_INFO VALUES(3, 'payment','Master tables(NDS)','Store payment type', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(3, 'city','Master tables(NDS)', 'Store city data')
+INSERT INTO DATA_TABLE_INFO VALUES(3, 'city','Master tables(NDS)', 'Store city data', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(3,'customer_type', 'Master tables(NDS)','Store customer type')
+INSERT INTO DATA_TABLE_INFO VALUES(3,'customer_type', 'Master tables(NDS)','Store customer type', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES (3,'product_line', 'Master tables(NDS)','Store product line data')
+INSERT INTO DATA_TABLE_INFO VALUES (3,'product_line', 'Master tables(NDS)','Store product line data', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(3, 'product','Master tables(NDS)','Store product info data')
+INSERT INTO DATA_TABLE_INFO VALUES(3, 'product','Master tables(NDS)','Store product info data', NULL)
 
-INSERT INTO DATA_TABLE_INFO VALUES(3,'supermarket_sales','Transaction table(NDS)', 'Store the invoice data of supermarket_sales')
+INSERT INTO DATA_TABLE_INFO VALUES(3,'supermarket_sales','Transaction table(NDS)', 'Store the invoice data of supermarket_sales', NULL)
 
-select * from DATA_TABLE_INFO
 
 create table COLUMN_INFO
 (
@@ -87,5 +88,4 @@ insert into COLUMN_INFO values(5,'ProductID','nvarchar',null,'PID01',NULL)
 INSERT INTO COLUMN_INFO VALUES(5,'Quantity','int',null,'1',null)
 insert into COLUMN_INFO values(5,'Tax 5%','float',null,'26,1415',null)
 insert into COLUMN_INFO values(5,'Total','float',null,'548,9715',null)
-insert into COLUMN_INFO values(5,'Date','Datetime',null,'2019-01-05','13:08:00.0000000',null)
-
+insert into COLUMN_INFO values(5,'Date','Datetime',null,'2019-01-05',null)

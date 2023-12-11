@@ -11,11 +11,23 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{F5A0747B-B2D8-4CF9-8B92-7DE3E4D0F305}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{60D5884E-EDD8-40B8-9C61-3E4A4E630D70}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{90548E27-6D4B-4E06-B2EC-EF291806963B}"
+      DTS:ObjectName="ABC1.BI07_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{90548E27-6D4B-4E06-B2EC-EF291806963B}ABC1.BI07_METADATA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ABC1.BI07_NDS]"
       DTS:CreationName="OLEDB"
@@ -71,6 +83,15 @@
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E12596D5-CBB5-44FB-8485-59782BC8FF07}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Count_Row">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{C487E1BB-08D9-4EA2-80CF-36C036697AD8}"
@@ -1579,21 +1600,6 @@ where [refTable].[ProductLineID_NK] = ?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Product Line\product_line\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[Product line]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Copy Column"
-                          length="255"
-                          lineageId="Package\Product Line\product_line\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[Product line]"
-                          name="Product line"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">Product line</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Product Line\product_line\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[createdDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Copy Column"
@@ -1787,6 +1793,64 @@ where [refTable].[ProductLineID_NK] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Product Line\product_line\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Count_Row</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Product Line\product_line\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Product Line\product_line\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Product Line\product_line\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Product Line\product_line\Row Count 1"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count 1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Count_Row</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Product Line\product_line\Row Count 1.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Product Line\product_line\Row Count 1.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Product Line\product_line\Row Count 1.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Product Line\product_line\update product_line"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -1829,13 +1893,6 @@ set [Product line] = ?, updatedDate = ?
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].Columns[Product line]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Product line"
-                          externalMetadataColumnId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Product Line\product_line\product_line Stage.Outputs[OLE DB Source Output].Columns[Product line]" />
-                        <inputColumn
                           refId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].Columns[newupdatedDate]"
                           cachedDataType="date"
                           cachedName="newupdatedDate"
@@ -1847,6 +1904,13 @@ set [Product line] = ?, updatedDate = ?
                           cachedName="ProductLineID_SK"
                           externalMetadataColumnId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Product Line\product_line\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[ProductLineID_SK]" />
+                        <inputColumn
+                          refId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].Columns[Product line]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Product line"
+                          externalMetadataColumnId="Package\Product Line\product_line\update product_line.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Product Line\product_line\product_line Stage.Outputs[OLE DB Source Output].Columns[Product line]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1947,6 +2011,16 @@ set [Product line] = ?, updatedDate = ?
                   name="Lookup No Match Output"
                   startId="Package\Product Line\product_line\Lookup in product_line NDS.Outputs[Lookup No Match Output]" />
                 <path
+                  refId="Package\Product Line\product_line.Paths[OLE DB Command Output]"
+                  endId="Package\Product Line\product_line\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Command Output"
+                  startId="Package\Product Line\product_line\insert new product_line.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Product Line\product_line.Paths[OLE DB Command Output1]"
+                  endId="Package\Product Line\product_line\Row Count 1.Inputs[Row Count Input 1]"
+                  name="OLE DB Command Output"
+                  startId="Package\Product Line\product_line\update product_line.Outputs[OLE DB Command Output]" />
+                <path
                   refId="Package\Product Line\product_line.Paths[OLE DB Source Output]"
                   endId="Package\Product Line\product_line\Lookup in product_line NDS.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
@@ -1960,16 +2034,55 @@ set [Product line] = ?, updatedDate = ?
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Product Line\Update DATA_TABLE_INFO"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1864d043-e9a6-46a1-948e-ed4ad0f2a7e2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:MaxErrorCount="5"
+          DTS:ObjectName="Update DATA_TABLE_INFO"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{90548E27-6D4B-4E06-B2EC-EF291806963B}"
+              SQLTask:SqlStatementSource="IF ? &gt; 0&#xA;UPDATE DATA_TABLE_INFO&#xA;SET UPDATEDATE = ?&#xA;WHERE DBS_ID = 3 AND TABLE_NAME = 'product_line';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Count_Row"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Package::CET"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Product Line.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{5315C360-1717-4E32-A973-EDE3E0A3CDBE}"
+          DTS:DTSID="{A901A8DA-E347-4586-9428-CFA543BB3E86}"
           DTS:From="Package\Product Line\Find MAX_ID of product_line"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\Product Line\product_line" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Product Line.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E32E7497-DC9D-42BE-A7D9-332A0934A607}"
+          DTS:From="Package\Product Line\product_line"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Product Line\Update DATA_TABLE_INFO" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -1984,41 +2097,67 @@ set [Product line] = ?, updatedDate = ?
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\Product Line\product_line"
-          TopLeft="85.3714288451234,86.2470586686914" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Product Line\Find MAX_ID of product_line"
-          TopLeft="18.7428572644993,15.8941175538878" />
+          TopLeft="18.7428572644993,28" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Product Line\product_line"
+          TopLeft="203.228571953153,34.8823529351439" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Product Line\Update DATA_TABLE_INFO"
+          TopLeft="185.371429057997,126.223529545153" />
         <EdgeLayout
           Id="Package\Product Line.PrecedenceConstraints[Constraint]"
-          TopLeft="99.9428572644993,57.4941175538878">
+          TopLeft="99.9428572644993,28">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.8285715806241,28.7529411148036"
+              EndConnector="171.685714688654,6.88235293514393"
               Start="0,0"
-              End="53.8285715806241,21.2529411148036">
+              End="171.685714688654,-0.617647064856065">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.3764705574018" />
+                    End="0,-18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.3764705574018"
-                    Point2="0,14.3764705574018"
-                    Point3="4,14.3764705574018" />
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
                   <mssgle:LineSegment
-                    End="49.8285715806241,14.3764705574018" />
+                    End="167.685714688654,-22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="49.8285715806241,14.3764705574018"
-                    Point2="53.8285715806241,14.3764705574018"
-                    Point3="53.8285715806241,18.3764705574018" />
+                    Point1="167.685714688654,-22.5"
+                    Point2="171.685714688654,-22.5"
+                    Point3="171.685714688654,-18.5" />
                   <mssgle:LineSegment
-                    End="53.8285715806241,21.2529411148036" />
+                    End="171.685714688654,-0.617647064856065" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line.PrecedenceConstraints[Constraint 1]"
+          TopLeft="274.700000505575,76.4823529351439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.7411766100092"
+              Start="0,0"
+              End="0,42.2411766100092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2411766100092" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2030,8 +2169,8 @@ set [Product line] = ?, updatedDate = ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="238.4,183.2"
-          Size="238.4,226.4"
+          PanelSize="411.2,295.2"
+          Size="411.2,338.4"
           Id="Package\Product Line"
           TopLeft="43.5714286641807,47.4117646643241" />
       </GraphLayout>
@@ -2041,176 +2180,50 @@ set [Product line] = ?, updatedDate = ?
     design-time-name="Package\Product Line\product_line">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Product Line\product_line\get new updatedDate"
-          TopLeft="619.542850163032,259.999996125698" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Product Line\product_line\product_line Stage"
-          TopLeft="339.142852721774,38.9999994188547" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="270.4,41.6"
           Id="Package\Product Line\product_line\create createdDate, updatedDate, ID_SK"
-          TopLeft="11.714283423156,254.599996587634" />
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Product Line\product_line\Lookup in product_line NDS"
-          TopLeft="314.999995306134,115.999998271465" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Product Line\product_line\insert new product_line"
-          TopLeft="13.142856132011,335.188230745242" />
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Product Line\product_line\update product_line"
-          TopLeft="670.999991678766,343.529407031808" />
-        <NodeLayout
-          Size="241.6,41.6"
-          Id="Package\Product Line\product_line\Check createdDate &amp; updatedDate"
-          TopLeft="546.285707921398,168.411762132003" />
+          TopLeft="11.714283423156,364.894114141521" />
         <NodeLayout
           Size="234.4,41.6"
           Id="Package\Product Line\product_line\create ID increases automatically"
-          TopLeft="63.9999990463257,167.599997884035" />
-        <EdgeLayout
-          Id="Package\Product Line\product_line.Paths[Lookup Match Output]"
-          TopLeft="524.599995306134,136.799998271465">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="142.485712615264,31.6117638605381"
-              Start="0,0"
-              End="142.485712615264,24.1117638605381">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="138.485712615264,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="138.485712615264,0"
-                    Point2="142.485712615264,0"
-                    Point3="142.485712615264,4" />
-                  <mssgle:LineSegment
-                    End="142.485712615264,24.1117638605381" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="94.2943258965141,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Product Line\product_line.Paths[Derived Column Output1]"
-          TopLeft="146.914283423156,296.199996587634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-39.371427291145,38.988234157608"
-              Start="0,0"
-              End="-39.371427291145,31.488234157608">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.494117078804" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.494117078804"
-                    Point2="0,19.494117078804"
-                    Point3="-4,19.494117078804" />
-                  <mssgle:LineSegment
-                    End="-35.371427291145,19.494117078804" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-35.371427291145,19.494117078804"
-                    Point2="-39.371427291145,19.494117078804"
-                    Point3="-39.371427291145,23.494117078804" />
-                  <mssgle:LineSegment
-                    End="-39.371427291145,31.488234157608" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Product Line\product_line.Paths[Derived Column Output]"
-          TopLeft="709.542850163032,301.599996125698">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.4571415157346,41.9294109061104"
-              Start="0,0"
-              End="47.4571415157346,34.4294109061104">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.9647054530552" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.9647054530552"
-                    Point2="0,20.9647054530552"
-                    Point3="4,20.9647054530552" />
-                  <mssgle:LineSegment
-                    End="43.4571415157346,20.9647054530552" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.4571415157346,20.9647054530552"
-                    Point2="47.4571415157346,20.9647054530552"
-                    Point3="47.4571415157346,24.9647054530552" />
-                  <mssgle:LineSegment
-                    End="47.4571415157346,34.4294109061104" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Product Line\product_line.Paths[Case 1]"
-          TopLeft="667.085707921398,210.011762132003">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.4571422416336,49.9882339936948"
-              Start="0,0"
-              End="42.4571422416336,42.4882339936948">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.9941169968474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.9941169968474"
-                    Point2="0,24.9941169968474"
-                    Point3="4,24.9941169968474" />
-                  <mssgle:LineSegment
-                    End="38.4571422416336,24.9941169968474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.4571422416336,24.9941169968474"
-                    Point2="42.4571422416336,24.9941169968474"
-                    Point3="42.4571422416336,28.9941169968474" />
-                  <mssgle:LineSegment
-                    End="42.4571422416336,42.4882339936948" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="6.01048518331681,29.9941169968474,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="63.9999990463257,277.894115437923" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Product Line\product_line\Row Count 1"
+          TopLeft="698.571430058504,527.929411581045" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Product Line\product_line\insert new product_line"
+          TopLeft="13.142856132011,445.482348299129" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Product Line\product_line\get new updatedDate"
+          TopLeft="619.542850163032,370.294113679585" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Product Line\product_line\Row Count"
+          TopLeft="52.8571429696618,533.270587985945" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Product Line\product_line\product_line Stage"
+          TopLeft="335.571424142743,72.8235288044779" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\Product Line\product_line\Check createdDate &amp; updatedDate"
+          TopLeft="546.285707921398,278.705879685891" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Product Line\product_line\update product_line"
+          TopLeft="670.999991678766,453.823524585695" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Product Line\product_line\Lookup in product_line NDS"
+          TopLeft="313.571423874521,166.647057054107" />
         <EdgeLayout
           Id="Package\Product Line\product_line.Paths[Output 0]"
-          TopLeft="181.199999046326,209.199997884035">
+          TopLeft="181.199999046326,319.494115437923">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2244,18 +2257,86 @@ set [Product line] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product Line\product_line.Paths[OLE DB Source Output]"
-          TopLeft="421.071424013954,80.5999994188547">
+          TopLeft="418.571424008632,114.423528804478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.3999988526103"
+              EndConnector="0,52.2235282496291"
               Start="0,0"
-              End="0,27.8999988526103">
+              End="0,44.7235282496291">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.8999988526103" />
+                    End="0,44.7235282496291" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[OLE DB Command Output1]"
+          TopLeft="756.999991678766,495.423524585695">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.1714383797378,32.5058869953501"
+              Start="0,0"
+              End="11.1714383797378,25.0058869953501">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.2529434976751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.2529434976751"
+                    Point2="0,16.2529434976751"
+                    Point3="4,16.2529434976751" />
+                  <mssgle:LineSegment
+                    End="7.17143837973776,16.2529434976751" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.17143837973776,16.2529434976751"
+                    Point2="11.1714383797378,16.2529434976751"
+                    Point3="11.1714383797378,20.2529434976751" />
+                  <mssgle:LineSegment
+                    End="11.1714383797378,25.0058869953501" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[OLE DB Command Output]"
+          TopLeft="107.542856132011,487.082348299129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.1142868376508,46.188239686816"
+              Start="0,0"
+              End="10.1142868376508,38.688239686816">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.094119843408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.094119843408"
+                    Point2="0,23.094119843408"
+                    Point3="4,23.094119843408" />
+                  <mssgle:LineSegment
+                    End="6.11428683765079,23.094119843408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.11428683765079,23.094119843408"
+                    Point2="10.1142868376508,23.094119843408"
+                    Point3="10.1142868376508,27.094119843408" />
+                  <mssgle:LineSegment
+                    End="10.1142868376508,38.688239686816" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2266,31 +2347,177 @@ set [Product line] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product Line\product_line.Paths[Lookup No Match Output]"
-          TopLeft="314.999995306134,136.799998271465">
+          TopLeft="384.771423874521,208.247057054107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-133.799996259808,30.79999961257"
+              EndConnector="-203.571424828196,69.6470583838162"
               Start="0,0"
-              End="-133.799996259808,23.29999961257">
+              End="-203.571424828196,62.1470583838162">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-129.799996259808,0" />
+                    End="0,24.1754008916348" />
                   <mssgle:CubicBezierSegment
-                    Point1="-129.799996259808,0"
-                    Point2="-133.799996259808,0"
-                    Point3="-133.799996259808,4" />
+                    Point1="0,24.1754008916348"
+                    Point2="0,28.1754008916348"
+                    Point3="-4,28.1754008916348" />
                   <mssgle:LineSegment
-                    End="-133.799996259808,23.29999961257" />
+                    End="-199.571424828196,28.1754008916348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-199.571424828196,28.1754008916348"
+                    Point2="-203.571424828196,28.1754008916348"
+                    Point3="-203.571424828196,32.1754008916348" />
+                  <mssgle:LineSegment
+                    End="-203.571424828196,62.1470583838162" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-189.606382978558,-17.609375,111.6127734375,11.609375"
+              BoundingBox="-157.592099132848,33.1754008916348,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[Lookup Match Output]"
+          TopLeft="451.971423874521,208.247057054107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="215.114284046877,70.4588226317843"
+              Start="0,0"
+              End="215.114284046877,62.9588226317843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5037964283127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5037964283127"
+                    Point2="0,28.5037964283127"
+                    Point3="4,28.5037964283127" />
+                  <mssgle:LineSegment
+                    End="211.114284046877,28.5037964283127" />
+                  <mssgle:CubicBezierSegment
+                    Point1="211.114284046877,28.5037964283127"
+                    Point2="215.114284046877,28.5037964283127"
+                    Point3="215.114284046877,32.5037964283127" />
+                  <mssgle:LineSegment
+                    End="215.114284046877,62.9588226317843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="59.3657553046885,33.5037964283127,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[Derived Column Output1]"
+          TopLeft="146.914283423156,406.494114141521">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39.371427291145,38.988234157608"
+              Start="0,0"
+              End="-39.371427291145,31.488234157608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.494117078804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.494117078804"
+                    Point2="0,19.494117078804"
+                    Point3="-4,19.494117078804" />
+                  <mssgle:LineSegment
+                    End="-35.371427291145,19.494117078804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.371427291145,19.494117078804"
+                    Point2="-39.371427291145,19.494117078804"
+                    Point3="-39.371427291145,23.494117078804" />
+                  <mssgle:LineSegment
+                    End="-39.371427291145,31.488234157608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[Derived Column Output]"
+          TopLeft="709.542850163032,411.894113679585">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.4571415157346,41.9294109061104"
+              Start="0,0"
+              End="47.4571415157346,34.4294109061104">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9647054530552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.9647054530552"
+                    Point2="0,20.9647054530552"
+                    Point3="4,20.9647054530552" />
+                  <mssgle:LineSegment
+                    End="43.4571415157346,20.9647054530552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.4571415157346,20.9647054530552"
+                    Point2="47.4571415157346,20.9647054530552"
+                    Point3="47.4571415157346,24.9647054530552" />
+                  <mssgle:LineSegment
+                    End="47.4571415157346,34.4294109061104" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Product Line\product_line.Paths[Case 1]"
+          TopLeft="667.085707921398,320.305879685891">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.457142241634,49.9882339936937"
+              Start="0,0"
+              End="42.457142241634,42.4882339936937">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.9941169968469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.9941169968469"
+                    Point2="0,24.9941169968469"
+                    Point3="4,24.9941169968469" />
+                  <mssgle:LineSegment
+                    End="38.457142241634,24.9941169968469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.457142241634,24.9941169968469"
+                    Point2="42.457142241634,24.9941169968469"
+                    Point3="42.457142241634,28.9941169968469" />
+                  <mssgle:LineSegment
+                    End="42.457142241634,42.4882339936937" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.010485183317,29.9941169968469,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

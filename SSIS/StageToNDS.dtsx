@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{1428F80C-E336-4349-8812-838DAE41CF57}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{20E8A6B1-25C1-4A1F-819B-B844C67BCCC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1331,7 +1331,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1258</property>
+                      name="DefaultCodePage">1252</property>
                   </properties>
                   <connections>
                     <connection
@@ -1874,7 +1874,7 @@ set [Product line] = ?, updatedDate = ?
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1258</property>
+                      name="DefaultCodePage">1252</property>
                   </properties>
                   <connections>
                     <connection

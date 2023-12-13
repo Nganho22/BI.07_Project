@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{55DA5D2B-5B77-43A9-AA33-2EAEC810223D}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{EA3CAED4-7B04-451F-B69A-55C708637D98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9CBDE3D7-F5AD-4F87-B8BC-0E18FA33C5B9}ABC1.BI07_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{9CBDE3D7-F5AD-4F87-B8BC-0E18FA33C5B9}ABC1.BI07_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}ABC1.BI07_STAGE;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}ABC1.BI07_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -447,13 +447,13 @@
           Id="Package\Handle LSET, CET"
           TopLeft="18.5714286109622,37.4705882024496" />
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Update LSET\Update LSET"
-          TopLeft="53.0857152740567,20.8235290323781" />
-        <NodeLayout
           Size="162.4,41.6"
           Id="Package\Update LSET\Execute SQL Task"
           TopLeft="36.4857160084709,99.4470587370614" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Update LSET\Update LSET"
+          TopLeft="53.0857152740567,20.8235290323781" />
         <EdgeLayout
           Id="Package\Update LSET.PrecedenceConstraints[Constraint]"
           TopLeft="119.985715641264,62.4235290323781">

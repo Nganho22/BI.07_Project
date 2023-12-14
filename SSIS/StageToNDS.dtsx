@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="94"
-  DTS:VersionGUID="{B6FE44FB-9496-4837-B383-81A954499A24}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{A94501D5-EE06-4347-9110-FC0340714AD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{90548E27-6D4B-4E06-B2EC-EF291806963B}ABC1.BI07_METADATA;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{90548E27-6D4B-4E06-B2EC-EF291806963B}ABC1.BI07_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,31 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{EA327950-7585-4C12-842B-B79E63F25D92}ABC1.BI07_STAGE;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{24D43340-3F9F-4462-AFE7-144B973B09F4}"
-      DTS:ObjectName="LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{24D43340-3F9F-4462-AFE7-144B973B09F4}LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_STAGE]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{7B6F4384-C6CA-4D6F-BC3A-96D4B442A400}"
-      DTS:ObjectName="LAPTOP-VUQKGDIV\HONGNGOC.BI07_STAGE">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{7B6F4384-C6CA-4D6F-BC3A-96D4B442A400}LAPTOP-VUQKGDIV\HONGNGOC.BI07_STAGE;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{EA327950-7585-4C12-842B-B79E63F25D92}ABC1.BI07_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -11465,8 +11441,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\insert new supermarket_sales.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11919,8 +11895,8 @@ where [refTable].[Branch_NK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -12077,8 +12053,8 @@ where [refTable].[Customer type] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -12426,8 +12402,8 @@ where [refTable].[Invoice ID_NK] = ? and [refTable].[SOURCE_ID] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -12857,8 +12833,8 @@ where [refTable].[Branch_NK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -13206,8 +13182,8 @@ where [refTable].[Payment type] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -13364,8 +13340,8 @@ where [refTable].[ProductID_NK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -13697,8 +13673,8 @@ where [refTable].[Customer type] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -13855,8 +13831,8 @@ where [refTable].[Payment type] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -14013,8 +13989,8 @@ where [refTable].[ProductID_NK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -14389,8 +14365,8 @@ FROM     supermarket_sales</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\supermarket_sales.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_STAGE]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_STAGE]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_STAGE]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -14825,8 +14801,8 @@ where [Invoice ID_SK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\supermarket_sales\supermarket_sales\updated new supermarket_sales.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[LAPTOP-VUQKGDIV\HONGNGOC.BI07_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -15175,69 +15151,69 @@ where [Invoice ID_SK] = ?</property>
                   startId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output12]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
-                  endId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup DateKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
-                  endId="Package\supermarket_sales\supermarket_sales\create Invoice ID_SK &amp; updatedDate, createdDate 1.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
-                  endId="Package\supermarket_sales\supermarket_sales\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
+                  endId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup DateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
+                  endId="Package\supermarket_sales\supermarket_sales\create Invoice ID_SK &amp; updatedDate, createdDate 1.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
+                  endId="Package\supermarket_sales\supermarket_sales\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
                   endId="Package\supermarket_sales\supermarket_sales\create ID increases automatically.Inputs[Input 0]"
@@ -15783,94 +15759,6 @@ where [Invoice ID_SK] = ?</property>
           Size="411.2,292"
           Id="Package\Product Line"
           TopLeft="43.5714286641807,47.4117646643241" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="454.771428664181,191.811782641084">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="62.2374788356954,0"
-              Start="0,0"
-              End="54.7374788356954,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="54.7374788356954,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="249.238095330847,339.411764664324">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="454.771428664181,569.06274557149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.7523820294209,0"
-              Start="0,0"
-              End="87.2523820294209,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="87.2523820294209,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="732.419048763498,743.513726478657">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.3215675940801"
-              Start="0,0"
-              End="0,49.8215675940801">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.8215675940801" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="243.2,41.6"
           Id="Package\supermarket_sales\Find MAX_ID of supermarket_sales"
@@ -15959,6 +15847,94 @@ where [Invoice ID_SK] = ?</property>
           Id="Package\supermarket_sales"
           TopLeft="45.7142858115994,807.858823800211" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="454.771428664181,191.811782641084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.2374788356954,0"
+              Start="0,0"
+              End="54.7374788356954,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="54.7374788356954,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="249.238095330847,339.411764664324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="454.771428664181,569.06274557149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.7523820294209,0"
+              Start="0,0"
+              End="87.2523820294209,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.2523820294209,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="732.419048763498,743.513726478657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.3215675940801"
+              Start="0,0"
+              End="0,49.8215675940801">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8215675940801" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="525.714286833394,957.947058936474">
           <EdgeLayout.Curve>
@@ -15989,29 +15965,29 @@ where [Invoice ID_SK] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\City\city\create createdDate, updatedDate, ID_SK"
-          TopLeft="11.714283423156,364.894114141521" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\City\city\create ID increases automatically"
-          TopLeft="63.9999990463257,277.894115437923" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\City\city\Row Count"
-          TopLeft="52.8571429696618,533.270587985945" />
-        <NodeLayout
-          Size="148,42.4"
-          Id="Package\City\city\insert new city"
-          TopLeft="12.4285704390127,444.768062606131" />
+          Size="124.8,41.6"
+          Id="Package\City\city\city Stage"
+          TopLeft="322.571424336458,72.8235288044779" />
         <NodeLayout
           Size="180,41.6"
           Id="Package\City\city\get new updatedDate"
           TopLeft="619.542850163032,370.294113679585" />
         <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\City\city\city Stage"
-          TopLeft="322.571424336458,72.8235288044779" />
+          Size="168,42.4"
+          Id="Package\City\city\Lookup in city NDS"
+          TopLeft="313.571423874521,166.647057054107" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\City\city\Row Count"
+          TopLeft="52.8571429696618,533.270587985945" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\City\city\create createdDate, updatedDate, ID_SK"
+          TopLeft="11.714283423156,364.894114141521" />
+        <NodeLayout
+          Size="148,42.4"
+          Id="Package\City\city\insert new city"
+          TopLeft="12.4285704390127,444.768062606131" />
         <NodeLayout
           Size="132,42.4"
           Id="Package\City\city\update city"
@@ -16021,13 +15997,13 @@ where [Invoice ID_SK] = ?</property>
           Id="Package\City\city\Check createdDate &amp; updatedDate"
           TopLeft="546.285707921398,278.705879685891" />
         <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\City\city\create ID increases automatically"
+          TopLeft="63.9999990463257,277.894115437923" />
+        <NodeLayout
           Size="139.2,41.6"
           Id="Package\City\city\Row Count 1"
           TopLeft="698.571430058504,527.929411581045" />
-        <NodeLayout
-          Size="168,42.4"
-          Id="Package\City\city\Lookup in city NDS"
-          TopLeft="313.571423874521,166.647057054107" />
         <EdgeLayout
           Id="Package\City\city.Paths[Output 0]"
           TopLeft="181.199999046326,319.494115437923">
@@ -16059,7 +16035,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16093,7 +16071,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16127,7 +16107,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16161,7 +16143,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16267,7 +16251,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16301,7 +16287,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17376,17 +17364,17 @@ where [Invoice ID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string"></Value>
+          type="q3:string">[product]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17399,7 +17387,7 @@ where [Invoice ID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17409,7 +17397,7 @@ where [Invoice ID_SK] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17492,7 +17480,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17514,7 +17504,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17548,7 +17540,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17582,7 +17576,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17688,7 +17684,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17722,7 +17720,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17924,7 +17924,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17946,7 +17948,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17968,7 +17972,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17990,7 +17996,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18019,6 +18027,30 @@ where [Invoice ID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output12]"
+          TopLeft="1137.28888963462,291.311671098087">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="168.996826110797,0"
+              Start="0,0"
+              End="161.496826110797,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="161.496826110797,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.5570263366487,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
           TopLeft="1053.63372552393,232.599997153878">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18042,7 +18074,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
           TopLeft="560.742858024763,418.490755972162">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18066,7 +18098,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
           TopLeft="1331.17855610842,210.799997168779">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18090,7 +18122,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
           TopLeft="1095.00408244505,404.289075312341">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18126,7 +18158,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
           TopLeft="182.122448916599,316.894117405753">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18150,79 +18182,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
-          TopLeft="614.178566792562,132.072058016437">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-321.328566683464,0"
-              Start="0,0"
-              End="-313.828566683464,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-313.828566683464,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-205.105670060482,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
-          TopLeft="1137.28888963462,291.311671098087">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="168.996826110797,0"
-              Start="0,0"
-              End="161.496826110797,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="161.496826110797,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="32.5570263366487,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
-          TopLeft="260.114285896749,213.219117478396">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170.242857876512,0"
-              Start="0,0"
-              End="162.742857876512,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="162.742857876512,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="33.180042219506,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
           TopLeft="1413.87823277094,311.431932536591">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18246,7 +18206,31 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
+          TopLeft="614.178566792562,132.072058016437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-321.328566683464,0"
+              Start="0,0"
+              End="-313.828566683464,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-313.828566683464,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-205.105670060482,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
           TopLeft="1323.87074979646,383.36769342636">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18270,7 +18254,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
           TopLeft="428.122449676862,299.37142832725">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18294,7 +18278,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
           TopLeft="278.244897909224,398.783192945994">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18318,7 +18302,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
           TopLeft="518.639796725061,233.349999831924">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18342,6 +18326,30 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+          TopLeft="260.114285896749,213.219117478396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.242857876512,0"
+              Start="0,0"
+              End="162.742857876512,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="162.742857876512,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.180042219506,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\supermarket_sales\supermarket_sales.Paths[Derived Column Output1]"
           TopLeft="473.469388762995,494.993276929335">
           <EdgeLayout.Curve>
@@ -18360,7 +18368,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18382,7 +18392,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18412,5 +18424,220 @@ where [Invoice ID_SK] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[customer_type]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[customer_type]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[payment]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\supermarket_sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[payment]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[supermarket_sales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[city]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[city]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

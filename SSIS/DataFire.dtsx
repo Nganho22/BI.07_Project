@@ -1,0 +1,1671 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/14/2023 1:37:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABC1"
+  DTS:CreatorName="ABC1\user"
+  DTS:DTSID="{4AEAFE84-EF61-4859-A428-0A21146219CD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1066"
+  DTS:ObjectName="DataFire"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{5F3B8039-9B12-41F8-B78F-CD7CFAE23B4C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5EAC58FE-9FEB-4226-81D3-479E8F437817}"
+      DTS:ObjectName="ABC1.BI07_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DataFire-{5EAC58FE-9FEB-4226-81D3-479E8F437817}ABC1.BI07_NDS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9BF28277-D393-41D3-804D-33017BC56075}"
+      DTS:ObjectName="ABC1.BI07_NDS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{48C3156C-D02B-48BE-9E5F-A01E437E0967}"
+      DTS:ObjectName="CET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/14/2023 1:45:07 PM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{651BDCF2-FA24-483A-B774-1B83B459757C}"
+      DTS:ObjectName="ID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{99580BCB-CFC5-48DD-ACDF-22274D864029}"
+      DTS:ObjectName="LSET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/14/2023 1:45:09 PM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\supermarket_sales"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F626A3E4-DDDC-4FAA-874A-F6B99482A58A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="supermarket_sales"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\supermarket_sales\cogs"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="cogs"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\cogs.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\cogs.Inputs[Derived Column Input].Columns[Unit price]"
+                      cachedDataType="r8"
+                      cachedName="Unit price"
+                      lineageId="Package\supermarket_sales\Lookup.Outputs[Lookup Match Output].Columns[Unit price]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\cogs.Inputs[Derived Column Input].Columns[new_Quantity]"
+                      cachedDataType="i4"
+                      cachedName="new_Quantity"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Quantity]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\cogs.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\supermarket_sales\cogs.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]"
+                      name="new_cogs"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\supermarket_sales\Lookup.Outputs[Lookup Match Output].Columns[Unit price]} * #{Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Quantity]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Unit price] * new_Quantity</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\cogs.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\supermarket_sales\cogs.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\cogs.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\cogs.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\gross income"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="gross income"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\gross income.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\gross income.Inputs[Derived Column Input].Columns[new_gross margin]"
+                      cachedDataType="r8"
+                      cachedName="new_gross margin"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_gross margin]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\gross income.Inputs[Derived Column Input].Columns[new_Total]"
+                      cachedDataType="r8"
+                      cachedName="new_Total"
+                      lineageId="Package\supermarket_sales\Total.Outputs[Derived Column Output].Columns[new_Total]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\gross income.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\supermarket_sales\gross income.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\gross income.Outputs[Derived Column Output].Columns[new_gross income]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\gross income.Outputs[Derived Column Output].Columns[new_gross income]"
+                      name="new_gross income"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\supermarket_sales\Total.Outputs[Derived Column Output].Columns[new_Total]} * #{Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_gross margin]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">new_Total * [new_gross margin]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\gross income.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\supermarket_sales\gross income.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\gross income.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\gross income.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\gross income.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\gross income.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[product]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[product]) [refTable]
+where [refTable].[ProductID_SK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductID_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Unit price" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductLineID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1258</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\supermarket_sales\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\Lookup.Inputs[Lookup Input].Columns[ProductID_SK]"
+                      cachedDataType="i4"
+                      cachedName="ProductID_SK"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">ProductID_SK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\supermarket_sales\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Lookup.Outputs[Lookup Match Output].Columns[Unit price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\supermarket_sales\Lookup.Outputs[Lookup Match Output].Columns[Unit price]"
+                      name="Unit price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Unit price</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\supermarket_sales\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\supermarket_sales\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Quantity &amp; gross margin percentage &amp; Rating"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input].Columns[gross margin percentage]"
+                      cachedDataType="r8"
+                      cachedName="gross margin percentage"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Quantity]"
+                      name="new_Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">((#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]} &lt; 0) || ([ISNULL](#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]}))) ? (0) : (#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">((Quantity &lt; 0) || (ISNULL(Quantity))) ? (0) : (Quantity)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_gross margin]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_gross margin]"
+                      name="new_gross margin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]} &lt;= 0 || [ISNULL](#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]}) ? 5 : #{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[gross margin percentage] &lt;= 0 || ISNULL([gross margin percentage]) ? 5 : [gross margin percentage]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Rating]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Rating]"
+                      name="new_Rating"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]} &gt;= 0 &amp;&amp; #{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]} &lt;= 10 ? #{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]} : 5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Rating &gt;= 0 &amp;&amp; Rating &lt;= 10 ? Rating : 5</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\supermartker_sales NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="supermartker_sales NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from supermarket_sales where updatedDate = ? and SOURCE_ID = ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1258</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{48C3156C-2FD4-48BE-9E5F-A01E437E0967};"Parameter1:Input",{651BDCF2-05DB-483A-B774-1B83B459757C};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\supermarket_sales\supermartker_sales NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID_SK]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_SK]"
+                      name="Invoice ID_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_NK]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID_NK]"
+                      length="255"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_NK]"
+                      name="Invoice ID_NK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_SK]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]"
+                      name="Branch_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[customer_typeID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[customer_typeID_SK]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[customer_typeID_SK]"
+                      name="customer_typeID_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductID_SK]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]"
+                      name="ProductID_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Tax 5%]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Tax 5%]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Tax 5%]"
+                      name="Tax 5%"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Total]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Total]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Total]"
+                      name="Total"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      length="8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      length="4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      name="TimeKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[paymentID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[paymentID_SK]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[paymentID_SK]"
+                      name="paymentID_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[cogs]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[cogs]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[cogs]"
+                      name="cogs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[gross margin percentage]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]"
+                      name="gross margin percentage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross income]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[gross income]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[gross income]"
+                      name="gross income"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]"
+                      name="Rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                      name="SOURCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[createdDate]"
+                      name="createdDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[updatedDate]"
+                      name="updatedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID_SK]"
+                      dataType="i4"
+                      name="Invoice ID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Invoice ID_NK]"
+                      dataType="wstr"
+                      length="255"
+                      name="Invoice ID_NK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Branch_SK]"
+                      dataType="i4"
+                      name="Branch_SK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[customer_typeID_SK]"
+                      dataType="i4"
+                      name="customer_typeID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="i4"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductID_SK]"
+                      dataType="i4"
+                      name="ProductID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Tax 5%]"
+                      dataType="r8"
+                      name="Tax 5%" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Total]"
+                      dataType="r8"
+                      name="Total" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[paymentID_SK]"
+                      dataType="i4"
+                      name="paymentID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[cogs]"
+                      dataType="r8"
+                      name="cogs" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[gross margin percentage]"
+                      dataType="r8"
+                      name="gross margin percentage" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[gross income]"
+                      dataType="r8"
+                      name="gross income" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Rating]"
+                      dataType="r8"
+                      name="Rating" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                      dataType="i4"
+                      name="SOURCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID_SK]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID_SK]"
+                      name="Invoice ID_SK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID_NK]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Invoice ID_NK]"
+                      name="Invoice ID_NK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Branch_SK]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Branch_SK]"
+                      name="Branch_SK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[customer_typeID_SK]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[customer_typeID_SK]"
+                      name="customer_typeID_SK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ProductID_SK]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ProductID_SK]"
+                      name="ProductID_SK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Tax 5%]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Tax 5%]"
+                      name="Tax 5%" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Total]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Total]"
+                      name="Total" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      name="TimeKey" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[paymentID_SK]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[paymentID_SK]"
+                      name="paymentID_SK" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[cogs]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[cogs]"
+                      name="cogs" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[gross margin percentage]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[gross margin percentage]"
+                      name="gross margin percentage" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[gross income]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[gross income]"
+                      name="gross income" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      dataType="r8"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[Rating]"
+                      name="Rating" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                      name="SOURCE_ID" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[createdDate]"
+                      name="createdDate" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[updatedDate]"
+                      name="updatedDate" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\Tax 5%"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Tax 5%"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\Tax 5%.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\Tax 5%.Inputs[Derived Column Input].Columns[new_cogs]"
+                      cachedDataType="r8"
+                      cachedName="new_cogs"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\supermarket_sales\Tax 5%.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output].Columns[new_Tax 5%]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output].Columns[new_Tax 5%]"
+                      name="new_Tax 5%"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]} * 5) / 100</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(new_cogs * 5) / 100</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\supermarket_sales\Tax 5%.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\Total"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Total"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\Total.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\Total.Inputs[Derived Column Input].Columns[new_cogs]"
+                      cachedDataType="r8"
+                      cachedName="new_cogs"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\Total.Inputs[Derived Column Input].Columns[new_Tax 5%]"
+                      cachedDataType="r8"
+                      cachedName="new_Tax 5%"
+                      lineageId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output].Columns[new_Tax 5%]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\Total.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\supermarket_sales\Total.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Total.Outputs[Derived Column Output].Columns[new_Total]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\supermarket_sales\Total.Outputs[Derived Column Output].Columns[new_Total]"
+                      name="new_Total"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]} - #{Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output].Columns[new_Tax 5%]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">new_cogs - [new_Tax 5%]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\Total.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\supermarket_sales\Total.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\Total.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Total.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\Total.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\Total.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\supermarket_sales\updated new supermarket_sales"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="updated new supermarket_sales"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update supermarket_sales set 
+Quantity = ?, 
+[Tax 5%] = ?, 
+Total = ?, 
+cogs = ?, 
+[gross margin percentage] = ?, 
+[gross income] = ?,
+Rating = ?
+where [Invoice ID_SK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\supermarket_sales\updated new supermarket_sales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[Invoice ID_SK]"
+                      cachedDataType="i4"
+                      cachedName="Invoice ID_SK"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_SK]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_Quantity]"
+                      cachedDataType="i4"
+                      cachedName="new_Quantity"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Quantity]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_Tax 5%]"
+                      cachedDataType="r8"
+                      cachedName="new_Tax 5%"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output].Columns[new_Tax 5%]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_Total]"
+                      cachedDataType="r8"
+                      cachedName="new_Total"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\supermarket_sales\Total.Outputs[Derived Column Output].Columns[new_Total]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_cogs]"
+                      cachedDataType="r8"
+                      cachedName="new_cogs"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\supermarket_sales\cogs.Outputs[Derived Column Output].Columns[new_cogs]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_gross margin]"
+                      cachedDataType="r8"
+                      cachedName="new_gross margin"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_gross margin]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_gross income]"
+                      cachedDataType="r8"
+                      cachedName="new_gross income"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\supermarket_sales\gross income.Outputs[Derived Column Output].Columns[new_gross income]" />
+                    <inputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].Columns[new_Rating]"
+                      cachedDataType="r8"
+                      cachedName="new_Rating"
+                      externalMetadataColumnId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output].Columns[new_Rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="r8"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="r8"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="r8"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="r8"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="r8"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\supermarket_sales\updated new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\supermarket_sales.Paths[Derived Column Output]"
+              endId="Package\supermarket_sales\Total.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\supermarket_sales\Tax 5%.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[Derived Column Output1]"
+              endId="Package\supermarket_sales\gross income.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\supermarket_sales\Total.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[Derived Column Output2]"
+              endId="Package\supermarket_sales\updated new supermarket_sales.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\supermarket_sales\gross income.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[Derived Column Output3]"
+              endId="Package\supermarket_sales\cogs.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[Derived Column Output4]"
+              endId="Package\supermarket_sales\Tax 5%.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\supermarket_sales\cogs.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[Lookup Match Output]"
+              endId="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\supermarket_sales\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\supermarket_sales.Paths[OLE DB Source Output]"
+              endId="Package\supermarket_sales\Lookup.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\supermarket_sales"
+          TopLeft="307.142857796684,25.2352940955273" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\supermarket_sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\supermarket_sales\supermartker_sales NDS"
+          TopLeft="342.857143586996,12.999999988605" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\supermarket_sales\Lookup"
+          TopLeft="377.857143661502,97.1176469736962" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\supermarket_sales\updated new supermarket_sales"
+          TopLeft="638.57142993078,370.199999965815" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[OLE DB Source Output]"
+          TopLeft="436.957143624249,54.599999988605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176469850912"
+              Start="0,0"
+              End="0,35.0176469850912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176469850912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\supermarket_sales\Tax 5%"
+          TopLeft="377.142857945695,193.058823367201" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\supermarket_sales\Total"
+          TopLeft="376.428572229889,277.176470352292" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output]"
+          TopLeft="431.185715087792,234.658823367201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176469850912"
+              Start="0,0"
+              End="0,35.0176469850912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176469850912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\supermarket_sales\gross income"
+          TopLeft="689.285715753023,275.811764504794" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output1]"
+          TopLeft="478.828572229889,297.294117428543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="210.457143523134,0"
+              Start="0,0"
+              End="202.957143523134,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="202.957143523134,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output2]"
+          TopLeft="756.928572841901,317.411764504794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.7882354610214"
+              Start="0,0"
+              End="0,45.2882354610214">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.2882354610214" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating"
+          TopLeft="638.775511563867,99.411764618744" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Lookup Match Output]"
+          TopLeft="490.657143661502,119.06470579622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="148.118367902365,0"
+              Start="0,0"
+              End="140.618367902365,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="140.618367902365,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.1177972324324,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\supermarket_sales\cogs"
+          TopLeft="728.571430122366,192.268907394494" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output3]"
+          TopLeft="781.873470843116,141.011764618744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.25714277575"
+              Start="0,0"
+              End="0,43.75714277575">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.75714277575" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output4]"
+          TopLeft="728.571430122366,213.463865380847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-236.228572176671,0"
+              Start="0,0"
+              End="-228.728572176671,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-228.728572176671,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermartker_sales NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

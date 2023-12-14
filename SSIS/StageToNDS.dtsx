@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="103"
-  DTS:VersionGUID="{FFEF7E9C-2EC6-4062-88DC-4931450F7468}">
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{1A04AE00-7FF8-4F16-81A3-2BFF1F53D666}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{90548E27-6D4B-4E06-B2EC-EF291806963B}ABC1.BI07_METADATA;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{90548E27-6D4B-4E06-B2EC-EF291806963B}ABC1.BI07_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{EA327950-7585-4C12-842B-B79E63F25D92}ABC1.BI07_STAGE;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{EA327950-7585-4C12-842B-B79E63F25D92}ABC1.BI07_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -2589,10 +2589,11 @@ namespace SC_1daca4ddd23743b7a98ca173fa1e42ec.Properties {
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SC_1daca4ddd23743b7a98ca173fa1e42ec</RootNamespace>
-    <AssemblyName>SC_1daca4ddd23743b7a98ca173fa1e42ec</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AssemblyName>SC_34A40912A2AC4F96AD4397427FF7BB94</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -2669,23 +2670,23 @@ namespace SC_1daca4ddd23743b7a98ca173fa1e42ec.Properties {
                           dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
   <msb:PropertyGroup>
-    <msb:Language>msBuild</msb:Language>
     <msb:CodeName>SC_1daca4ddd23743b7a98ca173fa1e42ec</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_1daca4ddd23743b7a98ca173fa1e42ec</msb:DisplayName>
-    <msb:ProjectId>{E3F0FC38-6E28-4C7E-88E3-B0F159E9558A}</msb:ProjectId>
+    <msb:ProjectId>{35C16E72-4977-454D-98C5-4C72E377BF11}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_1daca4ddd23743b7a98ca173fa1e42ec.csproj" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
     <msb:File Include="Properties\Settings.settings" />
     <msb:File Include="Properties\AssemblyInfo.cs" />
     <msb:File Include="Properties\Resources.resx" />
     <msb:File Include="Properties\Resources.Designer.cs" />
-    <msb:File Include="main.cs" />
-    <msb:File Include="BufferWrapper.cs" />
     <msb:File Include="Properties\Settings.Designer.cs" />
-    <msb:File Include="ComponentWrapper.cs" />
   </msb:ItemGroup>
 </c:Project>]]></arrayElement>
                         <arrayElement
@@ -2817,18 +2818,18 @@ namespace SC_1daca4ddd23743b7a98ca173fa1e42ec.Properties {
                       <arrayElements
                         arrayElementCount="2">
                         <arrayElement
-                          dataType="System.String"><![CDATA[SC_1daca4ddd23743b7a98ca173fa1e42ec.dll]]></arrayElement>
+                          dataType="System.String"><![CDATA[SC_34A40912A2AC4F96AD4397427FF7BB94.dll]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAOkseGUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAKjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAE/ZemUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAJjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANgwAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANQwAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAMBEAAAAgAAAAEgAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAALBEAAAAgAAAAEgAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAM
-MQAAAAAAAEgAAAACAAUArCEAAHQOAAABAAAAAAAAACAwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAI
+MQAAAAAAAEgAAAACAAUArCEAAHAOAAABAAAAAAAAABwwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAQAGAAAAAEAABEDAgJ7AQAA
 BAoGF1h9AQAABAZvBgAABio6Ahd9AQAABAIoCgAABioqAgMEBSgSAAAKKjoCFgOMGgAAASgTAAAK
 KloDLAgCFigUAAAKKnIBAABwcxUAAAp6HgIoFgAACioeAigXAAAKKn4CKBgAAAoCAnMOAAAGfQIA
@@ -2837,31 +2838,31 @@ bw0AAAYDbwgAAAYt8SoGKjoCKBsAAAoCA30EAAAEKjoCKBsAAAoCA30FAAAEKh4CKBsAAAoqrn4G
 AAAELR5yrgAAcNAHAAACKBwAAApvHQAACnMeAAAKgAYAAAR+BgAABCoafgcAAAQqHgKABwAABCoa
 fggAAAQqHgIoHwAACioucxUAAAaACAAABCoAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAA
 AAUAbAAAACwFAAAjfgAAmAUAABQGAAAjU3RyaW5ncwAAAACsCwAAIAEAACNVUwDMDAAAEAAAACNH
-VUlEAAAA3AwAAJgBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEAAAAgAAAACAAA
+VUlEAAAA3AwAAJQBAAAjQmxvYgAAAAAAAAACAAABVxWiAQkBAAAA+gEzABYAAAEAAAAgAAAACAAA
 AAgAAAAWAAAADwAAAB8AAAAQAAAAAQAAAAMAAAAFAAAABgAAAAEAAAAEAAAAAQAAAAAA9wIBAAAA
 AAAGAPEBRAQGAIUCRAQGAD0BMQQPALgEAAAGAGoBhgMGANQBhgMGALUBhgMGAGwChgMGABEChgMG
 ACoChgMGAIEBhgMGAJwBwAIKAEUCigAKAAMEigAOAPQDigAKAM8DigAKAH4FigAGAEEFPgMGACAB
 MQQGABQEZAQGAMMDcQMSAPAA4QISAFEB4QISANgAXAMGAAUBRAQGAAEAPgMGAJgDPgMGANoCPgMG
-ALIDPgMGAKsAPgMGAFwAPgMGAAsGhgMAAAAABwAAAAAAAQABAAEAEABRAwAAEAABAAEAAQAQAOcD
+ALIDPgMGAKsAPgMGAFwAPgMGAAsGhgMAAAAAKwAAAAAAAQABAAEAEABRAwAAEAABAAEAAQAQAOcD
 AAA5AAIABQABABAAYAUAAEUAAgAKAAEAEAA1BQAASQAEAA4AAQAQAPYEAABJAAUADwAAABAAawTH
 BEkABgAQAAABEAAlBccEYQAIABQAAQCOBWcABgA1BWoABgD2BG4AAQBuBXIAAQBuBXIAEQBFA3YA
 EQDIAHoAEQBMAH4AUCAAAAAAxgCjAgYAAQBYIAAAAADGAK4CBgABAGAgAAAAAMYA6AWCAAEAhCAA
-AAAAhhgkBAYAAgCTIAAAAACGGCQEHwACAJ4gAAAAAIYIEAABAAUArSAAAAAAhggfA4gABgDEIAAA
+AAAAhhgkBAYAAgCTIAAAAACGGCQEHwACAJ4gAAAAAIYINAABAAUArSAAAAAAhggfA4gABgDEIAAA
 AACGAP8FLwAHAMwgAAAAAIYASAUvAAcA1CAAAAAAhhgkBAYABwD0IAAAAADGANsFjQAHABkhAAAA
 AMYB1AWCAAsALCEAAAAAxgHoBYIADAAuIQAAAACGGCQElwANAD0hAAAAAIYYJASXAA4ATCEAAAAA
 gxgkBAYADwBUIQAAAACTCBAEnQAPAIAhAAAAAJMIsACiAA8AhyEAAAAAkwi8AKcADwCPIQAAAACW
 CFQFrQAQAJYhAAAAAIYYJAQGABAAniEAAAAAkRgqBLIAEAAAAAEAAwYAAAEACQQAAAIAAAUAAAMA
-3QMAAAEAugIAAAEAugIAAAEAFwAAAAIAgAAAAAMACQQAAAQA3QMAAAEACQQAAAEAAwYAAAEAhAUA
+3QMAAAEAugIAAAEAugIAAAEAOwAAAAIAgAAAAAMACQQAAAQA3QMAAAEACQQAAAEAAwYAAAEAhAUA
 AAEAhAUAAAEAugIJACQEAQARACQEBgAZACQECgApACQEEAAxACQEEAA5ACQEEABBACQEEABJACQE
 EABRACQEEABZACQEEABhACQEEABpACQEBgCZACQEBgC5ACQEFQDJACQEBgCJAKMCBgCJAK4CBgBx
 ACQEHwBxADUDKQBxAC0DAQDZACQEEABxAP8FLwBxAEgFLwCJACQEBgDhAC4FMwCJABQFOgCRACQE
 BgDxAG4AQADxAAcGRwChACQETQDBACQEBgAuAAsAzQAuABMA1gAuABsA9QAuACMA/gAuACsAJwEu
-ADMAJwEuADsAJwEuAEMA/gAuAEsALQEuAFMAJwEuAFsARAFDAGMAkgFpAHMA9QCJAHMA9QDjAGsA
-kgEBAXsAkgEbAAMAAQAHAAMACAAFAAAAHAC2AAAAIwO6AAAAFAS+AAAA0ADDAAAAWAXIAAEABgAD
-AAEABwAFAAIAEQAHAAIAEgAJAAEAEwAJAAIAFAALAASAAAABAAAAAAAAAAAAAAAAACgAAAAEAAAA
-AAAAAAAAAABVAB8AAAAAABAAAAAAAAAAAAAAAF4AlgUAAAAAEAAAAAAAAAAAAAAAXgCzBQAAAAAE
-AAAAAAAAAAAAAABVAD4DAAAAAAAAAAABAAAAdQQAAAAAAAAASW50MzIAPE1vZHVsZT4Ac2V0X0lE
-AElucHV0SUQAbXNjb3JsaWIAU0NfMWRhY2E0ZGRkMjM3NDNiN2E5OGNhMTczZmExZTQyZWMAZGVm
+ADMAJwEuADsAJwEuAEMA/gAuAEsALQEuAFMAJwEuAFsARAFDAGMAjgFpAHMA9QCJAHMA9QDjAGsA
+jgEBAXsAjgEbAAMAAQAHAAMACAAFAAAAQAC2AAAAIwO6AAAAFAS+AAAA0ADDAAAAWAXIAAEABgAD
+AAEABwAFAAIAEQAHAAIAEgAJAAEAEwAJAAIAFAALAASAAAABAAAAAAAAAAAAAAAAAAcAAAAEAAAA
+AAAAAAAAAABVAEMAAAAAABAAAAAAAAAAAAAAAF4AlgUAAAAAEAAAAAAAAAAAAAAAXgCzBQAAAAAE
+AAAAAAAAAAAAAABVAD4DAAAAAAAAAAABAAAAdQQAAAAAAAAASW50MzIAU0NfMzRBNDA5MTJBMkFD
+NEY5NkFENDM5NzQyN0ZGN0JCOTQAPE1vZHVsZT4Ac2V0X0lEAElucHV0SUQAbXNjb3JsaWIAZGVm
 YXVsdEluc3RhbmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFt
 ZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAGdldF9DdWx0dXJlAHNldF9D
 dWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93
@@ -2873,8 +2874,8 @@ c2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1i
 bHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRD
 b21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50
 aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAHZhbHVlAFN5
-c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ18x
-ZGFjYTRkZGQyMzc0M2I3YTk4Y2ExNzNmYTFlNDJlYy5kbGwAc2V0X0lEX0lzTnVsbABTZXROdWxs
+c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ18z
+NEE0MDkxMkEyQUM0Rjk2QUQ0Mzk3NDI3RkY3QkI5NC5kbGwAc2V0X0lEX0lzTnVsbABTZXROdWxs
 AHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0
 aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRPcGVyYXRp
 b25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91
@@ -2892,20 +2893,20 @@ cwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAg
 AHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAA
 dABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFT
 AEMAXwAxAGQAYQBjAGEANABkAGQAZAAyADMANwA0ADMAYgA3AGEAOQA4AGMAYQAxADcAMwBmAGEA
-MQBlADQAMgBlAGMALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAB1c
-5s03JilEgo4B4eVwJZUABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkDBwEICSADARI9HQgSQQUg
+MQBlADQAMgBlAGMALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAKfo
+Bo09re1JrIw2pLRHZqIABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkDBwEICSADARI9HQgSQQUg
 AgEIHAMgAAIGIAICDhF1BSABHQgIBgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2A
 gMyRAgYIAwYSFAMGEhgDBhJFAwYSUQMGElUDBhIgBSABARIMBCABAQIJIAQBCA4SPRJBBSABARJF
 BAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMoAAgDKAACBAgAElEECAASVQQIABIgCAEACAAAAAAA
 HgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTQ18xZGFjYTRkZGQy
-Mzc0M2I3YTk4Y2ExNzNmYTFlNDJlYwAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIzAABNAQAc
-Lk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcuMgEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUULk5F
-VCBGcmFtZXdvcmsgNC43LjIEAQAAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMu
-UmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJh
-bCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRp
-bWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAADEAAAAAAAAAAAAAGjEAAAAgAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAwxAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwA
-AAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Mzc0M2I3YTk4Y2ExNzNmYTFlNDJlYwAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIzAABJAQAa
+Lk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQg
+RnJhbWV3b3JrIDQuNwQBAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNv
+dXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQ
+dWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJl
+c291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAD8MAAAAAAAAAAAAAAWMQAAACAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAACDEAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA
+/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2918,13 +2919,13 @@ ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBDAF8AMQBkAGEAYwBhADQAZABkAGQAMgAzADcANAAzAGIANwBhADkAOABjAGEAMQA3ADMA
 ZgBhADEAZQA0ADIAZQBjAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAxAGQAYQBjAGEA
-NABkAGQAZAAyADMANwA0ADMAYgA3AGEAOQA4AGMAYQAxADcAMwBmAGEAMQBlADQAMgBlAGMALgBk
+ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAzADQAQQA0ADAA
+OQAxADIAQQAyAEEAQwA0AEYAOQA2AEEARAA0ADMAOQA3ADQAMgA3AEYARgA3AEIAQgA5ADQALgBk
 AGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcA
 aAB0ACAAQAAgACAAMgAwADIAMwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBz
-AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADEA
-ZABhAGMAYQA0AGQAZABkADIAMwA3ADQAMwBiADcAYQA5ADgAYwBhADEANwAzAGYAYQAxAGUANAAy
-AGUAYwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwAxAGQA
+AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADMA
+NABBADQAMAA5ADEAMgBBADIAQQBDADQARgA5ADYAQQBEADQAMwA5ADcANAAyADcARgBGADcAQgBC
+ADkANAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwAxAGQA
 YQBjAGEANABkAGQAZAAyADMANwA0ADMAYgA3AGEAOQA4AGMAYQAxADcAMwBmAGEAMQBlADQAMgBl
 AGMAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
 OAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAA
@@ -2935,7 +2936,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAACwxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAACgxAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2951,7 +2952,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       dataType="System.String"
                       description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                       name="VSTAProjectName"
-                      typeConverter="NOTBROWSABLE">SC_1daca4ddd23743b7a98ca173fa1e42ec</property>
+                      typeConverter="NOTBROWSABLE">SC_34a40912a2ac4f96ad4397427ff7bb94</property>
                     <property
                       dataType="System.String"
                       description="Specifies the programming language used by the script."
@@ -3010,35 +3011,86 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK"
+                  refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="create createdDate, updatedDate, ID_SK"
+                  name="create createdDate, updatesDate, customer_typeID_SK"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Inputs[Derived Column Input]"
+                      refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Inputs[Derived Column Input].Columns[ID]"
+                          cachedDataType="i4"
+                          cachedName="ID"
+                          lineageId="Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Outputs[Output 0].Columns[ID]" />
+                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output]"
+                      refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output].Columns[newupdatedDate]"
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[customer_typeID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[customer_typeID_SK]"
+                          name="customer_typeID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Outputs[Output 0].Columns[ID]} + @[User::MAX_ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ID + @[User::MAX_ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[createdDate]"
                           dataType="date"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output].Columns[newupdatedDate]"
-                          name="newupdatedDate"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[createdDate]"
+                          name="createdDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::CET]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::CET]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[updatedDate]"
+                          dataType="date"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[updatedDate]"
+                          name="updatedDate"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -3058,23 +3110,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Error Output]"
+                      refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3083,105 +3135,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\customer_type 1\customer_type\create ID increases automatically"
-                  componentClassID="Microsoft.ConditionalSplit"
-                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-                  name="create ID increases automatically"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input]"
-                      description="Input to the Conditional Split Transformation"
-                      name="Conditional Split Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input].Columns[createdDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="createdDate"
-                          lineageId="Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          lineageId="Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[updatedDate]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Case 1]"
-                      description="Output 1 of the Conditional Split Transformation"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="Case 1"
-                      synchronousInputId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input]"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">(#{Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[createdDate]} &gt;= @[$Package::LSET] &amp;&amp; #{Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[createdDate]} &lt; @[$Package::CET]) || (#{Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[updatedDate]} &gt;= @[$Package::LSET] &amp;&amp; #{Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[updatedDate]} &lt; @[$Package::CET])</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the friendly version of the expression. This expression version uses column names."
-                          expressionType="Notify"
-                          name="FriendlyExpression">(createdDate &gt;= @[$Package::LSET] &amp;&amp; createdDate &lt; @[$Package::CET]) || (updatedDate &gt;= @[$Package::LSET] &amp;&amp; updatedDate &lt; @[$Package::CET])</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                          name="EvaluationOrder">0</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Default Output]"
-                      description="Default Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      name="Conditional Split Default Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input]">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          name="IsDefaultOut">true</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Error Output]"
-                      description="Error Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Conditional Split Error Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage"
+                  refId="Package\customer_type 1\customer_type\customer_type stage"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="customer_type in supermarket_sales stage"
+                  name="customer_type stage"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -3226,7 +3184,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Connections[OleDbConnection]"
+                      refId="Package\customer_type 1\customer_type\customer_type stage.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[ABC1.BI07_STAGE]"
                       connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_STAGE]"
                       description="The OLE DB runtime connection used to access the database."
@@ -3234,50 +3192,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output]"
+                      refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]"
+                          refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].Columns[Customer type]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].ExternalColumns[Customer type]"
+                          externalMetadataColumnId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].ExternalColumns[Customer type]"
                           length="255"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]"
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].Columns[Customer type]"
                           name="Customer type"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].ExternalColumns[Customer type]"
+                          refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].ExternalColumns[Customer type]"
                           dataType="wstr"
                           length="255"
                           name="Customer type" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output]"
+                      refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[Customer type]"
+                          refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[Customer type]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[Customer type]"
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[Customer type]"
                           name="Customer type" />
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3286,135 +3244,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\customer_type 1\customer_type\get new updatedDate"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="get new updatedDate"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\customer_type 1\customer_type\get new updatedDate.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Inputs[Derived Column Input].Columns[ID]"
-                          cachedDataType="i4"
-                          cachedName="ID"
-                          lineageId="Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Outputs[Output 0].Columns[ID]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\get new updatedDate.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[customer_typeID_SK]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[customer_typeID_SK]"
-                          name="customer_typeID_SK"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">#{Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Outputs[Output 0].Columns[ID]} + @[User::MAX_ID]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">ID + @[User::MAX_ID]</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[createdDate]"
-                          dataType="date"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[createdDate]"
-                          name="createdDate"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[$Package::CET]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::CET]</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[updatedDate]"
-                          dataType="date"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[updatedDate]"
-                          name="updatedDate"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[$Package::CET]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::CET]</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\get new updatedDate.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\customer_type 1\customer_type\insert new customer_type"
+                  refId="Package\customer_type 1\customer_type\instert customer_type"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="insert new customer_type"
+                  name="instert customer_type"
                   usesDispositions="true"
                   version="2">
                   <properties>
@@ -3427,9 +3261,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update customer_type 
-set [Customer type] = ?, updatedDate = ?
-where customer_typeID_SK = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into customer_type values (?,?,?,?)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3437,7 +3269,7 @@ where customer_typeID_SK = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\customer_type 1\customer_type\insert new customer_type.Connections[OleDbConnection]"
+                      refId="Package\customer_type 1\customer_type\instert customer_type.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="The OLE DB runtime connection used to access the database."
@@ -3445,49 +3277,55 @@ where customer_typeID_SK = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input]"
+                      refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].Columns[Customer type]"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].Columns[customer_typeID_SK]"
+                          cachedDataType="i4"
+                          cachedName="customer_typeID_SK"
+                          externalMetadataColumnId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[customer_typeID_SK]" />
+                        <inputColumn
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].Columns[Customer type]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Customer type"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]" />
+                          externalMetadataColumnId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].Columns[Customer type]" />
                         <inputColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].Columns[newupdatedDate]"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].Columns[createdDate]"
                           cachedDataType="date"
-                          cachedName="newupdatedDate"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output].Columns[newupdatedDate]" />
+                          cachedName="createdDate"
+                          externalMetadataColumnId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[createdDate]" />
                         <inputColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].Columns[customer_typeID_SK]"
-                          cachedDataType="i4"
-                          cachedName="customer_typeID_SK"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output].Columns[customer_typeID_SK]" />
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].Columns[updatedDate]"
+                          cachedDataType="date"
+                          cachedName="updatedDate"
+                          externalMetadataColumnId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output].Columns[updatedDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="wstr"
-                          length="255"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
                           name="Param_0">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="dbTimeStamp"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="255"
                           name="Param_1">
                           <properties>
                             <property
@@ -3497,14 +3335,25 @@ where customer_typeID_SK = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="i4"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="dbTimeStamp"
                           name="Param_2">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="dbTimeStamp"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                       </externalMetadataColumns>
@@ -3512,29 +3361,29 @@ where customer_typeID_SK = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Output]"
+                      refId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Error Output]"
+                      refId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3599,7 +3448,7 @@ where [refTable].[Customer type] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]};</property>
+                      name="ParameterMap">#{Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].Columns[Customer type]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3627,7 +3476,7 @@ where [refTable].[Customer type] = ?</property>
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Customer type"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]">
+                          lineageId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output].Columns[Customer type]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -3772,205 +3621,13 @@ where [refTable].[Customer type] = ?</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\customer_type 1\customer_type\Row Count 1"
-                  componentClassID="Microsoft.RowCount"
-                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-                  name="Row Count 1">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable to hold the row count."
-                      name="VariableName">User::Count_Row</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\customer_type 1\customer_type\Row Count 1.Inputs[Row Count Input 1]"
-                      hasSideEffects="true"
-                      name="Row Count Input 1">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\customer_type 1\customer_type\Row Count 1.Outputs[Row Count Output 1]"
-                      name="Row Count Output 1"
-                      synchronousInputId="Package\customer_type 1\customer_type\Row Count 1.Inputs[Row Count Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\customer_type 1\customer_type\update customer_type"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="update customer_type"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into customer_type values (?,?,?,?)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\customer_type 1\customer_type\update customer_type.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].Columns[customer_typeID_SK]"
-                          cachedDataType="i4"
-                          cachedName="customer_typeID_SK"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[customer_typeID_SK]" />
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].Columns[Customer type]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Customer type"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output].Columns[Customer type]" />
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].Columns[createdDate]"
-                          cachedDataType="date"
-                          cachedName="createdDate"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].Columns[updatedDate]"
-                          cachedDataType="date"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output].Columns[updatedDate]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="i4"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="wstr"
-                          length="255"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="dbTimeStamp"
-                          name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="dbTimeStamp"
-                          name="Param_3">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
-                  refId="Package\customer_type 1\customer_type.Paths[Case 1]"
-                  endId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Inputs[Derived Column Input]"
-                  name="Case 1"
-                  startId="Package\customer_type 1\customer_type\create ID increases automatically.Outputs[Case 1]" />
-                <path
                   refId="Package\customer_type 1\customer_type.Paths[Derived Column Output]"
-                  endId="Package\customer_type 1\customer_type\update customer_type.Inputs[OLE DB Command Input]"
+                  endId="Package\customer_type 1\customer_type\instert customer_type.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
-                  startId="Package\customer_type 1\customer_type\get new updatedDate.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\customer_type 1\customer_type.Paths[Derived Column Output1]"
-                  endId="Package\customer_type 1\customer_type\insert new customer_type.Inputs[OLE DB Command Input]"
-                  name="Derived Column Output"
-                  startId="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\customer_type 1\customer_type.Paths[Lookup Match Output]"
-                  endId="Package\customer_type 1\customer_type\create ID increases automatically.Inputs[Conditional Split Input]"
-                  name="Lookup Match Output"
-                  startId="Package\customer_type 1\customer_type\Lookup.Outputs[Lookup Match Output]" />
+                  startId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\customer_type 1\customer_type.Paths[Lookup No Match Output]"
                   endId="Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Inputs[Input 0]"
@@ -3980,20 +3637,15 @@ where [refTable].[Customer type] = ?</property>
                   refId="Package\customer_type 1\customer_type.Paths[OLE DB Command Output]"
                   endId="Package\customer_type 1\customer_type\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
-                  startId="Package\customer_type 1\customer_type\insert new customer_type.Outputs[OLE DB Command Output]" />
-                <path
-                  refId="Package\customer_type 1\customer_type.Paths[OLE DB Command Output1]"
-                  endId="Package\customer_type 1\customer_type\Row Count 1.Inputs[Row Count Input 1]"
-                  name="OLE DB Command Output"
-                  startId="Package\customer_type 1\customer_type\update customer_type.Outputs[OLE DB Command Output]" />
+                  startId="Package\customer_type 1\customer_type\instert customer_type.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\customer_type 1\customer_type.Paths[OLE DB Source Output]"
                   endId="Package\customer_type 1\customer_type\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage.Outputs[OLE DB Source Output]" />
+                  startId="Package\customer_type 1\customer_type\customer_type stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\customer_type 1\customer_type.Paths[Output 0]"
-                  endId="Package\customer_type 1\customer_type\get new updatedDate.Inputs[Derived Column Input]"
+                  endId="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK.Inputs[Derived Column Input]"
                   name="Output 0"
                   startId="Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate.Outputs[Output 0]" />
               </paths>
@@ -4118,100 +3770,6 @@ where [refTable].[Customer type] = ?</property>
             <pipeline
               version="1">
               <components>
-                <component
-                  refId="Package\payment\payment\Check createdDate &amp; updatedDate"
-                  componentClassID="Microsoft.ConditionalSplit"
-                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-                  name="Check createdDate &amp; updatedDate"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
-                      description="Input to the Conditional Split Transformation"
-                      name="Conditional Split Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input].Columns[createdDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="createdDate"
-                          lineageId="Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[createdDate]" />
-                        <inputColumn
-                          refId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          lineageId="Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[updatedDate]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[case 1]"
-                      description="Output 1 of the Conditional Split Transformation"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="case 1"
-                      synchronousInputId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">(#{Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[createdDate]} &gt;= @[$Package::LSET] &amp;&amp; #{Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[createdDate]} &lt; @[$Package::CET]) || (#{Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[updatedDate]} &gt;= @[$Package::LSET] &amp;&amp; #{Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[updatedDate]} &lt; @[$Package::CET])</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the friendly version of the expression. This expression version uses column names."
-                          expressionType="Notify"
-                          name="FriendlyExpression">(createdDate &gt;= @[$Package::LSET] &amp;&amp; createdDate &lt; @[$Package::CET]) || (updatedDate &gt;= @[$Package::LSET] &amp;&amp; updatedDate &lt; @[$Package::CET])</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                          name="EvaluationOrder">0</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Default Output]"
-                      description="Default Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      name="Conditional Split Default Output"
-                      synchronousInputId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          name="IsDefaultOut">true</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Error Output]"
-                      description="Error Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Conditional Split Error Output"
-                      synchronousInputId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
                 <component
                   refId="Package\payment\payment\create createdDate, updatedDate, ID_SK"
                   componentClassID="Microsoft.DerivedColumn"
@@ -4369,7 +3927,7 @@ where [refTable].[Customer type] = ?</property>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SC_9cc8926ff1d94a79871b042425312484</RootNamespace>
-    <AssemblyName>SC_9cc8926ff1d94a79871b042425312484</AssemblyName>
+    <AssemblyName>SC_E38815EB0D2F42E688EA84148936DC6A</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
@@ -4871,7 +4429,7 @@ public class Variables
     <msb:CodeName>SC_9cc8926ff1d94a79871b042425312484</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_9cc8926ff1d94a79871b042425312484</msb:DisplayName>
-    <msb:ProjectId>{20AEF99E-138F-47A7-820D-4A8D7A2171DE}</msb:ProjectId>
+    <msb:ProjectId>{D2C88B29-D8FA-452A-80F1-D06B4C9FAA96}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_9cc8926ff1d94a79871b042425312484.csproj" />
@@ -5014,11 +4572,11 @@ namespace SC_9cc8926ff1d94a79871b042425312484.Properties {
                       <arrayElements
                         arrayElementCount="2">
                         <arrayElement
-                          dataType="System.String"><![CDATA[SC_9cc8926ff1d94a79871b042425312484.dll]]></arrayElement>
+                          dataType="System.String"><![CDATA[SC_E38815EB0D2F42E688EA84148936DC6A.dll]]></arrayElement>
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDACiHeGUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAJjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAI/ZemUAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAJjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANQwAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5039,7 +4597,7 @@ AAgAAAAWAAAADwAAAB8AAAAQAAAAAQAAAAMAAAAFAAAABgAAAAEAAAAEAAAAAQAAAAAA9wIBAAAA
 AAAGAPEBRAQGAIUCRAQGAD0BMQQPALgEAAAGAGoBhgMGANQBhgMGALUBhgMGAGwChgMGABEChgMG
 ACoChgMGAIEBhgMGAJwBwAIKAEUCigAKAAMEigAOAPQDigAKAM8DigAKAH4FigAGAEEFPgMGACAB
 MQQGABQEZAQGAMMDcQMSAPAA4QISAFEB4QISANgAXAMGAAUBRAQGAAEAPgMGAJgDPgMGANoCPgMG
-ALIDPgMGAKsAPgMGAFwAPgMGAAsGhgMAAAAAKwAAAAAAAQABAAEAEABRAwAAEAABAAEAAQAQAOcD
+ALIDPgMGAKsAPgMGAFwAPgMGAAsGhgMAAAAABwAAAAAAAQABAAEAEABRAwAAEAABAAEAAQAQAOcD
 AAA5AAIABQABABAAYAUAAEUAAgAKAAEAEAA1BQAASQAEAA4AAQAQAPYEAABJAAUADwAAABAAawTH
 BEkABgAQAAABEAAlBccEYQAIABQAAQCOBWcABgA1BWoABgD2BG4AAQBuBXIAAQBuBXIAEQBFA3YA
 EQDIAHoAEQBMAH4AUCAAAAAAxgCjAgYAAQBYIAAAAADGAK4CBgABAGAgAAAAAMYA6AWCAAEAhCAA
@@ -5055,10 +4613,10 @@ ACQEHwBxADUDKQBxAC0DAQDZACQEEABxAP8FLwBxAEgFLwCJACQEBgDhAC4FMwCJABQFOgCRACQE
 BgDxAG4AQADxAAcGRwChACQETQDBACQEBgAuAAsAzQAuABMA1gAuABsA9QAuACMA/gAuACsAJwEu
 ADMAJwEuADsAJwEuAEMA/gAuAEsALQEuAFMAJwEuAFsARAFDAGMAjgFpAHMA9QCJAHMA9QDjAGsA
 jgEBAXsAjgEbAAMAAQAHAAMACAAFAAAAQAC2AAAAIwO6AAAAFAS+AAAA0ADDAAAAWAXIAAEABgAD
-AAEABwAFAAIAEQAHAAIAEgAJAAEAEwAJAAIAFAALAASAAAABAAAAAAAAAAAAAAAAAAcAAAAEAAAA
+AAEABwAFAAIAEQAHAAIAEgAJAAEAEwAJAAIAFAALAASAAAABAAAAAAAAAAAAAAAAABAAAAAEAAAA
 AAAAAAAAAABVAEMAAAAAABAAAAAAAAAAAAAAAF4AlgUAAAAAEAAAAAAAAAAAAAAAXgCzBQAAAAAE
-AAAAAAAAAAAAAABVAD4DAAAAAAAAAAABAAAAdQQAAAAAAAAASW50MzIAU0NfOWNjODkyNmZmMWQ5
-NGE3OTg3MWIwNDI0MjUzMTI0ODQAPE1vZHVsZT4Ac2V0X0lEAElucHV0SUQAbXNjb3JsaWIAZGVm
+AAAAAAAAAAAAAABVAD4DAAAAAAAAAAABAAAAdQQAAAAAAAAASW50MzIAPE1vZHVsZT4AU0NfRTM4
+ODE1RUIwRDJGNDJFNjg4RUE4NDE0ODkzNkRDNkEAc2V0X0lEAElucHV0SUQAbXNjb3JsaWIAZGVm
 YXVsdEluc3RhbmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFt
 ZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAGdldF9DdWx0dXJlAHNldF9D
 dWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93
@@ -5070,8 +4628,8 @@ c2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1i
 bHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRD
 b21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50
 aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAHZhbHVlAFN5
-c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ185
-Y2M4OTI2ZmYxZDk0YTc5ODcxYjA0MjQyNTMxMjQ4NC5kbGwAc2V0X0lEX0lzTnVsbABTZXROdWxs
+c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ19F
+Mzg4MTVFQjBEMkY0MkU2ODhFQTg0MTQ4OTM2REM2QS5kbGwAc2V0X0lEX0lzTnVsbABTZXROdWxs
 AHNldF9JdGVtAFN5c3RlbQByZXNvdXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0
 aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0aW9uAEludmFsaWRPcGVyYXRp
 b25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91
@@ -5089,8 +4647,8 @@ cwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAg
 AHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAA
 dABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFT
 AEMAXwA5AGMAYwA4ADkAMgA2AGYAZgAxAGQAOQA0AGEANwA5ADgANwAxAGIAMAA0ADIANAAyADUA
-MwAxADIANAA4ADQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAKZP
-/6X0FlNBrj+QPwWprd8ABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkDBwEICSADARI9HQgSQQUg
+MwAxADIANAA4ADQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAC6g
+BTIywm1Lu2WwQ0g4FPYABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkDBwEICSADARI9HQgSQQUg
 AgEIHAMgAAIGIAICDhF1BSABHQgIBgABEnkRfQUgABKAgQcgAgEOEoCBCLd6XFYZNOCJCImEXc2A
 gMyRAgYIAwYSFAMGEhgDBhJFAwYSUQMGElUDBhIgBSABARIMBCABAQIJIAQBCA4SPRJBBSABARJF
 BAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMoAAgDKAACBAgAElEECAASVQQIABIgCAEACAAAAAAA
@@ -5115,13 +4673,13 @@ ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
 AAAAUwBDAF8AOQBjAGMAOAA5ADIANgBmAGYAMQBkADkANABhADcAOQA4ADcAMQBiADAANAAyADQA
 MgA1ADMAMQAyADQAOAA0AAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwA5AGMAYwA4ADkA
-MgA2AGYAZgAxAGQAOQA0AGEANwA5ADgANwAxAGIAMAA0ADIANAAyADUAMwAxADIANAA4ADQALgBk
+ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBFADMAOAA4ADEA
+NQBFAEIAMABEADIARgA0ADIARQA2ADgAOABFAEEAOAA0ADEANAA4ADkAMwA2AEQAQwA2AEEALgBk
 AGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcA
 aAB0ACAAQAAgACAAMgAwADIAMwAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBz
-AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADkA
-YwBjADgAOQAyADYAZgBmADEAZAA5ADQAYQA3ADkAOAA3ADEAYgAwADQAMgA0ADIANQAzADEAMgA0
-ADgANAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA5AGMA
+AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAEUA
+MwA4ADgAMQA1AEUAQgAwAEQAMgBGADQAMgBFADYAOAA4AEUAQQA4ADQAMQA0ADgAOQAzADYARABD
+ADYAQQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA5AGMA
 YwA4ADkAMgA2AGYAZgAxAGQAOQA0AGEANwA5ADgANwAxAGIAMAA0ADIANAAyADUAMwAxADIANAA4
 ADQAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
 OAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAA
@@ -5148,7 +4706,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       dataType="System.String"
                       description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
                       name="VSTAProjectName"
-                      typeConverter="NOTBROWSABLE">SC_9cc8926ff1d94a79871b042425312484</property>
+                      typeConverter="NOTBROWSABLE">SC_e38815eb0d2f42e688ea84148936dc6a</property>
                     <property
                       dataType="System.String"
                       description="Specifies the programming language used by the script."
@@ -5207,79 +4765,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\payment\payment\get new updatedDate"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="get new updatedDate"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\payment\payment\get new updatedDate.Inputs[Derived Column Input]"
-                      description="Input to the Derived Column Transformation"
-                      name="Derived Column Input">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Output]"
-                      description="Default Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      name="Derived Column Output"
-                      synchronousInputId="Package\payment\payment\get new updatedDate.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Output].Columns[newupdatedDate]"
-                          dataType="date"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Output].Columns[newupdatedDate]"
-                          name="newupdatedDate"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">@[$Package::CET]</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">@[$Package::CET]</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Error Output]"
-                      description="Error Output of the Derived Column Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Derived Column Error Output"
-                      synchronousInputId="Package\payment\payment\get new updatedDate.Inputs[Derived Column Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\payment\payment\insert new payment"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -5331,7 +4816,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           cachedLength="255"
                           cachedName="Payment"
                           externalMetadataColumnId="Package\payment\payment\insert new payment.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].Columns[Payment]" />
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].Columns[Payment]" />
                         <inputColumn
                           refId="Package\payment\payment\insert new payment.Inputs[OLE DB Command Input].Columns[createdDate]"
                           cachedDataType="date"
@@ -5484,7 +4969,7 @@ where [refTable].[Payment type] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].Columns[Payment]};</property>
+                      name="ParameterMap">#{Package\payment\payment\payment stage.Outputs[OLE DB Source Output].Columns[Payment]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5512,7 +4997,7 @@ where [refTable].[Payment type] = ?</property>
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Payment"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].Columns[Payment]">
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].Columns[Payment]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -5629,11 +5114,11 @@ where [refTable].[Payment type] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\payment\payment\payment in supermarket_sales"
+                  refId="Package\payment\payment\payment stage"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="payment in supermarket_sales"
+                  name="payment stage"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -5678,7 +5163,7 @@ where [refTable].[Payment type] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\payment\payment\payment in supermarket_sales.Connections[OleDbConnection]"
+                      refId="Package\payment\payment\payment stage.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[ABC1.BI07_STAGE]"
                       connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_STAGE]"
                       description="The OLE DB runtime connection used to access the database."
@@ -5686,50 +5171,50 @@ where [refTable].[Payment type] = ?</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output]"
+                      refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].Columns[Payment]"
+                          refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].Columns[Payment]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
+                          externalMetadataColumnId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
                           length="255"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].Columns[Payment]"
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].Columns[Payment]"
                           name="Payment"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
+                          refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
                           dataType="wstr"
                           length="255"
                           name="Payment" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output]"
+                      refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[Payment]"
+                          refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[Payment]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[Payment]"
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[Payment]"
                           name="Payment" />
                         <outputColumn
-                          refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\payment\payment\payment stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -5766,190 +5251,13 @@ where [refTable].[Payment type] = ?</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\payment\payment\Row Count 1"
-                  componentClassID="Microsoft.RowCount"
-                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-                  name="Row Count 1">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable to hold the row count."
-                      name="VariableName">User::Count_Row</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\payment\payment\Row Count 1.Inputs[Row Count Input 1]"
-                      hasSideEffects="true"
-                      name="Row Count Input 1">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\payment\payment\Row Count 1.Outputs[Row Count Output 1]"
-                      name="Row Count Output 1"
-                      synchronousInputId="Package\payment\payment\Row Count 1.Inputs[Row Count Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\payment\payment\update payment"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="update payment"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update payment
-set [Payment type] = ?, updatedDate = ?
- where paymentID_SK = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\payment\payment\update payment.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].Columns[Payment type]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Payment type"
-                          externalMetadataColumnId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[Payment type]" />
-                        <inputColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].Columns[newupdatedDate]"
-                          cachedDataType="date"
-                          cachedName="newupdatedDate"
-                          externalMetadataColumnId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Output].Columns[newupdatedDate]" />
-                        <inputColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].Columns[paymentID_SK]"
-                          cachedDataType="i4"
-                          cachedName="paymentID_SK"
-                          externalMetadataColumnId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output].Columns[paymentID_SK]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="wstr"
-                          length="255"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="dbTimeStamp"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\payment\payment\update payment.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="i4"
-                          name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\payment\payment\update payment.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\payment\payment\update payment.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\payment\payment\update payment.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\payment\payment\update payment.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\payment\payment\update payment.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\update payment.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\payment\payment\update payment.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\payment\payment\update payment.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
-                <path
-                  refId="Package\payment\payment.Paths[case 1]"
-                  endId="Package\payment\payment\get new updatedDate.Inputs[Derived Column Input]"
-                  name="case 1"
-                  startId="Package\payment\payment\Check createdDate &amp; updatedDate.Outputs[case 1]" />
                 <path
                   refId="Package\payment\payment.Paths[Derived Column Output]"
                   endId="Package\payment\payment\insert new payment.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\payment\payment\create createdDate, updatedDate, ID_SK.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\payment\payment.Paths[Derived Column Output1]"
-                  endId="Package\payment\payment\update payment.Inputs[OLE DB Command Input]"
-                  name="Derived Column Output"
-                  startId="Package\payment\payment\get new updatedDate.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\payment\payment.Paths[Lookup Match Output]"
-                  endId="Package\payment\payment\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
-                  name="Lookup Match Output"
-                  startId="Package\payment\payment\Lookup in payment NDS.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\payment\payment.Paths[Lookup No Match Output]"
                   endId="Package\payment\payment\create ID increases automatically.Inputs[Input 0]"
@@ -5961,15 +5269,10 @@ set [Payment type] = ?, updatedDate = ?
                   name="OLE DB Command Output"
                   startId="Package\payment\payment\insert new payment.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\payment\payment.Paths[OLE DB Command Output1]"
-                  endId="Package\payment\payment\Row Count 1.Inputs[Row Count Input 1]"
-                  name="OLE DB Command Output"
-                  startId="Package\payment\payment\update payment.Outputs[OLE DB Command Output]" />
-                <path
                   refId="Package\payment\payment.Paths[OLE DB Source Output]"
                   endId="Package\payment\payment\Lookup in payment NDS.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\payment\payment\payment in supermarket_sales.Outputs[OLE DB Source Output]" />
+                  startId="Package\payment\payment\payment stage.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\payment\payment.Paths[Output 0]"
                   endId="Package\payment\payment\create createdDate, updatedDate, ID_SK.Inputs[Derived Column Input]"
@@ -7312,7 +6615,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           cachedDataType="i4"
                           cachedName="ProductLineID_SK"
                           externalMetadataColumnId="Package\Product\product\insert new product.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output].Columns[ProductLineID_SK]" />
+                          lineageId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[ProductLineID_SK]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -7605,11 +6908,11 @@ where [refTable].[ProductID_NK] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Product\product\Lookup in product_line"
+                  refId="Package\Product\product\Lookup in product_line NDS"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup in product_line"
+                  name="Lookup in product_line NDS"
                   usesDispositions="true"
                   version="6">
                   <properties>
@@ -7673,7 +6976,7 @@ where [refTable].[ProductLineID_NK] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Product\product\Lookup in product_line.Connections[OleDbConnection]"
+                      refId="Package\Product\product\Lookup in product_line NDS.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                       description="Connection manager used to access lookup data."
@@ -7681,11 +6984,11 @@ where [refTable].[ProductLineID_NK] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input]"
+                      refId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input].Columns[ProductLine]"
+                          refId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input].Columns[ProductLine]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="ProductLine"
@@ -7707,17 +7010,17 @@ where [refTable].[ProductLineID_NK] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output]"
+                      refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output].Columns[ProductLineID_SK]"
+                          refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[ProductLineID_SK]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output].Columns[ProductLineID_SK]"
+                          lineageId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[ProductLineID_SK]"
                           name="ProductLineID_SK"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -7731,30 +7034,30 @@ where [refTable].[ProductLineID_NK] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Product\product\Lookup in product_line.Outputs[Lookup No Match Output]"
+                      refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Product\product\Lookup in product_line.Outputs[Lookup Error Output]"
+                      refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Product\product\Lookup in product_line.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Product\product\Lookup in product_line.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Product\product\Lookup in product_line.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Product\product\Lookup in product_line.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -8035,7 +7338,7 @@ updatedDate = ?
                           cachedDataType="i4"
                           cachedName="ProductLineID_SK"
                           externalMetadataColumnId="Package\Product\product\update product.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output].Columns[ProductLineID_SK]" />
+                          lineageId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output].Columns[ProductLineID_SK]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8139,7 +7442,7 @@ updatedDate = ?
                   refId="Package\Product\product.Paths[Lookup Match Output]"
                   endId="Package\Product\product\Lookup in product NDS.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Product\product\Lookup in product_line.Outputs[Lookup Match Output]" />
+                  startId="Package\Product\product\Lookup in product_line NDS.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Product\product.Paths[Lookup Match Output1]"
                   endId="Package\Product\product\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
@@ -8162,7 +7465,7 @@ updatedDate = ?
                   startId="Package\Product\product\update product.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Product\product.Paths[OLE DB Source Output]"
-                  endId="Package\Product\product\Lookup in product_line.Inputs[Lookup Input]"
+                  endId="Package\Product\product\Lookup in product_line NDS.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
                   startId="Package\Product\product\product Stage.Outputs[OLE DB Source Output]" />
                 <path
@@ -15151,69 +14454,69 @@ where [Invoice ID_SK] = ?</property>
                   startId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output12]"
-                  endId="Package\supermarket_sales\supermarket_sales\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newDateKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
-                  endId="Package\supermarket_sales\supermarket_sales\create Invoice ID_SK &amp; updatedDate, createdDate 1.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup DateKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
-                  endId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
                   endId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
-                  endId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Inputs[Lookup Input]"
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup Branch_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\supermarket_sales\supermarket_sales\Lookup customer_typeID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
+                  endId="Package\supermarket_sales\supermarket_sales\get newupdatedDate.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup TimeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup DateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup ProductID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
+                  endId="Package\supermarket_sales\supermarket_sales\create Invoice ID_SK &amp; updatedDate, createdDate 1.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup paymentID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup newPaymentID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup newBanch_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup newTimeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+                  endId="Package\supermarket_sales\supermarket_sales\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup Invoice ID_SK &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
+                  endId="Package\supermarket_sales\supermarket_sales\Lookup newProductID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\supermarket_sales\supermarket_sales\Lookup new_customer_typeID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
                   endId="Package\supermarket_sales\supermarket_sales\create ID increases automatically.Inputs[Input 0]"
@@ -15847,6 +15150,28 @@ where [Invoice ID_SK] = ?</property>
           Id="Package\supermarket_sales"
           TopLeft="45.7142858115994,807.858823800211" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="517.008907499876,191.811782641084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.2374788356954,0"
+              Start="0,0"
+              End="-54.7374788356954,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-54.7374788356954,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="249.238095330847,339.411764664324">
           <EdgeLayout.Curve>
@@ -15934,28 +15259,6 @@ where [Invoice ID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="517.008907499876,191.811782641084">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-62.2374788356954,0"
-              Start="0,0"
-              End="-54.7374788356954,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-54.7374788356954,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -15967,7 +15270,7 @@ where [Invoice ID_SK] = ?</property>
         <NodeLayout
           Size="124.8,41.6"
           Id="Package\City\city\city Stage"
-          TopLeft="322.571424336458,72.8235288044779" />
+          TopLeft="338.571424098039,72.8235288044779" />
         <NodeLayout
           Size="180,41.6"
           Id="Package\City\city\get new updatedDate"
@@ -16040,30 +15343,18 @@ where [Invoice ID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\City\city.Paths[OLE DB Source Output]"
-          TopLeft="384.971424336458,114.423528804478">
+          TopLeft="399.27142398628,114.423528804478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.5999995380629,52.2235282496291"
+              EndConnector="0,52.2235282496291"
               Start="0,0"
-              End="12.5999995380629,44.7235282496291">
+              End="0,44.7235282496291">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.1117641248146" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.1117641248146"
-                    Point2="0,26.1117641248146"
-                    Point3="4,26.1117641248146" />
-                  <mssgle:LineSegment
-                    End="8.59999953806295,26.1117641248146" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.59999953806295,26.1117641248146"
-                    Point2="12.5999995380629,26.1117641248146"
-                    Point3="12.5999995380629,30.1117641248146" />
-                  <mssgle:LineSegment
-                    End="12.5999995380629,44.7235282496291" />
+                    End="0,44.7235282496291" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16359,477 +15650,178 @@ where [Invoice ID_SK] = ?</property>
     design-time-name="Package\customer_type 1\customer_type">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\customer_type 1\customer_type\Row Count"
-          TopLeft="345.999998420477,507.99999243021" />
+          Size="180.8,41.6"
+          Id="Package\customer_type 1\customer_type\instert customer_type"
+          TopLeft="141.222221011914,391.666661724448" />
         <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\customer_type 1\customer_type\create createdDate, updatedDate, ID_SK"
-          TopLeft="325.499995231628,312.499995425343" />
+          Size="176.8,41.6"
+          Id="Package\customer_type 1\customer_type\customer_type stage"
+          TopLeft="143.299143885701,60" />
         <NodeLayout
-          Size="200,41.6"
-          Id="Package\customer_type 1\customer_type\insert new customer_type"
-          TopLeft="305.999995440245,418.999993756414" />
-        <NodeLayout
-          Size="184,41.6"
-          Id="Package\customer_type 1\customer_type\update customer_type"
-          TopLeft="1013.99998489022,437.999993473292" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\customer_type 1\customer_type\create ID increases automatically"
-          TopLeft="455.999993205071,216.599998286366" />
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\customer_type 1\customer_type\Row Count 1"
-          TopLeft="1020.1999884218,512.199992713332" />
+          Size="339.2,41.6"
+          Id="Package\customer_type 1\customer_type\create createdDate, updatesDate, customer_typeID_SK"
+          TopLeft="60,317.888885046045" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\customer_type 1\customer_type\Lookup"
-          TopLeft="756.999988719821,145.999997824431" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\customer_type 1\customer_type\get new updatedDate"
-          TopLeft="944.999985918403,331.999995052815" />
-        <NodeLayout
-          Size="280,41.6"
-          Id="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage"
-          TopLeft="698.999989584089,52.9999992102385" />
+          TopLeft="168.222220437394,152.999998614193" />
         <NodeLayout
           Size="241.6,41.6"
           Id="Package\customer_type 1\customer_type\Check createdDate &amp; updatedDate"
-          TopLeft="914.999986365438,222.999996677041" />
-        <EdgeLayout
-          Id="Package\customer_type 1\customer_type.Paths[Derived Column Output]"
-          TopLeft="1034.9999859184,373.599995052815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="70.999998971816,64.399998420477"
-              Start="0,0"
-              End="70.999998971816,56.899998420477">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1999992102385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1999992102385"
-                    Point2="0,32.1999992102385"
-                    Point3="4,32.1999992102385" />
-                  <mssgle:LineSegment
-                    End="66.999998971816,32.1999992102385" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.999998971816,32.1999992102385"
-                    Point2="70.999998971816,32.1999992102385"
-                    Point3="70.999998971816,36.1999992102385" />
-                  <mssgle:LineSegment
-                    End="70.999998971816,56.899998420477" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\customer_type 1\customer_type.Paths[Case 1]"
-          TopLeft="573.199993205071,258.199998286366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-112.499997973443,54.299997138977"
-              Start="0,0"
-              End="-112.499997973443,46.799997138977">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.1499985694885" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.1499985694885"
-                    Point2="0,27.1499985694885"
-                    Point3="-4,27.1499985694885" />
-                  <mssgle:LineSegment
-                    End="-108.499997973443,27.1499985694885" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-108.499997973443,27.1499985694885"
-                    Point2="-112.499997973443,27.1499985694885"
-                    Point3="-112.499997973443,31.1499985694885" />
-                  <mssgle:LineSegment
-                    End="-112.499997973443,46.799997138977" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-71.4680849242215,32.1499985694885,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="105.555554876725,244.444441696008" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\customer_type 1\customer_type\Row Count"
+          TopLeft="164.088890961808,482.533327382802" />
         <EdgeLayout
           Id="Package\customer_type 1\customer_type.Paths[Output 0]"
-          TopLeft="1035.39998614192,264.599996677041">
+          TopLeft="227.977777438363,286.044441696008">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.399998375774"
+              EndConnector="0,31.8444433500372"
               Start="0,0"
-              End="0,59.899998375774">
+              End="0,24.3444433500372">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.899998375774" />
+                    End="0,24.3444433500372" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\customer_type 1\customer_type.Paths[OLE DB Source Output]"
-          TopLeft="838.999989584089,94.5999992102385">
+          TopLeft="228.160682161547,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.6000008642681,51.3999986141925"
+              EndConnector="0,51.3999986141925"
               Start="0,0"
-              End="-25.6000008642681,43.8999986141925">
+              End="0,43.8999986141925">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.6999993070962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.6999993070962"
-                    Point2="0,25.6999993070962"
-                    Point3="-4,25.6999993070962" />
-                  <mssgle:LineSegment
-                    End="-21.6000008642681,25.6999993070962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-21.6000008642681,25.6999993070962"
-                    Point2="-25.6000008642681,25.6999993070962"
-                    Point3="-25.6000008642681,29.6999993070962" />
-                  <mssgle:LineSegment
-                    End="-25.6000008642681,43.8999986141925" />
+                    End="0,43.8999986141925" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\customer_type 1\customer_type.Paths[OLE DB Command Output1]"
-          TopLeft="1105.99998489022,479.599993473292">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16.1999964684217,32.5999992400402"
-              Start="0,0"
-              End="-16.1999964684217,25.0999992400402">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.2999996200201" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.2999996200201"
-                    Point2="0,16.2999996200201"
-                    Point3="-4,16.2999996200201" />
-                  <mssgle:LineSegment
-                    End="-12.1999964684217,16.2999996200201" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.1999964684217,16.2999996200201"
-                    Point2="-16.1999964684217,16.2999996200201"
-                    Point3="-16.1999964684217,20.2999996200201" />
-                  <mssgle:LineSegment
-                    End="-16.1999964684217,25.0999992400402" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\customer_type 1\customer_type.Paths[OLE DB Command Output]"
-          TopLeft="408.399996930361,460.599993756414">
+          TopLeft="230.255555986861,433.266661724448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.399998673796"
+              EndConnector="0,49.266665658354"
               Start="0,0"
-              End="0,39.899998673796">
+              End="0,41.766665658354">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.899998673796" />
+                    End="0,41.766665658354" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\customer_type 1\customer_type.Paths[Lookup No Match Output]"
-          TopLeft="830.866655386488,187.599997824431">
+          TopLeft="225.48888765706,194.599998614193">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="204.93333097895,35.39999885261"
+              EndConnector="0,49.8444430818152"
               Start="0,0"
-              End="204.93333097895,27.89999885261">
+              End="0,42.3444430818152">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.4570624684785" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.4570624684785"
-                    Point2="0,14.4570624684785"
-                    Point3="4,14.4570624684785" />
-                  <mssgle:LineSegment
-                    End="200.93333097895,14.4570624684785" />
-                  <mssgle:CubicBezierSegment
-                    Point1="200.93333097895,14.4570624684785"
-                    Point2="204.93333097895,14.4570624684785"
-                    Point3="204.93333097895,18.4570624684785" />
-                  <mssgle:LineSegment
-                    End="204.93333097895,27.89999885261" />
+                    End="0,42.3444430818152" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.660278770725,19.4570624684785,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,15.3675340409076,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\customer_type 1\customer_type.Paths[Lookup Match Output]"
-          TopLeft="795.933322053154,187.599997824431">
+          Id="Package\customer_type 1\customer_type.Paths[Derived Column Output]"
+          TopLeft="230.611110505957,359.488885046045">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-222.733328848083,29.000000461935"
+              EndConnector="0,32.1777766784033"
               Start="0,0"
-              End="-222.733328848083,21.500000461935">
+              End="0,24.6777766784033">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.84335683200702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.84335683200702"
-                    Point2="0,11.843356832007"
-                    Point3="-4,11.843356832007" />
-                  <mssgle:LineSegment
-                    End="-218.733328848083,11.843356832007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-218.733328848083,11.843356832007"
-                    Point2="-222.733328848083,11.843356832007"
-                    Point3="-222.733328848083,15.843356832007" />
-                  <mssgle:LineSegment
-                    End="-222.733328848083,21.500000461935" />
+                    End="0,24.6777766784033" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-159.558051142792,16.843356832007,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\customer_type 1\customer_type.Paths[Derived Column Output1]"
-          TopLeft="460.699995231628,354.099995425343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-54.699999791383,64.899998331071"
-              Start="0,0"
-              End="-54.699999791383,57.399998331071">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.4499991655355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.4499991655355"
-                    Point2="0,32.4499991655355"
-                    Point3="-4,32.4499991655355" />
-                  <mssgle:LineSegment
-                    End="-50.699999791383,32.4499991655355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.699999791383,32.4499991655355"
-                    Point2="-54.699999791383,32.4499991655355"
-                    Point3="-54.699999791383,36.4499991655355" />
-                  <mssgle:LineSegment
-                    End="-54.699999791383,57.399998331071" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\customer_type 1\customer_type\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[customer_type]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\customer_type 1\customer_type\customer_type in supermarket_sales stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\payment\payment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\payment\payment\create createdDate, updatedDate, ID_SK"
-          TopLeft="165.000000351242,299.764705619598" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\payment\payment\create ID increases automatically"
-          TopLeft="175.000000372529,212.588235107776" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\payment\payment\update payment"
-          TopLeft="535.714286854681,302.605041751562" />
+          Size="148,41.6"
+          Id="Package\payment\payment\payment stage"
+          TopLeft="110.333329773375,60" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\payment\payment\insert new payment"
-          TopLeft="212.85714331026,378.717646745796" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\payment\payment\get new updatedDate"
-          TopLeft="526.530613365744,217.394957792638" />
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\payment\payment\Row Count 1"
-          TopLeft="543.877552178181,387.815125710485" />
+          TopLeft="107.857142959018,392.2176474387" />
         <NodeLayout
           Size="192,41.6"
           Id="Package\payment\payment\Lookup in payment NDS"
-          TopLeft="195.047612723242,121.333332619246" />
+          TopLeft="90.047612372,134.83333331215" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\payment\payment\create createdDate, updatedDate, ID_SK"
+          TopLeft="60,313.264706312502" />
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\payment\payment\create ID increases automatically"
+          TopLeft="70.000000021287,226.08823580068" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\payment\payment\Row Count"
-          TopLeft="227.857143342191,460.92941138733" />
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\payment\payment\payment in supermarket_sales"
-          TopLeft="183.333330601454,42.4999993667007" />
-        <NodeLayout
-          Size="241.6,41.6"
-          Id="Package\payment\payment\Check createdDate &amp; updatedDate"
-          TopLeft="487.755103079119,123.445378043056" />
-        <EdgeLayout
-          Id="Package\payment\payment.Paths[Derived Column Output]"
-          TopLeft="299.528571830751,341.364705619598">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.352941126198"
-              Start="0,0"
-              End="0,29.852941126198">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.852941126198" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\payment\payment.Paths[case 1]"
-          TopLeft="612.542858222432,165.045378043056">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.3495797495823"
-              Start="0,0"
-              End="0,44.8495797495823">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.8495797495823" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-14.53517578125,17.7016453435411,29.0703515625,9.4462890625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="122.857142990949,474.429412080234" />
         <EdgeLayout
           Id="Package\payment\payment.Paths[Output 0]"
-          TopLeft="296.200000361885,254.188235107776">
+          TopLeft="191.200000010643,267.68823580068">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16846,62 +15838,34 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\payment\payment.Paths[OLE DB Source Output]"
-          TopLeft="292.790471662348,84.0999993667007">
+          TopLeft="185.190471072687,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.2333332525453"
+              EndConnector="0,33.2333333121499"
               Start="0,0"
-              End="0,29.7333332525453">
+              End="0,25.7333333121499">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.7333332525453" />
+                    End="0,25.7333333121499" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\payment\payment.Paths[OLE DB Command Output1]"
-          TopLeft="613.395919516431,344.205041751562">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.6100839589233"
-              Start="0,0"
-              End="0,36.1100839589233">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.1100839589233" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\payment\payment.Paths[OLE DB Command Output]"
-          TopLeft="295.757143326225,420.317646745796">
+          TopLeft="190.757142974983,433.8176474387">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16918,14 +15882,12 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\payment\payment.Paths[Lookup No Match Output]"
-          TopLeft="291.623806547886,162.933332619246">
+          TopLeft="186.623806196644,176.43333331215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16948,87 +15910,30 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\payment\payment.Paths[Lookup Match Output]"
-          TopLeft="387.047612723242,143.189355331151">
+          Id="Package\payment\payment.Paths[Derived Column Output]"
+          TopLeft="194.528571479509,354.864706312502">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.707490355877,0"
+              EndConnector="0,37.352941126198"
               Start="0,0"
-              End="93.2074903558774,0">
+              End="0,29.852941126198">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="93.2074903558774,0" />
+                    End="0,29.852941126198" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-1.58764154081131,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\payment\payment.Paths[Derived Column Output1]"
-          TopLeft="614.922450110212,258.994957792638">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.6100839589235"
-              Start="0,0"
-              End="0,36.1100839589235">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.1100839589235" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\payment\payment\Lookup in payment NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[payment]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\payment\payment\payment in supermarket_sales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Product\product">
     <LayoutInfo>
@@ -17037,7 +15942,7 @@ where [Invoice ID_SK] = ?</property>
         <NodeLayout
           Size="145.6,42.4"
           Id="Package\Product\product\product Stage"
-          TopLeft="335.571424142743,72.8235288044779" />
+          TopLeft="354.571423859621,68.8235288640825" />
         <NodeLayout
           Size="270.4,41.6"
           Id="Package\Product\product\create createdDate, updatedDate, ID_SK"
@@ -17063,8 +15968,8 @@ where [Invoice ID_SK] = ?</property>
           Id="Package\Product\product\Row Count 1"
           TopLeft="761.499978849932,560.127468649651" />
         <NodeLayout
-          Size="186.4,42.4"
-          Id="Package\Product\product\Lookup in product_line"
+          Size="209.6,41.6"
+          Id="Package\Product\product\Lookup in product_line NDS"
           TopLeft="317.916652454685,161.233325708708" />
         <NodeLayout
           Size="129.6,41.6"
@@ -17097,33 +16002,29 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product\product.Paths[OLE DB Source Output]"
-          TopLeft="409.744038298714,115.490195471145">
+          TopLeft="425.044038157153,111.223528864083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.7431302375632"
+              EndConnector="0,50.0097968446255"
               Start="0,0"
-              End="0,38.2431302375632">
+              End="0,42.5097968446255">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.2431302375632" />
+                    End="0,42.5097968446255" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17157,9 +16058,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17181,9 +16080,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17236,25 +16133,37 @@ where [Invoice ID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product\product.Paths[Lookup Match Output]"
-          TopLeft="411.598204733481,203.899992375374">
+          TopLeft="422.716652454685,202.833325708708">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.0970597506206"
+              EndConnector="-10.770228775742,67.163726417287"
               Start="0,0"
-              End="0,58.5970597506206">
+              End="-10.770228775742,59.663726417287">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.5970597506206" />
+                    End="0,29.5818632086435" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5818632086435"
+                    Point2="0,33.5818632086435"
+                    Point3="-4,33.5818632086435" />
+                  <mssgle:LineSegment
+                    End="-6.770228775742,33.5818632086435" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.770228775742,33.5818632086435"
+                    Point2="-10.770228775742,33.5818632086435"
+                    Point3="-10.770228775742,37.5818632086435" />
+                  <mssgle:LineSegment
+                    End="-10.770228775742,59.663726417287" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,23.4938423753103,96.3827734375,11.609375"
+              BoundingBox="-53.576501106621,38.5818632086435,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17289,9 +16198,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17313,9 +16220,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17382,7 +16287,7 @@ where [Invoice ID_SK] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Product\product\Lookup in product_line">
+    design-time-name="Package\Product\product\Lookup in product_line NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -17480,9 +16385,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17504,9 +16407,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17540,9 +16441,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17576,9 +16475,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17684,9 +16581,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17720,9 +16615,7 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18026,7 +16919,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output12]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
           TopLeft="614.178566792562,132.072058016437">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18050,7 +16943,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
           TopLeft="260.114285896749,213.219117478396">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18074,7 +16967,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
           TopLeft="518.639796725061,233.349999831924">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18098,7 +16991,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
           TopLeft="278.244897909224,398.783192945994">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18122,7 +17015,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
           TopLeft="428.122449676862,299.37142832725">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18146,7 +17039,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
           TopLeft="1323.87074979646,383.36769342636">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18170,7 +17063,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output6]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
           TopLeft="182.122448916599,316.894117405753">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18194,7 +17087,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output5]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output12]"
           TopLeft="1413.87823277094,311.431932536591">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18218,7 +17111,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output4]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output7]"
           TopLeft="1095.00408244505,404.289075312341">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18254,7 +17147,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output3]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output8]"
           TopLeft="1331.17855610842,210.799997168779">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18278,7 +17171,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output9]"
           TopLeft="560.742858024763,418.490755972162">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18302,7 +17195,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output10]"
           TopLeft="1053.63372552393,232.599997153878">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -18326,7 +17219,7 @@ where [Invoice ID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+          Id="Package\supermarket_sales\supermarket_sales.Paths[Lookup Match Output11]"
           TopLeft="1137.28888963462,291.311671098087">
           <EdgeLayout.Curve>
             <mssgle:Curve

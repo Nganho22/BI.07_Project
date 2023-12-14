@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{1F4D3D27-A8AA-4150-9D3F-841BFEF53BF2}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{853BD07A-5754-4702-AF5B-7B09FCD330E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1214,7 +1214,7 @@ where [refTable].[Branch_SK] = ?</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                      name="FailOnFixedAttributeChange">true</property>
+                      name="FailOnFixedAttributeChange">false</property>
                     <property
                       dataType="System.String"
                       description="Specifies the column name for the inferred member."
@@ -2869,98 +2869,56 @@ where [refTable].[ProductLineID_SK] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Dim table city\city\Row Count update 1"
-          TopLeft="826.30578402274,508.295798186848" />
-        <NodeLayout
           Size="172.8,41.6"
           Id="Package\Dim table city\city\insert into city Audit"
-          TopLeft="828.769389497409,310.421428434281" />
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Dim table city\city\update into city 2"
-          TopLeft="473.9489796822,524.229411493141" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Dim table city\city\Insert new city"
-          TopLeft="207.549999949442,313.549999997151" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Dim table city\city\Slowly Changing Dimension"
-          TopLeft="446.12857055883,207.170588236634" />
+          TopLeft="679.216656639427,301.266663773358" />
         <NodeLayout
           Size="163.2,41.6"
           Id="Package\Dim table city\city\Lookup old values"
-          TopLeft="826.708164947878,212.508403220966" />
+          TopLeft="684.016656639427,199.666663773358" />
         <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Dim table city\city\Row Count update 2"
-          TopLeft="472.501360594033,627.103921295945" />
+          Size="160.8,41.6"
+          Id="Package\Dim table city\city\update into city 2"
+          TopLeft="399.46666444391,500.616663121432" />
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Dim table city\city\update into city"
-          TopLeft="839.020409937612,410.79243683872" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Dim table city\city\Row Count"
-          TopLeft="216.257142804685,210.038235292944" />
+          Size="181.6,41.6"
+          Id="Package\Dim table city\city\insert into city Audit 2"
+          TopLeft="389.06666444391,399.016663121432" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Dim table city\city\lookup old values 2"
-          TopLeft="463.762585037127,317.3879549137" />
+          TopLeft="395.06666444391,297.416663121432" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Dim table city\city\Slowly Changing Dimension"
+          TopLeft="375.366674315929,195.366666865349" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Dim table city\city\Row Count update 2"
+          TopLeft="392.66666444391,602.216663121432" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Dim table city\city\Insert new city"
+          TopLeft="94.9666723787782,298.216666846722" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Dim table city\city\Row Count update 1"
+          TopLeft="678.416656639427,504.466663773358" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Dim table city\city\update into city"
+          TopLeft="690.016656639427,402.866663773358" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Dim table city\city\Row Count"
+          TopLeft="104.566672378778,196.616666846722" />
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Dim table city\city\city NDS"
-          TopLeft="490.92857055883,105.570588236634" />
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
-          TopLeft="911.738777222644,254.108403220966">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.3130252133151"
-              Start="0,0"
-              End="0,48.8130252133151">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.8130252133151" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.6018251066576,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="420.166674315929,93.7666668653486" />
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Row Count Output 1]"
-          TopLeft="281.503571377063,251.638235292944">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.9117647042066"
-              Start="0,0"
-              End="0,54.4117647042066">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.4117647042066" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
-          TopLeft="550.12857055883,147.170588236634">
+          TopLeft="169.366672378778,238.216666846722">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2981,19 +2939,63 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output2]"
-          TopLeft="557.025170138116,565.829411493141">
+          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
+          TopLeft="479.366674315929,135.366666865349">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.2745098028042"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,53.7745098028042">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.7745098028042" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[OLE DB Command Output3]"
+          TopLeft="479.86666444391,440.616663121432">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[OLE DB Command Output2]"
+          TopLeft="479.86666444391,542.216663121432">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3004,18 +3006,18 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
-          TopLeft="914.063096980176,452.39243683872">
+          TopLeft="765.616656639427,444.466663773358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.9033613481282"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,48.4033613481282">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.4033613481282" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3026,33 +3028,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output]"
-          TopLeft="914.89489971751,352.021428434281">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58.7710084044389"
-              Start="0,0"
-              End="0,51.2710084044389">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.2710084044389" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Dim table city\city\insert into city Audit 2"
-          TopLeft="456.129932015002,422.629411493141" />
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output3]"
-          TopLeft="550.639455848601,464.229411493141">
+          TopLeft="765.616656639427,342.866663773358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3074,97 +3050,121 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Lookup Match Output1]"
-          TopLeft="547.746258526064,358.9879549137">
+          TopLeft="479.86666444391,339.016663121432">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63.6414565794409"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,56.1414565794409">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.1414565794409" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.2660407897204,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[New Output]"
-          TopLeft="446.12857055883,229.404411764789">
+          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
+          TopLeft="765.616656639427,241.266663773358">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-100.271427754145,0"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="-92.7714277541454,0">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-92.7714277541454,0" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.4771005958227,5,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
-          TopLeft="654.12857055883,230.6394957288">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="172.579594389048,0"
-              Start="0,0"
-              End="165.079594389048,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="165.079594389048,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="4.00589094452414,5,157.0678125,11.6630859375"
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Fixed Attribute Output]"
-          TopLeft="549.345577797978,248.770588236634">
+          TopLeft="479.61666937992,236.966666865349">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,68.6173666770654"
+              EndConnector="0,60.4499962560834"
               Start="0,0"
-              End="0,61.1173666770654">
+              End="0,52.9499962560834">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.1173666770654" />
+                    End="0,52.9499962560834" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-49.74138671875,24.7539958385327,99.4827734375,11.609375"
+              BoundingBox="-49.74138671875,20.6703106280417,99.4827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[New Output]"
+          TopLeft="375.366674315929,216.791666856035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.200001937151,0"
+              Start="0,0"
+              End="-133.700001937151,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-133.700001937151,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-93.9413876873255,5,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
+          TopLeft="583.366674315929,218.316665319353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.649982323498,0"
+              Start="0,0"
+              End="93.1499823234976,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.1499823234976,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.9589150882512,5,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3172,15 +3172,25 @@ where [refTable].[ProductLineID_SK] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim table city\city\Insert new city">
+    design-time-name="Package\Dim table city\city\Lookup old values">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[city]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3216,10 +3226,10 @@ where [refTable].[ProductLineID_SK] = ?</property>
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 3&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
@@ -3235,25 +3245,15 @@ where [refTable].[ProductLineID_SK] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim table city\city\Lookup old values">
+    design-time-name="Package\Dim table city\city\Insert new city">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[city]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3263,7 +3263,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3419,30 +3419,6 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table product_line\product_line.Paths[Lookup Match Output]"
-          TopLeft="970.55000109896,242.39999781698">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Dim table product_line\product_line.Paths[New Output]"
           TopLeft="473.69999602139,218.000000171363">
           <EdgeLayout.Curve>
@@ -3463,6 +3439,30 @@ where [refTable].[ProductLineID_SK] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-60.9413813766837,5,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table product_line\product_line.Paths[Lookup Match Output]"
+          TopLeft="970.55000109896,242.39999781698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999998"
+              Start="0,0"
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

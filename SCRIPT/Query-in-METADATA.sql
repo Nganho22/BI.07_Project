@@ -66,6 +66,7 @@ INSERT INTO DATA_TABLE_INFO VALUES(4, 'customer_type','dimension','Store custome
 INSERT INTO DATA_TABLE_INFO VALUES(4, 'supermarket_sales','fact','Store supermarket_sales fact', NULL)
 
 
+
 --COLUMN_INFO
 create table COLUMN_INFO
 (
@@ -185,6 +186,7 @@ insert into COLUMN_INFO values(16, N'Payment type',N'varchar','Store payment typ
 
 -- city
 insert into COLUMN_INFO values(17, N'Branch_SK','int','Store Branch surrogate key',1,null)
+insert into COLUMN_INFO values(17, N'Branch_NK','int','Store Branch natural key',1,null)
 insert into COLUMN_INFO values(17, N'City',N'varchar','Store City name','Yagoon',null)
 
 -- customer_type
@@ -203,10 +205,10 @@ insert into COLUMN_INFO values(19, N'Unit price','float','Store price of product
 -- supermarket_sales
 insert into COLUMN_INFO values(21, N'InvoiceID_SK','int','Store invoice ID surrogate key','1',null)
 insert into COLUMN_INFO values(21, N'Branch_SK','int','Store branch ID surrogate key','1',69)
-insert into COLUMN_INFO values(21, N'customer_typeID_SK','int','Store cuustomer type ID surrogate key','1',71)
+insert into COLUMN_INFO values(21, N'customer_typeID_SK','int','Store cuustomer type ID surrogate key','1',72)
 insert into COLUMN_INFO values(21, N'Gender','varchar','Store customer gender','MALE',null)
-insert into COLUMN_INFO values(21, N'ProductID_SK','int','Store product ID surrogate key','1',75)
-insert into COLUMN_INFO values(21, N'ProductLineID_SK','int','Store product line ID surrogate key','1',73)
+insert into COLUMN_INFO values(21, N'ProductID_SK','int','Store product ID surrogate key','1',76)
+insert into COLUMN_INFO values(21, N'ProductLineID_SK','int','Store product line ID surrogate key','1',74)
 insert into COLUMN_INFO values(21, N'Quantity','int','Store product quantity','2',null)
 insert into COLUMN_INFO values(21, N'Tax 5%','float','Store tax amount','26.1415',null)
 insert into COLUMN_INFO values(21, N'Total','float','Store Total amouunt of invoice','548.9715',null)
@@ -218,3 +220,5 @@ insert into COLUMN_INFO values(21, N'gross margin percentage','float','Store gro
 insert into COLUMN_INFO values(21, N'gross income','float','Store gross income amount','26.1415',null)
 insert into COLUMN_INFO values(21, N'Rating','float','Store ratings statistics','9.1',null)
 
+
+select * from column_info

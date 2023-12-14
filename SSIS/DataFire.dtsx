@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="DataFire"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{5F3B8039-9B12-41F8-B78F-CD7CFAE23B4C}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{89E3CDE5-56CF-4216-BCF6-4CFB16560FC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,18 +26,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DataFire-{5EAC58FE-9FEB-4226-81D3-479E8F437817}ABC1.BI07_NDS;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9BF28277-D393-41D3-804D-33017BC56075}"
-      DTS:ObjectName="ABC1.BI07_NDS 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{9BF28277-D393-41D3-804D-33017BC56075}ABC1.BI07_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -72,6 +60,371 @@
   </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\product"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8B34390B-8C56-4E1F-B67B-8E2CF3668C69}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="product"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\product\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\product\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\product\Derived Column.Inputs[Derived Column Input].Columns[Unit price]"
+                      cachedDataType="r8"
+                      cachedName="Unit price"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\product\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\product\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\product\Derived Column.Outputs[Derived Column Output].Columns[new_Unit price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\product\Derived Column.Outputs[Derived Column Output].Columns[new_Unit price]"
+                      name="new_Unit price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]} &lt; 0 || [ISNULL](#{Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]}) ? 1 : #{Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Unit price] &lt; 0 || ISNULL([Unit price]) ? 1 : [Unit price]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\product\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\product\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\product\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\product\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update product
+set [Unit price] = ?
+ where ProductID_SK = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\product\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\product\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].Columns[new_Unit price]"
+                      cachedDataType="r8"
+                      cachedName="new_Unit price"
+                      externalMetadataColumnId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\product\Derived Column.Outputs[Derived Column Output].Columns[new_Unit price]" />
+                    <inputColumn
+                      refId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductID_SK]"
+                      cachedDataType="i4"
+                      cachedName="ProductID_SK"
+                      externalMetadataColumnId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\product\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\product\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\product\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\product\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\product\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\product\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\product\product NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="product NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from product where updatedDate = ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1258</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{48C3156C-2FD4-48BE-9E5F-A01E437E0967};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\product\product NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\product\product NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductID_SK]"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[ProductID_SK]"
+                      name="ProductID_SK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[Unit price]"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Output].Columns[Unit price]"
+                      name="Unit price"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductID_SK]"
+                      dataType="i4"
+                      name="ProductID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductID_NK]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductID_NK" />
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[Unit price]"
+                      dataType="r8"
+                      name="Unit price" />
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[ProductLineID_SK]"
+                      dataType="i4"
+                      name="ProductLineID_SK" />
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                      dataType="dbTimeStamp"
+                      name="createdDate" />
+                    <externalMetadataColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                      dataType="dbTimeStamp"
+                      name="updatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\product\product NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ProductID_SK]"
+                      dataType="i4"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ProductID_SK]"
+                      name="ProductID_SK" />
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[Unit price]"
+                      dataType="r8"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[Unit price]"
+                      name="Unit price" />
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\product\product NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\product.Paths[Derived Column Output]"
+              endId="Package\product\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\product\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\product.Paths[OLE DB Source Output]"
+              endId="Package\product\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\product\product NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\supermarket_sales"
       DTS:CreationName="Microsoft.Pipeline"
@@ -466,13 +819,13 @@ where [refTable].[ProductID_SK] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">((#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]} &lt; 0) || ([ISNULL](#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]}))) ? (0) : (#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]})</property>
+                          name="Expression">#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]} &lt; 0 || [ISNULL](#{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]}) ? 0 : #{Package\supermarket_sales\supermartker_sales NDS.Outputs[OLE DB Source Output].Columns[Quantity]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">((Quantity &lt; 0) || (ISNULL(Quantity))) ? (0) : (Quantity)</property>
+                          name="FriendlyExpression">Quantity &lt; 0 || ISNULL(Quantity) ? 0 : Quantity</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1192,8 +1545,8 @@ where [Invoice ID_SK] = ?</property>
               <connections>
                 <connection
                   refId="Package\supermarket_sales\updated new supermarket_sales.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS 1]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1421,6 +1774,16 @@ where [Invoice ID_SK] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{82318ED6-24DF-43C7-B53F-8F38DC3F1EF1}"
+      DTS:From="Package\product"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\supermarket_sales" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1432,11 +1795,37 @@ where [Invoice ID_SK] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\supermarket_sales"
           TopLeft="307.142857796684,25.2352940955273" />
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\product"
+          TopLeft="142.857143161248,27.5294117405753" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="257.257143161248,47.1823529180513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.8857146354358,0"
+              Start="0,0"
+              End="42.3857146354358,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.3857146354358,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1662,6 +2051,102 @@ where [Invoice ID_SK] = ?</property>
         <Value
           type="q4:int">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\product">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\product\product NDS"
+          TopLeft="503.999992489815,32.9999995082617" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\product\Derived Column"
+          TopLeft="698.999989584089,110.999998345971" />
+        <EdgeLayout
+          Id="Package\product.Paths[OLE DB Source Output]"
+          TopLeft="572.799992489815,74.5999995082617">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202.599997094274,36.3999988377094"
+              Start="0,0"
+              End="202.599997094274,28.8999988377094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1999994188547" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1999994188547"
+                    Point2="0,18.1999994188547"
+                    Point3="4,18.1999994188547" />
+                  <mssgle:LineSegment
+                    End="198.599997094274,18.1999994188547" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198.599997094274,18.1999994188547"
+                    Point2="202.599997094274,18.1999994188547"
+                    Point3="202.599997094274,22.1999994188547" />
+                  <mssgle:LineSegment
+                    End="202.599997094274,28.8999988377094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\product\OLE DB Command"
+          TopLeft="544.999991878867,222.999996677041" />
+        <EdgeLayout
+          Id="Package\product.Paths[Derived Column Output]"
+          TopLeft="775.399989584089,152.599998345971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-147.999997705221,70.39999833107"
+              Start="0,0"
+              End="-147.999997705221,62.89999833107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.199999165535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.199999165535"
+                    Point2="0,35.199999165535"
+                    Point3="-4,35.199999165535" />
+                  <mssgle:LineSegment
+                    End="-143.999997705221,35.199999165535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-143.999997705221,35.199999165535"
+                    Point2="-147.999997705221,35.199999165535"
+                    Point3="-147.999997705221,39.199999165535" />
+                  <mssgle:LineSegment
+                    End="-147.999997705221,62.89999833107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\product\product NDS">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

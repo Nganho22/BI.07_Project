@@ -39,6 +39,40 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
+
+
+INSERT INTO DATE_MASTER(DateKey)
+SELECT TOP (DATEDIFF(DAY, '2019-01-01', '2019-03-31') + 1)
+    CONVERT(VARCHAR(8), DATEADD(DAY, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) - 1, '2019-01-01'), 112) AS DateKey
+FROM master.dbo.spt_values;
+
+
+update DATE_MASTER
+set Day = convert(int, SUBSTRING(DateKey, 7, 2)), Month = convert(int, SUBSTRING(DateKey, 5, 2)), Year = convert(int, SUBSTRING(DateKey, 1, 4));
+
+
+declare @Hour INT = 0, @Minute INT = 0;
+
+while @Hour <= 23
+begin
+    while @Minute <= 59
+    begin
+        insert into TIME_MASTER (TimeKey, Hour, Minute)
+        values (
+            RIGHT('00' + CAST(@Hour AS VARCHAR(2)), 2) + RIGHT('00' + CAST(@Minute AS VARCHAR(2)), 2),
+            @Hour,
+            @Minute
+        );
+
+        set @Minute = @Minute + 1;
+    end
+
+    set @Minute = 0;
+    set @Hour = @Hour + 1;
+end;
+
+
+
 /****** Object:  Table [dbo].[payment]    Script Date: 12/13/2023 5:10:22 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -73,6 +107,7 @@ GO
 
 CREATE TABLE [dbo].[city](
 	[Branch_SK] [int] NOT NULL,
+	[Branch_NK] [nvarchar](255) NULL,
 	[City] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -84,10 +119,12 @@ GO
 CREATE TABLE city_Audit (
 	id INT IDENTITY(1,1) PRIMARY KEY,
     [Branch_SK] int,
+	[Branch_NK_old_values] [nvarchar](255) NULL,
     [City_old_values] nvarchar(255),
 	updatedDate datetime null,
 	FOREIGN KEY ([Branch_SK]) REFERENCES City([Branch_SK])
 )
+
 
 /****** Object:  Table [dbo].[product_line]    Script Date: 12/13/2023 5:34:15 PM ******/
 SET ANSI_NULLS ON

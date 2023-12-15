@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{853BD07A-5754-4702-AF5B-7B09FCD330E7}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{82C8B47E-1295-48CB-9D8B-524A07A84BAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -313,6 +313,88 @@
                           refId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim table city\city\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input].Columns[Branch_NK]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Branch_NK"
+                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output].Columns[Branch]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output].Columns[Branch]"
+                          name="Branch"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">Branch_NK</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1251,12 +1333,12 @@ where [refTable].[Branch_SK] = ?</property>
                       name="Slowly Changing Dimension Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Dim table city\city\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch_NK]"
+                          refId="Package\Dim table city\city\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Branch]"
                           cachedDataType="wstr"
                           cachedLength="255"
-                          cachedName="Branch_NK"
+                          cachedName="Branch"
                           externalMetadataColumnId="Package\Dim table city\city\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Branch]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]">
+                          lineageId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output].Columns[Branch]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1598,6 +1680,11 @@ where [refTable].[Branch_SK] = ?</property>
                   name="Changing Attribute Updates Output"
                   startId="Package\Dim table city\city\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
                 <path
+                  refId="Package\Dim table city\city.Paths[Derived Column Output]"
+                  endId="Package\Dim table city\city\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Derived Column Output"
+                  startId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Dim table city\city.Paths[Fixed Attribute Output]"
                   endId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]"
                   name="Fixed Attribute Output"
@@ -1639,7 +1726,7 @@ where [refTable].[Branch_SK] = ?</property>
                   startId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Dim table city\city.Paths[OLE DB Source Output]"
-                  endId="Package\Dim table city\city\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  endId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output]" />
                 <path
@@ -2871,87 +2958,65 @@ where [refTable].[ProductLineID_SK] = ?</property>
         <NodeLayout
           Size="172.8,41.6"
           Id="Package\Dim table city\city\insert into city Audit"
-          TopLeft="679.216656639427,301.266663773358" />
+          TopLeft="1307.72855203578,314.242854056188" />
         <NodeLayout
           Size="163.2,41.6"
           Id="Package\Dim table city\city\Lookup old values"
-          TopLeft="684.016656639427,199.666663773358" />
+          TopLeft="1312.52855203577,212.642854056188" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Dim table city\city\update into city 2"
-          TopLeft="399.46666444391,500.616663121432" />
+          TopLeft="921.371418571685,525.84285241706" />
         <NodeLayout
           Size="181.6,41.6"
           Id="Package\Dim table city\city\insert into city Audit 2"
-          TopLeft="389.06666444391,399.016663121432" />
+          TopLeft="910.971418571685,424.24285241706" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Dim table city\city\lookup old values 2"
-          TopLeft="395.06666444391,297.416663121432" />
+          TopLeft="909.828561535265,322.64285241706" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\Dim table city\city\Slowly Changing Dimension"
-          TopLeft="375.366674315929,195.366666865349" />
+          TopLeft="888.7,208.7" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Dim table city\city\Row Count update 2"
-          TopLeft="392.66666444391,602.216663121432" />
+          TopLeft="914.571418571685,627.44285241706" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Dim table city\city\Insert new city"
-          TopLeft="94.9666723787782,298.216666846722" />
+          TopLeft="629.72856917211,311.728571407284" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Dim table city\city\Row Count update 1"
-          TopLeft="678.416656639427,504.466663773358" />
+          TopLeft="1306.92855203578,517.442854056188" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\Dim table city\city\update into city"
-          TopLeft="690.016656639427,402.866663773358" />
+          TopLeft="1318.52855203578,415.842854056188" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Dim table city\city\Row Count"
-          TopLeft="104.566672378778,196.616666846722" />
+          TopLeft="640.757140579394,218.699999850988" />
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Dim table city\city\city NDS"
-          TopLeft="420.166674315929,93.7666668653486" />
+          TopLeft="933.5,5.49999999999984" />
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Row Count Output 1]"
-          TopLeft="169.366672378778,238.216666846722">
+          TopLeft="704.842854875752,260.299999850988">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,51.4285715562956"
               Start="0,0"
-              End="0,52.5">
+              End="0,43.9285715562956">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
-          TopLeft="479.366674315929,135.366666865349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,43.9285715562956" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2962,18 +3027,18 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output3]"
-          TopLeft="479.86666444391,440.616663121432">
+          TopLeft="1001.77141857169,465.84285241706">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2984,7 +3049,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output2]"
-          TopLeft="479.86666444391,542.216663121432">
+          TopLeft="1001.77141857169,567.44285241706">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3006,7 +3071,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
-          TopLeft="765.616656639427,444.466663773358">
+          TopLeft="1394.12855203578,457.442854056188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3028,7 +3093,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output]"
-          TopLeft="765.616656639427,342.866663773358">
+          TopLeft="1394.12855203578,355.842854056188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3050,31 +3115,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Lookup Match Output1]"
-          TopLeft="479.86666444391,339.016663121432">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453124999999,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
-          TopLeft="765.616656639427,241.266663773358">
+          TopLeft="998.199990053475,364.24285241706">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3097,74 +3138,158 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Fixed Attribute Output]"
-          TopLeft="479.61666937992,236.966666865349">
+          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
+          TopLeft="1394.12855203578,254.242854056188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.4499962560834"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.9499962560834">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.9499962560834" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-49.74138671875,20.6703106280417,99.4827734375,11.609375"
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Dim table city\city\Derived Column"
+          TopLeft="916.3,107.1" />
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
+          TopLeft="992.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[Derived Column Output]"
+          TopLeft="992.7,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[New Output]"
-          TopLeft="375.366674315929,216.791666856035">
+          TopLeft="888.7,229.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-141.200001937151,0"
+              EndConnector="-118.342859420606,9.9999998509885"
               Start="0,0"
-              End="-133.700001937151,0">
+              End="-110.842859420606,9.9999998509885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-133.700001937151,0" />
+                    End="-55.171429710303,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.171429710303,0"
+                    Point2="-59.171429710303,0"
+                    Point3="-59.171429710303,4" />
+                  <mssgle:LineSegment
+                    End="-59.171429710303,5.9999998509885" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.171429710303,5.9999998509885"
+                    Point2="-59.171429710303,9.9999998509885"
+                    Point3="-63.171429710303,9.9999998509885" />
+                  <mssgle:LineSegment
+                    End="-110.842859420606,9.9999998509885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-93.9413876873255,5,54.1827734375,11.43359375"
+              BoundingBox="-86.262816429053,-17.43359375,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
-          TopLeft="583.366674315929,218.316665319353">
+          TopLeft="1096.7,231.471427028094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.649982323498,0"
+              EndConnector="215.828552035775,0"
               Start="0,0"
-              End="93.1499823234976,0">
+              End="208.328552035775,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="93.1499823234976,0" />
+                    End="208.328552035775,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-31.9589150882512,5,157.0678125,11.6630859375"
+              BoundingBox="25.6303697678875,5,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[Fixed Attribute Output]"
+          TopLeft="993.664280767632,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.3428524170605"
+              Start="0,0"
+              End="0,64.8428524170605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8428524170605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.74138671875,26.6167387085303,99.4827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3206,7 +3331,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
   &lt;TableName&gt;[dbo].[city]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;city NDS.Outputs[OLE DB Source Output].Columns[Branch_NK]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[Branch]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Branch&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;

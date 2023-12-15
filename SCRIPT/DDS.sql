@@ -107,7 +107,7 @@ GO
 
 CREATE TABLE [dbo].[city](
 	[Branch_SK] [int] NOT NULL,
-	[Branch_NK] [nvarchar](255) NULL,
+	[Branch] [nvarchar](255) NULL,
 	[City] [nvarchar](255) NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -119,7 +119,7 @@ GO
 CREATE TABLE city_Audit (
 	id INT IDENTITY(1,1) PRIMARY KEY,
     [Branch_SK] int,
-	[Branch_NK_old_values] [nvarchar](255) NULL,
+	[Branch_old_values] [nvarchar](255) NULL,
     [City_old_values] nvarchar(255),
 	updatedDate datetime null,
 	FOREIGN KEY ([Branch_SK]) REFERENCES City([Branch_SK])

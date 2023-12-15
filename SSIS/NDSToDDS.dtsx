@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{82C8B47E-1295-48CB-9D8B-524A07A84BAF}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{4E6F3D9C-2E42-421F-BE4D-19E10584445D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{B42A0B8E-C9FA-4E9F-98A8-24BCD2B0B8A6}"
       DTS:ObjectName="ABC1.BI07_DDS">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -33,6 +35,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{CB382AF8-9E82-4CE5-BC48-798BC33682E4}"
       DTS:ObjectName="ABC1.BI07_METADATA">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -45,6 +49,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{CD02F8DA-9D2D-4D52-BF5E-B2A45A083065}"
       DTS:ObjectName="ABC1.BI07_NDS">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -553,156 +559,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Dim table city\city\insert into city Audit 2"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="insert into city Audit 2"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into city_Audit values (?,?,?,?)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Dim table city\city\insert into city Audit 2.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].Columns[Branch_SK]"
-                          cachedDataType="i4"
-                          cachedName="Branch_SK"
-                          externalMetadataColumnId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
-                        <inputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].Columns[Branch_old_values]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Branch_old_values"
-                          externalMetadataColumnId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[Branch_old_values]" />
-                        <inputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].Columns[City_old_values]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="City_old_values"
-                          externalMetadataColumnId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[City_old_values]" />
-                        <inputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].Columns[updatedDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="updatedDate"
-                          externalMetadataColumnId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[updatedDate]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="i4"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="wstr"
-                          length="255"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="wstr"
-                          length="255"
-                          name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="dbTimeStamp"
-                          name="Param_3">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Dim table city\city\Insert new city"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1013,179 +869,6 @@ where [refTable].[Branch_SK] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Dim table city\city\lookup old values 2"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="lookup old values 2"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[city]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[city]) [refTable]
-where [refTable].[Branch_SK] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Branch_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Branch" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1258</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Dim table city\city\lookup old values 2.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input].Columns[Branch_SK]"
-                          cachedDataType="i4"
-                          cachedName="Branch_SK"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">Branch_SK</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[City_old_values]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Copy Column"
-                          length="255"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[City_old_values]"
-                          name="City_old_values"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">City</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[Branch_old_values]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Copy Column"
-                          length="255"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output].Columns[Branch_old_values]"
-                          name="Branch_old_values"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">Branch</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Dim table city\city\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1244,35 +927,6 @@ where [refTable].[Branch_SK] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Dim table city\city\Row Count update 2"
-                  componentClassID="Microsoft.RowCount"
-                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-                  name="Row Count update 2">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable to hold the row count."
-                      name="VariableName">User::Count_Row_Update2</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Dim table city\city\Row Count update 2.Inputs[Row Count Input 1]"
-                      hasSideEffects="true"
-                      name="Row Count Input 1">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Dim table city\city\Row Count update 2.Outputs[Row Count Output 1]"
-                      name="Row Count Output 1"
-                      synchronousInputId="Package\Dim table city\city\Row Count update 2.Inputs[Row Count Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Dim table city\city\Slowly Changing Dimension"
                   componentClassID="Microsoft.SCD"
                   contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -1296,7 +950,7 @@ where [refTable].[Branch_SK] = ?</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                      name="FailOnFixedAttributeChange">false</property>
+                      name="FailOnFixedAttributeChange">true</property>
                     <property
                       dataType="System.String"
                       description="Specifies the column name for the inferred member."
@@ -1485,18 +1139,18 @@ where [refTable].[Branch_SK] = ?</property>
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].Columns[Branch_SK]"
-                          cachedDataType="i4"
-                          cachedName="Branch_SK"
-                          externalMetadataColumnId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
-                        <inputColumn
                           refId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].Columns[City]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="City"
                           externalMetadataColumnId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].Columns[Branch_SK]"
+                          cachedDataType="i4"
+                          cachedName="Branch_SK"
+                          externalMetadataColumnId="Package\Dim table city\city\update into city.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1558,120 +1212,6 @@ where [refTable].[Branch_SK] = ?</property>
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\Dim table city\city\update into city 2"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="update into city 2"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[city] SET [City] = ? WHERE [Branch_SK] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Dim table city\city\update into city 2.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_DDS]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].Columns[Branch_SK]"
-                          cachedDataType="i4"
-                          cachedName="Branch_SK"
-                          externalMetadataColumnId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[Branch_SK]" />
-                        <inputColumn
-                          refId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].Columns[City]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="City"
-                          externalMetadataColumnId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Dim table city\city\city NDS.Outputs[OLE DB Source Output].Columns[City]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          dataType="wstr"
-                          length="255"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="i4"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -1685,20 +1225,10 @@ where [refTable].[Branch_SK] = ?</property>
                   name="Derived Column Output"
                   startId="Package\Dim table city\city\Derived Column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Dim table city\city.Paths[Fixed Attribute Output]"
-                  endId="Package\Dim table city\city\lookup old values 2.Inputs[Lookup Input]"
-                  name="Fixed Attribute Output"
-                  startId="Package\Dim table city\city\Slowly Changing Dimension.Outputs[Fixed Attribute Output]" />
-                <path
                   refId="Package\Dim table city\city.Paths[Lookup Match Output]"
                   endId="Package\Dim table city\city\insert into city Audit.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
                   startId="Package\Dim table city\city\Lookup old values.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Dim table city\city.Paths[Lookup Match Output1]"
-                  endId="Package\Dim table city\city\insert into city Audit 2.Inputs[OLE DB Command Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Dim table city\city\lookup old values 2.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Dim table city\city.Paths[New Output]"
                   endId="Package\Dim table city\city\Row Count.Inputs[Row Count Input 1]"
@@ -1714,16 +1244,6 @@ where [refTable].[Branch_SK] = ?</property>
                   endId="Package\Dim table city\city\Row Count update 1.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\Dim table city\city\update into city.Outputs[OLE DB Command Output]" />
-                <path
-                  refId="Package\Dim table city\city.Paths[OLE DB Command Output2]"
-                  endId="Package\Dim table city\city\Row Count update 2.Inputs[Row Count Input 1]"
-                  name="OLE DB Command Output"
-                  startId="Package\Dim table city\city\update into city 2.Outputs[OLE DB Command Output]" />
-                <path
-                  refId="Package\Dim table city\city.Paths[OLE DB Command Output3]"
-                  endId="Package\Dim table city\city\update into city 2.Inputs[OLE DB Command Input]"
-                  name="OLE DB Command Output"
-                  startId="Package\Dim table city\city\insert into city Audit 2.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Dim table city\city.Paths[OLE DB Source Output]"
                   endId="Package\Dim table city\city\Derived Column.Inputs[Derived Column Input]"
@@ -1752,7 +1272,7 @@ where [refTable].[Branch_SK] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{CB382AF8-9E82-4CE5-BC48-798BC33682E4}"
-              SQLTask:SqlStatementSource="IF ? &gt; 0 OR ? &gt; 0 OR ? &gt; 0&#xA;UPDATE DATA_TABLE_INFO&#xA;SET UPDATEDATE = ?&#xA;WHERE DBS_ID = 4 AND TABLE_NAME ='city';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="IF ? &gt; 0 OR ? &gt; 0&#xA;UPDATE DATA_TABLE_INFO&#xA;SET UPDATEDATE = ?&#xA;WHERE DBS_ID = 4 AND TABLE_NAME ='city';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::Count_Row_Insert"
@@ -1760,7 +1280,7 @@ where [refTable].[Branch_SK] = ?</property>
                 SQLTask:DataType="131"
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
+                SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="$Package::CET"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
@@ -1770,12 +1290,6 @@ where [refTable].[Branch_SK] = ?</property>
                 SQLTask:DtsVariableName="User::Count_Row_Update1"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="131"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::Count_Row_Update2"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -2956,215 +2470,37 @@ where [refTable].[ProductLineID_SK] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Dim table city\city\insert into city Audit"
-          TopLeft="1307.72855203578,314.242854056188" />
-        <NodeLayout
           Size="163.2,41.6"
           Id="Package\Dim table city\city\Lookup old values"
-          TopLeft="1312.52855203577,212.642854056188" />
+          TopLeft="1308.71905038134,215.343137087328" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Dim table city\city\update into city 2"
-          TopLeft="921.371418571685,525.84285241706" />
-        <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Dim table city\city\insert into city Audit 2"
-          TopLeft="910.971418571685,424.24285241706" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Dim table city\city\lookup old values 2"
-          TopLeft="909.828561535265,322.64285241706" />
+          Size="152.8,41.6"
+          Id="Package\Dim table city\city\Derived Column"
+          TopLeft="916.3,107.1" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\Dim table city\city\Slowly Changing Dimension"
           TopLeft="888.7,208.7" />
         <NodeLayout
           Size="174.4,41.6"
-          Id="Package\Dim table city\city\Row Count update 2"
-          TopLeft="914.571418571685,627.44285241706" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Dim table city\city\Insert new city"
-          TopLeft="629.72856917211,311.728571407284" />
-        <NodeLayout
-          Size="174.4,41.6"
           Id="Package\Dim table city\city\Row Count update 1"
-          TopLeft="1306.92855203578,517.442854056188" />
+          TopLeft="1303.11905038134,520.143137087328" />
         <NodeLayout
           Size="151.2,41.6"
           Id="Package\Dim table city\city\update into city"
-          TopLeft="1318.52855203578,415.842854056188" />
+          TopLeft="1314.71905038134,418.543137087328" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Dim table city\city\Row Count"
-          TopLeft="640.757140579394,218.699999850988" />
+          TopLeft="612.900000266092,213.798039211217" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Dim table city\city\insert into city Audit"
+          TopLeft="1303.91905038134,316.943137087328" />
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Dim table city\city\city NDS"
           TopLeft="933.5,5.49999999999984" />
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Row Count Output 1]"
-          TopLeft="704.842854875752,260.299999850988">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.4285715562956"
-              Start="0,0"
-              End="0,43.9285715562956">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.9285715562956" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output3]"
-          TopLeft="1001.77141857169,465.84285241706">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output2]"
-          TopLeft="1001.77141857169,567.44285241706">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
-          TopLeft="1394.12855203578,457.442854056188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output]"
-          TopLeft="1394.12855203578,355.842854056188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Lookup Match Output1]"
-          TopLeft="998.199990053475,364.24285241706">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
-          TopLeft="1394.12855203578,254.242854056188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Dim table city\city\Derived Column"
-          TopLeft="916.3,107.1" />
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
           TopLeft="992.7,47.0999999999998">
@@ -3185,6 +2521,74 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
+          TopLeft="1390.31905038134,460.143137087328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[OLE DB Command Output]"
+          TopLeft="1390.31905038134,358.543137087328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[Lookup Match Output]"
+          TopLeft="1390.31905038134,256.943137087328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3209,87 +2613,77 @@ where [refTable].[ProductLineID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Dim table city\city\Insert new city"
+          TopLeft="603.300000266092,315.398039211217" />
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[New Output]"
-          TopLeft="888.7,229.5">
+          Id="Package\Dim table city\city.Paths[Row Count Output 1]"
+          TopLeft="677.700000266092,255.398039211217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-118.342859420606,9.9999998509885"
+              EndConnector="0,60"
               Start="0,0"
-              End="-110.842859420606,9.9999998509885">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-55.171429710303,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.171429710303,0"
-                    Point2="-59.171429710303,0"
-                    Point3="-59.171429710303,4" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[New Output]"
+          TopLeft="888.7,232.049019605609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.199999733908,0"
+              Start="0,0"
+              End="-138.699999733908,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-59.171429710303,5.9999998509885" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.171429710303,5.9999998509885"
-                    Point2="-59.171429710303,9.9999998509885"
-                    Point3="-63.171429710303,9.9999998509885" />
-                  <mssgle:LineSegment
-                    End="-110.842859420606,9.9999998509885" />
+                    End="-138.699999733908,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-86.262816429053,-17.43359375,54.1827734375,11.43359375"
+              BoundingBox="-96.4413865857039,5,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
-          TopLeft="1096.7,231.471427028094">
+          TopLeft="1096.7,232.821568543664">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="215.828552035775,0"
+              EndConnector="212.019050381338,0"
               Start="0,0"
-              End="208.328552035775,0">
+              End="204.519050381338,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="208.328552035775,0" />
+                    End="204.519050381338,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.6303697678875,5,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Fixed Attribute Output]"
-          TopLeft="993.664280767632,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72.3428524170605"
-              Start="0,0"
-              End="0,64.8428524170605">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.8428524170605" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.74138671875,26.6167387085303,99.4827734375,11.609375"
+              BoundingBox="23.7256189406691,5,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3354,7 +2748,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
@@ -3366,42 +2760,6 @@ where [refTable].[ProductLineID_SK] = ?</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dim table city\city\Insert new city">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dim table city\city\lookup old values 2">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[city]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3474,7 +2832,9 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3496,7 +2856,9 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3518,7 +2880,9 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3540,7 +2904,9 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3708,6 +3074,19 @@ where [refTable].[ProductLineID_SK] = ?</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim table city\city\Insert new city">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

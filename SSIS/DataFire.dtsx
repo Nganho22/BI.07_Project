@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="DataFire"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{89E3CDE5-56CF-4216-BCF6-4CFB16560FC4}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{24E7CFA5-9255-411B-AE5B-ED8254A97462}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{5EAC58FE-9FEB-4226-81D3-479E8F437817}"
       DTS:ObjectName="ABC1.BI07_NDS">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -1797,13 +1799,13 @@ where [Invoice ID_SK] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\supermarket_sales"
-          TopLeft="307.142857796684,25.2352940955273" />
-        <NodeLayout
           Size="114.4,41.6"
           Id="Package\product"
           TopLeft="142.857143161248,27.5294117405753" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\supermarket_sales"
+          TopLeft="307.142857796684,25.2352940955273" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="257.257143161248,47.1823529180513">
@@ -1830,245 +1832,22 @@ where [Invoice ID_SK] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\supermarket_sales">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="193.6,41.6"
-          Id="Package\supermarket_sales\supermartker_sales NDS"
-          TopLeft="342.857143586996,12.999999988605" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\supermarket_sales\Lookup"
-          TopLeft="377.857143661502,97.1176469736962" />
-        <NodeLayout
-          Size="231.2,41.6"
-          Id="Package\supermarket_sales\updated new supermarket_sales"
-          TopLeft="638.57142993078,370.199999965815" />
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[OLE DB Source Output]"
-          TopLeft="436.957143624249,54.599999988605">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176469850912"
-              Start="0,0"
-              End="0,35.0176469850912">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.0176469850912" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="115.2,41.6"
-          Id="Package\supermarket_sales\Tax 5%"
-          TopLeft="377.142857945695,193.058823367201" />
-        <NodeLayout
-          Size="102.4,41.6"
-          Id="Package\supermarket_sales\Total"
-          TopLeft="376.428572229889,277.176470352292" />
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Derived Column Output]"
-          TopLeft="431.185715087792,234.658823367201">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176469850912"
-              Start="0,0"
-              End="0,35.0176469850912">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.0176469850912" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\supermarket_sales\gross income"
-          TopLeft="689.285715753023,275.811764504794" />
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Derived Column Output1]"
-          TopLeft="478.828572229889,297.294117428543">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="210.457143523134,0"
-              Start="0,0"
-              End="202.957143523134,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="202.957143523134,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Derived Column Output2]"
-          TopLeft="756.928572841901,317.411764504794">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.7882354610214"
-              Start="0,0"
-              End="0,45.2882354610214">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.2882354610214" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="292.8,41.6"
-          Id="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating"
-          TopLeft="638.775511563867,99.411764618744" />
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Lookup Match Output]"
-          TopLeft="490.657143661502,119.06470579622">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="148.118367902365,0"
-              Start="0,0"
-              End="140.618367902365,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="140.618367902365,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.1177972324324,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="100,41.6"
-          Id="Package\supermarket_sales\cogs"
-          TopLeft="728.571430122366,192.268907394494" />
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Derived Column Output3]"
-          TopLeft="781.873470843116,141.011764618744">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.25714277575"
-              Start="0,0"
-              End="0,43.75714277575">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.75714277575" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\supermarket_sales.Paths[Derived Column Output4]"
-          TopLeft="728.571430122366,213.463865380847">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-236.228572176671,0"
-              Start="0,0"
-              End="-228.728572176671,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-228.728572176671,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\supermarket_sales\supermartker_sales NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\supermarket_sales\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\product">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\product\product NDS"
-          TopLeft="503.999992489815,32.9999995082617" />
+          Size="164.8,41.6"
+          Id="Package\product\OLE DB Command"
+          TopLeft="544.999991878867,222.999996677041" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\product\Derived Column"
           TopLeft="698.999989584089,110.999998345971" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\product\product NDS"
+          TopLeft="503.999992489815,32.9999995082617" />
         <EdgeLayout
           Id="Package\product.Paths[OLE DB Source Output]"
           TopLeft="572.799992489815,74.5999995082617">
@@ -2100,13 +1879,11 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\product\OLE DB Command"
-          TopLeft="544.999991878867,222.999996677041" />
         <EdgeLayout
           Id="Package\product.Paths[Derived Column Output]"
           TopLeft="775.399989584089,152.599998345971">
@@ -2138,7 +1915,9 @@ where [Invoice ID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2147,6 +1926,245 @@ where [Invoice ID_SK] = ?</property>
   <PipelineComponentMetadata
     design-time-name="Package\product\product NDS">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\supermarket_sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\supermarket_sales\supermartker_sales NDS"
+          TopLeft="342.857143586996,12.999999988605" />
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\supermarket_sales\Quantity &amp; gross margin percentage &amp; Rating"
+          TopLeft="638.775511563867,99.411764618744" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\supermarket_sales\gross income"
+          TopLeft="689.285715753023,275.811764504794" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\supermarket_sales\updated new supermarket_sales"
+          TopLeft="638.57142993078,370.199999965815" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\supermarket_sales\Lookup"
+          TopLeft="377.857143661502,97.1176469736962" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\supermarket_sales\Total"
+          TopLeft="376.428572229889,277.176470352292" />
+        <NodeLayout
+          Size="115.2,41.6"
+          Id="Package\supermarket_sales\Tax 5%"
+          TopLeft="377.142857945695,193.058823367201" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\supermarket_sales\cogs"
+          TopLeft="728.571430122366,192.268907394494" />
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[OLE DB Source Output]"
+          TopLeft="436.957143624249,54.599999988605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176469850912"
+              Start="0,0"
+              End="0,35.0176469850912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176469850912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Lookup Match Output]"
+          TopLeft="490.657143661502,119.06470579622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="148.118367902365,0"
+              Start="0,0"
+              End="140.618367902365,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="140.618367902365,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.1177972324324,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output4]"
+          TopLeft="728.571430122366,213.463865380847">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-236.228572176671,0"
+              Start="0,0"
+              End="-228.728572176671,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-228.728572176671,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output3]"
+          TopLeft="781.873470843116,141.011764618744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.25714277575"
+              Start="0,0"
+              End="0,43.75714277575">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.75714277575" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output2]"
+          TopLeft="756.928572841901,317.411764504794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.7882354610214"
+              Start="0,0"
+              End="0,45.2882354610214">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.2882354610214" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output1]"
+          TopLeft="478.828572229889,297.294117428543">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="210.457143523134,0"
+              Start="0,0"
+              End="202.957143523134,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="202.957143523134,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\supermarket_sales.Paths[Derived Column Output]"
+          TopLeft="431.185715087792,234.658823367201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176469850912"
+              Start="0,0"
+              End="0,35.0176469850912">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176469850912" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\supermartker_sales NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\supermarket_sales\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[product]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

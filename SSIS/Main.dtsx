@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{59DD776C-0448-4511-AE2B-AD844705157C}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{C3FADA47-047A-4EB2-BCE5-74DB1E3C2B15}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{9CBDE3D7-F5AD-4F87-B8BC-0E18FA33C5B9}"
       DTS:ObjectName="ABC1.BI07_METADATA">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -33,6 +35,8 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}"
       DTS:ObjectName="ABC1.BI07_STAGE">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"

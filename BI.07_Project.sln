@@ -7,6 +7,8 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS", "SSIS\SSIS.dtproj", 
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS", "SSAS\SSAS.dwproj", "{5386CFB7-B223-42BE-A96A-AEFFF78A9321}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS_MOVIE", "SSIS_MOVIE\SSIS_MOVIE.dtproj", "{D03CB164-95DB-456E-803A-315D20D2250C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -17,6 +19,8 @@ Global
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.ActiveCfg = Development
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.Build.0 = Development
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.Deploy.0 = Development
+		{D03CB164-95DB-456E-803A-315D20D2250C}.Development|Default.ActiveCfg = Development
+		{D03CB164-95DB-456E-803A-315D20D2250C}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

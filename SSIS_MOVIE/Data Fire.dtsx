@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/17/2023 12:44:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABC1"
+  DTS:CreatorName="ABC1\user"
+  DTS:DTSID="{1BA9592D-32B2-4989-B804-7233A776E11B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1066"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{A28F6747-C794-4804-A739-9CE1F7B0B897}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{15E6886B-AA55-49D8-BF6D-E10B7FC3C579}"
+      DTS:ObjectName="CET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/17/2023 12:44:59 AM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{11DB65FC-9FEE-4F64-8618-9F04E0AB7B22}"
+      DTS:ObjectName="ID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{2BAD08BB-0E85-489D-B29B-F29D185AAB00}"
+      DTS:ObjectName="LSET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/17/2023 12:44:56 AM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

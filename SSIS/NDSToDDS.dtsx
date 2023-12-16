@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{418AB670-1AD8-4EDE-A975-01BB7CFCB2D8}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{DCA5C731-B8F0-4FE8-9DAA-21840E238847}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3508,6 +3508,43 @@ where [refTable].[ProductLineID_SK] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Dim table  payment\payment"
+          TopLeft="72.550001157501,37.8323525733524" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Dim table  payment\update DATA_TABLE_INFO (insert)"
+          TopLeft="16.3000010377595,139.155881896303" />
+        <EdgeLayout
+          Id="Package\Dim table  payment.PrecedenceConstraints[Constraint]"
+          TopLeft="135.22500109763,79.4323525733523">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.7235293229508"
+              Start="0,0"
+              End="0,52.2235293229508">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.2235293229508" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="279.2,247.2"
+          Size="279.2,290.4"
+          Id="Package\Dim table  payment"
+          TopLeft="60,440.191176504605" />
+        <NodeLayout
           Size="94.4,41.6"
           Id="Package\Dim table city\city"
           TopLeft="105.377778986428,37.6115778053291" />
@@ -3544,6 +3581,43 @@ where [refTable].[ProductLineID_SK] = ?</property>
           Size="310.4,315.2"
           Id="Package\Dim table city"
           TopLeft="439.285715220838,61.3882352445159" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Dim table customer_type\customer_type"
+          TopLeft="68.8642877460898,44.6441171920965" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Dim table customer_type\update DATA_TABLE_INFO (insert)"
+          TopLeft="26.9000019424728,146.761764177188" />
+        <EdgeLayout
+          Id="Package\Dim table customer_type.PrecedenceConstraints[Constraint]"
+          TopLeft="145.882144844281,86.2441171920965">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5176469850913"
+              Start="0,0"
+              End="0,53.0176469850913">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.0176469850913" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="290.4,243.2"
+          Size="290.4,286.4"
+          Id="Package\Dim table customer_type"
+          TopLeft="446.428572251176,436.588235244516" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\Dim table product_line\product_line"
@@ -3603,102 +3677,6 @@ where [refTable].[ProductLineID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Dim table customer_type\customer_type"
-          TopLeft="68.8642877460898,44.6441171920965" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\Dim table customer_type\update DATA_TABLE_INFO (insert)"
-          TopLeft="26.9000019424728,146.761764177188" />
-        <EdgeLayout
-          Id="Package\Dim table customer_type.PrecedenceConstraints[Constraint]"
-          TopLeft="145.882144844281,86.2441171920965">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.5176469850913"
-              Start="0,0"
-              End="0,53.0176469850913">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.0176469850913" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="290.4,243.2"
-          Size="290.4,286.4"
-          Id="Package\Dim table customer_type"
-          TopLeft="446.428572251176,436.588235244516" />
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\Dim table  payment\payment"
-          TopLeft="72.550001157501,37.8323525733524" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\Dim table  payment\update DATA_TABLE_INFO (insert)"
-          TopLeft="16.3000010377595,139.155881896303" />
-        <EdgeLayout
-          Id="Package\Dim table  payment.PrecedenceConstraints[Constraint]"
-          TopLeft="135.22500109763,79.4323525733523">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.7235293229508"
-              Start="0,0"
-              End="0,52.2235293229508">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.2235293229508" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="279.2,247.2"
-          Size="279.2,290.4"
-          Id="Package\Dim table  payment"
-          TopLeft="60,440.191176504605" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="446.428572251176,582.58970587456">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-107.228572251176,0"
-              Start="0,0"
-              End="-99.728572251176,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-99.728572251176,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="593.057143736007,376.588235244516">
@@ -3721,90 +3699,168 @@ where [refTable].[ProductLineID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="446.428572251176,582.58970587456">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107.228572251176,0"
+              Start="0,0"
+              End="-99.728572251176,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-99.728572251176,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Dim table  payment\payment">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Dim table  payment\payment\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Dim table  payment\payment\payment NDS"
+          TopLeft="239.1,5.49999999999995" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Dim table  payment\payment\Row Count"
+          TopLeft="249.99999627471,225.999996632338" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Dim table  payment\payment\Insert new payment"
+          TopLeft="234.499996587634,326.699998241663" />
+        <EdgeLayout
+          Id="Package\Dim table  payment\payment.Paths[Row Count Output 1]"
+          TopLeft="317.849996431172,267.599996632338">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.1000016093253"
+              Start="0,0"
+              End="0,51.6000016093253">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.6000016093253" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table  payment\payment.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table  payment\payment.Paths[New Output]"
+          TopLeft="312.749998137355,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.2999966323376"
+              Start="0,0"
+              End="0,69.7999966323376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.7999966323376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,29.1832014411688,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\Dim table city\city">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\Dim table city\city\Lookup old values"
-          TopLeft="1308.71905038134,215.343137087328" />
+          Size="174.4,41.6"
+          Id="Package\Dim table city\city\Row Count update 1"
+          TopLeft="1303.11905038134,520.143137087328" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Dim table city\city\Derived Column"
           TopLeft="916.3,107.1" />
         <NodeLayout
-          Size="208,41.6"
-          Id="Package\Dim table city\city\Slowly Changing Dimension"
-          TopLeft="888.7,208.7" />
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Dim table city\city\Row Count update 1"
-          TopLeft="1303.11905038134,520.143137087328" />
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Dim table city\city\update into city"
-          TopLeft="1314.71905038134,418.543137087328" />
+          Size="148.8,41.6"
+          Id="Package\Dim table city\city\Insert new city"
+          TopLeft="603.300000266092,315.398039211217" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Dim table city\city\Row Count"
           TopLeft="612.900000266092,213.798039211217" />
         <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Dim table city\city\update into city"
+          TopLeft="1314.71905038134,418.543137087328" />
+        <NodeLayout
           Size="172.8,41.6"
           Id="Package\Dim table city\city\insert into city Audit"
           TopLeft="1303.91905038134,316.943137087328" />
         <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Dim table city\city\Lookup old values"
+          TopLeft="1308.71905038134,215.343137087328" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Dim table city\city\Slowly Changing Dimension"
+          TopLeft="888.7,208.7" />
+        <NodeLayout
           Size="118.4,41.6"
           Id="Package\Dim table city\city\city NDS"
           TopLeft="933.5,5.49999999999984" />
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
-          TopLeft="992.7,47.0999999999998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
-          TopLeft="1390.31905038134,460.143137087328">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[OLE DB Command Output]"
           TopLeft="1390.31905038134,358.543137087328">
@@ -3825,6 +3881,30 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[New Output]"
+          TopLeft="888.7,232.049019605609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.199999733908,0"
+              Start="0,0"
+              End="-138.699999733908,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-138.699999733908,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.441386585704,5,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3873,10 +3953,30 @@ where [refTable].[ProductLineID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Dim table city\city\Insert new city"
-          TopLeft="603.300000266092,315.398039211217" />
+        <EdgeLayout
+          Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
+          TopLeft="1096.7,232.821568543664">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.019050381338,0"
+              Start="0,0"
+              End="204.519050381338,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="204.519050381338,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="23.725618940669,5,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim table city\city.Paths[Row Count Output 1]"
           TopLeft="677.700000266092,255.398039211217">
@@ -3900,51 +4000,47 @@ where [refTable].[ProductLineID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[New Output]"
-          TopLeft="888.7,232.049019605609">
+          Id="Package\Dim table city\city.Paths[OLE DB Source Output]"
+          TopLeft="992.7,47.0999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-146.199999733908,0"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="-138.699999733908,0">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-138.699999733908,0" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-96.4413865857039,5,54.1827734375,11.43359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim table city\city.Paths[Changing Attribute Updates Output]"
-          TopLeft="1096.7,232.821568543664">
+          Id="Package\Dim table city\city.Paths[OLE DB Command Output1]"
+          TopLeft="1390.31905038134,460.143137087328">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="212.019050381338,0"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="204.519050381338,0">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="204.519050381338,0" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="23.7256189406691,5,157.0678125,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4050,6 +4146,102 @@ where [refTable].[ProductLineID_SK] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Dim table customer_type\customer_type">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Dim table customer_type\customer_type\Row Count"
+          TopLeft="238.775510712372,207.563025028147" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Dim table customer_type\customer_type\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Dim table customer_type\customer_type\customer_type NDS"
+          TopLeft="224.7,5.49999999999995" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Dim table customer_type\customer_type\Insert new customer_type"
+          TopLeft="203.459184094873,298.279831854253" />
+        <EdgeLayout
+          Id="Package\Dim table customer_type\customer_type.Paths[Row Count Output 1]"
+          TopLeft="303.917347403622,249.163025028147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.1168068261059"
+              Start="0,0"
+              End="0,41.6168068261059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6168068261059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table customer_type\customer_type.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim table customer_type\customer_type.Paths[New Output]"
+          TopLeft="307.137755356186,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.863025028147"
+              Start="0,0"
+              End="0,51.363025028147">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.363025028147" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,19.9647156390735,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\Dim table product_line\product_line">
     <LayoutInfo>
       <GraphLayout
@@ -4105,9 +4297,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4129,9 +4319,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4153,9 +4341,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4177,9 +4363,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4350,197 +4534,5 @@ where [refTable].[ProductLineID_SK] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Dim table customer_type\customer_type">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Dim table customer_type\customer_type\Row Count"
-          TopLeft="238.775510712372,207.563025028147" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Dim table customer_type\customer_type\Slowly Changing Dimension"
-          TopLeft="206.7,107.1" />
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Dim table customer_type\customer_type\customer_type NDS"
-          TopLeft="224.7,5.49999999999995" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Dim table customer_type\customer_type\Insert new customer_type"
-          TopLeft="203.459184094873,298.279831854253" />
-        <EdgeLayout
-          Id="Package\Dim table customer_type\customer_type.Paths[Row Count Output 1]"
-          TopLeft="303.917347403622,249.163025028147">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.1168068261059"
-              Start="0,0"
-              End="0,41.6168068261059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.6168068261059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table customer_type\customer_type.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table customer_type\customer_type.Paths[New Output]"
-          TopLeft="307.137755356186,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58.863025028147"
-              Start="0,0"
-              End="0,51.363025028147">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.363025028147" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,19.9647156390735,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Dim table  payment\payment">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Dim table  payment\payment\Slowly Changing Dimension"
-          TopLeft="206.7,107.1" />
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Dim table  payment\payment\payment NDS"
-          TopLeft="239.1,5.49999999999995" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Dim table  payment\payment\Row Count"
-          TopLeft="249.99999627471,225.999996632338" />
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Dim table  payment\payment\Insert new payment"
-          TopLeft="234.499996587634,326.699998241663" />
-        <EdgeLayout
-          Id="Package\Dim table  payment\payment.Paths[Row Count Output 1]"
-          TopLeft="317.849996431172,267.599996632338">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.1000016093253"
-              Start="0,0"
-              End="0,51.6000016093253">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.6000016093253" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table  payment\payment.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim table  payment\payment.Paths[New Output]"
-          TopLeft="312.749998137355,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.2999966323376"
-              Start="0,0"
-              End="0,69.7999966323376">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.7999966323376" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,29.1832014411688,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -72,7 +72,6 @@ begin
 end;
 
 
-
 /****** Object:  Table [dbo].[payment]    Script Date: 12/13/2023 5:10:22 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -90,13 +89,14 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE payment_Audit (
-	id INT IDENTITY(1,1) PRIMARY KEY,
-    [paymentID_SK] int,
-    [Payment type_old_values] nvarchar(255),
-	updatedDate datetime null,
-	FOREIGN KEY ([paymentID_SK]) REFERENCES payment([paymentID_SK])
-)
+-- drop TABLE payment_Audit
+--CREATE TABLE payment_Audit (
+--	id INT IDENTITY(1,1) PRIMARY KEY,
+--    [paymentID_SK] int,
+--    [Payment type_old_values] nvarchar(255),
+--	updatedDate datetime null,
+--	FOREIGN KEY ([paymentID_SK]) REFERENCES payment([paymentID_SK])
+--)
 
 /****** Object:  Table [dbo].[city]    Script Date: 12/13/2023 5:10:56 PM ******/
 SET ANSI_NULLS ON
@@ -193,13 +193,14 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-CREATE TABLE customer_type_Audit (
-	id INT IDENTITY(1,1) PRIMARY KEY,
-    [customer_typeID_SK] int,
-    [Customer type_old_values] nvarchar(255),
-	updatedDate datetime null,
-	FOREIGN KEY ([customer_typeID_SK]) REFERENCES customer_type([customer_typeID_SK])
-)
+-- drop TABLE customer_type_Audit
+--CREATE TABLE customer_type_Audit (
+--	id INT IDENTITY(1,1) PRIMARY KEY,
+--    [customer_typeID_SK] int,
+--    [Customer type_old_values] nvarchar(255),
+--	updatedDate datetime null,
+--	FOREIGN KEY ([customer_typeID_SK]) REFERENCES customer_type([customer_typeID_SK])
+--)
 
 CREATE TABLE [supermarket_sales] (
     [Invoice ID_SK] int NOT NULL,
@@ -248,3 +249,4 @@ CREATE TABLE [supermarket_sales_audit] (
 	updatedDate datetime null,
 	FOREIGN KEY ([Invoice ID_SK]) REFERENCES supermarket_sales([Invoice ID_SK])
 )
+

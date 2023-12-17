@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/17/2023 11:33:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABC1"
+  DTS:CreatorName="ABC1\user"
+  DTS:DTSID="{BF97C986-1BB2-4993-8CD6-342410EB871B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1066"
+  DTS:ObjectName="Main"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{972B7518-72F0-47C8-BD33-FD47B0EF9BCF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{8E67F22E-AF73-446D-BBF5-8E1FA29D2A53}"
+      DTS:ObjectName="csv">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5F1DFAAE-CD97-4820-9AFC-30589B560E3E}"
+      DTS:ObjectName="excel">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.xlsx</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{2F1BFFAA-5837-421A-9A2C-8A6D592EC871}"
+      DTS:ObjectName="severname">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ABC1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

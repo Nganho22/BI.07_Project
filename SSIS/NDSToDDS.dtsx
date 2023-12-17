@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{BC4BC2A5-FCCD-4C0E-A2B2-C455AFB81B43}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{C8FC6700-D5DC-46BE-B75A-0475BDAF9E5D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5076,7 +5076,7 @@ where [refTable].[ProductID_SK] = ?</property>
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                       name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
+                      typeConverter="LookupNoMatchBehavior">0</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -5144,6 +5144,7 @@ where [refTable].[ProductID_SK] = ?</property>
                     <output
                       refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK.Inputs[Lookup Input]">
@@ -6108,14 +6109,14 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
               <paths>
                 <path
                   refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
-                  endId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
                   endId="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+                  endId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
                   endId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input]"
@@ -6244,11 +6245,11 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119.333333333334,41.3333333333334"
           Id="Package\Dim table  payment\payment"
           TopLeft="72.550001157501,37.8323525733524" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table  payment\update DATA_TABLE_INFO (insert)"
           TopLeft="16.3000010377595,139.155881896303" />
         <EdgeLayout
@@ -6276,16 +6277,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="279.2,248"
-          Size="279.2,290.4"
+          PanelSize="279.333333333334,248"
+          Size="279.333333333334,290.666666666667"
           Id="Package\Dim table  payment"
           TopLeft="60,440.191176504605" />
         <NodeLayout
-          Size="94.4,41.6"
+          Size="94.6666666666667,41.3333333333334"
           Id="Package\Dim table city\city"
           TopLeft="105.377778986428,37.6115778053291" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table city\update DATA_TABLE_INFO (insert)"
           TopLeft="30.6952391449084,174.113725236601" />
         <EdgeLayout
@@ -6313,16 +6314,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="310.4,272"
-          Size="310.4,315.2"
+          PanelSize="310.666666666667,272"
+          Size="310.666666666667,315.333333333334"
           Id="Package\Dim table city"
           TopLeft="439.285715220838,61.3882352445159" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,41.3333333333334"
           Id="Package\Dim table customer_type\customer_type"
           TopLeft="68.8642877460898,44.6441171920965" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table customer_type\update DATA_TABLE_INFO (insert)"
           TopLeft="26.9000019424728,146.761764177188" />
         <EdgeLayout
@@ -6350,16 +6351,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290.4,244"
-          Size="290.4,286.4"
+          PanelSize="290.666666666667,244"
+          Size="290.666666666667,286.666666666667"
           Id="Package\Dim table customer_type"
           TopLeft="446.428572251176,436.588235244516" />
         <NodeLayout
-          Size="116,42.4"
+          Size="116,42.6666666666667"
           Id="Package\Dim table product\product"
           TopLeft="72.2499972619116,19.5999753904351" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table product\update DATA_TABLE_INFO (insert)"
           TopLeft="18.1666632021468,148.349988253117" />
         <EdgeLayout
@@ -6399,16 +6400,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="276.8,245.6"
-          Size="276.8,288"
+          PanelSize="276.666666666667,245.333333333334"
+          Size="276.666666666667,288"
           Id="Package\Dim table product"
           TopLeft="59.9524154151163,800.066634556453" />
         <NodeLayout
-          Size="136.8,41.6"
+          Size="136.666666666667,41.3333333333334"
           Id="Package\Dim table product_line\product_line"
           TopLeft="74.6285725598433,27.1620914282695" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table product_line\update DATA_TABLE_INFO (insert)"
           TopLeft="21.8492063840096,168.54472461772" />
         <EdgeLayout
@@ -6436,47 +6437,10 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="281.6,272"
-          Size="281.6,315.2"
+          PanelSize="281.333333333334,272"
+          Size="281.333333333334,315.333333333334"
           Id="Package\Dim table product_line"
           TopLeft="60,60" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Fact table supermarket_sales\supermarket_sales"
-          TopLeft="74.8535725106162,18.623529340043" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\Fact table supermarket_sales\update DATA_TABLE_INFO (insert)"
-          TopLeft="36.3714296008251,153.211764516189" />
-        <EdgeLayout
-          Id="Package\Fact table supermarket_sales.PrecedenceConstraints[Constraint]"
-          TopLeft="158.212501055721,60.223529340043">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,92.988235176146"
-              Start="0,0"
-              End="0,85.488235176146">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,85.488235176146" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="285.6,249.6"
-          Size="285.6,292.8"
-          Id="Package\Fact table supermarket_sales"
-          TopLeft="451.916683607233,801.928536050662" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="341.6,218.294117622258">
@@ -6565,6 +6529,43 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,41.3333333333334"
+          Id="Package\Fact table supermarket_sales\supermarket_sales"
+          TopLeft="74.8535725106162,18.623529340043" />
+        <NodeLayout
+          Size="244,41.3333333333334"
+          Id="Package\Fact table supermarket_sales\update DATA_TABLE_INFO (insert)"
+          TopLeft="36.3714296008251,153.211764516189" />
+        <EdgeLayout
+          Id="Package\Fact table supermarket_sales.PrecedenceConstraints[Constraint]"
+          TopLeft="158.279167722387,59.9568626733763">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93.2549018428124"
+              Start="0,0"
+              End="0,85.7549018428124">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.7549018428124" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="285.333333333334,249.333333333334"
+          Size="285.333333333334,292.666666666667"
+          Id="Package\Fact table supermarket_sales"
+          TopLeft="451.916683607233,801.928536050662" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="336.619082081783,946.164251970224">
@@ -7061,7 +7062,9 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7083,7 +7086,9 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7652,75 +7657,127 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201.6,42.4"
-          Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK"
-          TopLeft="313.124986002222,230.749988996983" />
-        <NodeLayout
-          Size="190.4,42.4"
-          Id="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS"
-          TopLeft="314.166652622323,112.883327950637" />
-        <NodeLayout
-          Size="140,42.4"
+          Size="140,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count 1"
           TopLeft="568.124974602834,530.249976909161" />
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK"
-          TopLeft="324.374985499308,332.727761912082" />
-        <NodeLayout
-          Size="131.2,42.4"
-          Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count"
-          TopLeft="119.999994635582,525.849974925519" />
-        <NodeLayout
-          Size="221.6,42.4"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales"
           TopLeft="524.999976530672,428.199981775285" />
         <NodeLayout
-          Size="204,42.4"
+          Size="204,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales"
           TopLeft="89.3749960046262,427.699979605676" />
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count"
+          TopLeft="119.999994635582,525.849974925519" />
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK"
+          TopLeft="313.124986002222,230.749988996983" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK"
+          TopLeft="324.374985499308,332.727761912082" />
+        <NodeLayout
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS"
+          TopLeft="314.166652622323,112.883327950637" />
         <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Source Output]"
-          TopLeft="411.645819312272,155.549994617303">
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
+          TopLeft="443.041652165974,375.394428578748">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75.1999943796797"
+              EndConnector="192.624991031364,52.8055531965363"
               Start="0,0"
-              End="0,67.6999943796797">
+              End="192.624991031364,45.3055531965363">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.6999943796797" />
+                    End="0,17.4013695774508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4013695774508"
+                    Point2="0,21.4013695774508"
+                    Point3="4,21.4013695774508" />
+                  <mssgle:LineSegment
+                    End="188.624991031364,21.4013695774508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188.624991031364,21.4013695774508"
+                    Point2="192.624991031364,21.4013695774508"
+                    Point3="192.624991031364,25.4013695774508" />
+                  <mssgle:LineSegment
+                    End="192.624991031364,45.3055531965363" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="40.506108796932,26.4013695774508,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Command Output1]"
-          TopLeft="636.895808900086,470.866648441951">
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
+          TopLeft="385.708318832641,375.394428578748">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3833284672102"
+              EndConnector="-194.333322828015,52.3055510269273"
               Start="0,0"
-              End="0,51.8833284672102">
+              End="-194.333322828015,44.8055510269273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8833284672102" />
+                    End="0,17.1987255263318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1987255263318"
+                    Point2="0,21.1987255263318"
+                    Point3="-4,21.1987255263318" />
+                  <mssgle:LineSegment
+                    End="-190.333322828015,21.1987255263318" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.333322828015,21.1987255263318"
+                    Point2="-194.333322828015,21.1987255263318"
+                    Point3="-194.333322828015,25.1987255263318" />
+                  <mssgle:LineSegment
+                    End="-194.333322828015,44.8055510269273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-145.358048132757,26.1987255263318,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
+          TopLeft="414.083319084098,273.41665566365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3111062484318"
+              Start="0,0"
+              End="0,51.8111062484318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8111062484318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.1008656242159,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7742,153 +7799,61 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
-          TopLeft="442.508318832641,374.327761912082">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="193.291657698031,53.872219863203"
-              Start="0,0"
-              End="193.291657698031,46.372219863203">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8349351303956" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.8349351303956"
-                    Point2="0,21.8349351303956"
-                    Point3="4,21.8349351303956" />
-                  <mssgle:LineSegment
-                    End="189.291657698031,21.8349351303956" />
-                  <mssgle:CubicBezierSegment
-                    Point1="189.291657698031,21.8349351303956"
-                    Point2="193.291657698031,21.8349351303956"
-                    Point3="193.291657698031,25.8349351303956" />
-                  <mssgle:LineSegment
-                    End="193.291657698031,46.372219863203" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="40.8394421302653,26.8349351303956,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
-          TopLeft="385.441652165975,374.327761912082">
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Source Output]"
+          TopLeft="411.645819312272,155.549994617303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-194.066656161348,53.372217693594"
+              EndConnector="0,75.1999943796797"
               Start="0,0"
-              End="-194.066656161348,45.872217693594">
+              End="0,67.6999943796797">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6322793837753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6322793837753"
-                    Point2="0,21.6322793837753"
-                    Point3="-4,21.6322793837753" />
-                  <mssgle:LineSegment
-                    End="-190.066656161348,21.6322793837753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-190.066656161348,21.6322793837753"
-                    Point2="-194.066656161348,21.6322793837753"
-                    Point3="-194.066656161348,25.6322793837753" />
-                  <mssgle:LineSegment
-                    End="-194.066656161348,45.872217693594" />
+                    End="0,67.6999943796797" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-145.224714799424,26.6322793837753,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
-          TopLeft="413.949985750765,273.149988996983">
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Command Output1]"
+          TopLeft="636.895808900086,470.866648441951">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.577772915099"
+              EndConnector="0,59.3833284672102"
               Start="0,0"
-              End="0,52.077772915099">
+              End="0,51.8833284672102">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.077772915099" />
+                    End="0,51.8833284672102" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.2341989575495,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[product]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[supermarket_sales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

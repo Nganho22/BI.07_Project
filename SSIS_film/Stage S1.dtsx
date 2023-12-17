@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/17/2023 11:39:57 AM"
+  DTS:CreationDate="12/17/2023 11:52:03 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ABC1"
   DTS:CreatorName="ABC1\user"
-  DTS:DTSID="{8780E827-7211-4D07-A7B4-C92F4C3F6DD1}"
+  DTS:DTSID="{61014CB5-1E14-4765-B95C-BB075D72EB6B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1066"
-  DTS:ObjectName="Data Fire"
+  DTS:ObjectName="Stage S1"
   DTS:PackageType="5"
   DTS:VersionBuild="1"
-  DTS:VersionGUID="{3C72C452-533C-4B08-94BB-97E4347E1A3E}">
+  DTS:VersionGUID="{57EFCA74-701B-4F16-A6CD-C65CD71F413B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

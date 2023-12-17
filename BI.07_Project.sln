@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS", "SSIS\SSIS.dtproj", "{BE52DB4C-22B0-4C8F-ABFE-EE75FFF20EA3}"
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS_supermarket", "SSIS\SSIS_supermarket.dtproj", "{BE52DB4C-22B0-4C8F-ABFE-EE75FFF20EA3}"
 EndProject
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS", "SSAS\SSAS.dwproj", "{5386CFB7-B223-42BE-A96A-AEFFF78A9321}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SSAS_supermarket", "SSAS\SSAS_supermarket.dwproj", "{5386CFB7-B223-42BE-A96A-AEFFF78A9321}"
 EndProject
-Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS_MOVIE", "SSIS_MOVIE\SSIS_MOVIE.dtproj", "{D03CB164-95DB-456E-803A-315D20D2250C}"
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "SSIS_film", "SSIS_film\SSIS_film.dtproj", "{AA354A83-7D3A-42C6-B7B2-5B94BCC72DB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +19,8 @@ Global
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.ActiveCfg = Development
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.Build.0 = Development
 		{5386CFB7-B223-42BE-A96A-AEFFF78A9321}.Development|Default.Deploy.0 = Development
-		{D03CB164-95DB-456E-803A-315D20D2250C}.Development|Default.ActiveCfg = Development
-		{D03CB164-95DB-456E-803A-315D20D2250C}.Development|Default.Build.0 = Development
+		{AA354A83-7D3A-42C6-B7B2-5B94BCC72DB0}.Development|Default.ActiveCfg = Development
+		{AA354A83-7D3A-42C6-B7B2-5B94BCC72DB0}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

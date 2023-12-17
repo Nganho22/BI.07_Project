@@ -1,47 +1,50 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="12/17/2023 12:44:24 AM"
+  DTS:CreationDate="12/17/2023 11:51:12 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="ABC1"
   DTS:CreatorName="ABC1\user"
-  DTS:DTSID="{1BA9592D-32B2-4989-B804-7233A776E11B}"
+  DTS:DTSID="{A46AA4A8-1227-4F43-8865-EF59702AAA77}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1066"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{A28F6747-C794-4804-A739-9CE1F7B0B897}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{1CD772FD-598D-4795-8511-56DB6CBF428F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="7"
-      DTS:DTSID="{15E6886B-AA55-49D8-BF6D-E10B7FC3C579}"
-      DTS:ObjectName="CET">
+      DTS:DataType="8"
+      DTS:DTSID="{CC7652E4-4850-4D71-A9DB-64BD847CF808}"
+      DTS:ObjectName="csv">
       <DTS:Property
-        DTS:DataType="7"
-        DTS:Name="ParameterValue">12/17/2023 12:44:59 AM</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="3"
-      DTS:DTSID="{11DB65FC-9FEE-4F64-8618-9F04E0AB7B22}"
-      DTS:ObjectName="ID">
+      DTS:DataType="8"
+      DTS:DTSID="{74C7B231-5428-4842-AFCC-FD66A79C17A3}"
+      DTS:ObjectName="excel">
       <DTS:Property
-        DTS:DataType="3"
-        DTS:Name="ParameterValue">0</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
-      DTS:DataType="7"
-      DTS:DTSID="{2BAD08BB-0E85-489D-B29B-F29D185AAB00}"
-      DTS:ObjectName="LSET">
+      DTS:DataType="8"
+      DTS:DTSID="{A111C58B-EEDE-402D-B04B-BB88E3ADFFC9}"
+      DTS:ObjectName="severname">
       <DTS:Property
-        DTS:DataType="7"
-        DTS:Name="ParameterValue">12/17/2023 12:44:56 AM</DTS:Property>
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables />

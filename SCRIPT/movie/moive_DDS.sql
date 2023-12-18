@@ -1,0 +1,119 @@
+USE [master]
+GO
+
+
+CREATE DATABASE [BI07_MOVIE_DDS]
+GO
+USE [BI07_MOVIE_DDS]
+GO
+
+CREATE TABLE [dbo].[film](
+	[FilmID_SK] [int] NOT NULL,
+	[Film Name] [nvarchar](255) NULL,
+	[Price] [int] NULL
+PRIMARY KEY CLUSTERED 
+(
+	[FilmID_SK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[film_cate] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[film_cate](
+	[FilmCategoryID_SK] [int] NOT NULL,
+	[Film Category] [nvarchar](255) NULL
+PRIMARY KEY CLUSTERED 
+(
+	[FilmCategoryID_SK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[cinema] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[cinema](
+	[CinemaID_SK] [int] NOT NULL,
+	[Cinema Name] [nvarchar](255) NULL,
+	[Capacity] [int] NULL,
+	[Standard_Seats_price] [int] NULL,
+	[VIP_Seats_price] [int] NULL
+PRIMARY KEY CLUSTERED 
+(
+	[CinemaID_SK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[city] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[city](
+	[CityID_SK] [int] NOT NULL,
+	[City Name] [nvarchar](255) NULL
+PRIMARY KEY CLUSTERED 
+(
+	[CityID_SK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[DATE_MASTER] ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DATE_MASTER](
+	[DateKey] [varchar](8) NOT NULL,
+	[Day] [int] NULL,
+	[Month] [int] NULL,
+	[Year] [int] NULL,
+	[Quarter] [int] NULL
+PRIMARY KEY CLUSTERED 
+(
+	[DateKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[film_sales] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[film_sales](
+	[RevenueID_SK] [int] NOT NULL,
+	[FilmID_SK] [int] NULL,
+	[FilmCategoryID_SK] [int] NULL,
+	[CinemaID_SK] [int] NULL,
+	[CityID] [int] NULL,
+	[total_sales] [int] NULL,
+	[tickets_sold] [int] NULL,
+	[Standard_Seats_sold] [int] NULL,
+	[VIP_Seats_sold] [int] NULL,
+	[tickets_out] [int] NULL,
+	[Standard_Seats_out] [int] NULL,
+	[VIP_Seats_out] [int] NULL,
+	[ticket_use] [int] NULL,
+	[occur_perc] [float] NULL,
+	[DateKey] [nvarchar](255) NULL,
+	[SOURCE_ID] [int] NOT NULL
+PRIMARY KEY CLUSTERED 
+(
+	[RevenueID_SK] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+

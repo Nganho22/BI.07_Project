@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/17/2023 11:52:19 AM"
@@ -9,11 +9,1494 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5314.0"
   DTS:LocaleID="1066"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Stage S2"
   DTS:PackageType="5"
-  DTS:VersionGUID="{D753B7BA-6199-494D-92E9-444A865E1930}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{BD157AC6-A7A1-4E92-A3AD-9DBC1959E9F2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DF7EED91-295B-40D7-866D-F031521496FD}"
+      DTS:ObjectName="ABC1.BI07_MOVIE_METADATA">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S2-{DF7EED91-295B-40D7-866D-F031521496FD}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3680E0A-340C-4DFB-8CDF-3C4D88A8C52C}"
+      DTS:ObjectName="ABC1.BI07_MOVIE_STAGE">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S2-{F3680E0A-340C-4DFB-8CDF-3C4D88A8C52C}ABC1.BI07_MOVIE_STAGE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3DD29366-7BE6-4BB0-B543-099E3418A0CC}"
+      DTS:ObjectName="D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv">
+      <DTS:PropertyExpression
+        DTS:Name="Name">@[$Project::csv]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1066"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1258"
+          DTS:ConnectionString="D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="A"
+              DTS:DTSID="{93C3BD12-F8AC-430A-988B-43A3DD28CEAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RevenueID"
+              DTS:DTSID="{A5CCA828-FA8D-4B0D-8096-D1859576A319}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Film Name"
+              DTS:DTSID="{544417E1-02DA-445D-BB6D-4371691A9F5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CinemaID"
+              DTS:DTSID="{C1AE18A1-4DF6-4ECF-9F6B-58F0075100EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_sales"
+              DTS:DTSID="{9E485811-F2F5-48A0-9374-EE6647F50FCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Standard_Seats_sold"
+              DTS:DTSID="{F79000EE-A797-47E2-B049-6D1C3E3167F0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VIP_Seats_sold"
+              DTS:DTSID="{09A377B0-C24C-4701-81D9-5AA6A781C6BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Standard_Seats_out"
+              DTS:DTSID="{B108CEDB-3A43-46F5-95D1-95C512C4FC62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VIP_Seats_out"
+              DTS:DTSID="{B35A0069-6779-4080-870F-749E912DDA9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="occu_perc"
+              DTS:DTSID="{6705B3C7-9FF5-4285-B063-93F7A2124860}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ticket_use"
+              DTS:DTSID="{4EF1AC21-4368-4877-A3C7-A02AAB47457D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{7EB02473-7010-428D-8E9D-5C1BDCD6BE68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quarter"
+              DTS:DTSID="{DB987774-85F1-4E85-860E-E2E7C3BC4EAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="month"
+              DTS:DTSID="{65CF18D2-F78D-4499-9323-40A976F5208E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="day"
+              DTS:DTSID="{4EFB8BC5-B703-42EF-9135-47F6EDA6A5E2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{80F29EAD-E343-4E81-B9BF-EA55A9EE17AD}"
+      DTS:ObjectName="CET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/18/2023 12:42:51 AM</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{DC4AAE7D-59D0-4291-A325-785970D32998}"
+      DTS:ObjectName="ID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="7"
+      DTS:DTSID="{205B4991-8ADC-4E3F-AA61-FB1C47B347BD}"
+      DTS:ObjectName="LSET">
+      <DTS:Property
+        DTS:DataType="7"
+        DTS:Name="ParameterValue">12/18/2023 12:42:48 AM</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C1A27B18-2DE1-47BA-BE9D-34884E0142D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Row">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\film_sales_S2"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{80F53713-18F8-4DF5-9DFF-C6A93B8A33E2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="film_sales_S2">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\film_sales_S2\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{55e465b2-5cdd-4146-a277-d31243ca3844}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\film_sales_S2\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[RevenueID]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="RevenueID"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RevenueID]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Film Name]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Film Name"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Film Name]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[CinemaID]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CinemaID"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CinemaID]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[$Package::ID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[$Package::ID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[RevID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[RevID]"
+                          name="RevID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RevenueID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RevenueID</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[fname]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[fname]"
+                          name="fname"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Film Name]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">[Film Name]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[cinema]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[cinema]"
+                          name="cinema"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CinemaID]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">CinemaID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales_S2\Data Flow Task\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1066"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RevenueID]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RevenueID]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[RevenueID]"
+                          name="RevenueID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Film Name]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Film Name]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Film Name]"
+                          name="Film Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CinemaID]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CinemaID]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CinemaID]"
+                          name="CinemaID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_sales]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_sales]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_sales]"
+                          name="total_sales"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_sold]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Standard_Seats_sold]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_sold]"
+                          name="Standard_Seats_sold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_sold]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VIP_Seats_sold]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_sold]"
+                          name="VIP_Seats_sold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_out]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Standard_Seats_out]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_out]"
+                          name="Standard_Seats_out"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_out]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VIP_Seats_out]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_out]"
+                          name="VIP_Seats_out"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[occu_perc]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[occu_perc]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[occu_perc]"
+                          name="occu_perc"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ticket_use]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ticket_use]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ticket_use]"
+                          name="ticket_use"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[year]"
+                          name="year"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[quarter]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[quarter]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[quarter]"
+                          name="quarter"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[month]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[month]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[month]"
+                          name="month"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[day]"
+                          codePage="1258"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[day]"
+                          length="50"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[day]"
+                          name="day"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[A]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="A" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RevenueID]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="RevenueID" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Film Name]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="Film Name" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CinemaID]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="CinemaID" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_sales]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="total_sales" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Standard_Seats_sold]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="Standard_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VIP_Seats_sold]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="VIP_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Standard_Seats_out]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="Standard_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VIP_Seats_out]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="VIP_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[occu_perc]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="occu_perc" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ticket_use]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="ticket_use" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[year]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="year" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[quarter]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="quarter" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[month]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="month" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[day]"
+                          codePage="1258"
+                          dataType="str"
+                          length="50"
+                          name="day" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1258"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[film_sales_S2]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[total_sales]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="total_sales"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_sales]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_sales]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Standard_Seats_sold]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Standard_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Standard_Seats_sold]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VIP_Seats_sold]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="VIP_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VIP_Seats_sold]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Standard_Seats_out]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Standard_Seats_out"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Standard_Seats_out]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Standard_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VIP_Seats_out]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="VIP_Seats_out"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VIP_Seats_out]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VIP_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ticket_use]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ticket_use"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ticket_use]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ticket_use]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[year]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="year"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[year]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quarter]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="quarter"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quarter]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[quarter]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[month]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="month"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[month]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[day]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="day"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[day]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[day]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                          cachedDataType="i4"
+                          cachedName="SOURCE_ID"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[occu_perc]"
+                          cachedCodepage="1258"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="occu_perc"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[occur_perc]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[occu_perc]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RevID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="RevID"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RevenueID]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[RevID]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fname]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="fname"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Film Name]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[fname]" />
+                        <inputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[cinema]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="cinema"
+                          externalMetadataColumnId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cinema ID]"
+                          lineageId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[cinema]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RevenueID]"
+                          dataType="wstr"
+                          length="255"
+                          name="RevenueID" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Film Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Film Name" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cinema ID]"
+                          dataType="wstr"
+                          length="255"
+                          name="Cinema ID" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_sales]"
+                          dataType="i4"
+                          name="total_sales" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Standard_Seats_sold]"
+                          dataType="i4"
+                          name="Standard_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VIP_Seats_sold]"
+                          dataType="i4"
+                          name="VIP_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Standard_Seats_out]"
+                          dataType="i4"
+                          name="Standard_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VIP_Seats_out]"
+                          dataType="i4"
+                          name="VIP_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[occur_perc]"
+                          dataType="r8"
+                          name="occur_perc" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ticket_use]"
+                          dataType="i4"
+                          name="ticket_use" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[year]"
+                          dataType="i4"
+                          name="year" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quarter]"
+                          dataType="i4"
+                          name="quarter" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[month]"
+                          dataType="i4"
+                          name="month" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[day]"
+                          dataType="i4"
+                          name="day" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          dataType="i4"
+                          name="SOURCE_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales_S2\Data Flow Task\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Row</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales_S2\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales_S2\Data Flow Task\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\film_sales_S2\Data Flow Task\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\film_sales_S2\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\film_sales_S2\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\film_sales_S2\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\film_sales_S2\Data Flow Task.Paths[Flat File Source Output]"
+                  endId="Package\film_sales_S2\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
+                  name="Flat File Source Output"
+                  startId="Package\film_sales_S2\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\film_sales_S2\Data Flow Task.Paths[Row Count Output 1]"
+                  endId="Package\film_sales_S2\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Row Count Output 1"
+                  startId="Package\film_sales_S2\Data Flow Task\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\film_sales_S2\TRUNCATE table film_sales_S2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{51100911-1d09-4b55-bb37-8bee4af7d606}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE table film_sales_S2"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F3680E0A-340C-4DFB-8CDF-3C4D88A8C52C}"
+              SQLTask:SqlStatementSource="IF OBJECT_ID('film_sales_S2') IS NOT NULL&#xA;    TRUNCATE TABLE film_sales_S2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\film_sales_S2\Update DATA_TABLE_INFO"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{25f88b28-75e5-4677-ac0b-80f2176f0356}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update DATA_TABLE_INFO"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DF7EED91-295B-40D7-866D-F031521496FD}"
+              SQLTask:SqlStatementSource="IF ? &gt; 0&#xA;UPDATE DATA_TABLE_INFO&#xA;SET UPDATEDATE = ?&#xA;WHERE DBS_ID = 2 AND TABLE_NAME = 'film_sales_S2';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Row"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="$Package::CET"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\film_sales_S2.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{8F582731-10D4-4F94-B74C-D9308A331072}"
+          DTS:From="Package\film_sales_S2\TRUNCATE table film_sales_S2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\film_sales_S2\Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\film_sales_S2.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{5E92DD88-F52B-41FE-931C-EF8E320C09D1}"
+          DTS:From="Package\film_sales_S2\Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\film_sales_S2\Update DATA_TABLE_INFO" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\film_sales_S2\Data Flow Task"
+          TopLeft="70.400000723771,107.87058838477" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\film_sales_S2\TRUNCATE table film_sales_S2"
+          TopLeft="36.2142857796685,27.788235335676" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\film_sales_S2\Update DATA_TABLE_INFO"
+          TopLeft="42.5428578073274,188.27058822524" />
+        <EdgeLayout
+          Id="Package\film_sales_S2.PrecedenceConstraints[Constraint]"
+          TopLeft="146.90714325172,69.388235335676">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.4823530490938"
+              Start="0,0"
+              End="0,30.9823530490938">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9823530490938" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales_S2.PrecedenceConstraints[Constraint 1]"
+          TopLeft="146.071429265549,149.47058838477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.7999998404699"
+              Start="0,0"
+              End="0,31.2999998404699">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2999998404699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="277.6,284.8"
+          Size="277.6,328"
+          Id="Package\film_sales_S2"
+          TopLeft="269.285714858953,106.294117553888" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\film_sales_S2\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\OLE DB Destination"
+          TopLeft="272.857143437984,178.176470432057" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\Derived Column"
+          TopLeft="254.285714827022,86.4117646301391" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\Row Count"
+          TopLeft="203.999996960163,21.9999996721745" />
+        <EdgeLayout
+          Id="Package\film_sales_S2\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="330.685714827022,128.011764630139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.3714286109623,50.1647058019176"
+              Start="0,0"
+              End="27.3714286109623,42.6647058019176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0823529009588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0823529009588"
+                    Point2="0,25.0823529009588"
+                    Point3="4,25.0823529009588" />
+                  <mssgle:LineSegment
+                    End="23.3714286109623,25.0823529009588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.3714286109623,25.0823529009588"
+                    Point2="27.3714286109623,25.0823529009588"
+                    Point3="27.3714286109623,29.0823529009588" />
+                  <mssgle:LineSegment
+                    End="27.3714286109623,42.6647058019176" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales_S2\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="268.799996960163,63.5999996721745">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.8857178668588,22.8117649579646"
+              Start="0,0"
+              End="61.8857178668588,15.3117649579646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.4058824789823" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.4058824789823"
+                    Point2="0,11.4058824789823"
+                    Point3="4,11.4058824789823" />
+                  <mssgle:LineSegment
+                    End="57.8857178668588,11.4058824789823" />
+                  <mssgle:CubicBezierSegment
+                    Point1="57.8857178668588,11.4058824789823"
+                    Point2="61.8857178668588,11.4058824789823"
+                    Point3="61.8857178668588,15.4058824789823" />
+                  <mssgle:LineSegment
+                    End="61.8857178668588,15.3117649579646" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\Flat File Source"
+          TopLeft="15.7142857477373,24.4705882138447" />
+        <EdgeLayout
+          Id="Package\film_sales_S2\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="166.114285747737,44.0352939430096">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.8857112124257,0"
+              Start="0,0"
+              End="30.3857112124257,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="30.3857112124257,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_sales_S2\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

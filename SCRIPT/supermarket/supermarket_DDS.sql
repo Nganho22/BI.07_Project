@@ -229,24 +229,3 @@ CREATE TABLE [supermarket_sales] (
     FOREIGN KEY (paymentID_SK) REFERENCES payment(paymentID_SK)
 )
 
-CREATE TABLE [supermarket_sales_audit] (
-    [Invoice ID_SK] int NOT NULL,
-    [Branch_SK_old_values] int,
-    [customer_typeID_SK_old_values] int,
-    [Gender_old_values] varchar(10),
-    [ProductID_SK_old_values] int,
-	[ProductLineID_SK_old_values] int,
-    [Quantity_old_values] int,
-    [Tax 5%_old_values] float,
-    [Total_old_values] float,
-    [DateKey_old_values] varchar(8),
-    [TimeKey_old_values] varchar(4),
-    [paymentID_SK_old_values] int,
-    [cogs_old_values] float,
-    [gross margin percentage_old_values] float,
-    [gross income_old_values] float,
-    [Rating_old_values] float,
-	updatedDate datetime null,
-	FOREIGN KEY ([Invoice ID_SK]) REFERENCES supermarket_sales([Invoice ID_SK])
-)
-

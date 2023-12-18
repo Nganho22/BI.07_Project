@@ -12,22 +12,11 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
+select * from DATA_FIRE
 
 
-INSERT INTO DATA_FIRE VALUES(24,'	[Day]>0 && [Day]<32 && [Month]==1 ||
-									[Day]>0 && [Day]<30 && [Month]==2 && [Year]%4 == 0 && [Year]%100 == 0 ||
-									[Day]>0 && [Day]<30 && [Month]==2 && [Year]%400 == 0 ||
-									[Day]>0 && [Day]<29 && [Month]==2 || 
-									[Day]>0 && [Day]<32 && [Month]==3 ||
-									[Day]>0 && [Day]<31 && [Month]==4 ||
-									[Day]>0 && [Day]<32 && [Month]==5 ||
-									[Day]>0 && [Day]<31 && [Month]==6 ||
-									[Day]>0 && [Day]<32 && [Month]==7 ||
-									[Day]>0 && [Day]<32 && [Month]==8 ||
-									[Day]>0 && [Day]<31 && [Month]==9 ||
-									[Day]>0 && [Day]<32 && [Month]==10 ||
-									[Day]>0 && [Day]<31 && [Month]==11 ||
-									[Day]>0 && [Day]<32 && [Month]==12 || ? [Day] : 1')
+
+INSERT INTO DATA_FIRE VALUES(24,'([Day]>0 && [Day]<32 && [Month]==1,3,5,5,7,8,10,12)||([Day]>0 && [Day]<30 && [Month]==2 && [Year]%4 == 0 && [Year]%100 == 0 || ([Day]>0 && [Day]<30 && [Month]==2 && [Year]%400 == 0)||([Day]>0 && [Day]<31 && [Month]==4,6,9,11) ? [Day] : 1')
 INSERT INTO DATA_FIRE VALUES(25, '[Month]>=1 || [Month]<=12 ? [Month] : 1')
 INSERT INTO DATA_FIRE VALUES(26, '[Year]<1 || [Year]>Year(GETDATE()) ? Year(GETDATE()) : [Year]')
 INSERT INTO DATA_FIRE VALUES(28, '[Hour]<0 || [Hour]>23 ? 12 : [Hour]')
@@ -45,7 +34,3 @@ INSERT INTO [DATA_FIRE] VALUES(56, '[cogs] < 0 || ISNULL([cogs]) ? 1 : [cogs] = 
 INSERT INTO [DATA_FIRE] VALUES(57, '[gross margin percentage] < 0 || ISNULL([gross margin percentage]) ? 1 : 4,761904762');
 INSERT INTO [DATA_FIRE] VALUES(58, '[gross income] < 0 || ISNULL([gross income]) ? 1 : [Total] * [gross margin percentage]');
 INSERT INTO [DATA_FIRE] VALUES(59, '[Rating] <= 0 || [Rating] >= 10 || ISNULL([Rating]) ? 0 : [Rating]');
-
-SELECT * FROM COLUMN_INFO WHERE TABLE_ID>=6 AND TABLE_ID<=13
-
-truncate table COLUMN_INFO

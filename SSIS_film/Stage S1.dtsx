@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage S1"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{6298EF0A-A89F-4F4C-B810-AF781560F890}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{037B57AE-9FA4-4E0C-9B45-4534EBA9D96A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2653,10 +2653,6 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208,41.6"
-          Id="Package\cinema\Update DATA_TABLE_INFO"
-          TopLeft="37.7777777304725,199.346405106616" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\cinema\Data Flow Task"
           TopLeft="71.1111111347637,104.671895474736" />
@@ -2664,6 +2660,10 @@
           Size="224,41.6"
           Id="Package\cinema\TRUNCATE table cinema"
           TopLeft="39.3650793211528,17.6444446596834" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\cinema\Update DATA_TABLE_INFO"
+          TopLeft="37.7777777304725,199.346405106616" />
         <EdgeLayout
           Id="Package\cinema.PrecedenceConstraints[Constraint]"
           TopLeft="148.838095227958,59.2444446596834">
@@ -2716,13 +2716,13 @@
           Id="Package\cinema"
           TopLeft="381.269842081465,44.4379084577805" />
         <NodeLayout
-          Size="224,41.6"
-          Id="Package\city\TRUNCATE table city"
-          TopLeft="42.5396825025141,21.7647059158676" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\city\Data Flow Task"
           TopLeft="79.0476190881663,99.5738562635187" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\city\TRUNCATE table city"
+          TopLeft="42.5396825025141,21.7647059158676" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\city\Update DATA_TABLE_INFO"
@@ -2779,6 +2779,10 @@
           Id="Package\city"
           TopLeft="53.5714286854681,59.7320260914335" />
         <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\film\Data Flow Task"
+          TopLeft="84.8476204186273,107.801307101361" />
+        <NodeLayout
           Size="224,41.6"
           Id="Package\film\TRUNCATE table film"
           TopLeft="46.7698413576938,27.0823529237487" />
@@ -2786,10 +2790,6 @@
           Size="208,41.6"
           Id="Package\film\Update DATA_TABLE_INFO"
           TopLeft="53.1015886050164,177.474509654669" />
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\film\Data Flow Task"
-          TopLeft="84.8476204186273,107.801307101361" />
         <EdgeLayout
           Id="Package\film.PrecedenceConstraints[Constraint]"
           TopLeft="159.408730888161,68.6823529237487">
@@ -2842,10 +2842,6 @@
           Id="Package\film"
           TopLeft="536.190477331884,433.843136874621" />
         <NodeLayout
-          Size="208,41.6"
-          Id="Package\film_cate\Update DATA_TABLE_INFO"
-          TopLeft="48.8888888652364,201.045751510355" />
-        <NodeLayout
           Size="150.4,41.6"
           Id="Package\film_cate\Data Flow Task"
           TopLeft="82.2222222695275,110.619607887824" />
@@ -2853,6 +2849,10 @@
           Size="224,41.6"
           Id="Package\film_cate\TRUNCATE table film_cate"
           TopLeft="47.3015872745557,16.7947714578138" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\film_cate\Update DATA_TABLE_INFO"
+          TopLeft="48.8888888652364,201.045751510355" />
         <EdgeLayout
           Id="Package\film_cate.PrecedenceConstraints[Constraint]"
           TopLeft="158.361904772042,58.3947714578138">
@@ -2970,6 +2970,462 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\cinema\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\cinema\Data Flow Task\cinema"
+          TopLeft="50.7142858222431,38.999999965815" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\cinema\Data Flow Task\Row Count"
+          TopLeft="519.285715391137,69.5882352331209" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\cinema\Data Flow Task\OLE DB Destination"
+          TopLeft="293.571429196365,159.058823389991" />
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="162.714285822243,59.799999965815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="356.571429568894,30.5882352673059"
+              Start="0,0"
+              End="349.071429568894,30.5882352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="174.285714784447,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="174.285714784447,0"
+                    Point2="178.285714784447,0"
+                    Point3="178.285714784447,4" />
+                  <mssgle:LineSegment
+                    End="178.285714784447,26.5882352673059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178.285714784447,26.5882352673059"
+                    Point2="178.285714784447,30.5882352673059"
+                    Point3="182.285714784447,30.5882352673059" />
+                  <mssgle:LineSegment
+                    End="349.071429568894,30.5882352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="584.085715391137,111.188235233121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205.314286194772,47.8705881568697"
+              Start="0,0"
+              End="-205.314286194772,40.3705881568697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9352940784349"
+                    Point2="0,23.9352940784349"
+                    Point3="-4,23.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-201.314286194772,23.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-201.314286194772,23.9352940784349"
+                    Point2="-205.314286194772,23.9352940784349"
+                    Point3="-205.314286194772,27.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-205.314286194772,40.3705881568697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\cinema\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\cinema\Data Flow Task\cinema">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\city\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="94.4,41.6"
+          Id="Package\city\Data Flow Task\city"
+          TopLeft="50.7142858222431,38.999999965815" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\city\Data Flow Task\Row Count"
+          TopLeft="519.285715391137,69.5882352331209" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\city\Data Flow Task\OLE DB Destination"
+          TopLeft="293.571429196365,159.058823389991" />
+        <EdgeLayout
+          Id="Package\city\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="145.114285822243,59.799999965815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="374.171429568894,30.5882352673059"
+              Start="0,0"
+              End="366.671429568894,30.5882352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="183.085714784447,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.085714784447,0"
+                    Point2="187.085714784447,0"
+                    Point3="187.085714784447,4" />
+                  <mssgle:LineSegment
+                    End="187.085714784447,26.5882352673059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="187.085714784447,26.5882352673059"
+                    Point2="187.085714784447,30.5882352673059"
+                    Point3="191.085714784447,30.5882352673059" />
+                  <mssgle:LineSegment
+                    End="366.671429568894,30.5882352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="584.085715391137,111.188235233121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205.314286194772,47.8705881568701"
+              Start="0,0"
+              End="-205.314286194772,40.3705881568701">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.935294078435" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.935294078435"
+                    Point2="0,23.935294078435"
+                    Point3="-4,23.935294078435" />
+                  <mssgle:LineSegment
+                    End="-201.314286194772,23.935294078435" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-201.314286194772,23.935294078435"
+                    Point2="-205.314286194772,23.935294078435"
+                    Point3="-205.314286194772,27.935294078435" />
+                  <mssgle:LineSegment
+                    End="-205.314286194772,40.3705881568701" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\city\Data Flow Task\city">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\city\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\film\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\film\Data Flow Task\Excel Source"
+          TopLeft="50.7142858222431,38.999999965815" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film\Data Flow Task\Row Count"
+          TopLeft="519.285715391137,69.5882352331209" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\film\Data Flow Task\OLE DB Destination"
+          TopLeft="293.571429196365,159.058823389991" />
+        <EdgeLayout
+          Id="Package\film\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="584.085715391137,111.188235233121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205.314286194772,47.8705881568697"
+              Start="0,0"
+              End="-205.314286194772,40.3705881568697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9352940784349"
+                    Point2="0,23.9352940784349"
+                    Point3="-4,23.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-201.314286194772,23.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-201.314286194772,23.9352940784349"
+                    Point2="-205.314286194772,23.9352940784349"
+                    Point3="-205.314286194772,27.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-205.314286194772,40.3705881568697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="189.114285822243,59.799999965815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="330.171429568894,30.5882352673059"
+              Start="0,0"
+              End="322.671429568894,30.5882352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="161.085714784447,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.085714784447,0"
+                    Point2="165.085714784447,0"
+                    Point3="165.085714784447,4" />
+                  <mssgle:LineSegment
+                    End="165.085714784447,26.5882352673059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.085714784447,26.5882352673059"
+                    Point2="165.085714784447,30.5882352673059"
+                    Point3="169.085714784447,30.5882352673059" />
+                  <mssgle:LineSegment
+                    End="322.671429568894,30.5882352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\film\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\film\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\film_cate\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\film_cate\Data Flow Task\Excel Source"
+          TopLeft="50.7142858222431,38.999999965815" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film_cate\Data Flow Task\Row Count"
+          TopLeft="519.285715391137,69.5882352331209" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\film_cate\Data Flow Task\OLE DB Destination"
+          TopLeft="293.571429196365,159.058823389991" />
+        <EdgeLayout
+          Id="Package\film_cate\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="189.114285822243,59.799999965815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="330.171429568894,30.5882352673059"
+              Start="0,0"
+              End="322.671429568894,30.5882352673059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="161.085714784447,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.085714784447,0"
+                    Point2="165.085714784447,0"
+                    Point3="165.085714784447,4" />
+                  <mssgle:LineSegment
+                    End="165.085714784447,26.5882352673059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.085714784447,26.5882352673059"
+                    Point2="165.085714784447,30.5882352673059"
+                    Point3="169.085714784447,30.5882352673059" />
+                  <mssgle:LineSegment
+                    End="322.671429568894,30.5882352673059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_cate\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="584.085715391137,111.188235233121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205.314286194772,47.8705881568697"
+              Start="0,0"
+              End="-205.314286194772,40.3705881568697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9352940784349"
+                    Point2="0,23.9352940784349"
+                    Point3="-4,23.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-201.314286194772,23.9352940784349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-201.314286194772,23.9352940784349"
+                    Point2="-205.314286194772,23.9352940784349"
+                    Point3="-205.314286194772,27.9352940784349" />
+                  <mssgle:LineSegment
+                    End="-205.314286194772,40.3705881568697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_cate\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_cate\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\film_sales_S1\Data Flow Task">
     <LayoutInfo>
@@ -3099,462 +3555,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\film_sales_S1\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\film\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\film\Data Flow Task\Excel Source"
-          TopLeft="50.7142858222431,38.999999965815" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\film\Data Flow Task\Row Count"
-          TopLeft="519.285715391137,69.5882352331209" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\film\Data Flow Task\OLE DB Destination"
-          TopLeft="293.571429196365,159.058823389991" />
-        <EdgeLayout
-          Id="Package\film\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="584.085715391137,111.188235233121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-205.314286194772,47.8705881568697"
-              Start="0,0"
-              End="-205.314286194772,40.3705881568697">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.9352940784349"
-                    Point2="0,23.9352940784349"
-                    Point3="-4,23.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-201.314286194772,23.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-201.314286194772,23.9352940784349"
-                    Point2="-205.314286194772,23.9352940784349"
-                    Point3="-205.314286194772,27.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-205.314286194772,40.3705881568697" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="189.114285822243,59.799999965815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="330.171429568894,30.5882352673059"
-              Start="0,0"
-              End="322.671429568894,30.5882352673059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="161.085714784447,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="161.085714784447,0"
-                    Point2="165.085714784447,0"
-                    Point3="165.085714784447,4" />
-                  <mssgle:LineSegment
-                    End="165.085714784447,26.5882352673059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="165.085714784447,26.5882352673059"
-                    Point2="165.085714784447,30.5882352673059"
-                    Point3="169.085714784447,30.5882352673059" />
-                  <mssgle:LineSegment
-                    End="322.671429568894,30.5882352673059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\film\Data Flow Task\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\film\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\city\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="94.4,41.6"
-          Id="Package\city\Data Flow Task\city"
-          TopLeft="50.7142858222431,38.999999965815" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\city\Data Flow Task\Row Count"
-          TopLeft="519.285715391137,69.5882352331209" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\city\Data Flow Task\OLE DB Destination"
-          TopLeft="293.571429196365,159.058823389991" />
-        <EdgeLayout
-          Id="Package\city\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="145.114285822243,59.799999965815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="374.171429568894,30.5882352673059"
-              Start="0,0"
-              End="366.671429568894,30.5882352673059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="183.085714784447,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="183.085714784447,0"
-                    Point2="187.085714784447,0"
-                    Point3="187.085714784447,4" />
-                  <mssgle:LineSegment
-                    End="187.085714784447,26.5882352673059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="187.085714784447,26.5882352673059"
-                    Point2="187.085714784447,30.5882352673059"
-                    Point3="191.085714784447,30.5882352673059" />
-                  <mssgle:LineSegment
-                    End="366.671429568894,30.5882352673059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="584.085715391137,111.188235233121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-205.314286194772,47.8705881568701"
-              Start="0,0"
-              End="-205.314286194772,40.3705881568701">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.935294078435" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.935294078435"
-                    Point2="0,23.935294078435"
-                    Point3="-4,23.935294078435" />
-                  <mssgle:LineSegment
-                    End="-201.314286194772,23.935294078435" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-201.314286194772,23.935294078435"
-                    Point2="-205.314286194772,23.935294078435"
-                    Point3="-205.314286194772,27.935294078435" />
-                  <mssgle:LineSegment
-                    End="-205.314286194772,40.3705881568701" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\city\Data Flow Task\city">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\city\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\cinema\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="112,41.6"
-          Id="Package\cinema\Data Flow Task\cinema"
-          TopLeft="50.7142858222431,38.999999965815" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\cinema\Data Flow Task\Row Count"
-          TopLeft="519.285715391137,69.5882352331209" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\cinema\Data Flow Task\OLE DB Destination"
-          TopLeft="293.571429196365,159.058823389991" />
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="162.714285822243,59.799999965815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="356.571429568894,30.5882352673059"
-              Start="0,0"
-              End="349.071429568894,30.5882352673059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="174.285714784447,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="174.285714784447,0"
-                    Point2="178.285714784447,0"
-                    Point3="178.285714784447,4" />
-                  <mssgle:LineSegment
-                    End="178.285714784447,26.5882352673059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="178.285714784447,26.5882352673059"
-                    Point2="178.285714784447,30.5882352673059"
-                    Point3="182.285714784447,30.5882352673059" />
-                  <mssgle:LineSegment
-                    End="349.071429568894,30.5882352673059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="584.085715391137,111.188235233121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-205.314286194772,47.8705881568697"
-              Start="0,0"
-              End="-205.314286194772,40.3705881568697">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.9352940784349"
-                    Point2="0,23.9352940784349"
-                    Point3="-4,23.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-201.314286194772,23.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-201.314286194772,23.9352940784349"
-                    Point2="-205.314286194772,23.9352940784349"
-                    Point3="-205.314286194772,27.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-205.314286194772,40.3705881568697" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\cinema\Data Flow Task\cinema">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\cinema\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\film_cate\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\film_cate\Data Flow Task\Excel Source"
-          TopLeft="50.7142858222431,38.999999965815" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\film_cate\Data Flow Task\Row Count"
-          TopLeft="519.285715391137,69.5882352331209" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\film_cate\Data Flow Task\OLE DB Destination"
-          TopLeft="293.571429196365,159.058823389991" />
-        <EdgeLayout
-          Id="Package\film_cate\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="189.114285822243,59.799999965815">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="330.171429568894,30.5882352673059"
-              Start="0,0"
-              End="322.671429568894,30.5882352673059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="161.085714784447,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="161.085714784447,0"
-                    Point2="165.085714784447,0"
-                    Point3="165.085714784447,4" />
-                  <mssgle:LineSegment
-                    End="165.085714784447,26.5882352673059" />
-                  <mssgle:CubicBezierSegment
-                    Point1="165.085714784447,26.5882352673059"
-                    Point2="165.085714784447,30.5882352673059"
-                    Point3="169.085714784447,30.5882352673059" />
-                  <mssgle:LineSegment
-                    End="322.671429568894,30.5882352673059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_cate\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="584.085715391137,111.188235233121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-205.314286194772,47.8705881568697"
-              Start="0,0"
-              End="-205.314286194772,40.3705881568697">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.9352940784349"
-                    Point2="0,23.9352940784349"
-                    Point3="-4,23.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-201.314286194772,23.9352940784349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-201.314286194772,23.9352940784349"
-                    Point2="-205.314286194772,23.9352940784349"
-                    Point3="-205.314286194772,27.9352940784349" />
-                  <mssgle:LineSegment
-                    End="-205.314286194772,40.3705881568697" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\film_cate\Data Flow Task\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\film_cate\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

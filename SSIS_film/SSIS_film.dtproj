@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ABC1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFW8knHQWkOZC2ZB0CVYvQAAAAACAAAAAAAQZgAAAAEAACAAAAByDz7A6aJn0X4yz2yqsdiaPBoVN5+AXtStos+drzsH4AAAAAAOgAAAAAIAACAAAAA3b2ckoDuaHAehm1Tr1sh7fdedKIvJrjy+pH4mP/M+lZAAAAAsEcN63pOL08lOy2uH0by31xYXMpv81vXBN2bpxWXzYYIHVB40hSwuBMU/iihH19YAdvlndQU+B7zCpwmvOdz4sthTKtCKUGHX8QzUnwy5G5X3i/2FaPl+o4VYJqMaxyI9ZAxnVMxO6BUlGjmiqejXdoe89vuaU+mOmwhevWHnT/+o8PFhL9VYDWuY3DXpBydAAAAAT0I67DJP3jRfXRrztiWLYItvnygfEOdkUgU3W58BBG1Feqq+pHqcsJypxjYLofpREAivd5lKMj9OCrdjxpYTfA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFW8knHQWkOZC2ZB0CVYvQAAAAACAAAAAAAQZgAAAAEAACAAAAAaLoX3M6WuPQLGfiblH7QG1FwtZyBJ5kMWAVKg6nwMHwAAAAAOgAAAAAIAACAAAACW1f0L2LkW7fJVrNJ6o5Hf5vUZjm0NNq9HtMMfRUr3E5AAAADahPepM07zsXjaeOEf0zK0PlSNztmoP4xz9QEyroT+wanwRx5FSZJk5zE0iXqUwpLRQ091qsbIC0808pquNf1l2qQm5fHVFaHThE/dWBJ9o22SD0mYibI7OGsoxPN4wALnYmv0yQ4509JCT+Z4okDECgj085jdFbQrMUReYJjFFMEosPKY3AzRTzS7829Psz1AAAAAAn49ZCJ8npeCrBdUjWReFZJPil2PlQqTdqYNvqYeS5lWy1OlYqtlolpU1xOGyTmLdx4fxmFOk6ie80Kpgz5ZqQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -68,8 +68,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -83,8 +81,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -98,8 +94,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -687,10 +681,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage S2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BD157AC6-A7A1-4E92-A3AD-9DBC1959E9F2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{85767BBC-0728-41B3-9F94-2C47D7980ABD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1005,7 +999,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.AlwaysCheckForRowDelimiters">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1020,7 +1014,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.CodePage">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.CodePage">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1035,7 +1029,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.ColumnNamesInFirstDataRow">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.ColumnNamesInFirstDataRow">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1050,7 +1044,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1065,22 +1059,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.DataRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.DataRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1095,7 +1074,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.Format">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.Format">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1110,7 +1089,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.HeaderRowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.HeaderRowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1126,7 +1105,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.HeaderRowsToSkip">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.HeaderRowsToSkip">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1141,7 +1120,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.LocaleID">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.LocaleID">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1156,7 +1135,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.RowDelimiter">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.RowDelimiter">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1172,7 +1151,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.TextQualifier">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.TextQualifier">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1187,7 +1166,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv.Unicode">
+                <SSIS:Parameter SSIS:Name="CM.film_sales.csv.Unicode">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>

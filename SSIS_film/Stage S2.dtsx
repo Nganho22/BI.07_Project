@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage S2"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{BD157AC6-A7A1-4E92-A3AD-9DBC1959E9F2}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{85767BBC-0728-41B3-9F94-2C47D7980ABD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -45,12 +45,12 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
+      DTS:refId="Package.ConnectionManagers[film_sales.csv]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{3DD29366-7BE6-4BB0-B543-099E3418A0CC}"
-      DTS:ObjectName="D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv">
+      DTS:ObjectName="film_sales.csv">
       <DTS:PropertyExpression
-        DTS:Name="Name">@[$Project::csv]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::csv]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -454,8 +454,8 @@
                   <connections>
                     <connection
                       refId="Package\film_sales_S2\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                      connectionManagerID="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
-                      connectionManagerRefId="Package.ConnectionManagers[D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.csv]"
+                      connectionManagerID="Package.ConnectionManagers[film_sales.csv]"
+                      connectionManagerRefId="Package.ConnectionManagers[film_sales.csv]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
@@ -1381,47 +1381,17 @@
           Id="Package\film_sales_S2\Data Flow Task\OLE DB Destination"
           TopLeft="272.857143437984,178.176470432057" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\film_sales_S2\Data Flow Task\Derived Column"
-          TopLeft="254.285714827022,86.4117646301391" />
-        <NodeLayout
           Size="129.6,41.6"
           Id="Package\film_sales_S2\Data Flow Task\Row Count"
           TopLeft="203.999996960163,21.9999996721745" />
-        <EdgeLayout
-          Id="Package\film_sales_S2\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="330.685714827022,128.011764630139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.3714286109623,50.1647058019176"
-              Start="0,0"
-              End="27.3714286109623,42.6647058019176">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.0823529009588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.0823529009588"
-                    Point2="0,25.0823529009588"
-                    Point3="4,25.0823529009588" />
-                  <mssgle:LineSegment
-                    End="23.3714286109623,25.0823529009588" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.3714286109623,25.0823529009588"
-                    Point2="27.3714286109623,25.0823529009588"
-                    Point3="27.3714286109623,29.0823529009588" />
-                  <mssgle:LineSegment
-                    End="27.3714286109623,42.6647058019176" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\Flat File Source"
+          TopLeft="15.7142857477373,24.4705882138447" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\film_sales_S2\Data Flow Task\Derived Column"
+          TopLeft="254.285714827022,86.4117646301391" />
         <EdgeLayout
           Id="Package\film_sales_S2\Data Flow Task.Paths[Row Count Output 1]"
           TopLeft="268.799996960163,63.5999996721745">
@@ -1456,10 +1426,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\film_sales_S2\Data Flow Task\Flat File Source"
-          TopLeft="15.7142857477373,24.4705882138447" />
         <EdgeLayout
           Id="Package\film_sales_S2\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="166.114285747737,44.0352939430096">
@@ -1474,6 +1440,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="30.3857112124257,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales_S2\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="330.685714827022,128.011764630139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.3714286109623,50.1647058019176"
+              Start="0,0"
+              End="27.3714286109623,42.6647058019176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.0823529009588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.0823529009588"
+                    Point2="0,25.0823529009588"
+                    Point3="4,25.0823529009588" />
+                  <mssgle:LineSegment
+                    End="23.3714286109623,25.0823529009588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.3714286109623,25.0823529009588"
+                    Point2="27.3714286109623,25.0823529009588"
+                    Point3="27.3714286109623,29.0823529009588" />
+                  <mssgle:LineSegment
+                    End="27.3714286109623,42.6647058019176" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

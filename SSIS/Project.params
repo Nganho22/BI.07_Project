@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">ABC1</SSIS:Property>
+        SSIS:Name="Value">LAPTOP-VUQKGDIV\HONGNGOC</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -37,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">D:\HK1_4\BI\BI.07_Project\Info\supermarket_sales.xls</SSIS:Property>
+        SSIS:Name="Value">C:\Users\Acer\OneDrive\Máy tính\BI07_Nhom\Info\supermarket_sales.xls</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

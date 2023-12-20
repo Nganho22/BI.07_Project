@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{EC3508D6-D603-4CB2-B31B-726CD9FBDC57}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{E85D2734-2A9B-49AD-B4F8-D51CFD8114C1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -403,6 +403,7 @@
       DTS:refId="Package\Source 2 csv"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{5db46814-68ab-4ff4-b8d1-e19cf2ff93fb}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -423,6 +424,7 @@
               DTS:refId="Package\Source 2 csv\ETL\Data fire"
               DTS:CreationName="Microsoft.ExecutePackageTask"
               DTS:Description="Execute Package Task"
+              DTS:Disabled="True"
               DTS:DTSID="{506cd98e-764a-4016-a570-345926f7054f}"
               DTS:ExecutableType="Microsoft.ExecutePackageTask"
               DTS:LocaleID="-1"
@@ -452,6 +454,7 @@
               DTS:refId="Package\Source 2 csv\ETL\DDS"
               DTS:CreationName="Microsoft.ExecutePackageTask"
               DTS:Description="Execute Package Task"
+              DTS:Disabled="True"
               DTS:DTSID="{27c4624a-95a4-47da-bec8-cea214a7ab56}"
               DTS:ExecutableType="Microsoft.ExecutePackageTask"
               DTS:LocaleID="-1"
@@ -861,7 +864,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="379.333333333334,299.333333333334"
+          PanelSize="379.333333333334,300"
           Size="379.333333333334,342.666666666667"
           Id="Package\Source 1 excel\ETL"
           TopLeft="583.323810874544,78.7254901212289" />
@@ -924,7 +927,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="416.666666666667,216"
+          PanelSize="416.666666666667,216.666666666667"
           Size="416.666666666667,259.333333333334"
           Id="Package\Source 1 excel\Handle LSET, CET"
           TopLeft="44.5238098740375,72.6156861393338" />
@@ -961,7 +964,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.666666666667,196"
+          PanelSize="220.666666666667,196.666666666667"
           Size="220.666666666667,239.333333333334"
           Id="Package\Source 1 excel\Update LSET"
           TopLeft="1081.18095479149,106.372548877282" />
@@ -1143,7 +1146,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="379.333333333334,299.333333333334"
+          PanelSize="379.333333333334,300"
           Size="379.333333333334,342.666666666667"
           Id="Package\Source 2 csv\ETL"
           TopLeft="583.323810874544,78.7254901212289" />
@@ -1206,7 +1209,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="416.666666666667,216"
+          PanelSize="416.666666666667,216.666666666667"
           Size="416.666666666667,259.333333333334"
           Id="Package\Source 2 csv\Handle LSET, CET"
           TopLeft="44.5238098740375,72.6156861393338" />
@@ -1243,7 +1246,7 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.666666666667,196"
+          PanelSize="220.666666666667,196.666666666667"
           Size="220.666666666667,239.333333333334"
           Id="Package\Source 2 csv\Update LSET"
           TopLeft="1081.18095479149,106.372548877282" />

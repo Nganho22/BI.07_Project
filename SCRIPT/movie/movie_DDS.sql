@@ -86,7 +86,6 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
-
 INSERT INTO DATE_MASTER(DateKey)
 SELECT TOP (DATEDIFF(DAY, '2018-03-01', '2018-10-31') + 1)
     CONVERT(VARCHAR(8), DATEADD(DAY, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) - 1, '2018-03-01'), 112) AS DateKey
@@ -113,6 +112,7 @@ set Quarter = 4
 where Month = 10  or Month = 11  or Month = 12
 
 
+
 /****** Object:  Table [dbo].[film_sales] ******/
 SET ANSI_NULLS ON
 GO
@@ -123,7 +123,7 @@ CREATE TABLE [dbo].[film_sales](
 	[FilmID_SK] [int] NULL,
 	[FilmCategoryID_SK] [int] NULL,
 	[CinemaID_SK] [int] NULL,
-	[CityID] [int] NULL,
+	[CityID_SK] [int] NULL,
 	[total_sales] [int] NULL,
 	[tickets_sold] [int] NULL,
 	[Standard_Seats_sold] [int] NULL,
@@ -133,14 +133,15 @@ CREATE TABLE [dbo].[film_sales](
 	[VIP_Seats_out] [int] NULL,
 	[ticket_use] [int] NULL,
 	[occur_perc] [float] NULL,
-	[DateKey] [nvarchar](255) NULL,
+	[DateKey] [varchar](8) NULL,
 	[SOURCE_ID] [int] NOT NULL
-PRIMARY KEY CLUSTERED 
-(
-	[RevenueID_SK] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+    PRIMARY KEY ([RevenueID_SK]),
+    FOREIGN KEY ([FilmID_SK]) REFERENCES film([FilmID_SK]),
+    FOREIGN KEY ([FilmCategoryID_SK]) REFERENCES [film_cate]([FilmCategoryID_SK]),
+    FOREIGN KEY ([CinemaID_SK]) REFERENCES [cinema]([CinemaID_SK]),
+	FOREIGN KEY ([CityID_SK]) REFERENCES [city]([CityID_SK]),
+    FOREIGN KEY ([DateKey]) REFERENCES [DATE_MASTER]([DateKey])
+)
 
 
 

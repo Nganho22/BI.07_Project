@@ -68,6 +68,7 @@ INSERT INTO DATA_TABLE_INFO VALUES (3,'cinema', 'Master tables(NDS)','Store cine
 INSERT INTO DATA_TABLE_INFO VALUES (3, 'film_sales','NDS','Store film sale data from source', NULL);
 
 -- DDS
+INSERT INTO DATA_TABLE_INFO VALUES (4, 'DATE_MASTER','dimension','Store date data from source', NULL);
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'film','dimension','Store film Dimension', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'film_cate','dimension','Store film category Dimension', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'city','dimension','Store city Dimension', NULL)
@@ -86,8 +87,11 @@ create table COLUMN_INFO
 	SOURCE_COLUMN_KEY_ID INT NULL,
 	FOREIGN KEY (TABLE_ID) REFERENCES DATA_TABLE_INFO(TABLE_ID),
 	    FOREIGN KEY (SOURCE_COLUMN_KEY_ID) REFERENCES COLUMN_INFO(COLUMN_ID)
-
 )
+
+-- FILM_CATE STAGE
+INSERT INTO COLUMN_INFO VALUES (5, N'FilmCategoryID',N'nvarchar','store Film Category Key', N'FC1',NULL)
+INSERT INTO COLUMN_INFO VALUES (5, N'Film Category',N'nvarchar','store Film Category', N'Action',NULL)
 
 -- FILM STAGE
 INSERT INTO COLUMN_INFO VALUES (4, N'FilmID','nvarchar','store film ID','F7',NULL)
@@ -95,26 +99,23 @@ INSERT INTO COLUMN_INFO VALUES (4, N'Film Name','nvarchar','store film name','Wo
 INSERT INTO COLUMN_INFO VALUES (4, N'FilmCategoryID','nvarchar','store film category ID', N'FC1','1')
 INSERT INTO COLUMN_INFO VALUES (4, N'Price','int','store film price','25000',NULL)
 
--- FILM_CATE STAGE
-INSERT INTO COLUMN_INFO VALUES (5, N'FilmCategoryID',N'nvarchar','store Film Category Key', N'FC1',NULL)
-INSERT INTO COLUMN_INFO VALUES (5, N'Film Category',N'nvarchar','store Film Category', N'Action',NULL)
-
--- CINEMA STAGE
-INSERT INTO COLUMN_INFO VALUES (6, N'CinemaID', N'nvarchar','store Cinema Key','C1',NULL)
-INSERT INTO COLUMN_INFO VALUES (6, N'Cinema Name', N'nvarchar','store Cinema Name','Galaxy Cinema',NULL)
-INSERT INTO COLUMN_INFO VALUES (6, N'CityID', N'nvarchar','store City Key','HCM',NULL)
-INSERT INTO COLUMN_INFO VALUES (6, N'Capacity', N'int','store Capacity', '1800', NULL)
-INSERT INTO COLUMN_INFO VALUES (6, N'Standard_Seats_price', N'int','store Standard Seats Price','30000', NULL)
-INSERT INTO COLUMN_INFO VALUES (6, N'VIP_Seats_price', N'int','store VIP Seats Price', '50000', NULL)
-
 -- CITY STAGE
 INSERT INTO COLUMN_INFO VALUES (7, N'CityID', N'nvarchar','store City Key','HCM',NULL)
 INSERT INTO COLUMN_INFO VALUES (7, N'CityName',N'nvarchar','store City Name', N'Ho Chi Minh',NULL)
 
+-- CINEMA STAGE
+INSERT INTO COLUMN_INFO VALUES (6, N'CinemaID', N'nvarchar','store Cinema Key','C1',NULL)
+INSERT INTO COLUMN_INFO VALUES (6, N'Cinema Name', N'nvarchar','store Cinema Name','Galaxy Cinema',NULL)
+INSERT INTO COLUMN_INFO VALUES (6, N'CityID', N'nvarchar','store City Key','HCM',7)
+INSERT INTO COLUMN_INFO VALUES (6, N'Capacity', N'int','store Capacity', '1800', NULL)
+INSERT INTO COLUMN_INFO VALUES (6, N'Standard_Seats_price', N'int','store Standard Seats Price','30000', NULL)
+INSERT INTO COLUMN_INFO VALUES (6, N'VIP_Seats_price', N'int','store VIP Seats Price', '50000', NULL)
+
+
 -- film_sales_S1
 INSERT INTO COLUMN_INFO VALUES (8, N'RevenueID','nvarchar','store revenue ID','RV1',NULL)
-INSERT INTO COLUMN_INFO VALUES (8, N'FilmID','nvarchar','store film ID','F2',NULL)
-INSERT INTO COLUMN_INFO VALUES (8, N'Cinema Name','nvarchar','store cinema name','Mega Cinema',NULL) 
+INSERT INTO COLUMN_INFO VALUES (8, N'FilmID','nvarchar','store film ID','F2', 3)
+INSERT INTO COLUMN_INFO VALUES (8, N'Cinema Name','nvarchar','store cinema name','Mega Cinema', null) 
 INSERT INTO COLUMN_INFO VALUES (8, N'total_sales','int','store total sale of revenue','4160000',NULL) 
 INSERT INTO COLUMN_INFO VALUES (8, N'tickets_sold','int','store number of ticket sold','208',NULL) 
 INSERT INTO COLUMN_INFO VALUES (8, N'Standard_Seats_sold','int','store number of standard seat sold','101',NULL) 
@@ -126,10 +127,15 @@ INSERT INTO COLUMN_INFO VALUES (8, N'occur_perc','float','store occupation perce
 INSERT INTO COLUMN_INFO VALUES (8, N'ticket_use','int','store number of ticket used','208',NULL) 
 INSERT INTO COLUMN_INFO VALUES (8, N'date','date','store date data ','9/18/2018',NULL) 
 
+--UPDATE COLUMN_INFO
+--SET SOURCE_COLUMN_KEY_ID = null
+--WHERE COLUMN_ID = 17;
+
+
 -- film_sales_S2
 INSERT INTO COLUMN_INFO VALUES (9, N'RevenueID','nvarchar','store revenue ID','RV1',NULL)
-INSERT INTO COLUMN_INFO VALUES (9, N'Film Name','nvarchar','store film name','Avenger: Endgame',NULL)
-INSERT INTO COLUMN_INFO VALUES (9, N'Cinema ID','nvarchar','store cinema ID','C1',NULL) 
+INSERT INTO COLUMN_INFO VALUES (9, N'Film Name','nvarchar','store film name','Avenger: Endgame',null)
+INSERT INTO COLUMN_INFO VALUES (9, N'Cinema ID','nvarchar','store cinema ID','C1', 9) 
 INSERT INTO COLUMN_INFO VALUES (9, N'total_sales','int','store total sale of revenue','4160000',NULL) 
 INSERT INTO COLUMN_INFO VALUES (9, N'Standard_Seats_sold','int','store number of standard seat sold','517',NULL) 
 INSERT INTO COLUMN_INFO VALUES (9, N'VIP_Seats_sold','int','store number of VIP seat sold','648',NULL) 
@@ -163,10 +169,11 @@ INSERT INTO COLUMN_INFO VALUES (12, N'updatedDate','datetime','Store uploaded da
 INSERT INTO COLUMN_INFO VALUES (11, N'FilmID_SK','int','store film surrogate key','1',NULL)
 INSERT INTO COLUMN_INFO VALUES (11, N'FilmID_NK','nvarchar','store film natural key','F7',NULL)
 INSERT INTO COLUMN_INFO VALUES (11, N'Film Name','nvarchar','store film name','Wonka',NULL) 
-INSERT INTO COLUMN_INFO VALUES (11, N'FilmCategoryID_SK','nvarchar','store film category surrogate key', '1', '47')
+INSERT INTO COLUMN_INFO VALUES (11, N'FilmCategoryID_SK','nvarchar','store film category surrogate key', '1', 47)
 INSERT INTO COLUMN_INFO VALUES (11, N'Price','int','store film price','25000',NULL)
 INSERT INTO COLUMN_INFO VALUES (11, N'createdDate','datetime','Store created date',getdate(),null)
 INSERT INTO COLUMN_INFO VALUES (11, N'updatedDate','datetime','Store uploaded date',getdate(),null)
+
 
 --city NDS
 INSERT INTO COLUMN_INFO VALUES (13, N'CityID_SK', N'int','store City surrogate key','1',NULL)
@@ -179,18 +186,19 @@ INSERT INTO COLUMN_INFO VALUES (13, N'updatedDate','datetime','Store uploaded da
 INSERT INTO COLUMN_INFO VALUES (14, N'CinemaID_SK', N'int','store Cinema Key','C1',NULL)
 INSERT INTO COLUMN_INFO VALUES (14, N'CinemaID_NK', N'nvarchar','store Cinema Key','C1',NULL)
 INSERT INTO COLUMN_INFO VALUES (14, N'Cinema Name', N'nvarchar','store Cinema Name','Galaxy Cinema',NULL)
-INSERT INTO COLUMN_INFO VALUES (14, N'CityID_SK', N'nvarchar','store City Key','1','59')
+INSERT INTO COLUMN_INFO VALUES (14, N'CityID_SK', N'nvarchar','store City Key','1',59)
 INSERT INTO COLUMN_INFO VALUES (14, N'Capacity', N'int','store Capacity', '1800', NULL)
 INSERT INTO COLUMN_INFO VALUES (14, N'Standard_Seats_price', N'int','store Standard Seats Price','30000', NULL)
 INSERT INTO COLUMN_INFO VALUES (14, N'VIP_Seats_price', N'int','store VIP Seats Price', '50000', NULL)
 INSERT INTO COLUMN_INFO VALUES (14, N'createdDate','datetime','Store created date',getdate(),null)
 INSERT INTO COLUMN_INFO VALUES (14, N'updatedDate','datetime','Store uploaded date',getdate(),null)
 
+
 -- FILM_SALES NDS
 INSERT INTO COLUMN_INFO VALUES (15, N'RevenueID_SK','int','Store revenue ID surrogate key','1',null)
 INSERT INTO COLUMN_INFO VALUES (15, N'RevenueID_NK','nvarchar','Store revenue ID natural key','RV1',null)
-INSERT INTO COLUMN_INFO VALUES (15, N'FilmID_SK','int','Store film ID surrogate key','1','52')
-INSERT INTO COLUMN_INFO VALUES (15, N'CinemaID_SK','int','Store Cinema ID surrogate key','1', '64')
+INSERT INTO COLUMN_INFO VALUES (15, N'FilmID_SK','int','Store film ID surrogate key','1', 52)
+INSERT INTO COLUMN_INFO VALUES (15, N'CinemaID_SK','int','Store Cinema ID surrogate key','1', 64)
 INSERT INTO COLUMN_INFO VALUES (15, N'total_sales','int','store total sale of revenue','4160000',NULL) 
 INSERT INTO COLUMN_INFO VALUES (15, N'tickets_sold','int','store number of ticket sold','208',NULL) 
 INSERT INTO COLUMN_INFO VALUES (15, N'Standard_Seats_sold','int','store number of standard seat sold','517',NULL) 
@@ -200,13 +208,13 @@ INSERT INTO COLUMN_INFO VALUES (15, N'Standard_Seats_out','int','store number of
 INSERT INTO COLUMN_INFO VALUES (15, N'VIP_Seats_out','int','store number of VIP seat out','0',NULL) 
 INSERT INTO COLUMN_INFO VALUES (15, N'ticket_use','int','store number of ticket used','1161',NULL) 
 INSERT INTO COLUMN_INFO VALUES (15, N'occur_perc','float','store occupation percentage','64.5',NULL) 
-INSERT INTO COLUMN_INFO VALUES (15, N'DateKey','nvarchar','Store date key','20190105','42')
+INSERT INTO COLUMN_INFO VALUES (15, N'DateKey','nvarchar','Store date key','20190105',42)
 INSERT INTO COLUMN_INFO VALUES (15, N'SOURCE_ID','int','Store source key','1',null)
 INSERT INTO COLUMN_INFO VALUES (15, N'createdDate','datetime','Store created date','2023-12-17 01:45:43.000',null)
 INSERT INTO COLUMN_INFO VALUES (15, N'updatedDate','datetime','Store uploaded date','2023-12-17 01:45:43.000',null)
 
 -- DDS
-
+select * from COLUMN_INFO
 -- tu column_ID 90 đến 106
 
 -- DATE_MASTER DDS
@@ -216,14 +224,14 @@ INSERT INTO COLUMN_INFO VALUES (16, N'Month','int','Store month in date','01',nu
 INSERT INTO COLUMN_INFO VALUES (16, N'Year',N'int','Store year in date','2019',null)
 INSERT INTO COLUMN_INFO VALUES (16, N'Quarter',N'int','Store quarter in date','2',null)
 
+-- film_cate DDS
+INSERT INTO COLUMN_INFO VALUES (18, N'FilmCategoryID_SK',N'int','store Film Category surrogate key', '1',NULL)
+INSERT INTO COLUMN_INFO VALUES (18, N'Film Category',N'nvarchar','store Film Category', N'Action',NULL)
+
 --film DDS
 INSERT INTO COLUMN_INFO VALUES (17, N'FilmID_SK','int','store film surrogate key','1',NULL)
 INSERT INTO COLUMN_INFO VALUES (17, N'Film Name','nvarchar','store film name','Wonka',NULL) 
 INSERT INTO COLUMN_INFO VALUES (17, N'Price','int','store film price','25000',NULL)
-
--- film_cate DDS
-INSERT INTO COLUMN_INFO VALUES (18, N'FilmCategoryID_SK',N'int','store Film Category surrogate key', '1',NULL)
-INSERT INTO COLUMN_INFO VALUES (18, N'Film Category',N'nvarchar','store Film Category', N'Action',NULL)
 
 --city DDS
 INSERT INTO COLUMN_INFO VALUES (19, N'CityID_SK', N'int','store City surrogate key','1',NULL)
@@ -236,12 +244,10 @@ INSERT INTO COLUMN_INFO VALUES (20, N'Capacity', N'int','store Capacity', '1800'
 INSERT INTO COLUMN_INFO VALUES (20, N'Standard_Seats_price', N'int','store Standard Seats Price','30000', NULL)
 INSERT INTO COLUMN_INFO VALUES (20, N'VIP_Seats_price', N'int','store VIP Seats Price', '50000', NULL)
 
-
-
 -- FILM_SALES DDS
 INSERT INTO COLUMN_INFO VALUES (21, N'RevenueID_SK','int','Store revenue ID surrogate key','1',null)
-INSERT INTO COLUMN_INFO VALUES (21, N'FilmID_SK','int','Store film ID surrogate key','1','95')
-INSERT INTO COLUMN_INFO VALUES (21, N'FilmCategoryID_SK',N'int','store Film Category surrogate key', '1', '98')
+INSERT INTO COLUMN_INFO VALUES (21, N'FilmID_SK','int','Store film ID surrogate key','1','97')
+INSERT INTO COLUMN_INFO VALUES (21, N'FilmCategoryID_SK',N'int','store Film Category surrogate key', '1', '95')
 INSERT INTO COLUMN_INFO VALUES (21, N'CinemaID_SK','int','Store Cinema ID surrogate key','1','102')
 INSERT INTO COLUMN_INFO VALUES (21, N'CityID_SK', N'int','store City surrogate key','1','100')
 INSERT INTO COLUMN_INFO VALUES (21, N'total_sales','int','store total sale of revenue','4160000',NULL) 

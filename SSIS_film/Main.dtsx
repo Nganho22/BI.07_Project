@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{E85D2734-2A9B-49AD-B4F8-D51CFD8114C1}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{C46178B3-6C93-4294-B063-CBF79F8B6106}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -65,6 +65,7 @@
       DTS:refId="Package\Source 1 excel"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{7733D08F-D9E0-46E3-A21B-FE1190A0CA42}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -403,7 +404,6 @@
       DTS:refId="Package\Source 2 csv"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{5db46814-68ab-4ff4-b8d1-e19cf2ff93fb}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -762,19 +762,19 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="119.333333333334,41.3333333333334"
+          Size="119.2,41.6"
           Id="Package\Source 1 excel\ETL\Data fire"
           TopLeft="164.171430271378,130.376470329502" />
         <NodeLayout
-          Size="99.3333333333334,41.3333333333334"
+          Size="99.2,41.6"
           Id="Package\Source 1 excel\ETL\DDS"
           TopLeft="263.522079833518,186.964705574018" />
         <NodeLayout
-          Size="113.333333333334,41.3333333333334"
+          Size="113.6,41.6"
           Id="Package\Source 1 excel\ETL\NDS S1"
           TopLeft="84.1714301010785,73.7882350849858" />
         <NodeLayout
-          Size="120,41.3333333333334"
+          Size="120,41.6"
           Id="Package\Source 1 excel\ETL\Stage S1"
           TopLeft="7.02857279400439,18.1647057107576" />
         <EdgeLayout
@@ -864,20 +864,20 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="379.333333333334,300"
-          Size="379.333333333334,342.666666666667"
+          PanelSize="379.2,300"
+          Size="379.2,342.4"
           Id="Package\Source 1 excel\ETL"
           TopLeft="583.323810874544,78.7254901212289" />
         <NodeLayout
-          Size="172.666666666667,41.3333333333334"
+          Size="172.8,41.6"
           Id="Package\Source 1 excel\Handle LSET, CET\Check source_name"
           TopLeft="227.342857594454,22.0588235381256" />
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="162.4,41.6"
           Id="Package\Source 1 excel\Handle LSET, CET\Get LSET, CET, ID"
           TopLeft="43.5999998935632,111.141176302344" />
         <NodeLayout
-          Size="115.333333333334,41.3333333333334"
+          Size="115.2,41.6"
           Id="Package\Source 1 excel\Handle LSET, CET\Set CET"
           TopLeft="252.200000478966,103.494117485518" />
         <EdgeLayout
@@ -927,16 +927,16 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="416.666666666667,216.666666666667"
-          Size="416.666666666667,259.333333333334"
+          PanelSize="416.8,216.8"
+          Size="416.8,259.2"
           Id="Package\Source 1 excel\Handle LSET, CET"
           TopLeft="44.5238098740375,72.6156861393338" />
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="162.4,41.6"
           Id="Package\Source 1 excel\Update LSET\Execute SQL Task"
           TopLeft="36.4857160084709,99.4470587370614" />
         <NodeLayout
-          Size="138.666666666667,41.3333333333334"
+          Size="138.4,41.6"
           Id="Package\Source 1 excel\Update LSET\Update LSET"
           TopLeft="53.0857152740567,20.8235290323781" />
         <EdgeLayout
@@ -964,8 +964,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.666666666667,196.666666666667"
-          Size="220.666666666667,239.333333333334"
+          PanelSize="220.8,196.8"
+          Size="220.8,239.2"
           Id="Package\Source 1 excel\Update LSET"
           TopLeft="1081.18095479149,106.372548877282" />
         <EdgeLayout
@@ -1039,24 +1039,24 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1340.66666666667,478"
-          Size="1340.66666666667,520.666666666667"
+          PanelSize="1340.8,478.4"
+          Size="1340.8,520.8"
           Id="Package\Source 1 excel"
           TopLeft="50.9523810608451,12.7450980280441" />
         <NodeLayout
-          Size="119.333333333334,41.3333333333334"
+          Size="119.2,41.6"
           Id="Package\Source 2 csv\ETL\Data fire"
           TopLeft="164.171430271378,130.376470329502" />
         <NodeLayout
-          Size="99.3333333333334,41.3333333333334"
+          Size="99.2,41.6"
           Id="Package\Source 2 csv\ETL\DDS"
           TopLeft="263.522079833518,186.964705574018" />
         <NodeLayout
-          Size="113.333333333334,41.3333333333334"
+          Size="113.6,41.6"
           Id="Package\Source 2 csv\ETL\NDS S2"
           TopLeft="84.1714301010785,73.7882350849858" />
         <NodeLayout
-          Size="120,41.3333333333334"
+          Size="120,41.6"
           Id="Package\Source 2 csv\ETL\Stage S2"
           TopLeft="7.02857279400439,18.1647057107576" />
         <EdgeLayout
@@ -1146,20 +1146,20 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="379.333333333334,300"
-          Size="379.333333333334,342.666666666667"
+          PanelSize="379.2,300"
+          Size="379.2,342.4"
           Id="Package\Source 2 csv\ETL"
           TopLeft="583.323810874544,78.7254901212289" />
         <NodeLayout
-          Size="172.666666666667,41.3333333333334"
+          Size="172.8,41.6"
           Id="Package\Source 2 csv\Handle LSET, CET\Check source_name"
           TopLeft="227.342857594454,22.0588235381256" />
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="162.4,41.6"
           Id="Package\Source 2 csv\Handle LSET, CET\Get LSET, CET, ID"
           TopLeft="43.5999998935632,111.141176302344" />
         <NodeLayout
-          Size="115.333333333334,41.3333333333334"
+          Size="115.2,41.6"
           Id="Package\Source 2 csv\Handle LSET, CET\Set CET"
           TopLeft="252.200000478966,103.494117485518" />
         <EdgeLayout
@@ -1209,16 +1209,16 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="416.666666666667,216.666666666667"
-          Size="416.666666666667,259.333333333334"
+          PanelSize="416.8,216.8"
+          Size="416.8,259.2"
           Id="Package\Source 2 csv\Handle LSET, CET"
           TopLeft="44.5238098740375,72.6156861393338" />
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="162.4,41.6"
           Id="Package\Source 2 csv\Update LSET\Execute SQL Task"
           TopLeft="36.4857160084709,99.4470587370614" />
         <NodeLayout
-          Size="138.666666666667,41.3333333333334"
+          Size="138.4,41.6"
           Id="Package\Source 2 csv\Update LSET\Update LSET"
           TopLeft="53.0857152740567,20.8235290323781" />
         <EdgeLayout
@@ -1246,8 +1246,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220.666666666667,196.666666666667"
-          Size="220.666666666667,239.333333333334"
+          PanelSize="220.8,196.8"
+          Size="220.8,239.2"
           Id="Package\Source 2 csv\Update LSET"
           TopLeft="1081.18095479149,106.372548877282" />
         <EdgeLayout
@@ -1321,8 +1321,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1340.66666666667,478"
-          Size="1340.66666666667,520.666666666667"
+          PanelSize="1340.8,478.4"
+          Size="1340.8,520.8"
           Id="Package\Source 2 csv"
           TopLeft="62.500000133046,631.558823065233" />
         <EdgeLayout

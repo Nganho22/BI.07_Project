@@ -46,6 +46,7 @@ CREATE TABLE DATA_TABLE_INFO
 
 --select* from DATA_TABLE_INFO
 
+
 --METADATA
 INSERT INTO DATA_TABLE_INFO VALUES (1, 'DATA_FLOW','METADATA','Store the timestamps of data source flow that ETL to DW', NULL);
 INSERT INTO DATA_TABLE_INFO VALUES (1, 'DATA_TABLE_INFO','METADATA','Store table information', getdate());
@@ -60,15 +61,15 @@ INSERT INTO DATA_TABLE_INFO VALUES (2, 'film_sales_S1','Stage','Store film_sales
 INSERT INTO DATA_TABLE_INFO VALUES (2, 'film_sales_S2','Stage','Store Ho Chi Minh city film sales data from source', NULL);
 
 -- NDS
-INSERT INTO DATA_TABLE_INFO VALUES (3, 'DATE_MASTER','NDS','Store date data from source', NULL);
+INSERT INTO DATA_TABLE_INFO VALUES (3, 'DATE_MASTER','Master tables(NDS)','Store date data from source', getdate());
 INSERT INTO DATA_TABLE_INFO VALUES (3, 'film','Master tables(NDS)','Store film data', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (3, 'film_cate','Master tables(NDS)', 'Store film category data', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (3,'city', 'Master tables(NDS)','Store city data', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (3,'cinema', 'Master tables(NDS)','Store cinema data', NULL)
-INSERT INTO DATA_TABLE_INFO VALUES (3, 'film_sales','NDS','Store film sale data from source', NULL);
+INSERT INTO DATA_TABLE_INFO VALUES (3, 'film_sales','Transaction tables (NDS)','Store film sale data from source', NULL);
 
 -- DDS
-INSERT INTO DATA_TABLE_INFO VALUES (4, 'DATE_MASTER','dimension','Store date data from source', NULL);
+INSERT INTO DATA_TABLE_INFO VALUES (4, 'DATE_MASTER','dimension','Store date data from source', getdate());
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'film','dimension','Store film Dimension', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'film_cate','dimension','Store film category Dimension', NULL)
 INSERT INTO DATA_TABLE_INFO VALUES (4, 'city','dimension','Store city Dimension', NULL)
@@ -261,6 +262,3 @@ INSERT INTO COLUMN_INFO VALUES (21, N'ticket_use','int','store number of ticket 
 INSERT INTO COLUMN_INFO VALUES (21, N'occur_perc','float','store occupation percentage','64.5',NULL) 
 INSERT INTO COLUMN_INFO VALUES (21, N'DateKey','nvarchar','Store date key','20190105','90')
 INSERT INTO COLUMN_INFO VALUES (21, N'SOURCE_ID','int','Store source key','1',null)
-
-select * from data_table_info
-select * from COLUMN_INFO

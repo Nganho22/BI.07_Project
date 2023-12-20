@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{529EC761-E077-4CA2-AA55-6D1D4E650002}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{213A94F7-1477-4D45-9DAC-281969323C68}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,6 +31,20 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{74B2161E-2C60-4580-82A6-F9E0034B7DFC}"
+      DTS:ObjectName="ABC1.BI07_MOVIE_METADATA">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_STAGE]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}"
@@ -42,18 +56,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LAPTOP-CTI64POB\MSSQLSERVER22.BI07_MOVIE_METADATA]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{751BFE5A-6635-477D-B9FF-4084E3FAB73F}"
-      DTS:ObjectName="LAPTOP-CTI64POB\MSSQLSERVER22.BI07_MOVIE_METADATA">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{751BFE5A-6635-477D-B9FF-4084E3FAB73F}LAPTOP-CTI64POB\MSSQLSERVER22.BI07_MOVIE_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -3981,12 +3983,12 @@ where [RevenueID_SK] = ?</property>
                   name="Derived Column Output"
                   startId="Package\film_sales 2\Data Flow Task\get newupdatedDate.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output5]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output4]"
                   endId="Package\film_sales 2\Data Flow Task\Derived Column tickets_out 1.Inputs[Derived Column Input]"
                   name="Derived Column Output"
                   startId="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold 1.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output4]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output5]"
                   endId="Package\film_sales 2\Data Flow Task\Lookup DateKey 1.Inputs[Lookup Input]"
                   name="Derived Column Output"
                   startId="Package\film_sales 2\Data Flow Task\Derived Column tickets_out 1.Outputs[Derived Column Output]" />
@@ -3996,52 +3998,52 @@ where [RevenueID_SK] = ?</property>
                   name="Derived Column Output"
                   startId="Package\film_sales 2\Data Flow Task\get newupdatedDate 1.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS.Inputs[Lookup Input]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output6]"
+                  endId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales 2\Data Flow Task\Lookup film NDS.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales 2\Data Flow Task\Lookup film NDS 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output5]"
+                  endId="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold 1.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output4]"
+                  endId="Package\film_sales 2\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales 2\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output2]"
+                  endId="Package\film_sales 2\Data Flow Task\get newupdatedDate 1.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales 2\Data Flow Task\Lookup DateKey 1.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output1]"
                   endId="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold.Inputs[Derived Column Input]"
                   name="Lookup Match Output"
                   startId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\film_sales 2\Data Flow Task\get newupdatedDate 1.Inputs[Derived Column Input]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output]"
+                  endId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales 2\Data Flow Task\Lookup DateKey 1.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales 2\Data Flow Task\Lookup film NDS.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output2]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\film_sales 2\Data Flow Task\Lookup film NDS.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\film_sales 2\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output3]"
-                  endId="Package\film_sales 2\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\film_sales 2\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output4]"
-                  endId="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold 1.Inputs[Derived Column Input]"
-                  name="Lookup Match Output"
-                  startId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\film_sales 2\Data Flow Task\Lookup film NDS 1.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales 2\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\film_sales 2\Data Flow Task\Lookup film NDS 1.Inputs[Lookup Input]"
                   name="Lookup No Match Output"
                   startId="Package\film_sales 2\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output1]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output]"
                   endId="Package\film_sales 2\Data Flow Task\Row Count 2.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\film_sales 2\Data Flow Task\updated new film_sales.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output]"
+                  refId="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output1]"
                   endId="Package\film_sales 2\Data Flow Task\Row Count.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\film_sales 2\Data Flow Task\insert new film_sales.Outputs[OLE DB Command Output]" />
@@ -4216,13 +4218,13 @@ where [RevenueID_SK] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Lookup cinema NDS"
-          TopLeft="216.622014125766,213.169037454356" />
-        <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\film_sales 2\Data Flow Task\Derived Column tickets_out 1"
           TopLeft="794.836273991859,396.178263543883" />
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Row Count 2"
+          TopLeft="237.383083102747,685.728141827368" />
         <NodeLayout
           Size="176.666666666667,41.3333333333334"
           Id="Package\film_sales 2\Data Flow Task\get newupdatedDate 1"
@@ -4232,155 +4234,163 @@ where [RevenueID_SK] = ?</property>
           Id="Package\film_sales 2\Data Flow Task\Derived Column tickets_out"
           TopLeft="203.94344326397,390.479743285237" />
         <NodeLayout
-          Size="268,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID"
-          TopLeft="460.014482277041,102.619096097469" />
-        <NodeLayout
-          Size="140,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Row Count 2"
-          TopLeft="237.383083102747,685.728141827368" />
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1"
-          TopLeft="806.443416330124,208.434222334039" />
-        <NodeLayout
           Size="156,42.6666666666667"
           Id="Package\film_sales 2\Data Flow Task\Lookup DateKey"
           TopLeft="229.707341456771,460.445228060428" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Lookup cinema NDS"
+          TopLeft="216.622014125766,213.169037454356" />
         <NodeLayout
           Size="212,42"
           Id="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold 1"
           TopLeft="791.294607483518,326.888978590437" />
         <NodeLayout
+          Size="129.333333333334,41.3333333333334"
+          Id="Package\film_sales 2\Data Flow Task\Row Count"
+          TopLeft="838.55003957228,874.441804561316" />
+        <NodeLayout
           Size="157.333333333334,42.6666666666667"
           Id="Package\film_sales 2\Data Flow Task\Lookup film NDS"
           TopLeft="228.095227898587,105.547614014717" />
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\film_sales stage"
-          TopLeft="512.5148798098,8.30616421654062" />
-        <NodeLayout
-          Size="320,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\create RevenueID_SK &amp; updatedDate, createdDate"
-          TopLeft="739.954820525442,708.296009813302" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Lookup DateKey 1"
-          TopLeft="818.100172296419,468.186605364521" />
-        <NodeLayout
-          Size="176.666666666667,41.3333333333334"
-          Id="Package\film_sales 2\Data Flow Task\insert new film_sales"
-          TopLeft="818.157201523058,791.627102750955" />
-        <NodeLayout
-          Size="188.666666666667,41.3333333333334"
-          Id="Package\film_sales 2\Data Flow Task\updated new film_sales"
-          TopLeft="216.269137560411,613.343360090738" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Lookup film NDS 1"
-          TopLeft="810.41663043822,109.727084183619" />
-        <NodeLayout
-          Size="212,42.6666666666667"
-          Id="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold"
-          TopLeft="200.401776755628,322.709508421535" />
         <NodeLayout
           Size="176.666666666667,41.3333333333334"
           Id="Package\film_sales 2\Data Flow Task\get newupdatedDate"
           TopLeft="220.461299668421,546.569973867865" />
         <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Lookup DateKey 1"
+          TopLeft="818.100172296419,468.186605364521" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Lookup film NDS 1"
+          TopLeft="810.41663043822,109.727084183619" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Lookup cinema NDS 1"
+          TopLeft="806.443416330124,208.434222334039" />
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Derived Column tickets_sold"
+          TopLeft="200.401776755628,322.709508421535" />
+        <NodeLayout
+          Size="320,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\create RevenueID_SK &amp; updatedDate, createdDate"
+          TopLeft="739.954820525442,708.296009813302" />
+        <NodeLayout
+          Size="188.666666666667,41.3333333333334"
+          Id="Package\film_sales 2\Data Flow Task\updated new film_sales"
+          TopLeft="216.269137560411,613.343360090738" />
+        <NodeLayout
+          Size="268,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID"
+          TopLeft="460.014482277041,102.619096097469" />
+        <NodeLayout
+          Size="176.666666666667,41.3333333333334"
+          Id="Package\film_sales 2\Data Flow Task\insert new film_sales"
+          TopLeft="818.157201523058,791.627102750955" />
+        <NodeLayout
           Size="234.666666666667,41.3333333333334"
           Id="Package\film_sales 2\Data Flow Task\create ID increases automatically"
           TopLeft="785.866366952324,635.50693780219" />
         <NodeLayout
-          Size="129.333333333334,41.3333333333334"
-          Id="Package\film_sales 2\Data Flow Task\Row Count"
-          TopLeft="838.55003957228,874.441804561316" />
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\film_sales 2\Data Flow Task\film_sales stage"
+          TopLeft="512.5148798098,8.30616421654062" />
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="591.931347710087,50.9728308832073">
+          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output5]"
+          TopLeft="895.535678573488,251.100889000705">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.6462652142612"
+              EndConnector="0,75.7880895897318"
               Start="0,0"
-              End="0,44.1462652142612">
+              End="0,68.2880895897318">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.1462652142612" />
+                    End="0,68.2880895897318" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,28.3393572948659,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Output 0]"
-          TopLeft="901.577260405549,676.840271135524">
+          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output4]"
+          TopLeft="308.250987229263,503.111894727094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.4557386777784"
+              EndConnector="0,43.4580791407708"
               Start="0,0"
-              End="0,23.9557386777784">
+              End="0,35.9580791407708">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9557386777784" />
+                    End="0,35.9580791407708" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.1743520703854,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output1]"
-          TopLeft="308.992776998246,654.676693424071">
+          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="460.014482277041,125.416688389426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.0514484032964"
+              EndConnector="-74.5859210451212,0"
               Start="0,0"
-              End="0,23.5514484032964">
+              End="-67.0859210451212,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5514484032964" />
+                    End="-67.0859210451212,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-81.7343472413106,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="904.853620547669,832.960436084289">
+          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output2]"
+          TopLeft="899.322389377741,510.853272031188">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.4813684770277"
+              EndConnector="0,47.9152217853803"
               Start="0,0"
-              End="0,33.9813684770277">
+              End="0,40.4152217853803">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.9813684770277" />
+                    End="0,40.4152217853803" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.4029233926901,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4429,6 +4439,72 @@ where [RevenueID_SK] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,22.9226908864862,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output6]"
+          TopLeft="902.87215337236,600.101827149901">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.4051106522891"
+              Start="0,0"
+              End="0,27.9051106522891">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.9051106522891" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output5]"
+          TopLeft="897.801556477472,438.84493021055">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.3416751539709"
+              Start="0,0"
+              End="0,21.8416751539709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8416751539709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output4]"
+          TopLeft="898.398774071022,368.888978590437">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.289284953446"
+              Start="0,0"
+              End="0,19.789284953446">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.789284953446" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4520,19 +4596,85 @@ where [RevenueID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output6]"
-          TopLeft="902.87215337236,600.101827149901">
+          Id="Package\film_sales 2\Data Flow Task.Paths[Output 0]"
+          TopLeft="901.577260405549,676.840271135524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.4051106522891"
+              EndConnector="0,31.4557386777784"
               Start="0,0"
-              End="0,27.9051106522891">
+              End="0,23.9557386777784">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9051106522891" />
+                    End="0,23.9557386777784" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="591.931347710087,50.9728308832073">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.6462652142612"
+              Start="0,0"
+              End="0,44.1462652142612">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.1462652142612" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output1]"
+          TopLeft="904.853620547669,832.960436084289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.4813684770277"
+              Start="0,0"
+              End="0,33.9813684770277">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9813684770277" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales 2\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="308.992776998246,654.676693424071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.0514484032964"
+              Start="0,0"
+              End="0,23.5514484032964">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5514484032964" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4566,101 +4708,7 @@ where [RevenueID_SK] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output4]"
-          TopLeft="897.801556477472,438.84493021055">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.3416751539709"
-              Start="0,0"
-              End="0,21.8416751539709">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8416751539709" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output6]"
-          TopLeft="899.322389377741,510.853272031188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.9152217853803"
-              Start="0,0"
-              End="0,40.4152217853803">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.4152217853803" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.4029233926901,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="308.250987229263,503.111894727094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.4580791407708"
-              Start="0,0"
-              End="0,35.9580791407708">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.9580791407708" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.1743520703854,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="460.014482277041,125.416688389426">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-74.5859210451212,0"
-              Start="0,0"
-              End="-67.0859210451212,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-67.0859210451212,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-81.7343472413106,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output5]"
           TopLeft="891.430023384172,152.393750850286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4681,52 +4729,6 @@ where [RevenueID_SK] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,18.4655482418763,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="895.535678573488,251.100889000705">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75.7880895897318"
-              Start="0,0"
-              End="0,68.2880895897318">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.2880895897318" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.3393572948659,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales 2\Data Flow Task.Paths[Derived Column Output5]"
-          TopLeft="898.398774071022,368.888978590437">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.289284953446"
-              Start="0,0"
-              End="0,19.789284953446">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.789284953446" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ABC1</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHuk+bwvkfU2DODPXcP3FUgAAAAACAAAAAAAQZgAAAAEAACAAAAA/qr7pXOdU32BBhilSeonCqM2HMR+jtxwZpVbZiIjBYwAAAAAOgAAAAAIAACAAAABeyTLCTb2uSA6T5+lWSQK1dTO6dG1HpzqpfE71IXKp/pAAAABJ7pOUtTFoJzMBkqGW+AkNDpd/N7sUfWFE+/JShHB6lVgBZ2UoPxGB29hk4jwkOi8aC5tslRXvuoj79i8T3d2O0M68LvzA0xqFXv8Ntak10XjlfveucPmcL0URVDe7YfnZuR/GPiJt9erSYRlmiu0eg4/yJmD/aLe6s7W+vKxKlOBsmLLeH/WFj08bKJJhPXFAAAAAa7y33cZV3OhdsVmUkYjX7rdtV4kDLERNsdf/eSZoS09tUtT8yS7dAC/Eei6uWHnOn8Zqjw73B2nQO/JhQciheA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbFW8knHQWkOZC2ZB0CVYvQAAAAACAAAAAAAQZgAAAAEAACAAAAAGygMpGLlDlO6ZBBGjFxffIq5XXxzAqPIJ8fmt2G0ALwAAAAAOgAAAAAIAACAAAAAWWc8NUynhJVInwLT+YUwoxpSnGXH4E7apcbryw3N805AAAADeZRIN7PAHitCQjxrIgIBlJlunicZgyf0TQOEbPk3ifyDBs9+L91s1ULx/jy0TUTFmkow/XrSvB00U44nyhS7Gv95DHrtIjuUdM83PosRgi9QfqHtmcYK0i6rKH4ON+lvExaYF929kCf20nLCDuz49eoHu6Uk0w0+0tKjdM2fYKSS5qAIfhB/pAB2r+D9ebX5AAAAA1E7XGqZpPZjMviDClXlA+CwA2YqRKY6caaI4uUM6F4pJIoFoPo+wgG7/WUItKJoISPYcxZfNijxhgMbKfdFe9A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -84,7 +84,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -199,10 +199,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage S1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">42</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{943F1EF3-D628-44A3-B5B5-029D03A8512A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8B858450-5F3E-4863-AA2E-9D939C604BCA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -277,7 +277,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -410,7 +410,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=ABC1;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -543,7 +543,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\Acer\OneDrive\Máy tính\BI07_Nhom\NEW DATASET\film_sales.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -616,7 +616,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Acer\OneDrive\Máy tính\BI07_Nhom\NEW DATASET\film_sales.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\HK1_4\BI\BI.07_Project\NEW DATASET\film_sales.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1107,8 +1107,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

@@ -86,6 +86,33 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
+
+INSERT INTO DATE_MASTER(DateKey)
+SELECT TOP (DATEDIFF(DAY, '2018-03-01', '2018-10-31') + 1)
+    CONVERT(VARCHAR(8), DATEADD(DAY, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) - 1, '2018-03-01'), 112) AS DateKey
+FROM master.dbo.spt_values;
+
+
+update DATE_MASTER
+set Day = convert(int, SUBSTRING(DateKey, 7, 2)), Month = convert(int, SUBSTRING(DateKey, 5, 2)), Year = convert(int, SUBSTRING(DateKey, 1, 4));
+
+update DATE_MASTER
+set Quarter = 1
+where Month = 1  or Month = 2  or Month = 3
+
+update DATE_MASTER
+set Quarter = 2
+where Month = 4  or Month = 5  or Month = 6
+
+update DATE_MASTER
+set Quarter = 3
+where Month = 7  or Month = 8  or Month = 9
+
+update DATE_MASTER
+set Quarter = 4
+where Month = 10  or Month = 11  or Month = 12
+
+
 /****** Object:  Table [dbo].[film_sales] ******/
 SET ANSI_NULLS ON
 GO

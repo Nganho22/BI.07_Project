@@ -164,6 +164,3 @@ CREATE TABLE [dbo].[film_sales](
 	FOREIGN KEY ([CityID_SK]) REFERENCES [city]([CityID_SK]),
     FOREIGN KEY ([DateKey]) REFERENCES [DATE_MASTER]([DateKey])
 )
-
-
-

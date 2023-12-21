@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{3960A9B4-4D0A-4765-8C5C-F9CFF1A9BC8C}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{BD96FD6D-5EB7-4B7B-9107-EBF385C6EF92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3717,6 +3717,80 @@ where [refTable].[CityID_SK] = ?</property>
               version="1">
               <components>
                 <component
+                  refId="Package\film_sales\film_sales\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\Derived Column.Inputs[Derived Column Input].Columns[occur_perc]"
+                          cachedDataType="r8"
+                          cachedName="occur_perc"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_R8)#{Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_R8)occur_perc</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\film_sales\film_sales\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\film_sales\film_sales\film_sales NDS"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -4498,201 +4572,17 @@ where [refTable].[RevenueID_SK] = ?</property>
                       synchronousInputId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmID_SK]"
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[RevenueID_SK]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmID_SK]"
-                          name="old_FilmID_SK"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[RevenueID_SK]"
+                          name="RevenueID_SK"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
                               dataType="System.String"
                               description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">FilmID_SK</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmCategoryID_SK]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmCategoryID_SK]"
-                          name="old_FilmCategoryID_SK"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">FilmCategoryID_SK</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CinemaID_SK]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CinemaID_SK]"
-                          name="old_CinemaID_SK"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">CinemaID_SK</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CityID_SK]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CityID_SK]"
-                          name="old_CityID_SK"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">CityID_SK</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_total_sales]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_total_sales]"
-                          name="old_total_sales"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">total_sales</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_sold]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_sold]"
-                          name="old_tickets_sold"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">tickets_sold</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_sold]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_sold]"
-                          name="old_Standard_Seats_sold"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">Standard_Seats_sold</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_sold]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_sold]"
-                          name="old_VIP_Seats_sold"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">VIP_Seats_sold</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_out]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_out]"
-                          name="old_tickets_out"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">tickets_out</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_out]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_out]"
-                          name="old_Standard_Seats_out"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">Standard_Seats_out</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_out]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_out]"
-                          name="old_VIP_Seats_out"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">VIP_Seats_out</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_ticket_use]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_ticket_use]"
-                          name="old_ticket_use"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">ticket_use</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_occur_perc]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_occur_perc]"
-                          name="old_occur_perc"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">occur_perc</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_DateKey]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Copy Column"
-                          length="8"
-                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_DateKey]"
-                          name="old_DateKey"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">DateKey</property>
+                              name="CopyFromReferenceColumn">RevenueID_SK</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -4849,12 +4739,6 @@ where [refTable].[RevenueID_SK] = ?</property>
                           externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                           lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]" />
                         <inputColumn
-                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[occur_perc]"
-                          cachedDataType="r8"
-                          cachedName="occur_perc"
-                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
-                        <inputColumn
                           refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[DateKey]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -4862,6 +4746,12 @@ where [refTable].[RevenueID_SK] = ?</property>
                           cachedName="DateKey"
                           externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[occur_perc]"
+                          cachedDataType="r8"
+                          cachedName="occur_perc"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5238,12 +5128,6 @@ where [refTable].[RevenueID_SK] = ?</property>
                           externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]" />
                         <inputColumn
-                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[occur_perc]"
-                          cachedDataType="r8"
-                          cachedName="occur_perc"
-                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
-                        <inputColumn
                           refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[DateKey]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -5257,6 +5141,12 @@ where [refTable].[RevenueID_SK] = ?</property>
                           cachedName="RevenueID_SK"
                           externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[occur_perc]"
+                          cachedDataType="r8"
+                          cachedName="occur_perc"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5465,20 +5355,25 @@ where [refTable].[RevenueID_SK] = ?</property>
               </components>
               <paths>
                 <path
+                  refId="Package\film_sales\film_sales.Paths[Derived Column Output]"
+                  endId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\film_sales\film_sales\Derived Column.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\film_sales\film_sales.Paths[Lookup Match Output]"
                   endId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\film_sales.Paths[Lookup Match Output1]"
-                  endId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\film_sales\film_sales.Paths[Lookup Match Output2]"
                   endId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
                   startId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[Lookup Match Output2]"
+                  endId="Package\film_sales\film_sales\Derived Column.Inputs[Derived Column Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\film_sales.Paths[Lookup No Match Output]"
                   endId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input]"
@@ -5942,7 +5837,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5964,7 +5861,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5986,7 +5885,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6008,7 +5909,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6166,7 +6069,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6188,7 +6093,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6210,7 +6117,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6232,7 +6141,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6374,7 +6285,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6420,7 +6333,9 @@ where [refTable].[RevenueID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6526,19 +6441,39 @@ where [refTable].[RevenueID_SK] = ?</property>
     design-time-name="Package\film_sales\film_sales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film_sales\film_sales\Row Count"
+          TopLeft="98.571424779235,435.117641572463" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\film_sales\film_sales\Lookup city NDS"
+          TopLeft="513.199996215105,168.999997481704" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\film_sales\film_sales\Lookup film_sales DDS"
+          TopLeft="493.428564100241,351.588231030993" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\film_sales\film_sales\OLE DB Command"
+          TopLeft="871.285701290381,343.647054539316" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\film_sales\film_sales\Lookup film_cate NDS"
+          TopLeft="497.199996215105,93.9999985992909" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\film_sales\film_sales\update film_sales"
+          TopLeft="117.571425262458,351.470583888126" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\film_sales\film_sales\film_sales NDS"
           TopLeft="514.999992325902,20.9999996870756" />
         <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\film_sales\film_sales\Lookup film_sales DDS"
-          TopLeft="491.999992668629,281.999995797872" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\film_sales\film_sales\Lookup film_cate NDS"
-          TopLeft="497.199996215105,93.9999985992909" />
+          Size="139.2,41.6"
+          Id="Package\film_sales\film_sales\Row Count 1"
+          TopLeft="895.285701017903,461.411759042204" />
         <EdgeLayout
           Id="Package\film_sales\film_sales.Paths[OLE DB Source Output]"
           TopLeft="588.699994270504,62.5999996870756">
@@ -6561,10 +6496,122 @@ where [refTable].[RevenueID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\film_sales\film_sales\Lookup city NDS"
-          TopLeft="513.199996215105,168.999997481704" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output1]"
+          TopLeft="953.685701290381,385.247054539316">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.1999997275227,76.1647045028877"
+              Start="0,0"
+              End="11.1999997275227,68.6647045028877">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0823522514438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0823522514438"
+                    Point2="0,38.0823522514438"
+                    Point3="4,38.0823522514438" />
+                  <mssgle:LineSegment
+                    End="7.19999972752271,38.0823522514438" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.19999972752271,38.0823522514438"
+                    Point2="11.1999997275227,38.0823522514438"
+                    Point3="11.1999997275227,42.0823522514438" />
+                  <mssgle:LineSegment
+                    End="11.1999997275227,68.6647045028877" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output]"
+          TopLeft="197.971425262458,393.070583888126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.6000004832232,42.0470576843374"
+              Start="0,0"
+              End="-34.6000004832232,34.5470576843374">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0235288421687" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0235288421687"
+                    Point2="0,21.0235288421687"
+                    Point3="-4,21.0235288421687" />
+                  <mssgle:LineSegment
+                    End="-30.6000004832232,21.0235288421687" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-30.6000004832232,21.0235288421687"
+                    Point2="-34.6000004832232,21.0235288421687"
+                    Point3="-34.6000004832232,25.0235288421687" />
+                  <mssgle:LineSegment
+                    End="-34.6000004832232,34.5470576843374" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup No Match Output]"
+          TopLeft="679.028564100241,368.417642785155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192.257137190139,0"
+              Start="0,0"
+              End="184.757137190139,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="184.757137190139,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="36.5721818763196,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup Match Output1]"
+          TopLeft="493.428564100241,372.329407459559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-215.057138837783,0"
+              Start="0,0"
+              End="-207.557138837783,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-207.557138837783,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-151.969956137642,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\film_sales.Paths[Lookup Match Output]"
           TopLeft="589.799996215105,135.599998599291">
@@ -6585,146 +6632,52 @@ where [refTable].[RevenueID_SK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,7.14531194120647,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales\film_sales.Paths[Lookup Match Output1]"
-          TopLeft="587.999994441867,210.599997481704">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71.3999983161687"
-              Start="0,0"
-              End="0,63.8999983161687">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.8999983161687" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,26.1453116580843,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,7.14531194120645,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\film_sales\film_sales\update film_sales"
-          TopLeft="208.999996885657,287.999995708466" />
+          Size="152.8,41.6"
+          Id="Package\film_sales\film_sales\Derived Column"
+          TopLeft="507.400001075012,244.999999897445" />
         <EdgeLayout
           Id="Package\film_sales\film_sales.Paths[Lookup Match Output2]"
-          TopLeft="491.999992668629,305.799995753169">
+          TopLeft="587.499998645059,210.599997481704">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-122.199995782971,0"
+              EndConnector="0,34.400002415741"
               Start="0,0"
-              End="-114.699995782971,0">
+              End="0,26.900002415741">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-114.699995782971,0" />
+                    End="0,26.900002415741" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-105.541384610236,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,7.64531370787049,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\film_sales\film_sales\OLE DB Command"
-          TopLeft="871.999987006187,283.99999576807" />
         <EdgeLayout
-          Id="Package\film_sales\film_sales.Paths[Lookup No Match Output]"
-          TopLeft="677.599992668629,303.799995782971">
+          Id="Package\film_sales\film_sales.Paths[Derived Column Output]"
+          TopLeft="585.014282587627,286.599999897445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="194.399994337559,0"
+              EndConnector="0,64.9882311335479"
               Start="0,0"
-              End="186.899994337559,0">
+              End="0,57.4882311335479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="186.899994337559,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="37.6436104500293,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\film_sales\film_sales\Row Count"
-          TopLeft="234.999996498227,363.999994575977" />
-        <EdgeLayout
-          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output]"
-          TopLeft="289.399996885657,329.599995708466">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.3999996125697,34.3999988675117"
-              Start="0,0"
-              End="10.3999996125697,26.8999988675117">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.1999994337559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.1999994337559"
-                    Point2="0,17.1999994337559"
-                    Point3="4,17.1999994337559" />
-                  <mssgle:LineSegment
-                    End="6.39999961256973,17.1999994337559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.39999961256973,17.1999994337559"
-                    Point2="10.3999996125697,17.1999994337559"
-                    Point3="10.3999996125697,21.1999994337559" />
-                  <mssgle:LineSegment
-                    End="10.3999996125697,26.8999988675117" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\film_sales\film_sales\Row Count 1"
-          TopLeft="890.999986723066,374.999994412065" />
-        <EdgeLayout
-          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output1]"
-          TopLeft="957.499986864627,325.59999576807">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.3999986439943"
-              Start="0,0"
-              End="0,41.8999986439943">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.8999986439943" />
+                    End="0,57.4882311335479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6737,15 +6690,25 @@ where [refTable].[RevenueID_SK] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\film_sales\film_sales\film_sales NDS">
+    design-time-name="Package\film_sales\film_sales\Lookup city NDS">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[cinema]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6778,7 +6741,7 @@ where [refTable].[RevenueID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6788,7 +6751,7 @@ where [refTable].[RevenueID_SK] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6796,25 +6759,15 @@ where [refTable].[RevenueID_SK] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\film_sales\film_sales\Lookup city NDS">
+    design-time-name="Package\film_sales\film_sales\film_sales NDS">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[cinema]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

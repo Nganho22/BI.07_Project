@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{0E895CA1-79E7-43F5-8C10-DE36DE6D67D2}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{1E729148-723B-4AA2-9069-2E6371D17F85}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1524,11 +1524,6 @@
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input].Columns[newticket_use]"
-                      cachedDataType="i4"
-                      cachedName="newticket_use"
-                      lineageId="Package\film_sales\fix tickets_use.Outputs[Derived Column Output].Columns[newticket_use]" />
-                    <inputColumn
                       refId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input].Columns[Capacity]"
                       cachedDataType="i4"
                       cachedName="Capacity"
@@ -1568,6 +1563,11 @@
                       cachedDataType="i4"
                       cachedName="VIP_Seats_price"
                       lineageId="Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[VIP_Seats_price]" />
+                    <inputColumn
+                      refId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input].Columns[occur_perc]"
+                      cachedDataType="r8"
+                      cachedName="occur_perc"
+                      lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1580,28 +1580,6 @@
                   name="Derived Column Output"
                   synchronousInputId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input]">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[newoccur_perc]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[newoccur_perc]"
-                      name="newoccur_perc"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\film_sales\fix tickets_use.Outputs[Derived Column Output].Columns[newticket_use]} * 100) / #{Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[Capacity]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(newticket_use * 100) / Capacity</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[newStan_Price]"
                       dataType="i4"
@@ -1644,6 +1622,28 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(film_Price + VIP_Seats_price) * (newVIP_Seats_sold - newVIP_Seats_out)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]"
+                      name="new_occ"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]} * 100) / #{Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[Capacity]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(occur_perc * 100) / Capacity</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2380,254 +2380,6 @@ where [refTable].[CinemaID_SK] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\film_sales\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update film_sales set total_sales = ?, tickets_sold = ?, Standard_Seats_sold = ?, VIP_Seats_sold = ?, tickets_out = ?, Standard_Seats_out = ?, VIP_Seats_out = ?, ticket_use = ?, occur_perc = ? where RevenueID_SK = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\film_sales\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newTotal_Sales]"
-                      cachedDataType="i4"
-                      cachedName="newTotal_Sales"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\film_sales\total_sales.Outputs[Derived Column Output].Columns[newTotal_Sales]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newtickets_sold]"
-                      cachedDataType="i4"
-                      cachedName="newtickets_sold"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\film_sales\fix tickets.Outputs[Derived Column Output].Columns[newtickets_sold]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newStandard_Seats_sold]"
-                      cachedDataType="i4"
-                      cachedName="newStandard_Seats_sold"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newStandard_Seats_sold]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newVIP_Seats_sold]"
-                      cachedDataType="i4"
-                      cachedName="newVIP_Seats_sold"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newVIP_Seats_sold]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newtickets_out]"
-                      cachedDataType="i4"
-                      cachedName="newtickets_out"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\film_sales\fix tickets.Outputs[Derived Column Output].Columns[newtickets_out]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newStandard_Seats_out]"
-                      cachedDataType="i4"
-                      cachedName="newStandard_Seats_out"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newStandard_Seats_out]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newVIP_Seats_out]"
-                      cachedDataType="i4"
-                      cachedName="newVIP_Seats_out"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newVIP_Seats_out]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newticket_use]"
-                      cachedDataType="i4"
-                      cachedName="newticket_use"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\film_sales\fix tickets_use.Outputs[Derived Column Output].Columns[newticket_use]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[newoccur_perc]"
-                      cachedDataType="i4"
-                      cachedName="newoccur_perc"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[newoccur_perc]" />
-                    <inputColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[RevenueID_SK]"
-                      cachedDataType="i4"
-                      cachedName="RevenueID_SK"
-                      externalMetadataColumnId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i4"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      dataType="i4"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      dataType="i4"
-                      name="Param_4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="i4"
-                      name="Param_5">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="i4"
-                      name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="i4"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      dataType="r8"
-                      name="Param_8">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      dataType="i4"
-                      name="Param_9">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\film_sales\total_sales"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2712,6 +2464,254 @@ where [refTable].[CinemaID_SK] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\film_sales\update film_sales"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="update film_sales"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update film_sales set total_sales = ?, tickets_sold = ?, Standard_Seats_sold = ?, VIP_Seats_sold = ?, tickets_out = ?, Standard_Seats_out = ?, VIP_Seats_out = ?, ticket_use = ?, occur_perc = ROUND(?,2) where RevenueID_SK = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\film_sales\update film_sales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newTotal_Sales]"
+                      cachedDataType="i4"
+                      cachedName="newTotal_Sales"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\film_sales\total_sales.Outputs[Derived Column Output].Columns[newTotal_Sales]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newtickets_sold]"
+                      cachedDataType="i4"
+                      cachedName="newtickets_sold"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\film_sales\fix tickets.Outputs[Derived Column Output].Columns[newtickets_sold]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newStandard_Seats_sold]"
+                      cachedDataType="i4"
+                      cachedName="newStandard_Seats_sold"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newStandard_Seats_sold]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newVIP_Seats_sold]"
+                      cachedDataType="i4"
+                      cachedName="newVIP_Seats_sold"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newVIP_Seats_sold]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newtickets_out]"
+                      cachedDataType="i4"
+                      cachedName="newtickets_out"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\film_sales\fix tickets.Outputs[Derived Column Output].Columns[newtickets_out]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newStandard_Seats_out]"
+                      cachedDataType="i4"
+                      cachedName="newStandard_Seats_out"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newStandard_Seats_out]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newVIP_Seats_out]"
+                      cachedDataType="i4"
+                      cachedName="newVIP_Seats_out"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\film_sales\fix seat_sold.Outputs[Derived Column Output].Columns[newVIP_Seats_out]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[newticket_use]"
+                      cachedDataType="i4"
+                      cachedName="newticket_use"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\film_sales\fix tickets_use.Outputs[Derived Column Output].Columns[newticket_use]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[RevenueID_SK]"
+                      cachedDataType="i4"
+                      cachedName="RevenueID_SK"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
+                    <inputColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[new_occ]"
+                      cachedDataType="r8"
+                      cachedName="new_occ"
+                      externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="i4"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="r8"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="i4"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\film_sales\update film_sales.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\film_sales\update film_sales.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -2741,7 +2741,7 @@ where [refTable].[CinemaID_SK] = ?</property>
               startId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output]" />
             <path
               refId="Package\film_sales.Paths[Derived Column Output5]"
-              endId="Package\film_sales\OLE DB Command.Inputs[OLE DB Command Input]"
+              endId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\film_sales\total_sales.Outputs[Derived Column Output]" />
             <path
@@ -2795,13 +2795,17 @@ where [refTable].[CinemaID_SK] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="112,41.6"
+          Id="Package\cinema"
+          TopLeft="158.571428908986,28.2941176222579" />
+        <NodeLayout
           Size="96,41.6"
           Id="Package\film"
           TopLeft="255.000000542828,87.9411763935043" />
         <NodeLayout
-          Size="112,41.6"
-          Id="Package\cinema"
-          TopLeft="158.571428908986,28.2941176222579" />
+          Size="124.8,41.6"
+          Id="Package\film_sales"
+          TopLeft="199.428571538049,172.823529260278" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="270.571428908986,49.0941176222579">
@@ -2830,10 +2834,6 @@ where [refTable].[CinemaID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\film_sales"
-          TopLeft="199.428571538049,172.823529260278" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="303.000000542828,129.541176393504">
@@ -2872,106 +2872,22 @@ where [refTable].[CinemaID_SK] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\film">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="119.2,41.6"
-          Id="Package\film\film NDS"
-          TopLeft="85.9999987185002,23.9999996423721" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\film\Derived Column"
-          TopLeft="148.999997779727,118.999998226762" />
-        <EdgeLayout
-          Id="Package\film.Paths[OLE DB Source Output]"
-          TopLeft="145.5999987185,65.5999996423721">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="79.7999990612268,53.3999985843897"
-              Start="0,0"
-              End="79.7999990612268,45.8999985843897">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.6999992921949" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.6999992921949"
-                    Point2="0,26.6999992921949"
-                    Point3="4,26.6999992921949" />
-                  <mssgle:LineSegment
-                    End="75.7999990612268,26.6999992921949" />
-                  <mssgle:CubicBezierSegment
-                    Point1="75.7999990612268,26.6999992921949"
-                    Point2="79.7999990612268,26.6999992921949"
-                    Point3="79.7999990612268,30.6999992921949" />
-                  <mssgle:LineSegment
-                    End="79.7999990612268,45.8999985843897" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\film\OLE DB Command"
-          TopLeft="123.199998390675,224.999996647239" />
-        <EdgeLayout
-          Id="Package\film.Paths[Derived Column Output]"
-          TopLeft="225.399997779727,160.599998226762">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.7999993890523,64.3999984204769"
-              Start="0,0"
-              End="-19.7999993890523,56.8999984204769">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1999992102384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1999992102384"
-                    Point2="0,32.1999992102384"
-                    Point3="-4,32.1999992102384" />
-                  <mssgle:LineSegment
-                    End="-15.7999993890523,32.1999992102384" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.7999993890523,32.1999992102384"
-                    Point2="-19.7999993890523,32.1999992102384"
-                    Point3="-19.7999993890523,36.1999992102384" />
-                  <mssgle:LineSegment
-                    End="-19.7999993890523,56.8999984204769" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\cinema">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\cinema\Derived Column"
+          TopLeft="87.1428573283614,107.823529317253" />
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\cinema\cinema NDS"
           TopLeft="25.0000000532184,28.2941176222579" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\cinema\Derived Column"
-          TopLeft="87.1428573283614,107.823529317253" />
+          Size="164.8,41.6"
+          Id="Package\cinema\OLE DB Command"
+          TopLeft="98.3714287280428,219.47058804292" />
         <EdgeLayout
           Id="Package\cinema.Paths[OLE DB Source Output]"
           TopLeft="92.6000000532184,69.8941176222579">
@@ -3003,13 +2919,11 @@ where [refTable].[CinemaID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\cinema\OLE DB Command"
-          TopLeft="98.3714287280428,219.47058804292" />
         <EdgeLayout
           Id="Package\cinema.Paths[Derived Column Output]"
           TopLeft="163.542857328361,149.423529317253">
@@ -3041,7 +2955,9 @@ where [refTable].[CinemaID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3055,6 +2971,98 @@ where [refTable].[CinemaID_SK] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\film">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\film\film NDS"
+          TopLeft="85.9999987185002,23.9999996423721" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\film\Derived Column"
+          TopLeft="148.999997779727,118.999998226762" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\film\OLE DB Command"
+          TopLeft="123.199998390675,224.999996647239" />
+        <EdgeLayout
+          Id="Package\film.Paths[OLE DB Source Output]"
+          TopLeft="145.5999987185,65.5999996423721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.7999990612268,53.3999985843897"
+              Start="0,0"
+              End="79.7999990612268,45.8999985843897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6999992921949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6999992921949"
+                    Point2="0,26.6999992921949"
+                    Point3="4,26.6999992921949" />
+                  <mssgle:LineSegment
+                    End="75.7999990612268,26.6999992921949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.7999990612268,26.6999992921949"
+                    Point2="79.7999990612268,26.6999992921949"
+                    Point3="79.7999990612268,30.6999992921949" />
+                  <mssgle:LineSegment
+                    End="79.7999990612268,45.8999985843897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film.Paths[Derived Column Output]"
+          TopLeft="225.399997779727,160.599998226762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.7999993890523,64.3999984204769"
+              Start="0,0"
+              End="-19.7999993890523,56.8999984204769">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1999992102384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1999992102384"
+                    Point2="0,32.1999992102384"
+                    Point3="-4,32.1999992102384" />
+                  <mssgle:LineSegment
+                    End="-15.7999993890523,32.1999992102384" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.7999993890523,32.1999992102384"
+                    Point2="-19.7999993890523,32.1999992102384"
+                    Point3="-19.7999993890523,36.1999992102384" />
+                  <mssgle:LineSegment
+                    End="-19.7999993890523,56.8999984204769" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\film\film NDS">
     <Properties>
@@ -3072,6 +3080,38 @@ where [refTable].[CinemaID_SK] = ?</property>
           Size="148,41.6"
           Id="Package\film_sales\film_sales NDS"
           TopLeft="51.9999992251396,10.9999998360872" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\film_sales\Lookup film_price"
+          TopLeft="39.3999997466803,397.999994069338" />
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\film_sales\fix occur, total_price"
+          TopLeft="535.999992012977,401.399994948506" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\film_sales\total_sales"
+          TopLeft="559.999998271465,275.799997273087" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\film_sales\Lookup Seats_price"
+          TopLeft="219.399997064471,433.799994382262" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\film_sales\fix tickets"
+          TopLeft="75.9999988675118,213.999996811152" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\film_sales\fix tickets_use"
+          TopLeft="95.9999985694886,312.999995335937" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\film_sales\Derived Column 1"
+          TopLeft="32.9999995082617,128.99999807775" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\film_sales\update film_sales"
+          TopLeft="516.9999922961,153.199997884035" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\film_sales\fix seat_sold"
@@ -3104,40 +3144,98 @@ where [refTable].[CinemaID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\film_sales\fix tickets"
-          TopLeft="75.9999988675118,213.999996811152" />
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\film_sales\fix tickets_use"
-          TopLeft="95.9999985694886,312.999995335937" />
         <EdgeLayout
-          Id="Package\film_sales.Paths[Derived Column Output]"
-          TopLeft="137.599998867512,255.599996811152">
+          Id="Package\film_sales.Paths[Lookup Match Output1]"
+          TopLeft="388.999997064471,454.599994382262">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.7999997019768,57.399998524785"
+              EndConnector="146.999994948506,-32.399999433756"
               Start="0,0"
-              End="30.7999997019768,49.899998524785">
+              End="139.499994948506,-32.399999433756">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.6999992623925" />
+                    End="69.4999974742531,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.6999992623925"
-                    Point2="0,28.6999992623925"
-                    Point3="4,28.6999992623925" />
+                    Point1="69.4999974742531,0"
+                    Point2="73.4999974742531,0"
+                    Point3="73.4999974742531,-4" />
                   <mssgle:LineSegment
-                    End="26.7999997019768,28.6999992623925" />
+                    End="73.4999974742531,-28.399999433756" />
                   <mssgle:CubicBezierSegment
-                    Point1="26.7999997019768,28.6999992623925"
-                    Point2="30.7999997019768,28.6999992623925"
-                    Point3="30.7999997019768,32.6999992623925" />
+                    Point1="73.4999974742531,-28.399999433756"
+                    Point2="73.4999974742531,-32.399999433756"
+                    Point3="77.4999974742531,-32.399999433756" />
                   <mssgle:LineSegment
-                    End="30.7999997019768,49.899998524785" />
+                    End="139.499994948506,-32.399999433756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.3086107555031,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales.Paths[Lookup Match Output]"
+          TopLeft="200.99999974668,411.299994382262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103.199997317791,22.5"
+              Start="0,0"
+              End="103.199997317791,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="99.199997317791,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99.199997317791,0"
+                    Point2="103.199997317791,0"
+                    Point3="103.199997317791,4" />
+                  <mssgle:LineSegment
+                    End="103.199997317791,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="55.008610599041,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales.Paths[Derived Column Output5]"
+          TopLeft="623.999998271465,275.799997273087">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.600005975365,-80.999999389052"
+              Start="0,0"
+              End="-26.600005975365,-73.499999389052">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-36.499999694526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-36.499999694526"
+                    Point2="0,-40.499999694526"
+                    Point3="-4,-40.499999694526" />
+                  <mssgle:LineSegment
+                    End="-22.600005975365,-40.499999694526" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.600005975365,-40.499999694526"
+                    Point2="-26.600005975365,-40.499999694526"
+                    Point3="-26.600005975365,-44.499999694526" />
+                  <mssgle:LineSegment
+                    End="-26.600005975365,-73.499999389052" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3146,30 +3244,54 @@ where [refTable].[CinemaID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\film_sales\Derived Column 1"
-          TopLeft="32.9999995082617,128.99999807775" />
         <EdgeLayout
-          Id="Package\film_sales.Paths[Derived Column Output1]"
-          TopLeft="170.699997705221,90.2999990463257">
+          Id="Package\film_sales.Paths[Derived Column Output4]"
+          TopLeft="623.599995142221,401.399994948506">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-56.4999981969595,38.6999990314245"
+              EndConnector="0,-83.9999976754189"
               Start="0,0"
-              End="-56.4999981969595,31.1999990314245">
+              End="0,-76.4999976754189">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-52.4999981969595,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-52.4999981969595,0"
-                    Point2="-56.4999981969595,0"
-                    Point3="-56.4999981969595,4" />
+                    End="0,-76.4999976754189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales.Paths[Derived Column Output3]"
+          TopLeft="168.399998569489,354.599995335937">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.1999988228083,43.3999987334013"
+              Start="0,0"
+              End="-48.1999988228083,35.8999987334013">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-56.4999981969595,31.1999990314245" />
+                    End="0,17.6999993667007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6999993667007"
+                    Point2="0,21.6999993667007"
+                    Point3="-4,21.6999993667007" />
+                  <mssgle:LineSegment
+                    End="-44.1999988228083,21.6999993667007" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.1999988228083,21.6999993667007"
+                    Point2="-48.1999988228083,21.6999993667007"
+                    Point3="-48.1999988228083,25.6999993667007" />
+                  <mssgle:LineSegment
+                    End="-48.1999988228083,35.8999987334013" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3212,36 +3334,26 @@ where [refTable].[CinemaID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\film_sales\Lookup film_price"
-          TopLeft="39.3999997466803,397.999994069338" />
         <EdgeLayout
-          Id="Package\film_sales.Paths[Derived Column Output3]"
-          TopLeft="168.399998569489,354.599995335937">
+          Id="Package\film_sales.Paths[Derived Column Output1]"
+          TopLeft="170.699997705221,90.2999990463257">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-48.1999988228083,43.3999987334013"
+              EndConnector="-56.4999981969595,38.6999990314245"
               Start="0,0"
-              End="-48.1999988228083,35.8999987334013">
+              End="-56.4999981969595,31.1999990314245">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6999993667007" />
+                    End="-52.4999981969595,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.6999993667007"
-                    Point2="0,21.6999993667007"
-                    Point3="-4,21.6999993667007" />
+                    Point1="-52.4999981969595,0"
+                    Point2="-56.4999981969595,0"
+                    Point3="-56.4999981969595,4" />
                   <mssgle:LineSegment
-                    End="-44.1999988228083,21.6999993667007" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.1999988228083,21.6999993667007"
-                    Point2="-48.1999988228083,21.6999993667007"
-                    Point3="-48.1999988228083,25.6999993667007" />
-                  <mssgle:LineSegment
-                    End="-48.1999988228083,35.8999987334013" />
+                    End="-56.4999981969595,31.1999990314245" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3250,136 +3362,32 @@ where [refTable].[CinemaID_SK] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\film_sales\Lookup Seats_price"
-          TopLeft="219.399997064471,433.799994382262" />
         <EdgeLayout
-          Id="Package\film_sales.Paths[Lookup Match Output]"
-          TopLeft="200.99999974668,411.299994382262">
+          Id="Package\film_sales.Paths[Derived Column Output]"
+          TopLeft="137.599998867512,255.599996811152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103.199997317791,22.5"
+              EndConnector="30.7999997019768,57.399998524785"
               Start="0,0"
-              End="103.199997317791,15">
+              End="30.7999997019768,49.899998524785">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="99.199997317791,0" />
+                    End="0,24.6999992623925" />
                   <mssgle:CubicBezierSegment
-                    Point1="99.199997317791,0"
-                    Point2="103.199997317791,0"
-                    Point3="103.199997317791,4" />
+                    Point1="0,24.6999992623925"
+                    Point2="0,28.6999992623925"
+                    Point3="4,28.6999992623925" />
                   <mssgle:LineSegment
-                    End="103.199997317791,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="55.008610599041,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\film_sales\fix occur, total_price"
-          TopLeft="535.999992012977,401.399994948506" />
-        <EdgeLayout
-          Id="Package\film_sales.Paths[Lookup Match Output1]"
-          TopLeft="388.999997064471,454.599994382262">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="146.999994948506,-32.399999433756"
-              Start="0,0"
-              End="139.499994948506,-32.399999433756">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="69.4999974742531,0" />
+                    End="26.7999997019768,28.6999992623925" />
                   <mssgle:CubicBezierSegment
-                    Point1="69.4999974742531,0"
-                    Point2="73.4999974742531,0"
-                    Point3="73.4999974742531,-4" />
+                    Point1="26.7999997019768,28.6999992623925"
+                    Point2="30.7999997019768,28.6999992623925"
+                    Point3="30.7999997019768,32.6999992623925" />
                   <mssgle:LineSegment
-                    End="73.4999974742531,-28.399999433756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.4999974742531,-28.399999433756"
-                    Point2="73.4999974742531,-32.399999433756"
-                    Point3="77.4999974742531,-32.399999433756" />
-                  <mssgle:LineSegment
-                    End="139.499994948506,-32.399999433756" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.3086107555031,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="128,41.6"
-          Id="Package\film_sales\total_sales"
-          TopLeft="559.999998271465,275.799997273087" />
-        <EdgeLayout
-          Id="Package\film_sales.Paths[Derived Column Output4]"
-          TopLeft="623.599995142221,401.399994948506">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-83.9999976754189"
-              Start="0,0"
-              End="0,-76.4999976754189">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-76.4999976754189" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\film_sales\OLE DB Command"
-          TopLeft="516.9999922961,153.199997884035" />
-        <EdgeLayout
-          Id="Package\film_sales.Paths[Derived Column Output5]"
-          TopLeft="623.999998271465,275.799997273087">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24.6000059753658,-80.9999993890523"
-              Start="0,0"
-              End="-24.6000059753658,-73.4999993890523">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-36.4999996945262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-36.4999996945262"
-                    Point2="0,-40.4999996945262"
-                    Point3="-4,-40.4999996945262" />
-                  <mssgle:LineSegment
-                    End="-20.6000059753658,-40.4999996945262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.6000059753658,-40.4999996945262"
-                    Point2="-24.6000059753658,-40.4999996945262"
-                    Point3="-24.6000059753658,-44.4999996945262" />
-                  <mssgle:LineSegment
-                    End="-24.6000059753658,-73.4999993890523" />
+                    End="30.7999997019768,49.899998524785" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3410,7 +3418,7 @@ where [refTable].[CinemaID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3420,7 +3428,7 @@ where [refTable].[CinemaID_SK] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3433,7 +3441,7 @@ where [refTable].[CinemaID_SK] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3443,7 +3451,7 @@ where [refTable].[CinemaID_SK] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

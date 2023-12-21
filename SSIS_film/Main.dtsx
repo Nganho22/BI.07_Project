@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{83C877CD-B302-43D4-92C4-F85EAF34BAE3}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{1693FF15-4BE1-446D-9AEF-D58D2834EAF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -65,7 +65,6 @@
       DTS:refId="Package\Source 1 excel"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{7733D08F-D9E0-46E3-A21B-FE1190A0CA42}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -402,6 +401,7 @@
       DTS:refId="Package\Source 2 csv"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{5db46814-68ab-4ff4-b8d1-e19cf2ff93fb}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"

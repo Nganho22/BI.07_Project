@@ -261,4 +261,4 @@ INSERT INTO COLUMN_INFO VALUES (21, N'VIP_Seats_out','int','store number of VIP 
 INSERT INTO COLUMN_INFO VALUES (21, N'ticket_use','int','store number of ticket used','1161',NULL) 
 INSERT INTO COLUMN_INFO VALUES (21, N'occur_perc','float','store occupation percentage','64.5',NULL) 
 INSERT INTO COLUMN_INFO VALUES (21, N'DateKey','nvarchar','Store date key','20190105','90')
-INSERT INTO COLUMN_INFO VALUES (21, N'SOURCE_ID','int','Store source key','1',null)
+

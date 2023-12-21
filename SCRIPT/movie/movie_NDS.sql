@@ -152,7 +152,7 @@ CREATE TABLE [dbo].[film_sales](
 	[VIP_Seats_out] [int] NULL,
 	[ticket_use] [int] NULL,
 	[occur_perc] [float] NULL,
-	[DateKey] [nvarchar](8) NULL,
+	[DateKey] [varchar](8) NULL,
 	[SOURCE_ID] [int] NOT NULL,
 	[createdDate] [datetime] NULL,
 	[updatedDate] [datetime] NULL,

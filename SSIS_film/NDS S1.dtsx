@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="NDS S1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{2FB1BB4D-AA57-4B22-B853-1BA836C12AED}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{531AC401-3882-4107-89B3-A60D0BFC1E9B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -8608,7 +8608,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           lineageId="Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[occur_perc]" />
                         <inputColumn
                           refId="Package\film_sales\Data Flow Task\insert new film_sales.Inputs[OLE DB Command Input].Columns[newDateKey]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="8"
                           cachedName="newDateKey"
                           externalMetadataColumnId="Package\film_sales\Data Flow Task\insert new film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
@@ -8780,7 +8781,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\film_sales\Data Flow Task\insert new film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="8"
                           name="Param_13">
                           <properties>
@@ -9068,7 +9070,7 @@ where [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Year] = ?<
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -9158,7 +9160,8 @@ where [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Year] = ?<
                       <outputColumns>
                         <outputColumn
                           refId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output].Columns[newDateKey]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Copy Column"
                           length="8"
                           lineageId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output].Columns[newDateKey]"
@@ -9574,7 +9577,7 @@ where [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Year] = ?<
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -9664,7 +9667,8 @@ where [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Year] = ?<
                       <outputColumns>
                         <outputColumn
                           refId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output].Columns[newDateKey]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Copy Column"
                           length="8"
                           lineageId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output].Columns[newDateKey]"
@@ -10235,7 +10239,8 @@ where [RevenueID_SK] = ?</property>
                           lineageId="Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[occur_perc]" />
                         <inputColumn
                           refId="Package\film_sales\Data Flow Task\updated new film_sales.Inputs[OLE DB Command Input].Columns[newDateKey]"
-                          cachedDataType="wstr"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
                           cachedLength="8"
                           cachedName="newDateKey"
                           externalMetadataColumnId="Package\film_sales\Data Flow Task\updated new film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
@@ -10378,7 +10383,8 @@ where [RevenueID_SK] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\film_sales\Data Flow Task\updated new film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          dataType="wstr"
+                          codePage="1252"
+                          dataType="str"
                           length="8"
                           name="Param_11">
                           <properties>
@@ -10474,19 +10480,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Dirived Column Day 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\film_sales\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
@@ -10494,19 +10500,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
+                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\film_sales\Data Flow Task\Dirived Column Day.Inputs[Derived Column Input]"
@@ -12640,28 +12646,14 @@ set [Film Category] = ?, updatedDate = ?
           Size="150.4,41.6"
           Id="Package\cinema\Data Flow Task"
           TopLeft="44.5064938226244,93.768907485654" />
-        <EdgeLayout
-          Id="Package\cinema.PrecedenceConstraints[Constraint 4]"
-          TopLeft="122.145083788826,47.1000000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.6689074856541"
-              Start="0,0"
-              End="0,39.1689074856541">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.1689074856541" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\cinema\Find MAX_ID of cinema"
+          TopLeft="30.1836737550294,5.5" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\cinema\Update DATA_TABLE_INFO"
+          TopLeft="17.5306125036047,193.321364744967" />
         <EdgeLayout
           Id="Package\cinema.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="120.618553163114,135.368907485654">
@@ -12684,14 +12676,28 @@ set [Film Category] = ?, updatedDate = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\cinema\Find MAX_ID of cinema"
-          TopLeft="30.1836737550294,5.5" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\cinema\Update DATA_TABLE_INFO"
-          TopLeft="17.5306125036047,193.321364744967" />
+        <EdgeLayout
+          Id="Package\cinema.PrecedenceConstraints[Constraint 4]"
+          TopLeft="122.145083788826,47.1000000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.6689074856541"
+              Start="0,0"
+              End="0,39.1689074856541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.1689074856541" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -12703,28 +12709,14 @@ set [Film Category] = ?, updatedDate = ?
           Size="94.4,41.6"
           Id="Package\city\city"
           TopLeft="60.5784930528835,96.4605040498116" />
-        <EdgeLayout
-          Id="Package\city.PrecedenceConstraints[Constraint 4]"
-          TopLeft="110.16624812169,50.7747898406061">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.6857142092054"
-              Start="0,0"
-              End="0,38.1857142092054">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.1857142092054" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\city\Find MAX_ID of city"
+          TopLeft="26.9540031904963,9.17478984060612" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\city\Update DATA_TABLE_INFO"
+          TopLeft="5.5,189.468907329631" />
         <EdgeLayout
           Id="Package\city.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="108.639246526442,138.060504049812">
@@ -12747,14 +12739,28 @@ set [Film Category] = ?, updatedDate = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\city\Find MAX_ID of city"
-          TopLeft="26.9540031904963,9.17478984060612" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\city\Update DATA_TABLE_INFO"
-          TopLeft="5.5,189.468907329631" />
+        <EdgeLayout
+          Id="Package\city.PrecedenceConstraints[Constraint 4]"
+          TopLeft="110.16624812169,50.7747898406061">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.6857142092054"
+              Start="0,0"
+              End="0,38.1857142092054">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.1857142092054" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -12766,28 +12772,14 @@ set [Film Category] = ?, updatedDate = ?
           Size="150.4,41.6"
           Id="Package\film\Data Flow Task"
           TopLeft="37.6163283995571,95.6344537135254" />
-        <EdgeLayout
-          Id="Package\film.PrecedenceConstraints[Constraint 4]"
-          TopLeft="115.661226377205,48.1924369738325">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.4420167396929"
-              Start="0,0"
-              End="0,39.9420167396929">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.9420167396929" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\film\Find MAX_ID of film"
+          TopLeft="32.1061243548519,6.59243697383249" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\film\Update DATA_TABLE_INFO"
+          TopLeft="11.345920243623,181.485293919313" />
         <EdgeLayout
           Id="Package\film.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="114.08112432159,137.234453713525">
@@ -12810,14 +12802,28 @@ set [Film Category] = ?, updatedDate = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\film\Find MAX_ID of film"
-          TopLeft="32.1061243548519,6.59243697383249" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\film\Update DATA_TABLE_INFO"
-          TopLeft="11.345920243623,181.485293919313" />
+        <EdgeLayout
+          Id="Package\film.PrecedenceConstraints[Constraint 4]"
+          TopLeft="115.661226377205,48.1924369738325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.4420167396929"
+              Start="0,0"
+              End="0,39.9420167396929">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9420167396929" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -12829,28 +12835,14 @@ set [Film Category] = ?, updatedDate = ?
           Size="150.4,41.6"
           Id="Package\film_sales\Data Flow Task"
           TopLeft="35.2142857142856,90.215125795134" />
-        <EdgeLayout
-          Id="Package\film_sales.PrecedenceConstraints[Constraint 4]"
-          TopLeft="113.50765306489,57.5210082021773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.6941175929567"
-              Start="0,0"
-              End="0,25.1941175929567">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.1941175929567" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\film_sales\Find MAX_ID of film_sales"
+          TopLeft="15.8010204154943,15.9210082021773" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\film_sales\Update DATA_TABLE_INFO"
+          TopLeft="5.5,174.666806359318" />
         <EdgeLayout
           Id="Package\film_sales.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="109.957142857143,131.815125795133">
@@ -12873,14 +12865,28 @@ set [Film Category] = ?, updatedDate = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\film_sales\Find MAX_ID of film_sales"
-          TopLeft="15.8010204154943,15.9210082021773" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\film_sales\Update DATA_TABLE_INFO"
-          TopLeft="5.5,174.666806359318" />
+        <EdgeLayout
+          Id="Package\film_sales.PrecedenceConstraints[Constraint 4]"
+          TopLeft="113.50765306489,57.5210082021773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.6941175929567"
+              Start="0,0"
+              End="0,25.1941175929567">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1941175929567" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -12892,28 +12898,14 @@ set [Film Category] = ?, updatedDate = ?
           Size="150.4,41.6"
           Id="Package\fim_cate\Data Flow Task"
           TopLeft="38.6217701051365,85.8025209490349" />
-        <EdgeLayout
-          Id="Package\fim_cate.PrecedenceConstraints[Constraint 4]"
-          TopLeft="112.18911702219,51.4697478953294">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.3327730537055"
-              Start="0,0"
-              End="0,26.8327730537055">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8327730537055" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\fim_cate\Find MAX_ID of film_cate"
+          TopLeft="11.356463939244,9.86974789532943" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\fim_cate\Update DATA_TABLE_INFO"
+          TopLeft="9.99591971866062,178.162464790571" />
         <EdgeLayout
           Id="Package\fim_cate.PrecedenceConstraints[Constraint 1 1]"
           TopLeft="113.908844911898,127.402520949035">
@@ -12936,14 +12928,28 @@ set [Film Category] = ?, updatedDate = ?
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\fim_cate\Find MAX_ID of film_cate"
-          TopLeft="11.356463939244,9.86974789532943" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\fim_cate\Update DATA_TABLE_INFO"
-          TopLeft="9.99591971866062,178.162464790571" />
+        <EdgeLayout
+          Id="Package\fim_cate.PrecedenceConstraints[Constraint 4]"
+          TopLeft="112.18911702219,51.4697478953294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.3327730537055"
+              Start="0,0"
+              End="0,26.8327730537055">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8327730537055" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -13055,346 +13061,14 @@ set [Film Category] = ?, updatedDate = ?
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\city\city">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\city\city\city stage"
-          TopLeft="394.071429398595,29.2058823321621" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\city\city\get new updatedDate"
-          TopLeft="593.428572623706,274.52941152407" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\city\city\Lookup in city NDS"
-          TopLeft="370.000000787633,118.52941166081" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\city\city\Row Count"
-          TopLeft="163.571428919629,444.223529066563" />
-        <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\city\city\create createdDate, updatedDate, ID_SK"
-          TopLeft="97.7142858541742,283.811764459214" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\city\city\insert new city"
-          TopLeft="159.285714624792,356.352940864113" />
-        <NodeLayout
-          Size="130.4,41.6"
-          Id="Package\city\city\update city"
-          TopLeft="596.457144055318,367.05882320767" />
-        <NodeLayout
-          Size="241.6,41.6"
-          Id="Package\city\city\Check createdDate &amp; updatedDate"
-          TopLeft="525.714286833393,191.941176302344" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\city\city\create ID increases automatically"
-          TopLeft="116.428571676417,198.823529237488" />
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\city\city\Row Count 1"
-          TopLeft="592.885715518862,443.599999612569" />
-        <EdgeLayout
-          Id="Package\city\city.Paths[Output 0]"
-          TopLeft="233.271428765296,240.423529237488">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.3882352217259"
-              Start="0,0"
-              End="0,35.8882352217259">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.8882352217259" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[OLE DB Source Output]"
-          TopLeft="454.635715093114,70.8058823321621">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.7235293286482"
-              Start="0,0"
-              End="0,40.2235293286482">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.2235293286482" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[OLE DB Command Output]"
-          TopLeft="230.62857177221,397.952940864113">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.2705882024496"
-              Start="0,0"
-              End="0,38.7705882024496">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.7705882024496" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[Lookup No Match Output]"
-          TopLeft="427.066667454299,160.12941166081">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-193.438095777882,38.6941175766779"
-              Start="0,0"
-              End="-193.438095777882,31.1941175766779">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6977083628608" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6977083628608"
-                    Point2="0,15.6977083628608"
-                    Point3="-4,15.6977083628608" />
-                  <mssgle:LineSegment
-                    End="-189.438095777882,15.6977083628608" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-189.438095777882,15.6977083628608"
-                    Point2="-193.438095777882,15.6977083628608"
-                    Point3="-193.438095777882,19.6977083628608" />
-                  <mssgle:LineSegment
-                    End="-193.438095777882,31.1941175766779" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-152.525434607691,20.6977083628608,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[Lookup Match Output]"
-          TopLeft="480.133334120966,160.12941166081">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="166.380952712427,31.8117646415341"
-              Start="0,0"
-              End="166.380952712427,24.3117646415341">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.90562584509631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.90562584509631"
-                    Point2="0,12.9056258450963"
-                    Point3="4,12.9056258450963" />
-                  <mssgle:LineSegment
-                    End="162.380952712427,12.9056258450963" />
-                  <mssgle:CubicBezierSegment
-                    Point1="162.380952712427,12.9056258450963"
-                    Point2="166.380952712427,12.9056258450963"
-                    Point3="166.380952712427,16.9056258450963" />
-                  <mssgle:LineSegment
-                    End="166.380952712427,24.3117646415341" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="34.9990896374635,17.9056258450963,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[Derived Column Output]"
-          TopLeft="232.900000239483,325.411764459214">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.9411764048991"
-              Start="0,0"
-              End="0,23.4411764048991">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.4411764048991" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[Case 1]"
-          TopLeft="646.514286833393,233.541176302344">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="36.9142857903122,40.9882352217258"
-              Start="0,0"
-              End="36.9142857903122,33.4882352217258">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4941176108629" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4941176108629"
-                    Point2="0,20.4941176108629"
-                    Point3="4,20.4941176108629" />
-                  <mssgle:LineSegment
-                    End="32.9142857903122,20.4941176108629" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32.9142857903122,20.4941176108629"
-                    Point2="36.9142857903122,20.4941176108629"
-                    Point3="36.9142857903122,24.4941176108629" />
-                  <mssgle:LineSegment
-                    End="36.9142857903122,33.4882352217258" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="3.2390569576561,25.4941176108629,30.436171875,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[Derived Column Output1]"
-          TopLeft="683.428572623706,316.12941152407">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21.7714285683877,50.9294116836001"
-              Start="0,0"
-              End="-21.7714285683877,43.4294116836001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.4647058418" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.4647058418"
-                    Point2="0,25.4647058418"
-                    Point3="-4,25.4647058418" />
-                  <mssgle:LineSegment
-                    End="-17.7714285683877,25.4647058418" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17.7714285683877,25.4647058418"
-                    Point2="-21.7714285683877,25.4647058418"
-                    Point3="-21.7714285683877,29.4647058418" />
-                  <mssgle:LineSegment
-                    End="-21.7714285683877,43.4294116836001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\city\city.Paths[OLE DB Command Output1]"
-          TopLeft="662.07142978709,408.65882320767">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.9411764048993"
-              Start="0,0"
-              End="0,27.4411764048993">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.4411764048993" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\city\city\city stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\city\city\Lookup in city NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[city]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\cinema\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\cinema\Data Flow Task\Lookup in city NDS"
+          TopLeft="710.999989405275,34.9999994784594" />
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\cinema\Data Flow Task\cinema stage"
@@ -13408,17 +13082,13 @@ set [Film Category] = ?, updatedDate = ?
           Id="Package\cinema\Data Flow Task\create ID increases automatically"
           TopLeft="233.999996513128,252.999996230006" />
         <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\cinema\Data Flow Task\Row Count 1"
-          TopLeft="848.999987348914,514.599992772937" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\cinema\Data Flow Task\Lookup in city NDS"
-          TopLeft="710.999989405275,34.9999994784594" />
-        <NodeLayout
           Size="148,41.6"
           Id="Package\cinema\Data Flow Task\update cinema"
           TopLeft="838.999987497926,429.999994188547" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\cinema\Data Flow Task\Row Count 1"
+          TopLeft="848.999987348914,514.599992772937" />
         <NodeLayout
           Size="180,41.6"
           Id="Package\cinema\Data Flow Task\get new updatedDate"
@@ -13439,130 +13109,6 @@ set [Film Category] = ?, updatedDate = ?
           Size="164,41.6"
           Id="Package\cinema\Data Flow Task\insert new cinema"
           TopLeft="260.999996110797,428.999994203448" />
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[Output 0]"
-          TopLeft="350.19999666214,294.599996230006">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.3999985843895"
-              Start="0,0"
-              End="0,45.8999985843895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.8999985843895" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="553.79999384582,54.2999995008111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="157.199995559454,0"
-              Start="0,0"
-              End="149.699995559454,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="149.699995559454,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[OLE DB Command Output1]"
-          TopLeft="915.79998742342,471.599994188547">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.9999985843897"
-              Start="0,0"
-              End="0,35.4999985843897">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.4999985843897" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="341.399996006489,470.599994203448">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.3999982863666"
-              Start="0,0"
-              End="0,25.8999982863666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.8999982863666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\cinema\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="599.93332533141,173.599998033047">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-248.733328818282,79.3999981969596"
-              Start="0,0"
-              End="-248.733328818282,71.8999981969596">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1689263081244" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1689263081244"
-                    Point2="0,32.1689263081244"
-                    Point3="-4,32.1689263081244" />
-                  <mssgle:LineSegment
-                    End="-244.733328818282,32.1689263081244" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-244.733328818282,32.1689263081244"
-                    Point2="-248.733328818282,32.1689263081244"
-                    Point3="-248.733328818282,36.1689263081244" />
-                  <mssgle:LineSegment
-                    End="-248.733328818282,71.8999981969596" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-180.173051127891,37.1689263081244,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\cinema\Data Flow Task.Paths[Lookup Match Output1]"
           TopLeft="794.599989405275,76.5999994784594">
@@ -13654,7 +13200,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13676,7 +13224,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13703,9 +13253,164 @@ set [Film Category] = ?, updatedDate = ?
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[Output 0]"
+          TopLeft="350.19999666214,294.599996230006">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.3999985843895"
+              Start="0,0"
+              End="0,45.8999985843895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8999985843895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="553.79999384582,54.2999995008111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.199995559454,0"
+              Start="0,0"
+              End="149.699995559454,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="149.699995559454,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[OLE DB Command Output1]"
+          TopLeft="915.79998742342,471.599994188547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.9999985843897"
+              Start="0,0"
+              End="0,35.4999985843897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4999985843897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="341.399996006489,470.599994203448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.3999982863666"
+              Start="0,0"
+              End="0,25.8999982863666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8999982863666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\cinema\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="599.93332533141,173.599998033047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-248.733328818282,79.3999981969596"
+              Start="0,0"
+              End="-248.733328818282,71.8999981969596">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1689263081244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1689263081244"
+                    Point2="0,32.1689263081244"
+                    Point3="-4,32.1689263081244" />
+                  <mssgle:LineSegment
+                    End="-244.733328818282,32.1689263081244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-244.733328818282,32.1689263081244"
+                    Point2="-248.733328818282,32.1689263081244"
+                    Point3="-248.733328818282,36.1689263081244" />
+                  <mssgle:LineSegment
+                    End="-248.733328818282,71.8999981969596" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.173051127891,37.1689263081244,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\cinema\Data Flow Task\Lookup in city NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[city]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\cinema\Data Flow Task\cinema stage">
     <Properties>
@@ -13720,35 +13425,12 @@ set [Film Category] = ?, updatedDate = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\cinema\Data Flow Task\Lookup in city NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[city]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\cinema\Data Flow Task\Lookup in cinema NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -13758,7 +13440,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13766,275 +13448,311 @@ set [Film Category] = ?, updatedDate = ?
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\fim_cate\Data Flow Task">
+    design-time-name="Package\city\city">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="270.4,41.6"
-          Id="Package\fim_cate\Data Flow Task\create createdDate, updatedDate, ID_SK"
-          TopLeft="107.142857370936,285.694117451333" />
-        <NodeLayout
-          Size="234.4,41.6"
-          Id="Package\fim_cate\Data Flow Task\create ID increases automatically"
-          TopLeft="128.571428845123,217.082352764219" />
-        <NodeLayout
-          Size="193.6,41.6"
-          Id="Package\fim_cate\Data Flow Task\Lookup in film_cate NDS"
-          TopLeft="320.000000681196,108.588235198936" />
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\fim_cate\Data Flow Task\film_cate stage"
-          TopLeft="349.285715029252,28.2941176222579" />
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\fim_cate\Data Flow Task\insert new film_cate"
-          TopLeft="155.000000329954,368.588234971036" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\fim_cate\Data Flow Task\update film_cate"
-          TopLeft="536.428572570487,361.705882035892" />
+          Size="123.2,41.6"
+          Id="Package\city\city\city stage"
+          TopLeft="394.071429398595,29.2058823321621" />
         <NodeLayout
           Size="180,41.6"
-          Id="Package\fim_cate\Data Flow Task\get new updatedDate"
-          TopLeft="527.857143980812,283.399999806285" />
+          Id="Package\city\city\get new updatedDate"
+          TopLeft="593.428572623706,274.52941152407" />
         <NodeLayout
-          Size="241.6,41.6"
-          Id="Package\fim_cate\Data Flow Task\Check createdDate &amp; updatedDate"
-          TopLeft="500.000001064369,208.458823401386" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\fim_cate\Data Flow Task\Row Count"
-          TopLeft="170.714286077691,449.647058429396" />
+          Size="167.2,41.6"
+          Id="Package\city\city\Lookup in city NDS"
+          TopLeft="370.000000787633,118.52941166081" />
         <NodeLayout
           Size="139.2,41.6"
-          Id="Package\fim_cate\Data Flow Task\Row Count 1"
-          TopLeft="537.8571440021,442.764705494252" />
+          Id="Package\city\city\Row Count 1"
+          TopLeft="592.885715518862,443.599999612569" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\city\city\Row Count"
+          TopLeft="163.571428919629,444.223529066563" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\city\city\create createdDate, updatedDate, ID_SK"
+          TopLeft="97.7142858541742,283.811764459214" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\city\city\insert new city"
+          TopLeft="159.285714624792,356.352940864113" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\city\city\Check createdDate &amp; updatedDate"
+          TopLeft="525.714286833393,191.941176302344" />
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\city\city\create ID increases automatically"
+          TopLeft="116.428571676417,198.823529237488" />
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\city\city\update city"
+          TopLeft="596.457144055318,367.05882320767" />
         <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[Output 0]"
-          TopLeft="244.05714310803,258.682352764219">
+          Id="Package\city\city.Paths[Output 0]"
+          TopLeft="233.271428765296,240.423529237488">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.0117646871142"
+              EndConnector="0,43.3882352217259"
               Start="0,0"
-              End="0,19.5117646871142">
+              End="0,35.8882352217259">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5117646871142" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="420.442857855224,69.8941176222579">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.6941175766779"
-              Start="0,0"
-              End="0,31.1941175766779">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.1941175766779" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Command Output1]"
-          TopLeft="611.142858286293,403.305882035892">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4588234583604"
-              Start="0,0"
-              End="0,31.9588234583604">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9588234583604" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="238.657143203823,410.188234971036">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4588234583606"
-              Start="0,0"
-              End="0,31.9588234583606">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9588234583606" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="416.800000681196,150.188235198936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-171.028571836072,66.8941175652828"
-              Start="0,0"
-              End="-171.028571836072,59.3941175652828">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.4470587826414" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.4470587826414"
-                    Point2="0,33.4470587826414"
-                    Point3="-4,33.4470587826414" />
-                  <mssgle:LineSegment
-                    End="-167.028571836072,33.4470587826414" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-167.028571836072,33.4470587826414"
-                    Point2="-171.028571836072,33.4470587826414"
-                    Point3="-171.028571836072,37.4470587826414" />
-                  <mssgle:LineSegment
-                    End="-171.028571836072,59.3941175652828" />
+                    End="0,35.8882352217259" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-141.320672636786,38.4470587826414,111.6127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="447.733334014529,150.188235198936">
+          Id="Package\city\city.Paths[OLE DB Source Output]"
+          TopLeft="454.635715093114,70.8058823321621">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="173.06666704984,58.2705882024497"
+              EndConnector="0,47.7235293286482"
               Start="0,0"
-              End="173.06666704984,50.7705882024497">
+              End="0,40.2235293286482">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5948119442706" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5948119442706"
-                    Point2="0,23.5948119442706"
-                    Point3="4,23.5948119442706" />
-                  <mssgle:LineSegment
-                    End="169.06666704984,23.5948119442706" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169.06666704984,23.5948119442706"
-                    Point2="173.06666704984,23.5948119442706"
-                    Point3="173.06666704984,27.5948119442706" />
-                  <mssgle:LineSegment
-                    End="173.06666704984,50.7705882024497" />
+                    End="0,40.2235293286482" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.3419468061698,28.5948119442706,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="616.342858275649,324.999999806285">
+          Id="Package\city\city.Paths[OLE DB Command Output1]"
+          TopLeft="662.07142978709,408.65882320767">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.7058822296071"
+              EndConnector="0,34.9411764048993"
               Start="0,0"
-              End="0,29.2058822296071">
+              End="0,27.4411764048993">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2058822296071" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="242.071428850445,327.294117451333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.2941175197027"
-              Start="0,0"
-              End="0,33.7941175197027">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.7941175197027" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\fim_cate\Data Flow Task.Paths[case 1]"
-          TopLeft="619.32857252259,250.058823401386">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.3411764048994"
-              Start="0,0"
-              End="0,25.8411764048994">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.8411764048994" />
+                    End="0,27.4411764048993" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-14.53517578125,8.19744367119969,29.0703515625,9.4462890625"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[OLE DB Command Output]"
+          TopLeft="230.62857177221,397.952940864113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.2705882024496"
+              Start="0,0"
+              End="0,38.7705882024496">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7705882024496" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[Lookup No Match Output]"
+          TopLeft="427.066667454299,160.12941166081">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-193.438095777882,38.6941175766779"
+              Start="0,0"
+              End="-193.438095777882,31.1941175766779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6977083628608" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6977083628608"
+                    Point2="0,15.6977083628608"
+                    Point3="-4,15.6977083628608" />
+                  <mssgle:LineSegment
+                    End="-189.438095777882,15.6977083628608" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-189.438095777882,15.6977083628608"
+                    Point2="-193.438095777882,15.6977083628608"
+                    Point3="-193.438095777882,19.6977083628608" />
+                  <mssgle:LineSegment
+                    End="-193.438095777882,31.1941175766779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-152.525434607691,20.6977083628608,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[Lookup Match Output]"
+          TopLeft="480.133334120966,160.12941166081">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166.380952712427,31.8117646415341"
+              Start="0,0"
+              End="166.380952712427,24.3117646415341">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.90562584509631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.90562584509631"
+                    Point2="0,12.9056258450963"
+                    Point3="4,12.9056258450963" />
+                  <mssgle:LineSegment
+                    End="162.380952712427,12.9056258450963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="162.380952712427,12.9056258450963"
+                    Point2="166.380952712427,12.9056258450963"
+                    Point3="166.380952712427,16.9056258450963" />
+                  <mssgle:LineSegment
+                    End="166.380952712427,24.3117646415341" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="34.9990896374635,17.9056258450963,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[Derived Column Output1]"
+          TopLeft="683.428572623706,316.12941152407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.7714285683877,50.9294116836001"
+              Start="0,0"
+              End="-21.7714285683877,43.4294116836001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4647058418" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4647058418"
+                    Point2="0,25.4647058418"
+                    Point3="-4,25.4647058418" />
+                  <mssgle:LineSegment
+                    End="-17.7714285683877,25.4647058418" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.7714285683877,25.4647058418"
+                    Point2="-21.7714285683877,25.4647058418"
+                    Point3="-21.7714285683877,29.4647058418" />
+                  <mssgle:LineSegment
+                    End="-21.7714285683877,43.4294116836001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[Derived Column Output]"
+          TopLeft="232.900000239483,325.411764459214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9411764048991"
+              Start="0,0"
+              End="0,23.4411764048991">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4411764048991" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\city\city.Paths[Case 1]"
+          TopLeft="646.514286833393,233.541176302344">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.9142857903122,40.9882352217258"
+              Start="0,0"
+              End="36.9142857903122,33.4882352217258">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4941176108629" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4941176108629"
+                    Point2="0,20.4941176108629"
+                    Point3="4,20.4941176108629" />
+                  <mssgle:LineSegment
+                    End="32.9142857903122,20.4941176108629" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.9142857903122,20.4941176108629"
+                    Point2="36.9142857903122,20.4941176108629"
+                    Point3="36.9142857903122,24.4941176108629" />
+                  <mssgle:LineSegment
+                    End="36.9142857903122,33.4882352217258" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.2390569576561,25.4941176108629,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14042,30 +13760,7 @@ set [Film Category] = ?, updatedDate = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\fim_cate\Data Flow Task\Lookup in film_cate NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[film_cate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\fim_cate\Data Flow Task\film_cate stage">
+    design-time-name="Package\city\city\city stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14074,6 +13769,29 @@ set [Film Category] = ?, updatedDate = ?
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\city\city\Lookup in city NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[city]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -14241,7 +13959,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14263,7 +13983,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14309,7 +14031,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14331,7 +14055,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14353,7 +14079,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14375,7 +14103,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14400,7 +14130,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14410,7 +14140,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14423,7 +14153,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14433,7 +14163,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14631,73 +14361,73 @@ set [Film Category] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-          TopLeft="422.653062124207,342.547898930232">
+          TopLeft="1344.68265501972,179.793277189792">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-166.391837916795,0"
+              EndConnector="0,70.8117646073495"
               Start="0,0"
-              End="-158.891837916795,0">
+              End="0,63.3117646073495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-158.891837916795,0" />
+                    End="0,63.3117646073495" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.637305677147,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,25.8511948036748,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-          TopLeft="513.033674369702,264.879411675054">
+          TopLeft="1259.2744917429,268.605672051696">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.6079830002565"
+              EndConnector="-227.035715005304,0"
               Start="0,0"
-              End="0,50.1079830002565">
+              End="-219.535715005304,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.1079830002565" />
+                    End="-219.535715005304,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.2493040001282,96.3827734375,11.609375"
+              BoundingBox="-157.959244221402,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="401.021429358681,149.661274394485">
+          TopLeft="942.020409456365,286.606302306251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.647619801293,0"
+              EndConnector="0,86.4882351818432"
               Start="0,0"
-              End="-136.147619801293,0">
+              End="0,78.9882351818432">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-136.147619801293,0" />
+                    End="0,78.9882351818432" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-116.265196619397,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,33.6894300909216,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14727,73 +14457,73 @@ set [Film Category] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="942.020409456365,286.606302306251">
+          TopLeft="401.021429358681,149.661274394485">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.4882351818432"
+              EndConnector="-143.647619801293,0"
               Start="0,0"
-              End="0,78.9882351818432">
+              End="-136.147619801293,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.9882351818432" />
+                    End="-136.147619801293,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,33.6894300909216,96.3827734375,11.609375"
+              BoundingBox="-116.265196619397,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="1259.2744917429,268.605672051696">
+          TopLeft="513.033674369702,264.879411675054">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-227.035715005304,0"
+              EndConnector="0,57.6079830002565"
               Start="0,0"
-              End="-219.535715005304,0">
+              End="0,50.1079830002565">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-219.535715005304,0" />
+                    End="0,50.1079830002565" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-157.959244221402,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,19.2493040001282,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="1344.68265501972,179.793277189792">
+          TopLeft="422.653062124207,342.547898930232">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,70.8117646073495"
+              EndConnector="-166.391837916795,0"
               Start="0,0"
-              End="0,63.3117646073495">
+              End="-158.891837916795,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.3117646073495" />
+                    End="-158.891837916795,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.8511948036748,96.3827734375,11.609375"
+              BoundingBox="-127.637305677147,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14918,7 +14648,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14928,7 +14658,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14941,7 +14671,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14951,7 +14681,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14964,7 +14694,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14974,7 +14704,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15046,7 +14776,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15056,7 +14786,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15069,7 +14799,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15079,10 +14809,334 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\fim_cate\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\fim_cate\Data Flow Task\create createdDate, updatedDate, ID_SK"
+          TopLeft="107.142857370936,285.694117451333" />
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\fim_cate\Data Flow Task\create ID increases automatically"
+          TopLeft="128.571428845123,217.082352764219" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\fim_cate\Data Flow Task\Lookup in film_cate NDS"
+          TopLeft="320.000000681196,108.588235198936" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\fim_cate\Data Flow Task\film_cate stage"
+          TopLeft="349.285715029252,28.2941176222579" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\fim_cate\Data Flow Task\Row Count"
+          TopLeft="170.714286077691,449.647058429396" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\fim_cate\Data Flow Task\insert new film_cate"
+          TopLeft="155.000000329954,368.588234971036" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\fim_cate\Data Flow Task\get new updatedDate"
+          TopLeft="527.857143980812,283.399999806285" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\fim_cate\Data Flow Task\Check createdDate &amp; updatedDate"
+          TopLeft="500.000001064369,208.458823401386" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\fim_cate\Data Flow Task\Row Count 1"
+          TopLeft="537.8571440021,442.764705494252" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\fim_cate\Data Flow Task\update film_cate"
+          TopLeft="536.428572570487,361.705882035892" />
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[Output 0]"
+          TopLeft="244.05714310803,258.682352764219">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.0117646871142"
+              Start="0,0"
+              End="0,19.5117646871142">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5117646871142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="420.442857855224,69.8941176222579">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6941175766779"
+              Start="0,0"
+              End="0,31.1941175766779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1941175766779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Command Output1]"
+          TopLeft="611.142858286293,403.305882035892">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583604"
+              Start="0,0"
+              End="0,31.9588234583604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="238.657143203823,410.188234971036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4588234583606"
+              Start="0,0"
+              End="0,31.9588234583606">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9588234583606" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="416.800000681196,150.188235198936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.028571836072,66.8941175652828"
+              Start="0,0"
+              End="-171.028571836072,59.3941175652828">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4470587826414" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.4470587826414"
+                    Point2="0,33.4470587826414"
+                    Point3="-4,33.4470587826414" />
+                  <mssgle:LineSegment
+                    End="-167.028571836072,33.4470587826414" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.028571836072,33.4470587826414"
+                    Point2="-171.028571836072,33.4470587826414"
+                    Point3="-171.028571836072,37.4470587826414" />
+                  <mssgle:LineSegment
+                    End="-171.028571836072,59.3941175652828" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-141.320672636786,38.4470587826414,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="447.733334014529,150.188235198936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173.06666704984,58.2705882024497"
+              Start="0,0"
+              End="173.06666704984,50.7705882024497">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5948119442706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5948119442706"
+                    Point2="0,23.5948119442706"
+                    Point3="4,23.5948119442706" />
+                  <mssgle:LineSegment
+                    End="169.06666704984,23.5948119442706" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169.06666704984,23.5948119442706"
+                    Point2="173.06666704984,23.5948119442706"
+                    Point3="173.06666704984,27.5948119442706" />
+                  <mssgle:LineSegment
+                    End="173.06666704984,50.7705882024497" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.3419468061698,28.5948119442706,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="616.342858275649,324.999999806285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.7058822296071"
+              Start="0,0"
+              End="0,29.2058822296071">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2058822296071" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="242.071428850445,327.294117451333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.2941175197027"
+              Start="0,0"
+              End="0,33.7941175197027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.7941175197027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\fim_cate\Data Flow Task.Paths[case 1]"
+          TopLeft="619.32857252259,250.058823401386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.3411764048994"
+              Start="0,0"
+              End="0,25.8411764048994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8411764048994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.53517578125,8.19744367119969,29.0703515625,9.4462890625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\fim_cate\Data Flow Task\Lookup in film_cate NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[film_cate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\fim_cate\Data Flow Task\film_cate stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

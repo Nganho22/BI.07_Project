@@ -11,30 +11,18 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{EFD0255C-569B-4F96-97FB-43AF5514781F}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{3960A9B4-4D0A-4765-8C5C-F9CFF1A9BC8C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{E1D32BD9-4915-42F5-9D0D-81912850FF31}"
-      DTS:ObjectName="ABC.BI07_MOVIE_NDS">
-      <DTS:PropertyExpression
-        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{9B84B4F6-6F0D-4F3E-903C-37FCFDBA13E0}"
       DTS:ObjectName="ABC1.BI07_MOVIE_DDS">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -53,7 +41,21 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E1D32BD9-4915-42F5-9D0D-81912850FF31}"
+      DTS:ObjectName="ABC1.BI07_MOVIE_NDS">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Project::severname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -182,8 +184,8 @@
                   <connections>
                     <connection
                       refId="Package\cinema\cinema\cinema NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1515,8 +1517,8 @@ where [refTable].[CinemaID_SK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\city\city\city NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2551,8 +2553,8 @@ where [refTable].[CityID_SK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\film\film\film NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3181,8 +3183,8 @@ where [refTable].[CityID_SK] = ?</property>
                   <connections>
                     <connection
                       refId="Package\film_cate\film_cate\film_cate NDS.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
-                      connectionManagerRefId="Package.ConnectionManagers[ABC.BI07_MOVIE_NDS]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3699,7 +3701,1855 @@ where [refTable].[CityID_SK] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="film_sales">
       <DTS:Variables />
-      <DTS:Executables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\film_sales\film_sales"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7C9F71C7-AF1F-48D7-9687-9BD573E4A22B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="film_sales"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\film_sales\film_sales\film_sales NDS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="film_sales NDS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[film_sales]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from film_sales where updatedDate = ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{AA0A7C78-3130-402C-B1C9-D118F75CF043};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\film_sales NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[RevenueID_SK]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]"
+                          name="RevenueID_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[FilmID_SK]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]"
+                          name="FilmID_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[CinemaID_SK]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]"
+                          name="CinemaID_SK"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[total_sales]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[total_sales]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[total_sales]"
+                          name="total_sales"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[tickets_sold]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_sold]"
+                          name="tickets_sold"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Standard_Seats_sold]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_sold]"
+                          name="Standard_Seats_sold"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[VIP_Seats_sold]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_sold]"
+                          name="VIP_Seats_sold"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[tickets_out]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_out]"
+                          name="tickets_out"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Standard_Seats_out]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_out]"
+                          name="Standard_Seats_out"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[VIP_Seats_out]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_out]"
+                          name="VIP_Seats_out"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[ticket_use]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]"
+                          name="ticket_use"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[occur_perc]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]"
+                          name="occur_perc"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                          length="8"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]"
+                          name="DateKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[RevenueID_SK]"
+                          dataType="i4"
+                          name="RevenueID_SK" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[RevenueID_NK]"
+                          dataType="wstr"
+                          length="255"
+                          name="RevenueID_NK" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[FilmID_SK]"
+                          dataType="i4"
+                          name="FilmID_SK" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[CinemaID_SK]"
+                          dataType="i4"
+                          name="CinemaID_SK" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[total_sales]"
+                          dataType="i4"
+                          name="total_sales" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[tickets_sold]"
+                          dataType="i4"
+                          name="tickets_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Standard_Seats_sold]"
+                          dataType="i4"
+                          name="Standard_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[VIP_Seats_sold]"
+                          dataType="i4"
+                          name="VIP_Seats_sold" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[tickets_out]"
+                          dataType="i4"
+                          name="tickets_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[Standard_Seats_out]"
+                          dataType="i4"
+                          name="Standard_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[VIP_Seats_out]"
+                          dataType="i4"
+                          name="VIP_Seats_out" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[ticket_use]"
+                          dataType="i4"
+                          name="ticket_use" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[occur_perc]"
+                          dataType="r8"
+                          name="occur_perc" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[DateKey]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="DateKey" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          dataType="i4"
+                          name="SOURCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[createdDate]"
+                          dataType="dbTimeStamp"
+                          name="createdDate" />
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].ExternalColumns[updatedDate]"
+                          dataType="dbTimeStamp"
+                          name="updatedDate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[RevenueID_SK]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[RevenueID_SK]"
+                          name="RevenueID_SK" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[FilmID_SK]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[FilmID_SK]"
+                          name="FilmID_SK" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[CinemaID_SK]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[CinemaID_SK]"
+                          name="CinemaID_SK" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[total_sales]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[total_sales]"
+                          name="total_sales" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[tickets_sold]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[tickets_sold]"
+                          name="tickets_sold" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[Standard_Seats_sold]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[Standard_Seats_sold]"
+                          name="Standard_Seats_sold" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[VIP_Seats_sold]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[VIP_Seats_sold]"
+                          name="VIP_Seats_sold" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[tickets_out]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[tickets_out]"
+                          name="tickets_out" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[Standard_Seats_out]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[Standard_Seats_out]"
+                          name="Standard_Seats_out" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[VIP_Seats_out]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[VIP_Seats_out]"
+                          name="VIP_Seats_out" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ticket_use]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ticket_use]"
+                          name="ticket_use" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[occur_perc]"
+                          dataType="r8"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[occur_perc]"
+                          name="occur_perc" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[DateKey]"
+                          name="DateKey" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\Lookup city NDS"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup city NDS"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[cinema]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[cinema]) [refTable]
+where [refTable].[CinemaID_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CinemaID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CinemaID_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Cinema Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Capacity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_price" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_price" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\Lookup city NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input].Columns[CinemaID_SK]"
+                          cachedDataType="i4"
+                          cachedName="CinemaID_SK"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CinemaID_SK</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output].Columns[CityID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output].Columns[CityID_SK]"
+                          name="CityID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CityID_SK</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\Lookup film_cate NDS"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup film_cate NDS"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[film]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[film]) [refTable]
+where [refTable].[FilmID_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="FilmID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmID_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Film Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmCategoryID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Price" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\Lookup film_cate NDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_NDS]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input].Columns[FilmID_SK]"
+                          cachedDataType="i4"
+                          cachedName="FilmID_SK"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">FilmID_SK</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output].Columns[FilmCategoryID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output].Columns[FilmCategoryID_SK]"
+                          name="FilmCategoryID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">FilmCategoryID_SK</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\Lookup film_sales DDS"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup film_sales DDS"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[film_sales]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[film_sales]) [refTable]
+where [refTable].[RevenueID_SK] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RevenueID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmCategoryID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CinemaID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="total_sales" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ticket_use" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="occur_perc" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateKey" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\Lookup film_sales DDS.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input].Columns[RevenueID_SK]"
+                          cachedDataType="i4"
+                          cachedName="RevenueID_SK"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">RevenueID_SK</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmID_SK]"
+                          name="old_FilmID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">FilmID_SK</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmCategoryID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_FilmCategoryID_SK]"
+                          name="old_FilmCategoryID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">FilmCategoryID_SK</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CinemaID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CinemaID_SK]"
+                          name="old_CinemaID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CinemaID_SK</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CityID_SK]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_CityID_SK]"
+                          name="old_CityID_SK"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CityID_SK</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_total_sales]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_total_sales]"
+                          name="old_total_sales"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">total_sales</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_sold]"
+                          name="old_tickets_sold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">tickets_sold</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_sold]"
+                          name="old_Standard_Seats_sold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Standard_Seats_sold</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_sold]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_sold]"
+                          name="old_VIP_Seats_sold"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">VIP_Seats_sold</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_tickets_out]"
+                          name="old_tickets_out"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">tickets_out</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_Standard_Seats_out]"
+                          name="old_Standard_Seats_out"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Standard_Seats_out</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_out]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_VIP_Seats_out]"
+                          name="old_VIP_Seats_out"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">VIP_Seats_out</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_ticket_use]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_ticket_use]"
+                          name="old_ticket_use"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ticket_use</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_occur_perc]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_occur_perc]"
+                          name="old_occur_perc"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">occur_perc</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_DateKey]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copy Column"
+                          length="8"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output].Columns[old_DateKey]"
+                          name="old_DateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">insert into film_sales values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[RevenueID_SK]"
+                          cachedDataType="i4"
+                          cachedName="RevenueID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[FilmID_SK]"
+                          cachedDataType="i4"
+                          cachedName="FilmID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[FilmCategoryID_SK]"
+                          cachedDataType="i4"
+                          cachedName="FilmCategoryID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output].Columns[FilmCategoryID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[CinemaID_SK]"
+                          cachedDataType="i4"
+                          cachedName="CinemaID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[CityID_SK]"
+                          cachedDataType="i4"
+                          cachedName="CityID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output].Columns[CityID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[total_sales]"
+                          cachedDataType="i4"
+                          cachedName="total_sales"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[total_sales]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[tickets_sold]"
+                          cachedDataType="i4"
+                          cachedName="tickets_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[Standard_Seats_sold]"
+                          cachedDataType="i4"
+                          cachedName="Standard_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[VIP_Seats_sold]"
+                          cachedDataType="i4"
+                          cachedName="VIP_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[tickets_out]"
+                          cachedDataType="i4"
+                          cachedName="tickets_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[Standard_Seats_out]"
+                          cachedDataType="i4"
+                          cachedName="Standard_Seats_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[VIP_Seats_out]"
+                          cachedDataType="i4"
+                          cachedName="VIP_Seats_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[ticket_use]"
+                          cachedDataType="i4"
+                          cachedName="ticket_use"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[occur_perc]"
+                          cachedDataType="r8"
+                          cachedName="occur_perc"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].Columns[DateKey]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="i4"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="i4"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="i4"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="i4"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="i4"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="i4"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          dataType="i4"
+                          name="Param_11">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          dataType="i4"
+                          name="Param_12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          dataType="r8"
+                          name="Param_13">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="Param_14">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Count_Row_Update1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\film_sales\film_sales\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\Row Count 1"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count 1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::Count_Row_Insert</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\Row Count 1.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\Row Count 1.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\film_sales\film_sales\Row Count 1.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\film_sales\film_sales\update film_sales"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="update film_sales"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">update film_sales set FilmID_SK = ?, FilmCategoryID_SK = ?, CinemaID_SK = ?, CityID_SK = ?, total_sales = ?, tickets_sold = ?, Standard_Seats_sold = ?, VIP_Seats_sold = ?, tickets_out = ?, Standard_Seats_out = ?, VIP_Seats_out = ?, ticket_use = ?, occur_perc = ?, DateKey = ? where RevenueID_SK = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\film_sales\film_sales\update film_sales.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_MOVIE_DDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[FilmID_SK]"
+                          cachedDataType="i4"
+                          cachedName="FilmID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[FilmID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[FilmCategoryID_SK]"
+                          cachedDataType="i4"
+                          cachedName="FilmCategoryID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output].Columns[FilmCategoryID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[CinemaID_SK]"
+                          cachedDataType="i4"
+                          cachedName="CinemaID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[CinemaID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[CityID_SK]"
+                          cachedDataType="i4"
+                          cachedName="CityID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output].Columns[CityID_SK]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[total_sales]"
+                          cachedDataType="i4"
+                          cachedName="total_sales"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[total_sales]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[tickets_sold]"
+                          cachedDataType="i4"
+                          cachedName="tickets_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[Standard_Seats_sold]"
+                          cachedDataType="i4"
+                          cachedName="Standard_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[VIP_Seats_sold]"
+                          cachedDataType="i4"
+                          cachedName="VIP_Seats_sold"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_sold]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[tickets_out]"
+                          cachedDataType="i4"
+                          cachedName="tickets_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[tickets_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[Standard_Seats_out]"
+                          cachedDataType="i4"
+                          cachedName="Standard_Seats_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[Standard_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[VIP_Seats_out]"
+                          cachedDataType="i4"
+                          cachedName="VIP_Seats_out"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[VIP_Seats_out]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[ticket_use]"
+                          cachedDataType="i4"
+                          cachedName="ticket_use"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[occur_perc]"
+                          cachedDataType="r8"
+                          cachedName="occur_perc"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[DateKey]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                        <inputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[RevenueID_SK]"
+                          cachedDataType="i4"
+                          cachedName="RevenueID_SK"
+                          externalMetadataColumnId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          lineageId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="i4"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="i4"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="i4"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="i4"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="i4"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="i4"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          dataType="i4"
+                          name="Param_11">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          dataType="r8"
+                          name="Param_12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="Param_13">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          dataType="i4"
+                          name="Param_14">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\film_sales\film_sales.Paths[Lookup Match Output]"
+                  endId="Package\film_sales\film_sales\Lookup city NDS.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales\film_sales\Lookup film_cate NDS.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[Lookup Match Output1]"
+                  endId="Package\film_sales\film_sales\Lookup film_sales DDS.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales\film_sales\Lookup city NDS.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[Lookup Match Output2]"
+                  endId="Package\film_sales\film_sales\update film_sales.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[Lookup No Match Output]"
+                  endId="Package\film_sales\film_sales\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\film_sales\film_sales\Lookup film_sales DDS.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[OLE DB Command Output]"
+                  endId="Package\film_sales\film_sales\Row Count.Inputs[Row Count Input 1]"
+                  name="OLE DB Command Output"
+                  startId="Package\film_sales\film_sales\update film_sales.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[OLE DB Command Output1]"
+                  endId="Package\film_sales\film_sales\Row Count 1.Inputs[Row Count Input 1]"
+                  name="OLE DB Command Output"
+                  startId="Package\film_sales\film_sales\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\film_sales\film_sales.Paths[OLE DB Source Output]"
+                  endId="Package\film_sales\film_sales\Lookup film_cate NDS.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\film_sales\film_sales\film_sales NDS.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\film_sales\update DATA_TABLE_INFO (insert)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9ed089df-5c8d-4a4d-ba99-c8ac1fdc73db}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="update DATA_TABLE_INFO (insert)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{74B2161E-2C60-4580-82A6-F9E0034B7DFC}"
+              SQLTask:SqlStatementSource="IF ? &gt; 0 OR ? &gt; 0 &#xA;UPDATE DATA_TABLE_INFO&#xA;SET UPDATEDATE = ?&#xA;WHERE DBS_ID = 4 AND TABLE_NAME ='film_sales';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::Count_Row_Insert"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="$Package::CET"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::Count_Row_Update1"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\film_sales.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{96AFA75B-6457-4D2B-AA82-2AD07CEA0125}"
+          DTS:From="Package\film_sales\film_sales"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\film_sales\update DATA_TABLE_INFO (insert)" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
@@ -3784,73 +5634,7 @@ where [refTable].[CityID_SK] = ?</property>
           PanelSize="291.2,233.6"
           Size="291.2,276.8"
           Id="Package\cinema"
-          TopLeft="559.365080428096,60" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\film_cate\film_cate"
-          TopLeft="94.9079378628948,24.7529408160012" />
-        <NodeLayout
-          Size="244,41.6"
-          Id="Package\film_cate\update DATA_TABLE_INFO (insert)"
-          TopLeft="39.6444458162969,136.640522398419" />
-        <EdgeLayout
-          Id="Package\film_cate.PrecedenceConstraints[Constraint]"
-          TopLeft="158.476191839596,66.3529408160012">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.2875815824173"
-              Start="0,0"
-              End="0,62.7875815824173">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.7875815824173" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="310.4,242.4"
-          Size="310.4,285.6"
-          Id="Package\film_cate"
-          TopLeft="545.158731191506,441.88235260722" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="204.8,55.2"
-          Size="204.8,98.4"
-          Id="Package\film_sales"
-          TopLeft="359.603175240951,822.261437357217" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="702.661905809801,336.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,105.08235260722"
-              Start="0,0"
-              End="0,97.5823526072201">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,97.5823526072201" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="559.365080428096,46.2352941297123" />
         <NodeLayout
           Size="94.4,41.6"
           Id="Package\city\city"
@@ -3925,32 +5709,116 @@ where [refTable].[CityID_SK] = ?</property>
           Size="281.6,288.8"
           Id="Package\film"
           TopLeft="123.336507282851,427.973855967248" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\film_cate\film_cate"
+          TopLeft="94.9079378628948,24.7529408160012" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\film_cate\update DATA_TABLE_INFO (insert)"
+          TopLeft="39.6444458162969,136.640522398419" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="396.815872351741,182.941176473269">
+          Id="Package\film_cate.PrecedenceConstraints[Constraint]"
+          TopLeft="158.476191839596,66.3529408160012">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="162.549208076355,15.4588235267306"
+              EndConnector="0,70.2875815824173"
               Start="0,0"
-              End="155.049208076355,15.4588235267306">
+              End="0,62.7875815824173">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.2746040381777,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.2746040381777,0"
-                    Point2="81.2746040381777,0"
-                    Point3="81.2746040381777,4" />
+                    End="0,62.7875815824173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="310.4,242.4"
+          Size="310.4,285.6"
+          Id="Package\film_cate"
+          TopLeft="545.158731191506,432.705882027028" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\film_sales\film_sales"
+          TopLeft="87.8571438105133,18.7803913942912" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\film_sales\update DATA_TABLE_INFO (insert)"
+          TopLeft="23.8000007982767,128.188234659572" />
+        <EdgeLayout
+          Id="Package\film_sales.PrecedenceConstraints[Constraint]"
+          TopLeft="148.028572304395,60.3803913942912">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.807843265281"
+              Start="0,0"
+              End="0,60.307843265281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="81.2746040381777,11.4588235267306" />
-                  <mssgle:CubicBezierSegment
-                    Point1="81.2746040381777,11.4588235267306"
-                    Point2="81.2746040381777,15.4588235267306"
-                    Point3="85.2746040381777,15.4588235267306" />
+                    End="0,60.307843265281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272.8,222.4"
+          Size="272.8,265.6"
+          Id="Package\film_sales"
+          TopLeft="351.031746651276,806.967319723564" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="396.815872351741,183.788235301491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162.549208076355,0"
+              Start="0,0"
+              End="155.049208076355,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="155.049208076355,15.4588235267306" />
+                    End="155.049208076355,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="702.661905809801,323.035294129712">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109.670587897316"
+              Start="0,0"
+              End="0,102.170587897316">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102.170587897316" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3961,30 +5829,18 @@ where [refTable].[CityID_SK] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="545.158731191506,584.68235260722">
+          TopLeft="545.158731191506,573.939868997138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-140.222223908655,-12.3084966399723"
+              EndConnector="-140.222223908655,0"
               Start="0,0"
-              End="-132.722223908655,-12.3084966399723">
+              End="-132.722223908655,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-66.1111119543275,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-66.1111119543275,0"
-                    Point2="-70.1111119543275,0"
-                    Point3="-70.1111119543275,-4" />
-                  <mssgle:LineSegment
-                    End="-70.1111119543275,-8.3084966399723" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70.1111119543275,-8.3084966399723"
-                    Point2="-70.1111119543275,-12.3084966399723"
-                    Point3="-74.1111119543275,-12.3084966399723" />
-                  <mssgle:LineSegment
-                    End="-132.722223908655,-12.3084966399723" />
+                    End="-132.722223908655,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3999,26 +5855,26 @@ where [refTable].[CityID_SK] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.8666679581,105.487581389969"
+              EndConnector="223.295239368425,90.1934637563163"
               Start="0,0"
-              End="197.8666679581,97.9875813899693">
+              End="223.295239368425,82.6934637563163">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.7437906949846" />
+                    End="0,41.0967318781582" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.7437906949846"
-                    Point2="0,52.7437906949846"
-                    Point3="4,52.7437906949846" />
+                    Point1="0,41.0967318781582"
+                    Point2="0,45.0967318781582"
+                    Point3="4,45.0967318781582" />
                   <mssgle:LineSegment
-                    End="193.8666679581,52.7437906949846" />
+                    End="219.295239368425,45.0967318781582" />
                   <mssgle:CubicBezierSegment
-                    Point1="193.8666679581,52.7437906949846"
-                    Point2="197.8666679581,52.7437906949846"
-                    Point3="197.8666679581,56.7437906949846" />
+                    Point1="219.295239368425,45.0967318781582"
+                    Point2="223.295239368425,45.0967318781582"
+                    Point3="223.295239368425,49.0967318781582" />
                   <mssgle:LineSegment
-                    End="197.8666679581,97.9875813899693" />
+                    End="223.295239368425,82.6934637563163" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4086,9 +5942,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4110,9 +5964,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4134,9 +5986,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4158,9 +6008,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4263,102 +6111,6 @@ where [refTable].[CityID_SK] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\film_cate\film_cate">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\film_cate\film_cate\Row Count"
-          TopLeft="250.999996259809,204.999996945262" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\film_cate\film_cate\Insert film_cate"
-          TopLeft="234.499996587634,290.699998778105" />
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\film_cate\film_cate\film_cate NDS"
-          TopLeft="238.3,5.49999999999984" />
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\film_cate\film_cate\Slowly Changing Dimension"
-          TopLeft="206.7,107.1" />
-        <EdgeLayout
-          Id="Package\film_cate\film_cate.Paths[Row Count Output 1]"
-          TopLeft="313.149996423721,246.599996945262">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.1000018328428"
-              Start="0,0"
-              End="0,36.6000018328428">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.6000018328428" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_cate\film_cate.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.0999999999998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_cate\film_cate.Paths[New Output]"
-          TopLeft="313.249998129904,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.2999969452621"
-              Start="0,0"
-              End="0,48.7999969452621">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.7999969452621" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,18.683201597631,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\city\city">
     <LayoutInfo>
       <GraphLayout
@@ -4414,9 +6166,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4438,9 +6188,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4462,9 +6210,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4486,9 +6232,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4630,9 +6374,7 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4655,7 +6397,7 @@ where [refTable].[CityID_SK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,19.1832015901805,54.1827734375,11.43359375"
+              BoundingBox="-27.09138671875,19.1832015901804,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4678,13 +6420,403 @@ where [refTable].[CityID_SK] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\film_cate\film_cate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film_cate\film_cate\Row Count"
+          TopLeft="250.999996259809,204.999996945262" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\film_cate\film_cate\Insert film_cate"
+          TopLeft="234.499996587634,290.699998778105" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\film_cate\film_cate\film_cate NDS"
+          TopLeft="238.3,5.49999999999984" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\film_cate\film_cate\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <EdgeLayout
+          Id="Package\film_cate\film_cate.Paths[Row Count Output 1]"
+          TopLeft="313.149996423721,246.599996945262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.1000018328428"
+              Start="0,0"
+              End="0,36.6000018328428">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.6000018328428" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_cate\film_cate.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_cate\film_cate.Paths[New Output]"
+          TopLeft="313.249998129904,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.2999969452621"
+              Start="0,0"
+              End="0,48.7999969452621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.7999969452621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,18.683201597631,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\film_sales\film_sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\film_sales\film_sales\film_sales NDS"
+          TopLeft="514.999992325902,20.9999996870756" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\film_sales\film_sales\Lookup film_sales DDS"
+          TopLeft="491.999992668629,281.999995797872" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\film_sales\film_sales\Lookup film_cate NDS"
+          TopLeft="497.199996215105,93.9999985992909" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[OLE DB Source Output]"
+          TopLeft="588.699994270504,62.5999996870756">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3999989122152"
+              Start="0,0"
+              End="0,23.8999989122152">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8999989122152" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\film_sales\film_sales\Lookup city NDS"
+          TopLeft="513.199996215105,168.999997481704" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup Match Output]"
+          TopLeft="589.799996215105,135.599998599291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.3999988824129"
+              Start="0,0"
+              End="0,25.8999988824129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8999988824129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.14531194120647,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup Match Output1]"
+          TopLeft="587.999994441867,210.599997481704">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.3999983161687"
+              Start="0,0"
+              End="0,63.8999983161687">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.8999983161687" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,26.1453116580843,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\film_sales\film_sales\update film_sales"
+          TopLeft="208.999996885657,287.999995708466" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup Match Output2]"
+          TopLeft="491.999992668629,305.799995753169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122.199995782971,0"
+              Start="0,0"
+              End="-114.699995782971,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-114.699995782971,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.541384610236,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\film_sales\film_sales\OLE DB Command"
+          TopLeft="871.999987006187,283.99999576807" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[Lookup No Match Output]"
+          TopLeft="677.599992668629,303.799995782971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="194.399994337559,0"
+              Start="0,0"
+              End="186.899994337559,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="186.899994337559,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.6436104500293,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\film_sales\film_sales\Row Count"
+          TopLeft="234.999996498227,363.999994575977" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output]"
+          TopLeft="289.399996885657,329.599995708466">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.3999996125697,34.3999988675117"
+              Start="0,0"
+              End="10.3999996125697,26.8999988675117">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1999994337559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1999994337559"
+                    Point2="0,17.1999994337559"
+                    Point3="4,17.1999994337559" />
+                  <mssgle:LineSegment
+                    End="6.39999961256973,17.1999994337559" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.39999961256973,17.1999994337559"
+                    Point2="10.3999996125697,17.1999994337559"
+                    Point3="10.3999996125697,21.1999994337559" />
+                  <mssgle:LineSegment
+                    End="10.3999996125697,26.8999988675117" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\film_sales\film_sales\Row Count 1"
+          TopLeft="890.999986723066,374.999994412065" />
+        <EdgeLayout
+          Id="Package\film_sales\film_sales.Paths[OLE DB Command Output1]"
+          TopLeft="957.499986864627,325.59999576807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3999986439943"
+              Start="0,0"
+              End="0,41.8999986439943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8999986439943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_sales\film_sales\film_sales NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_sales\film_sales\Lookup film_sales DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[film_sales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_sales\film_sales\Lookup film_cate NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[film]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\film_sales\film_sales\Lookup city NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[cinema]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

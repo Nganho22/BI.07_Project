@@ -157,7 +157,6 @@ CREATE TABLE [dbo].[film_sales](
 	[ticket_use] [int] NULL,
 	[occur_perc] [float] NULL,
 	[DateKey] [varchar](8) NULL,
-	[SOURCE_ID] [int] NOT NULL
     PRIMARY KEY ([RevenueID_SK]),
     FOREIGN KEY ([FilmID_SK]) REFERENCES film([FilmID_SK]),
     FOREIGN KEY ([FilmCategoryID_SK]) REFERENCES [film_cate]([FilmCategoryID_SK]),

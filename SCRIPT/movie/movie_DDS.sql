@@ -51,6 +51,19 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
+
+CREATE TABLE cinema_Audit (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    [CinemaID_SK] int,
+    [Cinema Name_old_values] nvarchar(255),
+	[Capacity_old_values] int,
+	[Standard_Seats_price_old_values] int,
+	[VIP_Seats_price_old_values] int,
+	updatedDate datetime null,
+	FOREIGN KEY ([CinemaID_SK]) REFERENCES cinema ([CinemaID_SK])
+)
+
+
 /****** Object:  Table [dbo].[city] ******/
 SET ANSI_NULLS ON
 GO
@@ -65,6 +78,16 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+
+CREATE TABLE city_Audit (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    [CityID_SK] int,
+    [City_name_old_values] nvarchar(255),
+	updatedDate datetime null,
+	FOREIGN KEY ([CityID_SK]) REFERENCES [city]([CityID_SK])
+)
+
 
 /****** Object:  Table [dbo].[DATE_MASTER] ******/
 SET ANSI_NULLS ON

@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{1E729148-723B-4AA2-9069-2E6371D17F85}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{578F3157-E640-4C72-9D7B-DEFB32BA417A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{34688FBE-D12D-4333-A37E-A7FB75FFDFDC}ABC1.BI07_MOVIE_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{34688FBE-D12D-4333-A37E-A7FB75FFDFDC}ABC1.BI07_MOVIE_NDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1029,6 +1029,86 @@
           version="1">
           <components>
             <component
+              refId="Package\film_sales\change type tickets_use"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="change type tickets_use"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\film_sales\change type tickets_use.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\film_sales\change type tickets_use.Inputs[Derived Column Input].Columns[ticket_use]"
+                      cachedDataType="i4"
+                      cachedName="ticket_use"
+                      lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\film_sales\change type tickets_use.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\film_sales\change type tickets_use.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\film_sales\change type tickets_use.Outputs[Derived Column Output].Columns[ticket_use_float]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\film_sales\change type tickets_use.Outputs[Derived Column Output].Columns[ticket_use_float]"
+                      name="ticket_use_float"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_R4)#{Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[ticket_use]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_R4)ticket_use</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\film_sales\change type tickets_use.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\film_sales\change type tickets_use.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\film_sales\change type tickets_use.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\film_sales\change type tickets_use.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\film_sales\change type tickets_use.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\film_sales\change type tickets_use.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\film_sales\Derived Column 1"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1564,10 +1644,10 @@
                       cachedName="VIP_Seats_price"
                       lineageId="Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[VIP_Seats_price]" />
                     <inputColumn
-                      refId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input].Columns[occur_perc]"
-                      cachedDataType="r8"
-                      cachedName="occur_perc"
-                      lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]" />
+                      refId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input].Columns[ticket_use_float]"
+                      cachedDataType="r4"
+                      cachedName="ticket_use_float"
+                      lineageId="Package\film_sales\change type tickets_use.Outputs[Derived Column Output].Columns[ticket_use_float]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1626,7 +1706,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]"
-                      dataType="r8"
+                      dataType="r4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]"
@@ -1637,13 +1717,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(#{Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[occur_perc]} * 100) / #{Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[Capacity]}</property>
+                          name="Expression">(DT_R4)((#{Package\film_sales\change type tickets_use.Outputs[Derived Column Output].Columns[ticket_use_float]} * 100) / #{Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output].Columns[Capacity]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(occur_perc * 100) / Capacity</property>
+                          name="FriendlyExpression">(DT_R4)((ticket_use_float * 100) / Capacity)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2560,7 +2640,7 @@ where [refTable].[CinemaID_SK] = ?</property>
                       lineageId="Package\film_sales\film_sales NDS.Outputs[OLE DB Source Output].Columns[RevenueID_SK]" />
                     <inputColumn
                       refId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].Columns[new_occ]"
-                      cachedDataType="r8"
+                      cachedDataType="r4"
                       cachedName="new_occ"
                       externalMetadataColumnId="Package\film_sales\update film_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\film_sales\fix occur, total_price.Outputs[Derived Column Output].Columns[new_occ]" />
@@ -2745,13 +2825,18 @@ where [refTable].[CinemaID_SK] = ?</property>
               name="Derived Column Output"
               startId="Package\film_sales\total_sales.Outputs[Derived Column Output]" />
             <path
+              refId="Package\film_sales.Paths[Derived Column Output6]"
+              endId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\film_sales\change type tickets_use.Outputs[Derived Column Output]" />
+            <path
               refId="Package\film_sales.Paths[Lookup Match Output]"
               endId="Package\film_sales\Lookup Seats_price.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\film_sales\Lookup film_price.Outputs[Lookup Match Output]" />
             <path
               refId="Package\film_sales.Paths[Lookup Match Output1]"
-              endId="Package\film_sales\fix occur, total_price.Inputs[Derived Column Input]"
+              endId="Package\film_sales\change type tickets_use.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\film_sales\Lookup Seats_price.Outputs[Lookup Match Output]" />
             <path
@@ -3085,13 +3170,13 @@ where [refTable].[CinemaID_SK] = ?</property>
           Id="Package\film_sales\Lookup film_price"
           TopLeft="39.3999997466803,397.999994069338" />
         <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\film_sales\update film_sales"
+          TopLeft="516.9999922961,153.199997884035" />
+        <NodeLayout
           Size="174.4,41.6"
           Id="Package\film_sales\fix occur, total_price"
           TopLeft="535.999992012977,401.399994948506" />
-        <NodeLayout
-          Size="128,41.6"
-          Id="Package\film_sales\total_sales"
-          TopLeft="559.999998271465,275.799997273087" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\film_sales\Lookup Seats_price"
@@ -3109,9 +3194,9 @@ where [refTable].[CinemaID_SK] = ?</property>
           Id="Package\film_sales\Derived Column 1"
           TopLeft="32.9999995082617,128.99999807775" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\film_sales\update film_sales"
-          TopLeft="516.9999922961,153.199997884035" />
+          Size="128,41.6"
+          Id="Package\film_sales\total_sales"
+          TopLeft="559.999998271465,275.799997273087" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\film_sales\fix seat_sold"
@@ -3142,42 +3227,6 @@ where [refTable].[CinemaID_SK] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\film_sales.Paths[Lookup Match Output1]"
-          TopLeft="388.999997064471,454.599994382262">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="146.999994948506,-32.399999433756"
-              Start="0,0"
-              End="139.499994948506,-32.399999433756">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="69.4999974742531,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.4999974742531,0"
-                    Point2="73.4999974742531,0"
-                    Point3="73.4999974742531,-4" />
-                  <mssgle:LineSegment
-                    End="73.4999974742531,-28.399999433756" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.4999974742531,-28.399999433756"
-                    Point2="73.4999974742531,-32.399999433756"
-                    Point3="77.4999974742531,-32.399999433756" />
-                  <mssgle:LineSegment
-                    End="139.499994948506,-32.399999433756" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.3086107555031,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3388,6 +3437,80 @@ where [refTable].[CinemaID_SK] = ?</property>
                     Point3="30.7999997019768,32.6999992623925" />
                   <mssgle:LineSegment
                     End="30.7999997019768,49.899998524785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\film_sales\change type tickets_use"
+          TopLeft="529.464286841376,498.970587797927" />
+        <EdgeLayout
+          Id="Package\film_sales.Paths[Lookup Match Output1]"
+          TopLeft="304.199997064471,475.399994382262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="290.597623110239,23.570593415665"
+              Start="0,0"
+              End="290.597623110239,16.070593415665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0254770737841" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0254770737841"
+                    Point2="0,14.0254770737841"
+                    Point3="4,14.0254770737841" />
+                  <mssgle:LineSegment
+                    End="286.597623110239,14.0254770737841" />
+                  <mssgle:CubicBezierSegment
+                    Point1="286.597623110239,14.0254770737841"
+                    Point2="290.597623110239,14.0254770737841"
+                    Point3="290.597623110239,18.0254770737841" />
+                  <mssgle:LineSegment
+                    End="290.597623110239,16.070593415665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="97.1074248363693,19.0254770737841,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\film_sales.Paths[Derived Column Output6]"
+          TopLeft="656.130953508043,498.970587797927">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.9309614950657,-55.9705928494211"
+              Start="0,0"
+              End="-32.9309614950657,-48.4705928494211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.6657772696003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.6657772696003"
+                    Point2="0,-22.6657772696003"
+                    Point3="-4,-22.6657772696003" />
+                  <mssgle:LineSegment
+                    End="-28.9309614950657,-22.6657772696003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.9309614950657,-22.6657772696003"
+                    Point2="-32.9309614950657,-22.6657772696003"
+                    Point3="-32.9309614950657,-26.6657772696003" />
+                  <mssgle:LineSegment
+                    End="-32.9309614950657,-48.4705928494211" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

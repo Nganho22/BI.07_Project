@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="NDS S1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{531AC401-3882-4107-89B3-A60D0BFC1E9B}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{B692F533-5714-461D-B08A-C3224F948A5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -10480,19 +10480,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Dirived Column Day 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
+                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\film_sales\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
@@ -10500,19 +10500,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\film_sales\Data Flow Task\Dirived Column Day.Inputs[Derived Column Input]"
@@ -14360,7 +14360,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
           TopLeft="1344.68265501972,179.793277189792">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14384,7 +14384,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
           TopLeft="1259.2744917429,268.605672051696">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14408,7 +14408,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
           TopLeft="942.020409456365,286.606302306251">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14456,7 +14456,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
           TopLeft="401.021429358681,149.661274394485">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14480,7 +14480,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
           TopLeft="513.033674369702,264.879411675054">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14504,7 +14504,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
           TopLeft="422.653062124207,342.547898930232">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14717,7 +14717,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14727,7 +14727,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14753,7 +14753,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14763,7 +14763,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

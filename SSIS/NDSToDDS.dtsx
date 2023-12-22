@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{B2FE876B-AC01-45E9-83E8-01C7AD8C7EDA}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{5FA3CDCA-64F3-49A7-B8BB-DF818938C082}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B42A0B8E-C9FA-4E9F-98A8-24BCD2B0B8A6}ABC1.BI07_DDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B42A0B8E-C9FA-4E9F-98A8-24BCD2B0B8A6}ABC1.BI07_DDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CB382AF8-9E82-4CE5-BC48-798BC33682E4}ABC1.BI07_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CB382AF8-9E82-4CE5-BC48-798BC33682E4}ABC1.BI07_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CD02F8DA-9D2D-4D52-BF5E-B2A45A083065}ABC1.BI07_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CD02F8DA-9D2D-4D52-BF5E-B2A45A083065}ABC1.BI07_NDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -4555,7 +4555,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">INSERT INTO [dbo].[supermarket_sales]
        
      VALUES
-           (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
+           (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4634,51 +4634,43 @@ where [refTable].[ProductLineID_SK] = ?</property>
                           externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Total]" />
                         <inputColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[DateKey]"
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[DateTimeKey]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="DateKey"
+                          cachedLength="12"
+                          cachedName="DateTimeKey"
                           externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]" />
-                        <inputColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[TimeKey]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="4"
-                          cachedName="TimeKey"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]" />
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output].Columns[DateTimeKey]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[paymentID_SK]"
                           cachedDataType="i4"
                           cachedName="paymentID_SK"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[paymentID_SK]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[cogs]"
                           cachedDataType="r8"
                           cachedName="cogs"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[cogs]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[gross margin percentage]"
                           cachedDataType="r8"
                           cachedName="gross margin percentage"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
-                        <inputColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[Rating]"
-                          cachedDataType="r8"
-                          cachedName="Rating"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[gross income]"
                           cachedDataType="r8"
                           cachedName="gross income"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[gross income]" />
+                        <inputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].Columns[Rating]"
+                          cachedDataType="r8"
+                          cachedName="Rating"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4787,7 +4779,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           codePage="1252"
                           dataType="str"
-                          length="8"
+                          length="12"
                           name="Param_9">
                           <properties>
                             <property
@@ -4798,9 +4790,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4"
+                          dataType="i4"
                           name="Param_10">
                           <properties>
                             <property
@@ -4811,7 +4801,7 @@ where [refTable].[ProductLineID_SK] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          dataType="i4"
+                          dataType="r8"
                           name="Param_11">
                           <properties>
                             <property
@@ -4853,17 +4843,6 @@ where [refTable].[ProductLineID_SK] = ?</property>
                               name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                          dataType="r8"
-                          name="Param_15">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4892,6 +4871,186 @@ where [refTable].[ProductLineID_SK] = ?</property>
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup DateTimeKey"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DATETIME_MASTER]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DATETIME_MASTER]) [refTable]
+where [refTable].[DateKey] = ? and [refTable].[TimeKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateTimeKey" dataType="DT_STR" length="12" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DateKey" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TimeKey" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Hour" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Minute" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]};#{Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1258</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[ABC1.BI07_DDS]"
+                      connectionManagerRefId="Package.ConnectionManagers[ABC1.BI07_DDS]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input].Columns[DateKey]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="DateKey"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">DateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input].Columns[TimeKey]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="TimeKey"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">TimeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output].Columns[DateTimeKey]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copy Column"
+                          length="12"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output].Columns[DateTimeKey]"
+                          name="DateTimeKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">DateTimeKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -5753,8 +5912,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       ,[Quantity] = ?
       ,[Tax 5%] = ?
       ,[Total] = ?
-      ,[DateKey] = ?
-      ,[TimeKey] = ?
+      ,[DateTimeKey] = ?
       ,[paymentID_SK] = ?
       ,[cogs] = ?
       ,[gross margin percentage] = ?
@@ -5833,57 +5991,49 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                           externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Total]" />
                         <inputColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[DateKey]"
+                          refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[DateTimeKey]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="DateKey"
+                          cachedLength="12"
+                          cachedName="DateTimeKey"
                           externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[DateKey]" />
+                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output].Columns[DateTimeKey]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[paymentID_SK]"
                           cachedDataType="i4"
                           cachedName="paymentID_SK"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[paymentID_SK]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[cogs]"
                           cachedDataType="r8"
                           cachedName="cogs"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[cogs]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[gross margin percentage]"
                           cachedDataType="r8"
                           cachedName="gross margin percentage"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[gross margin percentage]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[gross income]"
                           cachedDataType="r8"
                           cachedName="gross income"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[gross income]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[Rating]"
                           cachedDataType="r8"
                           cachedName="Rating"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Rating]" />
                         <inputColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[Invoice ID_SK]"
                           cachedDataType="i4"
                           cachedName="Invoice ID_SK"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[Invoice ID_SK]" />
-                        <inputColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].Columns[TimeKey]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="4"
-                          cachedName="TimeKey"
-                          externalMetadataColumnId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          lineageId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output].Columns[TimeKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5981,7 +6131,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           codePage="1252"
                           dataType="str"
-                          length="8"
+                          length="12"
                           name="Param_8">
                           <properties>
                             <property
@@ -5992,9 +6142,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4"
+                          dataType="i4"
                           name="Param_9">
                           <properties>
                             <property
@@ -6005,7 +6153,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          dataType="i4"
+                          dataType="r8"
                           name="Param_10">
                           <properties>
                             <property
@@ -6049,19 +6197,8 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                          dataType="r8"
-                          name="Param_14">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                           dataType="i4"
-                          name="Param_15">
+                          name="Param_14">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -6117,6 +6254,11 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                   name="Lookup Match Output"
                   startId="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK.Outputs[Lookup Match Output]" />
                 <path
+                  refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+                  endId="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
                   endId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
@@ -6133,7 +6275,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                   startId="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Source Output]"
-                  endId="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK.Inputs[Lookup Input]"
+                  endId="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
                   startId="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS.Outputs[OLE DB Source Output]" />
               </paths>
@@ -6244,11 +6386,11 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="119.2,41.6"
+          Size="119.333333333334,41.3333333333334"
           Id="Package\Dim table  payment\payment"
           TopLeft="72.550001157501,37.8323525733524" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table  payment\update DATA_TABLE_INFO (insert)"
           TopLeft="16.3000010377595,139.155881896303" />
         <EdgeLayout
@@ -6276,16 +6418,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="279.2,248"
-          Size="279.2,290.4"
+          PanelSize="279.333333333334,248"
+          Size="279.333333333334,290.666666666667"
           Id="Package\Dim table  payment"
           TopLeft="60,440.191176504605" />
         <NodeLayout
-          Size="94.4,41.6"
+          Size="94.6666666666667,41.3333333333334"
           Id="Package\Dim table city\city"
           TopLeft="105.377778986428,37.6115778053291" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table city\update DATA_TABLE_INFO (insert)"
           TopLeft="30.6952391449084,174.113725236601" />
         <EdgeLayout
@@ -6313,16 +6455,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="310.4,272"
-          Size="310.4,315.2"
+          PanelSize="310.666666666667,272"
+          Size="310.666666666667,315.333333333334"
           Id="Package\Dim table city"
           TopLeft="439.285715220838,61.3882352445159" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,41.3333333333334"
           Id="Package\Dim table customer_type\customer_type"
           TopLeft="68.8642877460898,44.6441171920965" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table customer_type\update DATA_TABLE_INFO (insert)"
           TopLeft="26.9000019424728,146.761764177188" />
         <EdgeLayout
@@ -6350,16 +6492,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290.4,244"
-          Size="290.4,286.4"
+          PanelSize="290.666666666667,244"
+          Size="290.666666666667,286.666666666667"
           Id="Package\Dim table customer_type"
           TopLeft="446.428572251176,436.588235244516" />
         <NodeLayout
-          Size="116,42.4"
+          Size="116,42.6666666666667"
           Id="Package\Dim table product\product"
           TopLeft="72.2499972619116,19.5999753904351" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table product\update DATA_TABLE_INFO (insert)"
           TopLeft="18.1666632021468,148.349988253117" />
         <EdgeLayout
@@ -6399,16 +6541,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="276.8,245.6"
-          Size="276.8,288"
+          PanelSize="276.666666666667,245.333333333334"
+          Size="276.666666666667,288"
           Id="Package\Dim table product"
           TopLeft="59.9524154151163,800.066634556453" />
         <NodeLayout
-          Size="136.8,41.6"
+          Size="136.666666666667,41.3333333333334"
           Id="Package\Dim table product_line\product_line"
           TopLeft="74.6285725598433,27.1620914282695" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Dim table product_line\update DATA_TABLE_INFO (insert)"
           TopLeft="21.8492063840096,168.54472461772" />
         <EdgeLayout
@@ -6436,16 +6578,16 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="281.6,272"
-          Size="281.6,315.2"
+          PanelSize="281.333333333334,272"
+          Size="281.333333333334,315.333333333334"
           Id="Package\Dim table product_line"
           TopLeft="60,60" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.666666666667,41.3333333333334"
           Id="Package\Fact table supermarket_sales\supermarket_sales"
           TopLeft="74.8535725106162,18.623529340043" />
         <NodeLayout
-          Size="244,41.6"
+          Size="244,41.3333333333334"
           Id="Package\Fact table supermarket_sales\update DATA_TABLE_INFO (insert)"
           TopLeft="36.3714296008251,153.211764516189" />
         <EdgeLayout
@@ -6473,8 +6615,8 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="285.6,249.6"
-          Size="285.6,292.8"
+          PanelSize="285.333333333334,250"
+          Size="285.333333333334,292.666666666667"
           Id="Package\Fact table supermarket_sales"
           TopLeft="451.916683607233,801.928536050662" />
         <EdgeLayout
@@ -7656,55 +7798,33 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201.6,42.4"
+          Size="201.333333333334,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK"
-          TopLeft="313.124986002222,230.749988996983" />
+          TopLeft="313.124986002222,250.249988067151" />
         <NodeLayout
-          Size="190.4,42.4"
+          Size="190.666666666667,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS"
-          TopLeft="314.166652622323,112.883327950637" />
+          TopLeft="319.166652398806,66.7333301512404" />
         <NodeLayout
-          Size="140,42.4"
+          Size="140,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count 1"
           TopLeft="568.124974602834,530.249976909161" />
         <NodeLayout
-          Size="180,42.4"
+          Size="180,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK"
-          TopLeft="324.374985499308,332.727761912082" />
+          TopLeft="324.999985471368,332.727761912082" />
         <NodeLayout
-          Size="131.2,42.4"
+          Size="131.333333333334,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count"
           TopLeft="119.999994635582,525.849974925519" />
         <NodeLayout
-          Size="221.6,42.4"
+          Size="221.333333333334,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales"
           TopLeft="524.999976530672,428.199981775285" />
         <NodeLayout
-          Size="204,42.4"
+          Size="204,42.6666666666667"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales"
           TopLeft="89.3749960046262,427.699979605676" />
-        <EdgeLayout
-          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Source Output]"
-          TopLeft="411.645819312272,155.549994617303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75.1999943796797"
-              Start="0,0"
-              End="0,67.6999943796797">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.6999943796797" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Command Output1]"
           TopLeft="636.895808900086,470.866648441951">
@@ -7751,49 +7871,49 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup No Match Output]"
-          TopLeft="443.041652165974,375.394428578748">
+          TopLeft="443.666652138035,375.394428578749">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="192.624991031364,52.8055531965363"
+              EndConnector="191.999991059304,52.8055531965363"
               Start="0,0"
-              End="192.624991031364,45.3055531965363">
+              End="191.999991059304,45.3055531965363">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.4013695774508" />
+                    End="0,17.4013695774509" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.4013695774508"
-                    Point2="0,21.4013695774508"
-                    Point3="4,21.4013695774508" />
+                    Point1="0,17.4013695774509"
+                    Point2="0,21.4013695774509"
+                    Point3="4,21.4013695774509" />
                   <mssgle:LineSegment
-                    End="188.624991031364,21.4013695774508" />
+                    End="187.999991059304,21.4013695774509" />
                   <mssgle:CubicBezierSegment
-                    Point1="188.624991031364,21.4013695774508"
-                    Point2="192.624991031364,21.4013695774508"
-                    Point3="192.624991031364,25.4013695774508" />
+                    Point1="187.999991059304,21.4013695774509"
+                    Point2="191.999991059304,21.4013695774509"
+                    Point3="191.999991059304,25.4013695774509" />
                   <mssgle:LineSegment
-                    End="192.624991031364,45.3055531965363" />
+                    End="191.999991059304,45.3055531965363" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="40.506108796932,26.4013695774508,111.6127734375,11.609375"
+              BoundingBox="40.1936088109018,26.4013695774509,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output1]"
-          TopLeft="385.708318832641,375.394428578748">
+          TopLeft="386.333318804702,375.394428578749">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-194.333322828015,52.3055510269273"
+              EndConnector="-194.958322800076,52.3055510269273"
               Start="0,0"
-              End="-194.333322828015,44.8055510269273">
+              End="-194.958322800076,44.8055510269273">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -7804,44 +7924,94 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                     Point2="0,21.1987255263318"
                     Point3="-4,21.1987255263318" />
                   <mssgle:LineSegment
-                    End="-190.333322828015,21.1987255263318" />
+                    End="-190.958322800076,21.1987255263318" />
                   <mssgle:CubicBezierSegment
-                    Point1="-190.333322828015,21.1987255263318"
-                    Point2="-194.333322828015,21.1987255263318"
-                    Point3="-194.333322828015,25.1987255263318" />
+                    Point1="-190.958322800076,21.1987255263318"
+                    Point2="-194.958322800076,21.1987255263318"
+                    Point3="-194.958322800076,25.1987255263318" />
                   <mssgle:LineSegment
-                    End="-194.333322828015,44.8055510269273" />
+                    End="-194.958322800076,44.8055510269273" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-145.358048132757,26.1987255263318,96.3827734375,11.609375"
+              BoundingBox="-145.670548118788,26.1987255263318,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output]"
-          TopLeft="414.083319084098,273.41665566365">
+          TopLeft="414.395819070129,292.916654733817">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3111062484318"
+              EndConnector="0,39.8111071782648"
               Start="0,0"
-              End="0,51.8111062484318">
+              End="0,32.3111071782648">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8111062484318" />
+                    End="0,32.3111071782648" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.1008656242159,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,10.3508660891324,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey"
+          TopLeft="322.499985583127,156.699993863106" />
+        <EdgeLayout
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[OLE DB Source Output]"
+          TopLeft="413.499985657633,109.399996817907">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.2999970451989"
+              Start="0,0"
+              End="0,39.7999970451989">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.7999970451989" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact table supermarket_sales\supermarket_sales.Paths[Lookup Match Output2]"
+          TopLeft="413.145819126008,199.366660529773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.8833275373779"
+              Start="0,0"
+              End="0,43.3833275373779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.3833275373779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.886976268689,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7854,7 +8024,38 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
           type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DATETIME_MASTER]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

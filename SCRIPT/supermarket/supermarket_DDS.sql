@@ -110,7 +110,6 @@ FROM
     DATE_MASTER dm,
     TIME_MASTER tm
 WHERE MONTH = 1
-
 GO
 
 INSERT INTO [dbo].[DATETIME_MASTER] (DateTimeKey, DateKey, Day, Month, Year, TimeKey, Hour, Minute)
@@ -146,6 +145,7 @@ FROM
 WHERE MONTH = 3
 
 GO
+
 DROP TABLE DATE_MASTER
 DROP TABLE TIME_MASTER
 

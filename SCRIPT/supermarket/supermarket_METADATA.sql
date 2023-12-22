@@ -13,6 +13,9 @@ CREATE TABLE [dbo].[DATA_FLOW](
 )
 GO
 
+--drop table COLUMN_INFO
+--drop table DATA_TABLE_INFO
+-- select * from DATA_TABLE_INFO
 --DATA_STORE_INFO
 CREATE TABLE DATA_STORE_INFO
 (
@@ -58,9 +61,11 @@ INSERT INTO DATA_TABLE_INFO VALUES(3,'supermarket_sales','Transaction table(NDS)
 
 -- DDS
 
-INSERT INTO DATA_TABLE_INFO VALUES(4, 'TIME_MASTER','dimension','Store Time Dimension', GETDATE())
+--INSERT INTO DATA_TABLE_INFO VALUES(4, 'TIME_MASTER','dimension','Store Time Dimension', GETDATE())
 
-INSERT INTO DATA_TABLE_INFO VALUES(4, 'DATE_MASTER','dimension','Store Date Dimension', GETDATE())
+--INSERT INTO DATA_TABLE_INFO VALUES(4, 'DATE_MASTER','dimension','Store Date Dimension', GETDATE())
+
+INSERT INTO DATA_TABLE_INFO VALUES(4, 'DATETIME_MASTER','dimension','Store Date, Time Dimension', GETDATE())
 
 INSERT INTO DATA_TABLE_INFO VALUES(4, 'payment','dimension','Store payment Dimension', NULL)
 
@@ -121,12 +126,6 @@ insert into COLUMN_INFO values(5,'gross income','float','store gross income','26
 insert into COLUMN_INFO values(5,'Rating','float','store rating','9,1',null)
 
 
---DATE_MASTER NDS
-insert into COLUMN_INFO values(6,N'DateKey',N'varchar','Store date key','20190105',null)
-insert into COLUMN_INFO values(6,N'Day',N'int','Store day in date','05',null)
-insert into COLUMN_INFO values(6,N'Month',N'int','Store month in date','01',null)
-insert into COLUMN_INFO values(6,N'Year',N'int','Store year in dete','2019',null)
-
 --TIME_MASTER NDS
 insert into COLUMN_INFO values(7,N'TimeKey',N'varchar','Store time key','2019',null)
 insert into COLUMN_INFO values(7,N'Hour',N'int','Store hour in time','20',null)
@@ -177,57 +176,69 @@ insert into COLUMN_INFO values(13, N'Rating','float','Store ratings statistics',
 
 -- DDS
 
--- DATE_MASTER
-insert into COLUMN_INFO values(15, N'DateKey',N'varchar','Store Date Key','20231230',null)
-insert into COLUMN_INFO values(15, N'Day','int','Store day in Date',30,null)
-insert into COLUMN_INFO values(15, N'Month','int','Store month in Date',12,null)
-insert into COLUMN_INFO values(15, N'Year','int','Store year in Date',2023,null)
 
--- TIME_MASTER
-insert into COLUMN_INFO values(14, N'TimeKey',N'varchar','Store Time Key','2359',null)
-insert into COLUMN_INFO values(14, N'Hour','int','Store Hour in Time',23,null)
-insert into COLUMN_INFO values(14, N'Minute','int','Store Minute in Time ',59,null)
+---- DATE_MASTER
+--insert into COLUMN_INFO values(15, N'DateKey',N'varchar','Store Date Key','20231230',null)
+--insert into COLUMN_INFO values(15, N'Day','int','Store day in Date',30,null)
+--insert into COLUMN_INFO values(15, N'Month','int','Store month in Date',12,null)
+--insert into COLUMN_INFO values(15, N'Year','int','Store year in Date',2023,null)
 
+---- TIME_MASTER
+--insert into COLUMN_INFO values(14, N'TimeKey',N'varchar','Store Time Key','2359',null)
+--insert into COLUMN_INFO values(14, N'Hour','int','Store Hour in Time',23,null)
+--insert into COLUMN_INFO values(14, N'Minute','int','Store Minute in Time ',59,null)
+
+-- DATETIME_MASTER
+insert into COLUMN_INFO values(14, N'DateTimeKey',N'varchar','Store DateTime Key','201901010000',null)
+insert into COLUMN_INFO values(14, N'DateKey', N'varchar','Store Date Key','20190101',null)
+insert into COLUMN_INFO values(14, N'Day','int','Store Day ','1',null)
+insert into COLUMN_INFO values(14, N'Month','int','Store Month ','1',null)
+insert into COLUMN_INFO values(14, N'Year','int','Store Year ','2019',null)
+insert into COLUMN_INFO values(14, N'TimeKey','varchar','Store Year ','0000',null)
+insert into COLUMN_INFO values(14, N'Hour','int','Store Year ','0',null)
+insert into COLUMN_INFO values(14, N'Minute','int','Store Year ','0',null)
 
 -- payment
-insert into COLUMN_INFO values(16, N'paymentID_SK','int','Store payment ID surrogate key',1,null)
-insert into COLUMN_INFO values(16, N'Payment type',N'varchar','Store payment type','Credit Card',null)
+insert into COLUMN_INFO values(15, N'paymentID_SK','int','Store payment ID surrogate key',1,null)
+insert into COLUMN_INFO values(15, N'Payment type',N'varchar','Store payment type','Credit Card',null)
 
 -- city
-insert into COLUMN_INFO values(17, N'Branch_SK','int','Store Branch surrogate key',1,null)
-insert into COLUMN_INFO values(17, N'Branch_NK','int','Store Branch natural key',1,null)
-insert into COLUMN_INFO values(17, N'City',N'varchar','Store City name','Yagoon',null)
+insert into COLUMN_INFO values(16, N'Branch_SK','int','Store Branch surrogate key',1,null)
+insert into COLUMN_INFO values(16, N'Branch_NK','int','Store Branch natural key',1,null)
+insert into COLUMN_INFO values(16, N'City',N'varchar','Store City name','Yagoon',null)
 
 -- customer_type
-insert into COLUMN_INFO values(20, N'customer_typeID_SK','int','Store customer type surrogate key',1,null)
-insert into COLUMN_INFO values(20, N'Customer type',N'varchar','Store customer type name','Member',null)
+insert into COLUMN_INFO values(19, N'customer_typeID_SK','int','Store customer type surrogate key',1,null)
+insert into COLUMN_INFO values(19, N'Customer type',N'varchar','Store customer type name','Member',null)
 
 
 -- product_line
-insert into COLUMN_INFO values(18, N'ProductLineID_SK','int','Store product_line surrogate key',1,null)
-insert into COLUMN_INFO values(18, N'Product line',N'varchar','Store product_line name','Health and Beauty',null)
+insert into COLUMN_INFO values(17, N'ProductLineID_SK','int','Store product_line surrogate key',1,null)
+insert into COLUMN_INFO values(17, N'Product line',N'varchar','Store product_line name','Health and Beauty',null)
 
 -- product
-insert into COLUMN_INFO values(19, N'ProductID_SK','int','Store product surrogate key',1,null)
-insert into COLUMN_INFO values(19, N'Unit price','float','Store price of product',74.69,null)
+insert into COLUMN_INFO values(18, N'ProductID_SK','int','Store product surrogate key',1,null)
+insert into COLUMN_INFO values(18, N'Unit price','float','Store price of product',74.69, null)
 
+select* from DATA_TABLE_INFO
 -- supermarket_sales
-insert into COLUMN_INFO values(21, N'InvoiceID_SK','int','Store invoice ID surrogate key','1',null)
-insert into COLUMN_INFO values(21, N'Branch_SK','int','Store branch ID surrogate key','1',69)
-insert into COLUMN_INFO values(21, N'customer_typeID_SK','int','Store cuustomer type ID surrogate key','1',72)
-insert into COLUMN_INFO values(21, N'Gender','varchar','Store customer gender','MALE',null)
-insert into COLUMN_INFO values(21, N'ProductID_SK','int','Store product ID surrogate key','1',76)
-insert into COLUMN_INFO values(21, N'ProductLineID_SK','int','Store product line ID surrogate key','1',74)
-insert into COLUMN_INFO values(21, N'Quantity','int','Store product quantity','2',null)
-insert into COLUMN_INFO values(21, N'Tax 5%','float','Store tax amount','26.1415',null)
-insert into COLUMN_INFO values(21, N'Total','float','Store Total amouunt of invoice','548.9715',null)
-insert into COLUMN_INFO values(21, N'DateKey','varchar','Store invoice create Date key','20231223',60)
-insert into COLUMN_INFO values(21, N'TimeKey','varchar','Store invoice create Time key','2359',64)
-insert into COLUMN_INFO values(21, N'paymentID_SK','int','Store payment ID surrogate key','1',67)
-insert into COLUMN_INFO values(21, N'cogs','float','Store cost of goods sold','522.83',null)
-insert into COLUMN_INFO values(21, N'gross margin percentage','float','Store gross margin percentage amount','4.761904762',null)
-insert into COLUMN_INFO values(21, N'gross income','float','Store gross income amount','26.1415',null)
-insert into COLUMN_INFO values(21, N'Rating','float','Store ratings statistics','9.1',null)
+insert into COLUMN_INFO values(20, N'InvoiceID_SK','int','Store invoice ID surrogate key','1',null)
+insert into COLUMN_INFO values(20, N'Branch_SK','int','Store branch ID surrogate key','1',66)
+insert into COLUMN_INFO values(20, N'customer_typeID_SK','int','Store cuustomer type ID surrogate key','1',69)
+insert into COLUMN_INFO values(20, N'Gender','varchar','Store customer gender','MALE',null)
+insert into COLUMN_INFO values(20, N'ProductID_SK','int','Store product ID surrogate key','1', 73)
+insert into COLUMN_INFO values(20, N'ProductLineID_SK','int','Store product line ID surrogate key','1',71)
+insert into COLUMN_INFO values(20, N'Quantity','int','Store product quantity','2',null)
+insert into COLUMN_INFO values(20, N'Tax 5%','float','Store tax amount','26.1415',null)
+insert into COLUMN_INFO values(20, N'Total','float','Store Total amouunt of invoice','548.9715',null)
+--insert into COLUMN_INFO values(20, N'DateKey','varchar','Store invoice create Date key','20231223',60)
+--insert into COLUMN_INFO values(20, N'TimeKey','varchar','Store invoice create Time key','2359',64)
+insert into COLUMN_INFO values(20, N'DateTimeKey',N'varchar','Store DateTime Key','201901010000',56)
+insert into COLUMN_INFO values(20, N'paymentID_SK','int','Store payment ID surrogate key','1',51)
+insert into COLUMN_INFO values(20, N'cogs','float','Store cost of goods sold','522.83',null)
+insert into COLUMN_INFO values(20, N'gross margin percentage','float','Store gross margin percentage amount','4.761904762',null)
+insert into COLUMN_INFO values(20, N'gross income','float','Store gross income amount','26.1415',null)
+insert into COLUMN_INFO values(20, N'Rating','float','Store ratings statistics','9.1',null)
 
 
 select * from column_info

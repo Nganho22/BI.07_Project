@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{DF282BFD-DF5D-4ED0-9C9B-1D180E2A1D4D}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{6CFFD361-DB90-4D0E-A5FA-E5720FA04BE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DDS-{9B84B4F6-6F0D-4F3E-903C-37FCFDBA13E0}ABC1.BI07_MOVIE_DDS;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DDS-{9B84B4F6-6F0D-4F3E-903C-37FCFDBA13E0}ABC1.BI07_MOVIE_DDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

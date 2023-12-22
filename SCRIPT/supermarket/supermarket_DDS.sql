@@ -79,6 +79,76 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
+CREATE TABLE [dbo].[DATETIME_MASTER](
+	[DateTimeKey] [varchar](12) NOT NULL,
+	[DateKey] [varchar](8) NULL,
+	[Day] [int] NULL,
+	[Month] [int] NULL,
+	[Year] [int] NULL,
+	[TimeKey] [varchar](4) NULL,
+	[Hour] [int] NULL,
+	[Minute] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[DateTimeKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+INSERT INTO [dbo].[DATETIME_MASTER] (DateTimeKey, DateKey, Day, Month, Year, TimeKey, Hour, Minute)
+SELECT
+    dm.DateKey + tm.TimeKey,
+    dm.DateKey,
+    dm.Day,
+    dm.Month,
+    dm.Year,
+    tm.TimeKey,
+    tm.Hour,
+    tm.Minute
+FROM
+    DATE_MASTER dm,
+    TIME_MASTER tm
+WHERE MONTH = 1
+
+GO
+
+INSERT INTO [dbo].[DATETIME_MASTER] (DateTimeKey, DateKey, Day, Month, Year, TimeKey, Hour, Minute)
+SELECT
+    dm.DateKey + tm.TimeKey,
+    dm.DateKey,
+    dm.Day,
+    dm.Month,
+    dm.Year,
+    tm.TimeKey,
+    tm.Hour,
+    tm.Minute
+FROM
+    DATE_MASTER dm,
+    TIME_MASTER tm
+WHERE MONTH = 2
+
+GO
+
+INSERT INTO [dbo].[DATETIME_MASTER] (DateTimeKey, DateKey, Day, Month, Year, TimeKey, Hour, Minute)
+SELECT
+    dm.DateKey + tm.TimeKey,
+    dm.DateKey,
+    dm.Day,
+    dm.Month,
+    dm.Year,
+    tm.TimeKey,
+    tm.Hour,
+    tm.Minute
+FROM
+    DATE_MASTER dm,
+    TIME_MASTER tm
+WHERE MONTH = 3
+
+GO
+DROP TABLE DATE_MASTER
+DROP TABLE TIME_MASTER
+
 CREATE TABLE [dbo].[payment](
 	[paymentID_SK] [int] NOT NULL,
 	[Payment type] [nvarchar](255) NULL,
@@ -202,6 +272,7 @@ GO
 --	FOREIGN KEY ([customer_typeID_SK]) REFERENCES customer_type([customer_typeID_SK])
 --)
 
+
 CREATE TABLE [supermarket_sales] (
     [Invoice ID_SK] int NOT NULL,
     [Branch_SK] int,
@@ -212,8 +283,7 @@ CREATE TABLE [supermarket_sales] (
     [Quantity] int,
     [Tax 5%] float,
     [Total] float,
-    [DateKey] varchar(8),
-    [TimeKey] varchar(4),
+    [DateTimeKey] varchar(12),
     [paymentID_SK] int,
     [cogs] float,
     [gross margin percentage] float,
@@ -224,8 +294,8 @@ CREATE TABLE [supermarket_sales] (
     FOREIGN KEY (customer_typeID_SK) REFERENCES customer_type(customer_typeID_SK),
     FOREIGN KEY (ProductID_SK) REFERENCES product(ProductID_SK),
 	FOREIGN KEY (ProductLineID_SK) REFERENCES product_line(ProductLineID_SK),
-    FOREIGN KEY (DateKey) REFERENCES DATE_MASTER(DateKey),
-    FOREIGN KEY (TimeKey) REFERENCES TIME_MASTER(TimeKey),
+    FOREIGN KEY (DateTimeKey) REFERENCES DATETIME_MASTER(DateTimeKey),
     FOREIGN KEY (paymentID_SK) REFERENCES payment(paymentID_SK)
 )
+
 

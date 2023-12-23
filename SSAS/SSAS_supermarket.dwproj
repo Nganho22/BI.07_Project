@@ -6,10 +6,79 @@
     <Name>SSAS.database</Name>
     <FullPath>SSAS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>BI07 DDS.cube</Name>
+      <FullPath>BI07 DDS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BI07 DDS.partitions</Name>
+          <FullPath>BI07 DDS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>City.dim</Name>
+      <FullPath>City.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DATETIME MASTER.dim</Name>
+      <FullPath>DATETIME MASTER.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Customer Type.dim</Name>
+      <FullPath>Customer Type.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Payment.dim</Name>
+      <FullPath>Payment.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product Line.dim</Name>
+      <FullPath>Product Line.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product.dim</Name>
+      <FullPath>Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Gender.dim</Name>
+      <FullPath>Gender.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>BI07 DDS.ds</Name>
+      <FullPath>BI07 DDS.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>BI07 DDS.dsv</Name>
+      <FullPath>BI07 DDS.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>BI07 DDS</Id>
+            <Name>BI07 DDS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ABC1;Persist Security Info=True;Password=;User ID=;Initial Catalog=BI07_DDS</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>BI07 DDS</Id>
+            <Name>BI07 DDS</Name>
+            <Value xsi:type="xsd:int">1</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

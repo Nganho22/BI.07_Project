@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{7767F69F-E0F0-4751-ACFD-9D8C078851F2}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{2810D753-0340-48CA-A9A4-C7C7E12B2E05}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6418,10 +6418,10 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="279.2,248"
+          PanelSize="279.2,247.2"
           Size="279.2,290.4"
           Id="Package\Dim table  payment"
-          TopLeft="60,440.191176504605" />
+          TopLeft="846.904763579875,458.034313743867" />
         <NodeLayout
           Size="94.4,41.6"
           Id="Package\Dim table city\city"
@@ -6492,10 +6492,10 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290.4,244"
+          PanelSize="290.4,243.2"
           Size="290.4,286.4"
           Id="Package\Dim table customer_type"
-          TopLeft="446.428572251176,436.588235244516" />
+          TopLeft="842.85714452364,61.882353220019" />
         <NodeLayout
           Size="116,42.4"
           Id="Package\Dim table product\product"
@@ -6541,10 +6541,10 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="276.8,245.6"
+          PanelSize="276.8,244.8"
           Size="276.8,288"
           Id="Package\Dim table product"
-          TopLeft="59.9524154151163,800.066634556453" />
+          TopLeft="481.380987740799,461.684281911882" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\Dim table product_line\product_line"
@@ -6585,25 +6585,37 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Fact table supermarket_sales\supermarket_sales"
-          TopLeft="74.8535725106162,18.623529340043" />
+          TopLeft="64.1392867735226,21.1725489456518" />
         <NodeLayout
           Size="244,41.6"
           Id="Package\Fact table supermarket_sales\update DATA_TABLE_INFO (insert)"
           TopLeft="36.3714296008251,153.211764516189" />
         <EdgeLayout
           Id="Package\Fact table supermarket_sales.PrecedenceConstraints[Constraint]"
-          TopLeft="158.279167722387,59.9568626733763">
+          TopLeft="147.339286773523,62.7725489456518">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,93.2549018428124"
+              EndConnector="11.0321428273025,90.4392155705372"
               Start="0,0"
-              End="0,85.7549018428124">
+              End="11.0321428273025,82.9392155705372">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,85.7549018428124" />
+                    End="0,41.2196077852686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.2196077852686"
+                    Point2="0,45.2196077852686"
+                    Point3="4,45.2196077852686" />
+                  <mssgle:LineSegment
+                    End="7.03214282730247,45.2196077852686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.03214282730247,45.2196077852686"
+                    Point2="11.0321428273025,45.2196077852686"
+                    Point3="11.0321428273025,49.2196077852686" />
+                  <mssgle:LineSegment
+                    End="11.0321428273025,82.9392155705372" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6618,7 +6630,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
           PanelSize="285.6,249.6"
           Size="285.6,292.8"
           Id="Package\Fact table supermarket_sales"
-          TopLeft="451.916683607233,801.928536050662" />
+          TopLeft="44.7738255976755,459.722653997678" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="341.6,218.294117622258">
@@ -6643,18 +6655,30 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="593.057143736007,376.588235244516">
+          TopLeft="749.685715220838,218.988235244516">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="93.1714293028015,-13.9058820244969"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="85.6714293028015,-13.9058820244969">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="42.5857146514007,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.5857146514007,0"
+                    Point2="46.5857146514007,0"
+                    Point3="46.5857146514007,-4" />
+                  <mssgle:LineSegment
+                    End="46.5857146514007,-9.90588202449695" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.5857146514007,-9.90588202449695"
+                    Point2="46.5857146514007,-13.9058820244969"
+                    Point3="50.5857146514007,-13.9058820244969" />
+                  <mssgle:LineSegment
+                    End="85.6714293028015,-13.9058820244969" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6665,18 +6689,18 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="446.428572251176,582.58970587456">
+          TopLeft="987.280954051757,348.282353220019">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-107.228572251176,0"
+              EndConnector="0,109.751960523848"
               Start="0,0"
-              End="-99.728572251176,0">
+              End="0,102.251960523848">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-99.728572251176,0" />
+                    End="0,102.251960523848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6687,18 +6711,18 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="198.976207707558,730.857843171272">
+          TopLeft="846.904763579875,604.459297827874">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.2087913851817"
+              EndConnector="-88.7237758390764,0"
               Start="0,0"
-              End="0,61.7087913851817">
+              End="-81.2237758390764,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.7087913851817" />
+                    End="-81.2237758390764,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6709,18 +6733,18 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="336.619082081783,946.164251970224">
+          TopLeft="481.380987740799,605.90346795478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="115.297601525451,0"
+              EndConnector="-151.007162143123,0"
               Start="0,0"
-              End="107.797601525451,0">
+              End="-143.507162143123,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="107.797601525451,0" />
+                    End="-143.507162143123,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

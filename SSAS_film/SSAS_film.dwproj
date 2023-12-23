@@ -6,10 +6,71 @@
     <Name>SSAS_film.database</Name>
     <FullPath>SSAS_film.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>BI07 MOVIE DDS.cube</Name>
+      <FullPath>BI07 MOVIE DDS.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>BI07 MOVIE DDS.partitions</Name>
+          <FullPath>BI07 MOVIE DDS.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Film.dim</Name>
+      <FullPath>Film.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>City.dim</Name>
+      <FullPath>City.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Film Cate.dim</Name>
+      <FullPath>Film Cate.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Cinema.dim</Name>
+      <FullPath>Cinema.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DATE MASTER.dim</Name>
+      <FullPath>DATE MASTER.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>BI07 MOVIE DDS.ds</Name>
+      <FullPath>BI07 MOVIE DDS.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>BI07 MOVIE DDS.dsv</Name>
+      <FullPath>BI07 MOVIE DDS.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>BI07 MOVIE DDS</Id>
+            <Name>BI07 MOVIE DDS</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=ABC1;Persist Security Info=True;Password=;User ID=;Initial Catalog=BI07_MOVIE_DDS</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>BI07 MOVIE DDS</Id>
+            <Name>BI07 MOVIE DDS</Name>
+            <Value xsi:type="xsd:int">1</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>

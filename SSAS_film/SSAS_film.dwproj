@@ -39,6 +39,10 @@
       <Name>DATE MASTER.dim</Name>
       <FullPath>DATE MASTER.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>RevenueID_SK.dim</Name>
+      <FullPath>RevenueID_SK.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

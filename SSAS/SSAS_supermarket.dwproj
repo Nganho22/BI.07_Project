@@ -47,6 +47,10 @@
       <Name>Gender.dim</Name>
       <FullPath>Gender.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>InvoiceID_SK.dim</Name>
+      <FullPath>InvoiceID_SK.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

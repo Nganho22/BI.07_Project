@@ -1,4 +1,4 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b29f7389-d568-4877-939b-f7848f0623a2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="990c306a-a9c2-4d6d-9b60-4f72b18b5f68" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>BI07 MOVIE DDS</ID>
   <Name>BI07 MOVIE DDS</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -224,100 +224,110 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="6acc4f5e-710c-435b-83ab-1f1e4b3ff33c">
+    <Dimension dwd:design-time-name="5101cd14-be13-43b8-aeee-22909be66424">
       <ID>Film</ID>
       <Name>Film</Name>
       <DimensionID>Film</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="6e9cd85a-7ad7-4c8e-b053-605911d6be29">
+        <Attribute dwd:design-time-name="b6e41db3-adc1-4f4f-ab33-58401fec4fa0">
           <AttributeID>Film ID SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ee057885-ed1c-4cb6-bf83-93503594869b">
+        <Attribute dwd:design-time-name="694b7ee5-5def-482f-89a8-97a95b0dffa4">
           <AttributeID>Film Name</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="b9d9be68-1376-432d-9ed5-c81cda4d549d">
+        <Attribute dwd:design-time-name="369b5866-1e0b-4d82-b30a-684e5b7946c6">
           <AttributeID>Price</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="6b0c940b-70c8-434c-b3d5-1ee51ff0b850">
+    <Dimension dwd:design-time-name="d63eca9e-c42f-46ed-bfac-3562353e0750">
       <ID>City</ID>
       <Name>City</Name>
       <DimensionID>City</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="c6c3fe3c-4d83-4a92-86d7-d08d09efdc6f">
+        <Attribute dwd:design-time-name="f09241c4-05e1-4887-b70e-50234c9d9fc1">
           <AttributeID>City ID SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="ddb500be-7aeb-4ea1-89e3-ee882fd5d606">
+        <Attribute dwd:design-time-name="c0f72cff-bddc-46ad-9440-607da5cf1502">
           <AttributeID>City Name</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="05f4ef4d-73ca-4658-a100-327a5228ed29">
+    <Dimension dwd:design-time-name="a2eef293-d5a9-48ca-b1b6-80a1a054e821">
       <ID>Film Cate</ID>
       <Name>Film Cate</Name>
       <DimensionID>Film Cate</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="a6ebd98e-f758-4203-931d-b093305cb895">
+        <Attribute dwd:design-time-name="ec7a66e6-7ccc-400e-8f3d-b529ec6e72a6">
           <AttributeID>Film Category ID SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4584d056-66a5-4fb7-9089-54b1634b2e35">
+        <Attribute dwd:design-time-name="050200dd-b806-48dc-8c85-e58cc032713b">
           <AttributeID>Film Category</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="b7d6568e-ef6b-43cc-96e0-2146a0fcb758">
+    <Dimension dwd:design-time-name="a9316e4c-430e-4d14-9dfa-acd5781b7638">
       <ID>Cinema</ID>
       <Name>Cinema</Name>
       <DimensionID>Cinema</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="c59d68af-6c03-4625-8e59-af153a179264">
+        <Attribute dwd:design-time-name="2e246c46-613c-4c9d-a5d3-66f78bb77339">
           <AttributeID>Cinema ID SK</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="bdea090b-6ddb-4077-a099-cd812cd8e6b4">
+        <Attribute dwd:design-time-name="b782fe18-1c1a-4e10-b806-7fc0973eaa27">
           <AttributeID>Cinema Name</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="db172946-446d-42d3-89e0-31f5fbb6d3c2">
+        <Attribute dwd:design-time-name="0e799558-17ed-42ca-ac48-4534f507f7d1">
           <AttributeID>Capacity</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="9812b8d2-f5f8-4193-9ad4-8043cf301abe">
+        <Attribute dwd:design-time-name="7e806551-b58f-44d7-b426-a2d79e741065">
           <AttributeID>Standard Seats Price</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="82f73ff4-bd2f-4fab-89da-5230d3d981bf">
+        <Attribute dwd:design-time-name="3cf4e03e-94dc-4c19-be43-67397075d0c5">
           <AttributeID>VIP Seats Price</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
-    <Dimension dwd:design-time-name="01fa7de8-972d-44ba-aeb8-bf4c89a7473f">
+    <Dimension dwd:design-time-name="bfe92e3b-a5f9-484a-b287-f9f79b1fe339">
       <ID>DATE MASTER</ID>
       <Name>DATE MASTER</Name>
       <DimensionID>DATE MASTER</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="8be03466-09ad-41a6-9453-709611a9841a">
+        <Attribute dwd:design-time-name="7a556297-bbfd-4711-be25-e57d96584f56">
           <AttributeID>Date Key</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="c099864b-1618-4de7-9299-3ee8b381aa40">
+        <Attribute dwd:design-time-name="e981c6ee-888f-4f23-b7f6-46a1be382079">
           <AttributeID>Day</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="915b1e96-ba0c-4ed3-8048-0b7d1e67dbbd">
+        <Attribute dwd:design-time-name="87aae9a6-2a45-4227-8b9b-f482377b9e36">
           <AttributeID>Month</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="6592c870-ebee-4a95-8d7f-f5ae541db185">
+        <Attribute dwd:design-time-name="74ed81e3-d2db-4e47-b6b4-af007dda294a">
           <AttributeID>Year</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="4faeeef8-15f1-4e81-bdb7-402839d3115c">
+        <Attribute dwd:design-time-name="7be3a435-4e6f-491f-a7ad-25fa8cc5c490">
           <AttributeID>Quarter</AttributeID>
         </Attribute>
       </Attributes>
       <Hierarchies>
-        <Hierarchy dwd:design-time-name="d771bdb9-c04b-4b51-8f98-6ef09b1e7ac4">
+        <Hierarchy dwd:design-time-name="9ff10e29-84de-4b42-9b31-f8a644b05a40">
           <HierarchyID>Hierarchy</HierarchyID>
         </Hierarchy>
       </Hierarchies>
     </Dimension>
+    <Dimension dwd:design-time-name="ba05a567-620e-4af7-bf59-4b5015923be8">
+      <ID>RevenueID_SK</ID>
+      <Name>RevenueID_SK</Name>
+      <DimensionID>RevenueID_SK</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ae688323-2b7e-4ba3-85d8-2c2689fc4744">
+          <AttributeID>Revenue ID SK</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="7fcb55a7-3a02-4513-8abe-78ea3651b21d">
+    <MeasureGroup dwd:design-time-name="e5478777-eb16-4614-9c29-c92b1c38b5f1">
       <ID>Film Sales</ID>
       <Name>Film Sales</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -325,124 +335,124 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="83f91919-5db0-4d70-ac2b-a8091afd2ccd">
+        <Measure dwd:design-time-name="fed467b1-5cfc-4fb3-aec3-23dd926c917f">
           <ID>Total Sales</ID>
           <Name>Total Sales</Name>
-          <Source dwd:design-time-name="7e1281ef-1d09-42f2-9f52-6e86a04975bb">
+          <Source dwd:design-time-name="1ae2a4a7-13eb-41a4-b26f-d93d77a9f1d5">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="b86ebefb-65a4-4c57-8f44-a1ffd7eaa38e">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="429b26f4-a1db-4c43-9cc8-b2a628fb4000">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>total_sales</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="c46dc807-84b1-46f0-9eb1-b0a24bc1168f">
+        <Measure dwd:design-time-name="3d2942a2-1d5c-4331-a677-2533e4025fd4">
           <ID>Tickets Sold</ID>
           <Name>Tickets Sold</Name>
-          <Source dwd:design-time-name="0248fee5-7741-46e3-ae1e-a66c29b682e8">
+          <Source dwd:design-time-name="65baebea-7788-4782-b1be-f91a20852fe8">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="1f054580-59ff-48b1-a946-ee7800c940a1">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c76e18af-ec0b-4a98-92cb-465aa14b49d5">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>tickets_sold</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="3ae37c7c-a610-4150-ac0b-1b6b4d7ffcd7">
+        <Measure dwd:design-time-name="9726f4cd-0e62-4f8b-8ea1-06b41fbebb8f">
           <ID>Standard Seats Sold</ID>
           <Name>Standard Seats Sold</Name>
-          <Source dwd:design-time-name="ff3a1dfb-1ee8-4310-bea7-2a613302dc12">
+          <Source dwd:design-time-name="1b89dbc9-28c2-4711-8071-a314f4871543">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="68fcd770-33aa-4a1a-907a-8f895404ef1b">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="9d1aee7b-88a3-4f56-84f8-69b042aa28aa">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>Standard_Seats_sold</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="8c9d5b01-71b6-417c-8294-ccda5b67b446">
+        <Measure dwd:design-time-name="804d9039-c967-4391-b09f-7b0cc7a08517">
           <ID>VIP Seats Sold</ID>
           <Name>VIP Seats Sold</Name>
-          <Source dwd:design-time-name="cdb77f15-5c6f-4043-97f4-214baa76eac3">
+          <Source dwd:design-time-name="d33ef441-76dd-4192-a7f6-04b17346217f">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="2dbd67fb-a8cb-4ffd-b4f4-b4258aa35cf6">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b12d14a3-fab3-46f1-b983-256b3015cb72">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>VIP_Seats_sold</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="563fd4d7-d030-4406-9877-6c63a029098c">
+        <Measure dwd:design-time-name="4af75226-789b-4d28-915a-e98fe5bb9503">
           <ID>Tickets Out</ID>
           <Name>Tickets Out</Name>
-          <Source dwd:design-time-name="4a8a004b-7da1-42b5-988e-4d347a5faf05">
+          <Source dwd:design-time-name="3ca59108-7fda-4ba9-ab9f-2b17e950cd93">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="2c4a8f17-6ea4-44c9-b548-15dd07bbad61">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4dafc1d3-65c4-4dcc-93d3-8496c4191444">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>tickets_out</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="af85cafd-36b0-4d2e-9990-ae980f252dc2">
+        <Measure dwd:design-time-name="7ff96c20-1bb0-4c35-b42e-30a5d6dddec3">
           <ID>Standard Seats Out</ID>
           <Name>Standard Seats Out</Name>
-          <Source dwd:design-time-name="8e486712-7dd1-41e5-ac28-bd8542db4201">
+          <Source dwd:design-time-name="fe56da5a-c7e1-447f-a284-b21ae39bb6bd">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="41282191-ef83-48b2-9325-dcd9c645b2ac">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a50eeeef-c9e7-4258-b4bc-d55c3be81584">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>Standard_Seats_out</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="bf49e170-2470-45b3-b173-4d87065766c6">
+        <Measure dwd:design-time-name="2c28449d-3eaa-48a8-8b33-30afa900cbe1">
           <ID>VIP Seats Out</ID>
           <Name>VIP Seats Out</Name>
-          <Source dwd:design-time-name="115f7ac3-c14c-4c68-97a7-d10f4d76d0fb">
+          <Source dwd:design-time-name="0f7b22fa-0132-4c16-bcf2-efb07abd1723">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="0bfd5f3a-5537-47db-bfbf-327acd331717">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ccb43e0b-9d42-49a3-bdae-43ca6136a8c9">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>VIP_Seats_out</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="0967da3b-0f43-453b-bc31-36306a4d87b0">
+        <Measure dwd:design-time-name="4127871e-b4a4-40b0-845c-c2a87435b753">
           <ID>Ticket Use</ID>
           <Name>Ticket Use</Name>
-          <Source dwd:design-time-name="b294e331-a6c7-4e10-91b4-1372f8a3e27f">
+          <Source dwd:design-time-name="1654afb4-844a-40f8-9d68-2e3fc99e3df5">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="a4b1c5a6-6179-4c12-9c3b-a87adf64a580">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3b1cc15a-5648-462c-bc45-d90ce55792a9">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>ticket_use</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="f7154f3f-c0a5-4a84-82cf-ace42087714f">
+        <Measure dwd:design-time-name="30265fff-078b-4370-946d-995157905a68">
           <ID>Occur Perc</ID>
           <Name>Occur Perc</Name>
-          <Source dwd:design-time-name="c7db4970-ae9a-440c-9203-19c8fb93b2d3">
+          <Source dwd:design-time-name="8174b6aa-0cbc-4803-b7d7-7aa01f82a5b4">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="a53523a3-b26c-4ffa-9848-d685845a6a2d">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="509f42eb-e075-49ef-9dec-aa0d151b5107">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>occur_perc</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="6c1e74e1-50ff-4467-af7b-e598a14785ae">
+        <Measure dwd:design-time-name="aae5ecf3-1fa7-4e56-91e2-94e70344a569">
           <ID>Film Sales Count</ID>
           <Name>Film Sales Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="df97a6c0-8802-440b-9aac-23bfe9b2e72a">
+          <Source dwd:design-time-name="a28f61ec-05a9-4371-aa80-ec44204b1853">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="bcbf31c1-dc5f-4715-b32c-a5a8fe067e90">
+            <Source xsi:type="RowBinding" dwd:design-time-name="48518501-6140-4f72-8ad3-f77cd4b21efc">
               <TableID>dbo_film_sales</TableID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="10c83912-2fd5-4fc8-b666-40a40ecd027f">
+        <Measure dwd:design-time-name="6e542cda-06fa-475d-93d5-17a3bc772be6">
           <ID>Revenue ID SK</ID>
           <Name>Revenue ID SK_Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="1e87e975-9261-4ce3-b916-ab8f8ddceaea">
+          <Source dwd:design-time-name="b32fb1c3-6812-424e-96f8-0b6e8e3d3fa8">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="6db6ac28-0776-4695-a2b2-9517994acf31">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e265dcc5-4af4-43fc-a2cf-ab565fc1427c">
               <TableID>dbo_film_sales</TableID>
               <ColumnID>RevenueID_SK</ColumnID>
             </Source>
@@ -452,16 +462,16 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="32bf46ed-c236-4618-8c9a-9833df7dcbf6">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cf9f56ef-62ae-4b20-af0a-7d2ed91f3197">
           <CubeDimensionID>Film</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7ae33974-2326-4b05-8c58-89eeab6f0a4d">
+            <Attribute dwd:design-time-name="01f60823-2c48-43b4-aca3-c69311cf2d61">
               <AttributeID>Film ID SK</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="61aa9c65-932c-4414-89a9-8be1728fb8fb">
+                <KeyColumn dwd:design-time-name="fc721033-af5f-430f-be17-d4f6de0c0786">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="de33d3f1-c76b-4bdf-8ca4-0119a21adfad">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="64f59d05-54c2-43b4-b265-c513c527f5eb">
                     <TableID>dbo_film_sales</TableID>
                     <ColumnID>FilmID_SK</ColumnID>
                   </Source>
@@ -471,16 +481,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="86e9da80-2800-4f81-90d7-6cb78d7497bb">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7c4f0762-3e86-4126-8675-5d22d330aa62">
           <CubeDimensionID>City</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="668d2d06-e0ce-4150-909e-c27f429f9934">
+            <Attribute dwd:design-time-name="97604621-f2a3-4f82-bef9-394ab8b24c76">
               <AttributeID>City ID SK</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="c267286e-8118-48f3-adab-bf063e27cc35">
+                <KeyColumn dwd:design-time-name="4b7f42e3-84eb-4861-9536-04b6d420e4a4">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a8ef7b6a-1b1b-48c8-9d51-f1c046450298">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="352e7391-ce73-41fb-915a-d8ed95397a91">
                     <TableID>dbo_film_sales</TableID>
                     <ColumnID>CityID_SK</ColumnID>
                   </Source>
@@ -490,16 +500,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1d4439d1-90db-4157-9084-ee900c805eca">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="39df2224-8d82-4bba-b35c-ac2e90ce69cd">
           <CubeDimensionID>Film Cate</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e2c979df-7f03-433a-b041-ed90f60aaa23">
+            <Attribute dwd:design-time-name="05a20d10-b0f0-4e8d-8beb-ba8f9d6985a4">
               <AttributeID>Film Category ID SK</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="fae72242-ba28-4967-8a26-a122ce46454e">
+                <KeyColumn dwd:design-time-name="17961b02-18e8-49a0-abb0-4ee42fba1461">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="84043ce4-11a1-49e6-a2af-9a4edd60a507">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="484c49ce-bf61-423e-bd61-f222b7162ddb">
                     <TableID>dbo_film_sales</TableID>
                     <ColumnID>FilmCategoryID_SK</ColumnID>
                   </Source>
@@ -509,16 +519,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1bf583d1-e49f-4f33-9d6e-4eaa67ec81c7">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2c820d7c-e8a5-415e-ad4c-4ac427b54da3">
           <CubeDimensionID>Cinema</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="cb335853-4bae-413d-b2e6-418c310e1f3f">
+            <Attribute dwd:design-time-name="7010c0e7-d335-4a02-9064-c2c0cc5ca73c">
               <AttributeID>Cinema ID SK</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="ccaf4178-3e4a-4fba-9be3-0b6a50e85f5a">
+                <KeyColumn dwd:design-time-name="8ba053eb-2285-4970-b6ff-f7bd98a20d02">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4eef55c4-e707-44c7-9ee0-ccaeab5b6343">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6898384e-b9d8-4364-b3b7-076b64114c96">
                     <TableID>dbo_film_sales</TableID>
                     <ColumnID>CinemaID_SK</ColumnID>
                   </Source>
@@ -528,19 +538,37 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8fac5cef-7796-478d-b90d-c746e6c482ec">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e2e5f527-e19a-41b6-a13b-3db1baea49cb">
           <CubeDimensionID>DATE MASTER</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="e49c4325-35ee-41ec-8667-808b78720e1b">
+            <Attribute dwd:design-time-name="ba19e420-9bb6-45dc-b6d2-6506bc0f3439">
               <AttributeID>Date Key</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="a75232b1-cfa5-4455-afe4-a867bc220a3a">
+                <KeyColumn dwd:design-time-name="d6accde4-5a0f-4f9d-8183-624fbe560847">
                   <DataType>WChar</DataType>
                   <DataSize>8</DataSize>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ce3ffa4c-7a68-4328-9f90-e8b3035c98f2">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cc4d8f6c-038a-4494-b8c4-5b4dfea04722">
                     <TableID>dbo_film_sales</TableID>
                     <ColumnID>DateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="bcdef71e-0cd5-4dfc-a017-d3530a8199ef">
+          <CubeDimensionID>RevenueID_SK</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a6774efb-e7ba-4776-95c8-611e9b35d285">
+              <AttributeID>Revenue ID SK</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e64d93d6-2265-47fb-80fb-86133ce1240e">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1f7947dc-3b35-4f79-927a-cbf6c172defa">
+                    <TableID>dbo_film_sales</TableID>
+                    <ColumnID>RevenueID_SK</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -552,7 +580,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="729e2c10-ed33-4f4b-9958-73c629624171">
+  <Source dwd:design-time-name="18731525-7218-4405-92e4-cb5fe530a5ca">
     <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
   </Source>
 </Cube>

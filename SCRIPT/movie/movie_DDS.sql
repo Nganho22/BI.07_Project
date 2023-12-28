@@ -18,6 +18,15 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 GO
 
+CREATE TABLE film_Audit (
+	id INT IDENTITY(1,1) PRIMARY KEY,
+    [FilmID_SK] int,
+    [Film Name] nvarchar(255),
+	[Price] [int] NULL,
+	updatedDate datetime null,
+	FOREIGN KEY ([FilmID_SK]) REFERENCES [film]([FilmID_SK])
+)
+
 /****** Object:  Table [dbo].[film_cate] ******/
 SET ANSI_NULLS ON
 GO

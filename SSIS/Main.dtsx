@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{C3FADA47-047A-4EB2-BCE5-74DB1E3C2B15}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{91F23BB6-6369-4574-97B1-6B043806C213}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{9CBDE3D7-F5AD-4F87-B8BC-0E18FA33C5B9}ABC1.BI07_METADATA;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{9CBDE3D7-F5AD-4F87-B8BC-0E18FA33C5B9}ABC1.BI07_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}ABC1.BI07_STAGE;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{DFE1FB4D-92FF-4604-B7ED-0A389629A27D}ABC1.BI07_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -417,7 +417,7 @@
           Id="Package\ETL\DataFire"
           TopLeft="170.950001583249,153.791176151361" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="137.6,41.6"
           Id="Package\ETL\NDS To DDS"
           TopLeft="167.914287291072,227.047058531951" />
         <NodeLayout
@@ -498,30 +498,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\ETL.PrecedenceConstraints[Constraint 2]"
-          TopLeft="229.750001583249,195.391176151361">
+          TopLeft="233.23214443716,195.391176151361">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29.3642857078229,31.6558823805904"
+              EndConnector="0,31.65588238059"
               Start="0,0"
-              End="29.3642857078229,24.1558823805904">
+              End="0,24.15588238059">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.8279411902952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.8279411902952"
-                    Point2="0,15.8279411902952"
-                    Point3="4,15.8279411902952" />
-                  <mssgle:LineSegment
-                    End="25.3642857078229,15.8279411902952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.3642857078229,15.8279411902952"
-                    Point2="29.3642857078229,15.8279411902952"
-                    Point3="29.3642857078229,19.8279411902952" />
-                  <mssgle:LineSegment
-                    End="29.3642857078229,24.1558823805904" />
+                    End="0,24.15588238059" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

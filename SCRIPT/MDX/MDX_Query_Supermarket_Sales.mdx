@@ -1,0 +1,66 @@
+﻿
+--Tình hình mua hàng của khách hàng theo từng chi nhánh
+select 
+non empty {[City].[Hierarchy].[Branch], [City].[Hierarchy]}
+on columns,
+non empty {[Measures].[Quantity], [Measures].[Total]}
+on rows
+from [BI07 DDS]
+
+;
+--Tình hình mua hàng của khách hàng theo từng loại sản phẩm
+select 
+non empty {[Product Line].[Product Line].[Product Line], [Product Line].[Product Line]}  
+on columns,
+non empty {
+	[Measures].[Quantity], 
+	[Measures].[Total]
+}
+on rows
+from [BI07 DDS]
+
+;
+--Tình hình mua hàng của khách hàng theo thời gian
+select 
+non empty {[Measures].[Quantity], [Measures].[Total]} 
+on columns,
+non empty CROSSJOIN(
+	[DATETIME MASTER].[Date Time].[Month].Members,
+    [DATETIME MASTER].[Year].[Year].Members
+)
+on rows
+from [BI07 DDS]
+
+;
+--Tình hình mua hàng của khách hàng theo hình thức thanh toán
+select 
+non empty {[Payment].[Payment Type].[Payment Type], [Payment].[Payment Type]}
+on columns,
+non empty  {[Measures].[Quantity], [Measures].[Total]}
+on rows 
+from [BI07 DDS]
+
+;
+--Tình hình mua hàng của khách hàng từng chi nhánh theo hình thức thanh toán
+select 
+non empty {[City].[Hierarchy].[Branch], [City].[Hierarchy]}
+on columns,
+non empty {[Payment].[Payment Type].[Payment Type], [Payment].[Payment Type]}
+on rows
+from [BI07 DDS]
+
+;
+--Tình hình mua hàng của khách hàng theo từng chi nhánh, từng loại sản phẩm, theo thời gian, hình thức thanh toán
+SELECT
+non empty  {[Measures].[Quantity], [Measures].[Total]} ON COLUMNS,
+non empty  CROSSJOIN(
+    {[City].[Hierarchy].[Branch].Members},
+	{[DATETIME MASTER].[Date Time].[Month].Members},
+    {[DATETIME MASTER].[Year].[Year].Members},
+    {[Product Line].[Product Line].[Product Line].Members}
+	,{[Payment].[Payment Type].[Payment Type].Members}
+  ) ON ROWS
+FROM
+  [BI07 DDS]
+//WHERE
+//  ([Payment].[Payment Type])

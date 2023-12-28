@@ -97,7 +97,7 @@ GO
 
 /****** Object:  Table [dbo].[DATE_MASTER] ******/
 CREATE TABLE DATE_MASTER(
-	[DateKey] [nvarchar](8) NOT NULL,
+	[DateKey] [varchar](8) NOT NULL,
 	[Day] [int] NULL,
 	[Month] [int] NULL,
 	[Year] [int] NULL,

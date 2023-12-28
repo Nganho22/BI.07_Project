@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="NDS S1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{B692F533-5714-461D-B08A-C3224F948A5C}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{2C31A430-7EA4-4E3B-A261-41FE759D9886}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -10480,19 +10480,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Dirived Column Day 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\film_sales\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
@@ -10500,19 +10500,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
+                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\film_sales\Data Flow Task\Dirived Column Day.Inputs[Derived Column Input]"
@@ -13511,9 +13511,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13535,9 +13533,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13559,9 +13555,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13583,9 +13577,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13691,9 +13683,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13715,9 +13705,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14266,7 +14254,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14288,7 +14278,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14310,7 +14302,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14332,7 +14326,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14360,7 +14356,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
           TopLeft="1344.68265501972,179.793277189792">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14384,7 +14380,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
           TopLeft="1259.2744917429,268.605672051696">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14408,7 +14404,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
           TopLeft="942.020409456365,286.606302306251">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14456,7 +14452,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
           TopLeft="401.021429358681,149.661274394485">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14480,7 +14476,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
           TopLeft="513.033674369702,264.879411675054">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14504,7 +14500,7 @@ set [Film Category] = ?, updatedDate = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
+          Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
           TopLeft="422.653062124207,342.547898930232">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14546,7 +14542,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14568,7 +14566,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14590,7 +14590,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14612,7 +14614,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

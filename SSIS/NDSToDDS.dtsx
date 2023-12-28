@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{2810D753-0340-48CA-A9A4-C7C7E12B2E05}">
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{C07A3FF5-A94C-43CF-AD3F-B359EB28F7B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B42A0B8E-C9FA-4E9F-98A8-24BCD2B0B8A6}ABC1.BI07_DDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{B42A0B8E-C9FA-4E9F-98A8-24BCD2B0B8A6}ABC1.BI07_DDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CB382AF8-9E82-4CE5-BC48-798BC33682E4}ABC1.BI07_METADATA;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CB382AF8-9E82-4CE5-BC48-798BC33682E4}ABC1.BI07_METADATA;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CD02F8DA-9D2D-4D52-BF5E-B2A45A083065}ABC1.BI07_NDS;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CD02F8DA-9D2D-4D52-BF5E-B2A45A083065}ABC1.BI07_NDS;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -6672,9 +6672,9 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
                     Point2="46.5857146514007,0"
                     Point3="46.5857146514007,-4" />
                   <mssgle:LineSegment
-                    End="46.5857146514007,-9.90588202449695" />
+                    End="46.5857146514007,-9.90588202449689" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.5857146514007,-9.90588202449695"
+                    Point1="46.5857146514007,-9.90588202449689"
                     Point2="46.5857146514007,-13.9058820244969"
                     Point3="50.5857146514007,-13.9058820244969" />
                   <mssgle:LineSegment
@@ -6912,9 +6912,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6984,9 +6982,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7032,9 +7028,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7056,9 +7050,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7080,9 +7072,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7708,7 +7698,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="18.1410962589829,5,157.0678125,11.6630859375"
+              BoundingBox="18.141096258983,5,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7814,35 +7804,35 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="201.333333333334,42.6666666666667"
+          Size="201.6,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup ProductLineID_SK"
           TopLeft="313.124986002222,250.249988067151" />
         <NodeLayout
-          Size="131.333333333334,42.6666666666667"
+          Size="131.2,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count"
           TopLeft="119.999994635582,525.849974925519" />
         <NodeLayout
-          Size="204,42.6666666666667"
+          Size="204,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Update supermarket_sales"
           TopLeft="89.3749960046262,427.699979605676" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup DateTimeKey"
           TopLeft="322.499985583127,156.699993863106" />
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
+          Size="190.4,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\supermarket_sales NDS"
           TopLeft="319.166652398806,66.7333301512404" />
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
+          Size="221.6,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Insert new supermarket_sales"
           TopLeft="524.999976530672,428.199981775285" />
         <NodeLayout
-          Size="140,42.6666666666667"
+          Size="140,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Row Count 1"
           TopLeft="568.124974602834,530.249976909161" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.4"
           Id="Package\Fact table supermarket_sales\supermarket_sales\Lookup InvoiceID_SK"
           TopLeft="324.999985471368,332.727761912082" />
         <EdgeLayout
@@ -7877,7 +7867,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="40.1936088109018,26.4013695774509,111.6127734375,11.609375"
+              BoundingBox="40.193608810902,26.4013695774509,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7984,9 +7974,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8008,9 +7996,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8032,9 +8018,7 @@ WHEN Gender = 1 THEN 'Female' ELSE NULL END AS N'Gender'
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -1,0 +1,54 @@
+﻿-- Thống kê số vé bán được của từng phim theo ngày, tháng, năm và theo rạp
+SELECT NONEMPTY ({[Measures].[Film Sales Count]}*
+[Cinema].[Cinema Name].[Cinema Name].ALLMEMBERS) ON COLUMNS,
+NONEMPTY(	CROSSJOIN (	[DATE MASTER].[Hierarchy].[Year],
+						[DATE MASTER].[Month].[Month],
+						[DATE MASTER].[Day].[Day]))
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê số vé vip và số vé standard được mua theo ngày, tháng, năm.
+SELECT NONEMPTY ({	[Measures].[Standard Seats Sold],
+					[Measures].[VIP Seats Sold]}) ON COLUMNS,
+NONEMPTY(CROSSJOIN ([DATE MASTER].[Hierarchy].[Year],
+					[DATE MASTER].[Month].[Month],
+					[DATE MASTER].[Day].[Day]))
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê số lượng vé vip và standard được mua theo từng rạp phim theo từng tháng trong năm
+SELECT NONEMPTY ({	[Measures].[Standard Seats Sold],
+					[Measures].[VIP Seats Sold]}) ON COLUMNS,
+NONEMPTY([Cinema].[Cinema Name].[Cinema Name])
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê số lượng mua vé thật sự được bán ra của từng thể loại phim trong năm
+SELECT NONEMPTY ({[Measures].[Ticket Use]}) ON COLUMNS,
+NONEMPTY([Film Cate].[Film Category].[Film Category])
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê trung bình tỷ lệ sức chứa của các rạp phim theo từng tháng 
+-- / quý trong năm
+SELECT NONEMPTY ({[Measures].[AVER_OCCUR]}) ON COLUMNS,
+NONEMPTY(
+CROSSJOIN (	[DATE MASTER].[Hierarchy].[Year],
+			[DATE MASTER].[Quarter].[Quarter],
+			[DATE MASTER].[Month].[Month]))
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê tỷ lệ vé được trả lại của từng loại vé theo thể loại phim
+SELECT NONEMPTY ({	[Measures].[AVER_STANDARD_OUT],
+					[Measures].[AVER_VIP_OUT]}) ON COLUMNS,
+NONEMPTY([Film Cate].[Film Category].[Film Category])
+ON ROWS
+FROM [BI07 MOVIE DDS]
+
+-- Thống kê doanh thu của từng phim theo từng thành phố. 
+SELECT NONEMPTY ({	[Measures].[Total Sales]}*
+					[Film].[Film Name].[Film Name].ALLMEMBERS) ON COLUMNS,
+NONEMPTY([City].[City Name].[City Name])
+ON ROWS
+FROM [BI07 MOVIE DDS]

@@ -1,0 +1,2024 @@
+<Create xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+    <ObjectDefinition>
+        <Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500">
+            <ID>SSAS_film</ID>
+            <Name>SSAS_film</Name>
+            <ddl200:CompatibilityLevel>1100</ddl200:CompatibilityLevel>
+            <Language>1033</Language>
+            <Collation>Latin1_General_CI_AS</Collation>
+            <DataSourceImpersonationInfo>
+                <ImpersonationMode>Default</ImpersonationMode>
+            </DataSourceImpersonationInfo>
+            <Dimensions>
+                <Dimension>
+                    <ID>Film Cate</ID>
+                    <Name>Film Cate</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3093" scrolltop="-9296" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9825" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="film_cate" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1535" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e00000e0e0000ff050000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_film_cate" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-3093</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-9296</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                    </Annotations>
+                    <Source xsi:type="DataSourceViewBinding">
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <UnknownMember>Visible</UnknownMember>
+                    <ErrorConfiguration>
+                        <KeyNotFound>ReportAndStop</KeyNotFound>
+                        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                    </ErrorConfiguration>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <UnknownMemberName>Unknown</UnknownMemberName>
+                    <Attributes>
+                        <Attribute>
+                            <ID>Film Category ID SK</ID>
+                            <Name>Film Category ID SK</Name>
+                            <Usage>Key</Usage>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <NullProcessing>UnknownMember</NullProcessing>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_film_cate</TableID>
+                                        <ColumnID>FilmCategoryID_SK</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <NullProcessing>ZeroOrBlank</NullProcessing>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_film_cate</TableID>
+                                    <ColumnID>FilmCategoryID_SK</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Film Category</AttributeID>
+                                    <Name>Film Category</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                            <OrderBy>Key</OrderBy>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Film Category</ID>
+                            <Name>Film Category</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>WChar</DataType>
+                                    <DataSize>255</DataSize>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_film_cate</TableID>
+                                        <ColumnID>Film_x0020_Category</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <DataSize>255</DataSize>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_film_cate</TableID>
+                                    <ColumnID>Film_x0020_Category</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                    </Attributes>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Dimension>
+                <Dimension>
+                    <ID>Cinema</ID>
+                    <Name>Cinema</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2934" scrolltop="-8767" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9825" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="cinema" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3916" height="2593" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e00004c0f0000210a0000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_cinema" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-2934</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-8767</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                    </Annotations>
+                    <Source xsi:type="DataSourceViewBinding">
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <UnknownMember>Visible</UnknownMember>
+                    <ErrorConfiguration>
+                        <KeyNotFound>ReportAndStop</KeyNotFound>
+                        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                    </ErrorConfiguration>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <UnknownMemberName>Unknown</UnknownMemberName>
+                    <Attributes>
+                        <Attribute>
+                            <ID>Cinema ID SK</ID>
+                            <Name>Cinema ID SK</Name>
+                            <Usage>Key</Usage>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <NullProcessing>UnknownMember</NullProcessing>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_cinema</TableID>
+                                        <ColumnID>CinemaID_SK</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <NullProcessing>ZeroOrBlank</NullProcessing>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_cinema</TableID>
+                                    <ColumnID>CinemaID_SK</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Cinema Name</AttributeID>
+                                    <Name>Cinema Name</Name>
+                                </AttributeRelationship>
+                                <AttributeRelationship>
+                                    <AttributeID>Capacity</AttributeID>
+                                    <Name>Capacity</Name>
+                                </AttributeRelationship>
+                                <AttributeRelationship>
+                                    <AttributeID>Standard Seats Price</AttributeID>
+                                    <Name>Standard Seats Price</Name>
+                                </AttributeRelationship>
+                                <AttributeRelationship>
+                                    <AttributeID>VIP Seats Price</AttributeID>
+                                    <Name>VIP Seats Price</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                            <OrderBy>Key</OrderBy>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Cinema Name</ID>
+                            <Name>Cinema Name</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>WChar</DataType>
+                                    <DataSize>255</DataSize>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_cinema</TableID>
+                                        <ColumnID>Cinema_x0020_Name</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <DataSize>255</DataSize>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_cinema</TableID>
+                                    <ColumnID>Cinema_x0020_Name</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Capacity</ID>
+                            <Name>Capacity</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_cinema</TableID>
+                                        <ColumnID>Capacity</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_cinema</TableID>
+                                    <ColumnID>Capacity</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Standard Seats Price</ID>
+                            <Name>Standard Seats Price</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_cinema</TableID>
+                                        <ColumnID>Standard_Seats_price</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_cinema</TableID>
+                                    <ColumnID>Standard_Seats_price</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                        <Attribute>
+                            <ID>VIP Seats Price</ID>
+                            <Name>VIP Seats Price</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_cinema</TableID>
+                                        <ColumnID>VIP_Seats_price</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_cinema</TableID>
+                                    <ColumnID>VIP_Seats_price</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                    </Attributes>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Dimension>
+                <Dimension>
+                    <ID>City</ID>
+                    <Name>City</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3392" scrolltop="-9296" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9825" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="city" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1535" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000ff050000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_city" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-3392</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-9296</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                    </Annotations>
+                    <Source xsi:type="DataSourceViewBinding">
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <UnknownMember>Visible</UnknownMember>
+                    <ErrorConfiguration>
+                        <KeyNotFound>ReportAndStop</KeyNotFound>
+                        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                    </ErrorConfiguration>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <UnknownMemberName>Unknown</UnknownMemberName>
+                    <Attributes>
+                        <Attribute>
+                            <ID>City ID SK</ID>
+                            <Name>City ID SK</Name>
+                            <Usage>Key</Usage>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <NullProcessing>UnknownMember</NullProcessing>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_city</TableID>
+                                        <ColumnID>CityID_SK</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <NullProcessing>ZeroOrBlank</NullProcessing>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_city</TableID>
+                                    <ColumnID>CityID_SK</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>City Name</AttributeID>
+                                    <Name>City Name</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                            <OrderBy>Key</OrderBy>
+                        </Attribute>
+                        <Attribute>
+                            <ID>City Name</ID>
+                            <Name>City Name</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>WChar</DataType>
+                                    <DataSize>255</DataSize>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_city</TableID>
+                                        <ColumnID>City_x0020_Name</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <DataSize>255</DataSize>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_city</TableID>
+                                    <ColumnID>City_x0020_Name</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                    </Attributes>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Dimension>
+                <Dimension>
+                    <ID>Film</ID>
+                    <Name>Film</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3392" scrolltop="-9120" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9825" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="film" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_film" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-3392</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-9120</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                    </Annotations>
+                    <Source xsi:type="DataSourceViewBinding">
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <UnknownMember>Visible</UnknownMember>
+                    <ErrorConfiguration>
+                        <KeyNotFound>ReportAndStop</KeyNotFound>
+                        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                    </ErrorConfiguration>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <UnknownMemberName>Unknown</UnknownMemberName>
+                    <Attributes>
+                        <Attribute>
+                            <ID>Film ID SK</ID>
+                            <Name>Film ID SK</Name>
+                            <Usage>Key</Usage>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <NullProcessing>UnknownMember</NullProcessing>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_film</TableID>
+                                        <ColumnID>FilmID_SK</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <NullProcessing>ZeroOrBlank</NullProcessing>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_film</TableID>
+                                    <ColumnID>FilmID_SK</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Film Name</AttributeID>
+                                    <Name>Film Name</Name>
+                                </AttributeRelationship>
+                                <AttributeRelationship>
+                                    <AttributeID>Price</AttributeID>
+                                    <Name>Price</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                            <OrderBy>Key</OrderBy>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Film Name</ID>
+                            <Name>Film Name</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>WChar</DataType>
+                                    <DataSize>255</DataSize>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_film</TableID>
+                                        <ColumnID>Film_x0020_Name</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <DataSize>255</DataSize>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_film</TableID>
+                                    <ColumnID>Film_x0020_Name</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Price</ID>
+                            <Name>Price</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_film</TableID>
+                                        <ColumnID>Price</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_film</TableID>
+                                    <ColumnID>Price</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                    </Attributes>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Dimension>
+                <Dimension>
+                    <ID>DATE MASTER</ID>
+                    <Name>DATE MASTER</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3392" scrolltop="-8767" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9825" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DATE_MASTER" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2593" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000210a0000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_DATE_MASTER" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-3392</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-8767</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+                            <Value>
+                                <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+                                    <Shapes NodeWidth="107">
+                                        <Shape Id="Date Key" Expanded="false">
+                                            <Attributes>
+                                                <Attribute Id="Date Key" />
+                                            </Attributes>
+                                            <Position x="20" y="20" />
+                                        </Shape>
+                                        <Shape Id="Day" Expanded="false">
+                                            <Attributes>
+                                                <Attribute Id="Day" />
+                                            </Attributes>
+                                            <Position x="158" y="20" />
+                                        </Shape>
+                                        <Shape Id="Month" Expanded="false">
+                                            <Attributes>
+                                                <Attribute Id="Month" />
+                                            </Attributes>
+                                            <Position x="297" y="20" />
+                                        </Shape>
+                                        <Shape Id="Quarter" Expanded="false">
+                                            <Attributes>
+                                                <Attribute Id="Quarter" />
+                                            </Attributes>
+                                            <Position x="436" y="20" />
+                                        </Shape>
+                                        <Shape Id="Year" Expanded="false">
+                                            <Attributes>
+                                                <Attribute Id="Year" />
+                                            </Attributes>
+                                            <Position x="575" y="20" />
+                                        </Shape>
+                                    </Shapes>
+                                </DiagramLayout>
+                            </Value>
+                        </Annotation>
+                    </Annotations>
+                    <Source xsi:type="DataSourceViewBinding">
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <UnknownMember>Visible</UnknownMember>
+                    <ErrorConfiguration>
+                        <KeyNotFound>ReportAndStop</KeyNotFound>
+                        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+                        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+                    </ErrorConfiguration>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <UnknownMemberName>Unknown</UnknownMemberName>
+                    <Attributes>
+                        <Attribute>
+                            <ID>Date Key</ID>
+                            <Name>Date Key</Name>
+                            <Usage>Key</Usage>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>WChar</DataType>
+                                    <DataSize>8</DataSize>
+                                    <NullProcessing>UnknownMember</NullProcessing>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>DateKey</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <DataSize>8</DataSize>
+                                <NullProcessing>ZeroOrBlank</NullProcessing>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_DATE_MASTER</TableID>
+                                    <ColumnID>DateKey</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Day</AttributeID>
+                                    <Name>Day</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                            <OrderBy>Key</OrderBy>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Year</ID>
+                            <Name>Year</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Year</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_DATE_MASTER</TableID>
+                                    <ColumnID>Year</ColumnID>
+                                </Source>
+                            </NameColumn>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Quarter</ID>
+                            <Name>Quarter</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Quarter</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Year</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_DATE_MASTER</TableID>
+                                    <ColumnID>Quarter</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Year</AttributeID>
+                                    <Name>Year</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Month</ID>
+                            <Name>Month</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Month</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Quarter</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Year</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_DATE_MASTER</TableID>
+                                    <ColumnID>Month</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Quarter</AttributeID>
+                                    <Name>Quarter</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                        </Attribute>
+                        <Attribute>
+                            <ID>Day</ID>
+                            <Name>Day</Name>
+                            <KeyColumns>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Day</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Month</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Quarter</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                                <KeyColumn>
+                                    <DataType>Integer</DataType>
+                                    <Source xsi:type="ColumnBinding">
+                                        <TableID>dbo_DATE_MASTER</TableID>
+                                        <ColumnID>Year</ColumnID>
+                                    </Source>
+                                </KeyColumn>
+                            </KeyColumns>
+                            <NameColumn>
+                                <DataType>WChar</DataType>
+                                <Source xsi:type="ColumnBinding">
+                                    <TableID>dbo_DATE_MASTER</TableID>
+                                    <ColumnID>Day</ColumnID>
+                                </Source>
+                            </NameColumn>
+                            <AttributeRelationships>
+                                <AttributeRelationship>
+                                    <AttributeID>Month</AttributeID>
+                                    <Name>Month</Name>
+                                </AttributeRelationship>
+                            </AttributeRelationships>
+                        </Attribute>
+                    </Attributes>
+                    <Hierarchies>
+                        <Hierarchy>
+                            <ID>Hierarchy</ID>
+                            <Name>Hierarchy</Name>
+                            <Levels>
+                                <Level>
+                                    <ID>Year</ID>
+                                    <Name>Year</Name>
+                                    <SourceAttributeID>Year</SourceAttributeID>
+                                </Level>
+                                <Level>
+                                    <ID>Quarter</ID>
+                                    <Name>Quarter</Name>
+                                    <SourceAttributeID>Quarter</SourceAttributeID>
+                                </Level>
+                                <Level>
+                                    <ID>Month</ID>
+                                    <Name>Month</Name>
+                                    <SourceAttributeID>Month</SourceAttributeID>
+                                </Level>
+                                <Level>
+                                    <ID>Day</ID>
+                                    <Name>Day</Name>
+                                    <SourceAttributeID>Day</SourceAttributeID>
+                                </Level>
+                            </Levels>
+                        </Hierarchy>
+                    </Hierarchies>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Dimension>
+            </Dimensions>
+            <Cubes>
+                <Cube>
+                    <ID>BI07 MOVIE DDS</ID>
+                    <Name>BI07 MOVIE DDS</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                            <Value>
+                                <dds xmlns="">
+                                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="12" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6089" scrolltop="-2878" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="27287" y="20126" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                                        <font>
+                                            <ddsxmlobjectstreamwrapper binary="01000000900180380100065461686f6d61" />
+                                        </font>
+                                        <mouseicon>
+                                            <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                                        </mouseicon>
+                                    </diagram>
+                                    <layoutmanager>
+                                        <ddsxmlobj />
+                                    </layoutmanager>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="film_cate" left="5526" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3598" height="1535" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e00000e0e0000ff050000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_film_cate" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DATE_MASTER" left="11630" top="5138" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2593" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000210a0000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_DATE_MASTER" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="cinema" left="8067" top="11335" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3916" height="2593" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e00004c0f0000210a0000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_cinema" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="film_sales" left="5420" top="3935" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3810" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000e20e000088130000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_film_sales" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="film" left="2667" top="11335" logicalid="5" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="1887" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00005f070000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_film" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="city" left="20" top="5667" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="1535" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000ff050000" />
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dbo_city" vartype="8" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <shape groupshapeid="0" groupnode="0" />
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6926" top="1036" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobj>
+                                                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                            </ddsxmlobj>
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dataSet.Relations[FK__film_sale__FilmC__47DBAE45]" vartype="8" />
+                                                <property name="Virtual" value="0" vartype="11" />
+                                                <property name="VisibleAP" value="0" vartype="3" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="7" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                            <point x="7325" y="1535" />
+                                            <point x="7325" y="3935" />
+                                        </connector>
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8930" top="6035" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobj>
+                                                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                            </ddsxmlobj>
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dataSet.Relations[FK__film_sale__DateK__4AB81AF0]" vartype="8" />
+                                                <property name="Virtual" value="0" vartype="11" />
+                                                <property name="VisibleAP" value="0" vartype="3" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="14" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                            <point x="11630" y="6434" />
+                                            <point x="10430" y="6434" />
+                                            <point x="10430" y="6435" />
+                                            <point x="9230" y="6435" />
+                                        </connector>
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="7575" top="8635" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="2850" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobj>
+                                                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                            </ddsxmlobj>
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dataSet.Relations[FK__film_sale__Cinem__48CFD27E]" vartype="8" />
+                                                <property name="Virtual" value="0" vartype="11" />
+                                                <property name="VisibleAP" value="0" vartype="3" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="6" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                            <point x="10025" y="11335" />
+                                            <point x="10025" y="10135" />
+                                            <point x="7875" y="10135" />
+                                            <point x="7875" y="8935" />
+                                        </connector>
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2720" top="6035" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobj>
+                                                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                            </ddsxmlobj>
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dataSet.Relations[FK__film_sale__CityI__49C3F6B7]" vartype="8" />
+                                                <property name="Virtual" value="0" vartype="11" />
+                                                <property name="VisibleAP" value="0" vartype="3" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="13" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                            <point x="3020" y="6434" />
+                                            <point x="4220" y="6434" />
+                                            <point x="4220" y="6435" />
+                                            <point x="5420" y="6435" />
+                                        </connector>
+                                    </ddscontrol>
+                                    <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3768" top="8635" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="2757" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                                        <control>
+                                            <ddsxmlobj>
+                                                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                                            </ddsxmlobj>
+                                        </control>
+                                        <layoutobject>
+                                            <ddsxmlobj>
+                                                <property name="LogicalObject" value="dataSet.Relations[FK__film_sale__FilmI__46E78A0C]" vartype="8" />
+                                                <property name="Virtual" value="0" vartype="11" />
+                                                <property name="VisibleAP" value="0" vartype="3" />
+                                            </ddsxmlobj>
+                                        </layoutobject>
+                                        <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="4" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                                            <point x="4167" y="11335" />
+                                            <point x="4167" y="10135" />
+                                            <point x="6225" y="10135" />
+                                            <point x="6225" y="8935" />
+                                        </connector>
+                                    </ddscontrol>
+                                </dds>
+                            </Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                            <Value>false</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                            <Value>-6089</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                            <Value>-2878</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                            <Value>20</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                            <Value>0</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                            <Value>100</Value>
+                        </Annotation>
+                    </Annotations>
+                    <Language>1033</Language>
+                    <Collation>Latin1_General_CI_AS</Collation>
+                    <Dimensions>
+                        <Dimension>
+                            <ID>Film Cate</ID>
+                            <Name>Film Cate</Name>
+                            <DimensionID>Film Cate</DimensionID>
+                            <Attributes>
+                                <Attribute>
+                                    <AttributeID>Film Category ID SK</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Film Category</AttributeID>
+                                </Attribute>
+                            </Attributes>
+                        </Dimension>
+                        <Dimension>
+                            <ID>Cinema</ID>
+                            <Name>Cinema</Name>
+                            <DimensionID>Cinema</DimensionID>
+                            <Attributes>
+                                <Attribute>
+                                    <AttributeID>Cinema ID SK</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Cinema Name</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Capacity</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Standard Seats Price</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>VIP Seats Price</AttributeID>
+                                </Attribute>
+                            </Attributes>
+                        </Dimension>
+                        <Dimension>
+                            <ID>City</ID>
+                            <Name>City</Name>
+                            <DimensionID>City</DimensionID>
+                            <Attributes>
+                                <Attribute>
+                                    <AttributeID>City ID SK</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>City Name</AttributeID>
+                                </Attribute>
+                            </Attributes>
+                        </Dimension>
+                        <Dimension>
+                            <ID>Film</ID>
+                            <Name>Film</Name>
+                            <DimensionID>Film</DimensionID>
+                            <Attributes>
+                                <Attribute>
+                                    <AttributeID>Film ID SK</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Film Name</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Price</AttributeID>
+                                </Attribute>
+                            </Attributes>
+                        </Dimension>
+                        <Dimension>
+                            <ID>DATE MASTER</ID>
+                            <Name>DATE MASTER</Name>
+                            <DimensionID>DATE MASTER</DimensionID>
+                            <Attributes>
+                                <Attribute>
+                                    <AttributeID>Date Key</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Year</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Quarter</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Month</AttributeID>
+                                </Attribute>
+                                <Attribute>
+                                    <AttributeID>Day</AttributeID>
+                                </Attribute>
+                            </Attributes>
+                            <Hierarchies>
+                                <Hierarchy>
+                                    <HierarchyID>Hierarchy</HierarchyID>
+                                </Hierarchy>
+                            </Hierarchies>
+                        </Dimension>
+                    </Dimensions>
+                    <MeasureGroups>
+                        <MeasureGroup>
+                            <ID>Film Sales</ID>
+                            <Name>Film Sales</Name>
+                            <Measures>
+                                <Measure>
+                                    <ID>Total Sales</ID>
+                                    <Name>Total Sales</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>total_sales</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Tickets Sold</ID>
+                                    <Name>Tickets Sold</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>tickets_sold</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Standard Seats Sold</ID>
+                                    <Name>Standard Seats Sold</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>Standard_Seats_sold</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>VIP Seats Sold</ID>
+                                    <Name>VIP Seats Sold</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>VIP_Seats_sold</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Tickets Out</ID>
+                                    <Name>Tickets Out</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>tickets_out</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Standard Seats Out</ID>
+                                    <Name>Standard Seats Out</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>Standard_Seats_out</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>VIP Seats Out</ID>
+                                    <Name>VIP Seats Out</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>VIP_Seats_out</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Ticket Use</ID>
+                                    <Name>Ticket Use</Name>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>ticket_use</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Occur Perc</ID>
+                                    <Name>Occur Perc</Name>
+                                    <DataType>Double</DataType>
+                                    <Source>
+                                        <DataType>Double</DataType>
+                                        <Source xsi:type="ColumnBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                            <ColumnID>occur_perc</ColumnID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                                <Measure>
+                                    <ID>Film Sales Count</ID>
+                                    <Name>Film Sales Count</Name>
+                                    <AggregateFunction>Count</AggregateFunction>
+                                    <DataType>Integer</DataType>
+                                    <Source>
+                                        <DataType>Integer</DataType>
+                                        <DataSize>4</DataSize>
+                                        <Source xsi:type="RowBinding">
+                                            <TableID>dbo_film_sales</TableID>
+                                        </Source>
+                                    </Source>
+                                </Measure>
+                            </Measures>
+                            <StorageMode>Molap</StorageMode>
+                            <ProcessingMode>Regular</ProcessingMode>
+                            <Dimensions>
+                                <Dimension xsi:type="RegularMeasureGroupDimension">
+                                    <CubeDimensionID>Film Cate</CubeDimensionID>
+                                    <Cardinality>One</Cardinality>
+                                    <Attributes>
+                                        <Attribute>
+                                            <AttributeID>Film Category ID SK</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <NullProcessing>UnknownMember</NullProcessing>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_sales</TableID>
+                                                        <ColumnID>FilmCategoryID_SK</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                            <Type>Granularity</Type>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Film Category</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>WChar</DataType>
+                                                    <DataSize>255</DataSize>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_cate</TableID>
+                                                        <ColumnID>Film_x0020_Category</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                    </Attributes>
+                                </Dimension>
+                                <Dimension xsi:type="RegularMeasureGroupDimension">
+                                    <CubeDimensionID>Cinema</CubeDimensionID>
+                                    <Cardinality>One</Cardinality>
+                                    <Attributes>
+                                        <Attribute>
+                                            <AttributeID>Cinema ID SK</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <NullProcessing>UnknownMember</NullProcessing>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_sales</TableID>
+                                                        <ColumnID>CinemaID_SK</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                            <Type>Granularity</Type>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Cinema Name</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>WChar</DataType>
+                                                    <DataSize>255</DataSize>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_cinema</TableID>
+                                                        <ColumnID>Cinema_x0020_Name</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Capacity</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_cinema</TableID>
+                                                        <ColumnID>Capacity</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Standard Seats Price</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_cinema</TableID>
+                                                        <ColumnID>Standard_Seats_price</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>VIP Seats Price</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_cinema</TableID>
+                                                        <ColumnID>VIP_Seats_price</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                    </Attributes>
+                                </Dimension>
+                                <Dimension xsi:type="RegularMeasureGroupDimension">
+                                    <CubeDimensionID>City</CubeDimensionID>
+                                    <Cardinality>One</Cardinality>
+                                    <Attributes>
+                                        <Attribute>
+                                            <AttributeID>City ID SK</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <NullProcessing>UnknownMember</NullProcessing>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_sales</TableID>
+                                                        <ColumnID>CityID_SK</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                            <Type>Granularity</Type>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>City Name</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>WChar</DataType>
+                                                    <DataSize>255</DataSize>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_city</TableID>
+                                                        <ColumnID>City_x0020_Name</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                    </Attributes>
+                                </Dimension>
+                                <Dimension xsi:type="RegularMeasureGroupDimension">
+                                    <CubeDimensionID>Film</CubeDimensionID>
+                                    <Cardinality>One</Cardinality>
+                                    <Attributes>
+                                        <Attribute>
+                                            <AttributeID>Film ID SK</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <NullProcessing>UnknownMember</NullProcessing>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_sales</TableID>
+                                                        <ColumnID>FilmID_SK</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                            <Type>Granularity</Type>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Film Name</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>WChar</DataType>
+                                                    <DataSize>255</DataSize>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film</TableID>
+                                                        <ColumnID>Film_x0020_Name</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Price</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film</TableID>
+                                                        <ColumnID>Price</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                    </Attributes>
+                                </Dimension>
+                                <Dimension xsi:type="RegularMeasureGroupDimension">
+                                    <CubeDimensionID>DATE MASTER</CubeDimensionID>
+                                    <Cardinality>One</Cardinality>
+                                    <Attributes>
+                                        <Attribute>
+                                            <AttributeID>Date Key</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>WChar</DataType>
+                                                    <DataSize>8</DataSize>
+                                                    <NullProcessing>UnknownMember</NullProcessing>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_film_sales</TableID>
+                                                        <ColumnID>DateKey</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                            <Type>Granularity</Type>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Year</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Year</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Quarter</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Quarter</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Year</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Month</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Month</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Quarter</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Year</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                        <Attribute>
+                                            <AttributeID>Day</AttributeID>
+                                            <KeyColumns>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Day</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Month</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Quarter</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                                <KeyColumn>
+                                                    <DataType>Integer</DataType>
+                                                    <Source xsi:type="ColumnBinding">
+                                                        <TableID>dbo_DATE_MASTER</TableID>
+                                                        <ColumnID>Year</ColumnID>
+                                                    </Source>
+                                                </KeyColumn>
+                                            </KeyColumns>
+                                        </Attribute>
+                                    </Attributes>
+                                </Dimension>
+                            </Dimensions>
+                            <Partitions>
+                                <Partition>
+                                    <ID>Film Sales</ID>
+                                    <Name>Film Sales</Name>
+                                    <Source xsi:type="DsvTableBinding">
+                                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                                        <TableID>dbo_film_sales</TableID>
+                                    </Source>
+                                    <StorageMode>Molap</StorageMode>
+                                    <ProcessingMode>Regular</ProcessingMode>
+                                    <ProactiveCaching>
+                                        <SilenceInterval>-PT1S</SilenceInterval>
+                                        <Latency>-PT1S</Latency>
+                                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                                    </ProactiveCaching>
+                                </Partition>
+                            </Partitions>
+                            <ProactiveCaching>
+                                <SilenceInterval>-PT1S</SilenceInterval>
+                                <Latency>-PT1S</Latency>
+                                <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                                <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                                <Source xsi:type="ProactiveCachingInheritedBinding" />
+                            </ProactiveCaching>
+                        </MeasureGroup>
+                    </MeasureGroups>
+                    <Source>
+                        <DataSourceViewID>BI07 MOVIE DDS</DataSourceViewID>
+                    </Source>
+                    <MdxScripts>
+                        <MdxScript>
+                            <ID>MdxScript</ID>
+                            <Name>MdxScript</Name>
+                            <Commands>
+                                <Command>
+                                    <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].MAX_OCCUR
+ AS 100, 
+FORMAT_STRING = "Standard", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Film Sales'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].AVER_OCCUR
+ AS [Measures].[Occur Perc]/[Measures].[Film Sales Count], 
+FORMAT_STRING = "Standard", 
+NON_EMPTY_BEHAVIOR = { [Occur Perc], [Film Sales Count] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Film Sales'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].AVER_STANDARD_OUT
+ AS [Measures].[Standard Seats Out]/[Measures].[Standard Seats Sold], 
+FORMAT_STRING = "Standard", 
+NON_EMPTY_BEHAVIOR = { [Standard Seats Sold], [Standard Seats Out] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Film Sales'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].AVER_VIP_OUT
+ AS [Measures].[VIP Seats Out]/[Measures].[VIP Seats Sold], 
+FORMAT_STRING = "Standard", 
+NON_EMPTY_BEHAVIOR = { [VIP Seats Sold], [VIP Seats Out] }, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Film Sales'  ; </Text>
+                                </Command>
+                            </Commands>
+                        </MdxScript>
+                    </MdxScripts>
+                    <ProactiveCaching>
+                        <SilenceInterval>-PT1S</SilenceInterval>
+                        <Latency>-PT1S</Latency>
+                        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                        <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                </Cube>
+            </Cubes>
+            <DataSources>
+                <DataSource xsi:type="RelationalDataSource">
+                    <ID>BI07 MOVIE DDS</ID>
+                    <Name>BI07 MOVIE DDS</Name>
+                    <ConnectionString>Provider=SQLNCLI11.1;Data Source=LAPTOP-CTI64POB\MSSQLSERVER22;User ID=sa;Initial Catalog=BI07_MOVIE_DDS</ConnectionString>
+                    <ImpersonationInfo>
+                        <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
+                    </ImpersonationInfo>
+                    <Timeout>PT0S</Timeout>
+                </DataSource>
+            </DataSources>
+            <DataSourceViews>
+                <DataSourceView>
+                    <ID>BI07 MOVIE DDS</ID>
+                    <Name>BI07 MOVIE DDS</Name>
+                    <Annotations>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+                            <Value>_ALL_TABLES_</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+                            <Value>true</Value>
+                        </Annotation>
+                        <Annotation>
+                            <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+                            <Value>
+                                <Layouts xmlns="">
+                                    <Diagram>
+                                        <Name>_ALL_TABLES_</Name>
+                                        <DiagramLayout />
+                                        <ShowRelationshipNames>False</ShowRelationshipNames>
+                                        <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                                        <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                                        <DiagramViewPortTop>0</DiagramViewPortTop>
+                                        <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                                        <DiagramBoundingTop>0</DiagramBoundingTop>
+                                        <DiagramZoom>100</DiagramZoom>
+                                    </Diagram>
+                                </Layouts>
+                            </Value>
+                        </Annotation>
+                    </Annotations>
+                    <DataSourceID>BI07 MOVIE DDS</DataSourceID>
+                    <Schema>
+                        <xs:schema id="BI07_x0020_MOVIE_x0020_DDS" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+                            <xs:element name="BI07_x0020_MOVIE_x0020_DDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+                                <xs:complexType>
+                                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                        <xs:element name="dbo_cinema" msprop:DbTableName="cinema" msprop:FriendlyName="cinema" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="CinemaID_SK" msprop:DbColumnName="CinemaID_SK" msprop:FriendlyName="CinemaID_SK" type="xs:int" />
+                                                    <xs:element name="Cinema_x0020_Name" msprop:DbColumnName="Cinema Name" msprop:FriendlyName="Cinema Name" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="255" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="Capacity" msprop:DbColumnName="Capacity" msprop:FriendlyName="Capacity" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Standard_Seats_price" msprop:DbColumnName="Standard_Seats_price" msprop:FriendlyName="Standard_Seats_price" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="VIP_Seats_price" msprop:DbColumnName="VIP_Seats_price" msprop:FriendlyName="VIP_Seats_price" type="xs:int" minOccurs="0" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="dbo_city" msprop:DbTableName="city" msprop:FriendlyName="city" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="CityID_SK" msprop:DbColumnName="CityID_SK" msprop:FriendlyName="CityID_SK" type="xs:int" />
+                                                    <xs:element name="City_x0020_Name" msprop:DbColumnName="City Name" msprop:FriendlyName="City Name" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="255" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="dbo_DATE_MASTER" msprop:DbTableName="DATE_MASTER" msprop:FriendlyName="DATE_MASTER" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="DateKey" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="8" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="Day" msprop:DbColumnName="Day" msprop:FriendlyName="Day" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Month" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Year" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Quarter" msprop:DbColumnName="Quarter" msprop:FriendlyName="Quarter" type="xs:int" minOccurs="0" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="dbo_film" msprop:DbTableName="film" msprop:FriendlyName="film" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="FilmID_SK" msprop:DbColumnName="FilmID_SK" msprop:FriendlyName="FilmID_SK" type="xs:int" />
+                                                    <xs:element name="Film_x0020_Name" msprop:DbColumnName="Film Name" msprop:FriendlyName="Film Name" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="255" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element name="Price" msprop:DbColumnName="Price" msprop:FriendlyName="Price" type="xs:int" minOccurs="0" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="dbo_film_cate" msprop:DbTableName="film_cate" msprop:FriendlyName="film_cate" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="FilmCategoryID_SK" msprop:DbColumnName="FilmCategoryID_SK" msprop:FriendlyName="FilmCategoryID_SK" type="xs:int" />
+                                                    <xs:element name="Film_x0020_Category" msprop:DbColumnName="Film Category" msprop:FriendlyName="Film Category" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="255" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="dbo_film_sales" msprop:DbTableName="film_sales" msprop:FriendlyName="film_sales" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="RevenueID_SK" msprop:DbColumnName="RevenueID_SK" msprop:FriendlyName="RevenueID_SK" type="xs:int" />
+                                                    <xs:element name="FilmID_SK" msprop:DbColumnName="FilmID_SK" msprop:FriendlyName="FilmID_SK" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="FilmCategoryID_SK" msprop:DbColumnName="FilmCategoryID_SK" msprop:FriendlyName="FilmCategoryID_SK" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="CinemaID_SK" msprop:DbColumnName="CinemaID_SK" msprop:FriendlyName="CinemaID_SK" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="CityID_SK" msprop:DbColumnName="CityID_SK" msprop:FriendlyName="CityID_SK" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="total_sales" msprop:DbColumnName="total_sales" msprop:FriendlyName="total_sales" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="tickets_sold" msprop:DbColumnName="tickets_sold" msprop:FriendlyName="tickets_sold" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Standard_Seats_sold" msprop:DbColumnName="Standard_Seats_sold" msprop:FriendlyName="Standard_Seats_sold" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="VIP_Seats_sold" msprop:DbColumnName="VIP_Seats_sold" msprop:FriendlyName="VIP_Seats_sold" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="tickets_out" msprop:DbColumnName="tickets_out" msprop:FriendlyName="tickets_out" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="Standard_Seats_out" msprop:DbColumnName="Standard_Seats_out" msprop:FriendlyName="Standard_Seats_out" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="VIP_Seats_out" msprop:DbColumnName="VIP_Seats_out" msprop:FriendlyName="VIP_Seats_out" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="ticket_use" msprop:DbColumnName="ticket_use" msprop:FriendlyName="ticket_use" type="xs:int" minOccurs="0" />
+                                                    <xs:element name="occur_perc" msprop:DbColumnName="occur_perc" msprop:FriendlyName="occur_perc" type="xs:double" minOccurs="0" />
+                                                    <xs:element name="DateKey" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="8" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:choice>
+                                </xs:complexType>
+                                <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_cinema" />
+                                    <xs:field xpath="CinemaID_SK" />
+                                </xs:unique>
+                                <xs:unique name="dbo_city_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_city" />
+                                    <xs:field xpath="CityID_SK" />
+                                </xs:unique>
+                                <xs:unique name="dbo_DATE_MASTER_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_DATE_MASTER" />
+                                    <xs:field xpath="DateKey" />
+                                </xs:unique>
+                                <xs:unique name="dbo_film_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_film" />
+                                    <xs:field xpath="FilmID_SK" />
+                                </xs:unique>
+                                <xs:unique name="dbo_film_cate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_film_cate" />
+                                    <xs:field xpath="FilmCategoryID_SK" />
+                                </xs:unique>
+                                <xs:unique name="dbo_film_sales_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="RevenueID_SK" />
+                                </xs:unique>
+                                <xs:keyref name="FK__film_sale__FilmC__47DBAE45" refer="dbo_film_cate_Constraint1">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="FilmCategoryID_SK" />
+                                </xs:keyref>
+                                <xs:keyref name="FK__film_sale__Cinem__48CFD27E" refer="Constraint1">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="CinemaID_SK" />
+                                </xs:keyref>
+                                <xs:keyref name="FK__film_sale__CityI__49C3F6B7" refer="dbo_city_Constraint1">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="CityID_SK" />
+                                </xs:keyref>
+                                <xs:keyref name="FK__film_sale__FilmI__46E78A0C" refer="dbo_film_Constraint1">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="FilmID_SK" />
+                                </xs:keyref>
+                                <xs:keyref name="FK__film_sale__DateK__4AB81AF0" refer="dbo_DATE_MASTER_Constraint1">
+                                    <xs:selector xpath=".//dbo_film_sales" />
+                                    <xs:field xpath="DateKey" />
+                                </xs:keyref>
+                            </xs:element>
+                        </xs:schema>
+                        <BI07_x0020_MOVIE_x0020_DDS xmlns="" />
+                    </Schema>
+                </DataSourceView>
+            </DataSourceViews>
+        </Database>
+    </ObjectDefinition>
+</Create>
+

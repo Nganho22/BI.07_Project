@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{FD95C411-B661-4038-BAC0-9B6E6F91537E}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{47343ECB-95C6-419F-BC10-2153D504AEE8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Main-{74B2161E-2C60-4580-82A6-F9E0034B7DFC}ABC1.BI07_MOVIE_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

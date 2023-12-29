@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="NDS S1"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{2C31A430-7EA4-4E3B-A261-41FE759D9886}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{05C88940-CFD0-42DA-A5F6-9576001D9A6B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-NDS S1-{E1D32BD9-4915-42F5-9D0D-81912850FF31}LAPTOP-VUQKGDIV\HONGNGOC.BI07_MOVIE_NDS;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{AFEA5C93-78B2-4B4D-93FA-3839990E2FF5}ABC1.BI07_MOVIE_METADATA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -55,7 +55,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=LAPTOP-VUQKGDIV\HONGNGOC;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
+          DTS:ConnectionString="Data Source=ABC1;Initial Catalog=BI07_MOVIE_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Stage S1-{2131F0C0-ADED-4DCF-8CF5-15ED6EFFE3F0}ABC1.BI07_MOVIE_STAGE;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -9895,7 +9895,7 @@ where [refTable].[FilmID_NK] = ?</property>
                       expressionType="Notify"
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[film_sales]) [refTable]
-where [refTable].[RevenueID_NK] = ?</property>
+where [refTable].[RevenueID_NK] = ? and [refTable].[SOURCE_ID] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -9926,12 +9926,12 @@ where [refTable].[RevenueID_NK] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RevenueID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RevenueID_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CinemaID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="total_sales" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ticket_use" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="occur_perc" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateKey" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SOURCE_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RevenueID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RevenueID_NK" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FilmID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CinemaID_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="total_sales" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_sold" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="tickets_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Standard_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VIP_Seats_out" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ticket_use" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="occur_perc" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateKey" dataType="DT_STR" length="8" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="createdDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="updatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[RevenueID]};</property>
+                      name="ParameterMap">#{Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[RevenueID]};#{Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[SOURCE_ID]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9965,6 +9965,22 @@ where [refTable].[RevenueID_NK] = ?</property>
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">RevenueID_NK</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Inputs[Lookup Input].Columns[SOURCE_ID]"
+                          cachedDataType="i4"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\film_sales\Data Flow Task\film_sales stage.Outputs[OLE DB Source Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">SOURCE_ID</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -10480,19 +10496,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Dirived Column Day 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
+                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\film_sales\Data Flow Task\get newupdatedDate.Inputs[Derived Column Input]"
@@ -10500,19 +10516,19 @@ where [RevenueID_SK] = ?</property>
                   startId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\film_sales\Data Flow Task\Check createdDate &amp; updatedDate.Inputs[Conditional Split Input]"
+                  endId="Package\film_sales\Data Flow Task\create ID increases automatically.Inputs[Input 0]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup RevenueID_SK &amp; &amp; SOURCE_ID.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup CinemaID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newDateKey.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\film_sales\Data Flow Task\Lookup newCinemaID_SK.Inputs[Lookup Input]"
+                  endId="Package\film_sales\Data Flow Task\Lookup FilmID_SK.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\film_sales\Data Flow Task\Lookup newFilmID_SK.Outputs[Lookup Match Output]" />
+                  startId="Package\film_sales\Data Flow Task\Lookup DateKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\film_sales\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\film_sales\Data Flow Task\Dirived Column Day.Inputs[Derived Column Input]"
@@ -12845,18 +12861,18 @@ set [Film Category] = ?, updatedDate = ?
           TopLeft="5.5,174.666806359318" />
         <EdgeLayout
           Id="Package\film_sales.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="109.957142857143,131.815125795133">
+          TopLeft="109.957142857143,131.815125795134">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.8516805641841"
+              EndConnector="0,42.851680564184"
               Start="0,0"
-              End="0,35.3516805641841">
+              End="0,35.351680564184">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.3516805641841" />
+                    End="0,35.351680564184" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13511,7 +13527,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13533,7 +13551,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13555,7 +13575,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13577,7 +13599,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13683,7 +13707,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13705,7 +13731,9 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14254,9 +14282,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14278,9 +14304,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14302,9 +14326,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14326,9 +14348,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14357,73 +14377,73 @@ set [Film Category] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output6]"
-          TopLeft="1344.68265501972,179.793277189792">
+          TopLeft="422.653062124207,342.547898930232">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,70.8117646073495"
+              EndConnector="-166.391837916795,0"
               Start="0,0"
-              End="0,63.3117646073495">
+              End="-158.891837916795,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.3117646073495" />
+                    End="-158.891837916795,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.8511948036748,96.3827734375,11.609375"
+              BoundingBox="-127.637305677147,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output5]"
-          TopLeft="1259.2744917429,268.605672051696">
+          TopLeft="513.033674369702,264.879411675054">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-227.035715005304,0"
+              EndConnector="0,57.6079830002565"
               Start="0,0"
-              End="-219.535715005304,0">
+              End="0,50.1079830002565">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-219.535715005304,0" />
+                    End="0,50.1079830002565" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-157.959244221402,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,19.2493040001282,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="942.020409456365,286.606302306251">
+          TopLeft="401.021429358681,149.661274394485">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,86.4882351818432"
+              EndConnector="-143.647619801293,0"
               Start="0,0"
-              End="0,78.9882351818432">
+              End="-136.147619801293,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,78.9882351818432" />
+                    End="-136.147619801293,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,33.6894300909216,96.3827734375,11.609375"
+              BoundingBox="-116.265196619397,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14453,73 +14473,73 @@ set [Film Category] = ?, updatedDate = ?
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="401.021429358681,149.661274394485">
+          TopLeft="942.020409456365,286.606302306251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.647619801293,0"
+              EndConnector="0,86.4882351818432"
               Start="0,0"
-              End="-136.147619801293,0">
+              End="0,78.9882351818432">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-136.147619801293,0" />
+                    End="0,78.9882351818432" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-116.265196619397,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,33.6894300909216,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="513.033674369702,264.879411675054">
+          TopLeft="1259.2744917429,268.605672051696">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.6079830002565"
+              EndConnector="-227.035715005304,0"
               Start="0,0"
-              End="0,50.1079830002565">
+              End="-219.535715005304,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.1079830002565" />
+                    End="-219.535715005304,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.2493040001282,96.3827734375,11.609375"
+              BoundingBox="-157.959244221402,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\film_sales\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="422.653062124207,342.547898930232">
+          TopLeft="1344.68265501972,179.793277189792">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-166.391837916795,0"
+              EndConnector="0,70.8117646073495"
               Start="0,0"
-              End="-158.891837916795,0">
+              End="0,63.3117646073495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-158.891837916795,0" />
+                    End="0,63.3117646073495" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.637305677147,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,25.8511948036748,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14542,9 +14562,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14566,9 +14584,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14590,9 +14606,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14614,9 +14628,7 @@ set [Film Category] = ?, updatedDate = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14652,7 +14664,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14662,7 +14674,7 @@ set [Film Category] = ?, updatedDate = ?
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

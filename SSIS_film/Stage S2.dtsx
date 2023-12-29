@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="Stage S2"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{8EB01DBD-AB9A-40A3-B153-75A277E61309}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{C2ADE04D-D249-493C-A46B-866AC6154F44}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

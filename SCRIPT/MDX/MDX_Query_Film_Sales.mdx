@@ -1,18 +1,18 @@
 ﻿-- Thống kê số vé bán được của từng phim theo ngày, tháng, năm và theo rạp
 SELECT NONEMPTY ({[Measures].[Film Sales Count]}*
 [Cinema].[Cinema Name].[Cinema Name].ALLMEMBERS) ON COLUMNS,
-NONEMPTY(	CROSSJOIN (	[DATE MASTER].[Hierarchy].[Year],
-						[DATE MASTER].[Month].[Month],
-						[DATE MASTER].[Day].[Day]))
+NONEMPTY(	CROSSJOIN (	[DATE MASTER].[Year].[Year].members,
+						[DATE MASTER].[Month].[Month].members,
+						[DATE MASTER].[Day].[Day].members))
 ON ROWS
 FROM [BI07 MOVIE DDS]
 
 -- Thống kê số vé vip và số vé standard được mua theo ngày, tháng, năm.
 SELECT NONEMPTY ({	[Measures].[Standard Seats Sold],
 					[Measures].[VIP Seats Sold]}) ON COLUMNS,
-NONEMPTY(CROSSJOIN ([DATE MASTER].[Hierarchy].[Year],
-					[DATE MASTER].[Month].[Month],
-					[DATE MASTER].[Day].[Day]))
+NONEMPTY(CROSSJOIN ([DATE MASTER].[Year].[Year].members,
+					[DATE MASTER].[Month].[Month].members,
+					[DATE MASTER].[Day].[Day].members))
 ON ROWS
 FROM [BI07 MOVIE DDS]
 
@@ -33,9 +33,9 @@ FROM [BI07 MOVIE DDS]
 -- / quý trong năm
 SELECT NONEMPTY ({[Measures].[AVER_OCCUR]}) ON COLUMNS,
 NONEMPTY(
-CROSSJOIN (	[DATE MASTER].[Hierarchy].[Year],
-			[DATE MASTER].[Quarter].[Quarter],
-			[DATE MASTER].[Month].[Month]))
+CROSSJOIN (	[DATE MASTER].[Year].[Year].members,
+			[DATE MASTER].[Quarter].[Quarter].members,
+			[DATE MASTER].[Month].[Month].members))
 ON ROWS
 FROM [BI07 MOVIE DDS]
 
